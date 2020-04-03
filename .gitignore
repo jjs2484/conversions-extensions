@@ -1,0 +1,8 @@
+# Composer
+composer.phar
+/vendor/
+
+# macOS
+.DS_Store
+
+conversions-meta-tags.zip
