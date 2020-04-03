@@ -1,11 +1,12 @@
 === Conversions Extensions ===
 Contributors: js2484
 Stable tag: 1.0.0
-Tags: meta, tags, title, description
+Tags: theme, extension, homepage
 Tested up to: 5.4
 Requires at least: 4.4
 Requires PHP: 5.6
 License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds homepage sections and other extensions to Conversions WordPress theme.
 
