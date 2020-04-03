@@ -126,7 +126,7 @@ class Homepage {
 		);
 
 		// phpcs:disable WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once( __DIR__ . '/class-homepage-sorting-customizer-control.php' );
+		require_once __DIR__ . '/class-homepage-sorting-customizer-control.php';
 		// phpcs:enable
 
 		$theme = wp_get_theme();
@@ -223,11 +223,11 @@ class Homepage {
 	}
 
 	/**
-		@brief		Return all available sections.
-		@since		2020-03-28 18:09:14
-	**/
-	public static function get_sections()
-	{
+	 * Return all available sections.
+	 *
+	 * @since 2020-03-28
+	 */
+	public static function get_sections() {
 		$sections = static::$sections;
 		$sections = apply_filters( 'conversions_get_sections', $sections );
 		return $sections;

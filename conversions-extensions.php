@@ -8,6 +8,8 @@
  * Text Domain: conversions
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @package conversions-extensions
  */
 
 namespace conversions {
@@ -22,7 +24,6 @@ namespace conversions {
 		 * @since 2020-03-25
 		 */
 		public function __construct() {
-		//	add_filter( 'conversions_get_sections', [ $this, 'conversions_get_sections' ] );
 			add_action( 'conversions_footer_info', [ $this, 'conversions_footer_social' ], 20 );
 			add_action( 'conversions_customize_register', [ $this, 'conversions_customize_register' ] );
 			add_action( 'wp_head', [ $this, 'wp_head' ], 99 );
@@ -76,7 +77,7 @@ namespace conversions {
 				}
 			}
 
-			require_once( __DIR__ . '/homepage/class-homepage.php' );
+			require_once __DIR__ . '/homepage/class-homepage.php';
 		}
 
 		/**
@@ -84,7 +85,7 @@ namespace conversions {
 		 *
 		 * @since 2020-03-25
 		 *
-		 * @param object $wp_customize The Customizer object.
+		 * @param object $conversions_customizer The Customizer object.
 		 */
 		public function conversions_customize_register( $conversions_customizer ) {
 
@@ -96,23 +97,23 @@ namespace conversions {
 
 			// require customizer repeater.
 			// phpcs:disable WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once( __DIR__ . '/repeater/class-conversions-repeater.php' );
+			require_once __DIR__ . '/repeater/class-conversions-repeater.php';
 			// phpcs:enable
 
 			// -----------------------------------------------------
 			// Include customizer sections
 			// -----------------------------------------------------
 			// phpcs:disable WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once( __DIR__ . '/homepage/customizer/homepage.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.hero.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.clients.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.features.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.pricing.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.testimonials.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.news.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.woocommerce.php' );
-			require_once( __DIR__ . '/homepage/customizer/homepage.edd.php' );
-			require_once( __DIR__ . '/footer/customizer/social-icons.php' );
+			require_once __DIR__ . '/homepage/customizer/homepage.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.hero.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.clients.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.features.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.testimonials.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.news.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.woocommerce.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.edd.php';
+			require_once __DIR__ . '/footer/customizer/social-icons.php';
 			// phpcs:enable
 		}
 

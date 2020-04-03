@@ -4,6 +4,7 @@
  *
  * @package conversions
  */
+
 $wp_customize->add_setting(
 	'conversions_social_size',
 	[
