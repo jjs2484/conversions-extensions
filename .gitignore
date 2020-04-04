@@ -1,3 +1,10 @@
+# Sass
+.sass-cache
+
+# Grunt
+/node_modules/
+npm-debug.log
+
 # Composer
 composer.phar
 /vendor/
@@ -6,4 +13,3 @@ composer.phar
 .DS_Store
 
 conversions-extensions.zip
-node_modules
