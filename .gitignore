@@ -6,3 +6,4 @@ composer.phar
 .DS_Store
 
 conversions-extensions.zip
+node_modules

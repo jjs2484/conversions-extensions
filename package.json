@@ -1,0 +1,37 @@
+{
+  "name": "conversions-extensions",
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjs2484/conversions-extensions.git"
+  },
+  "author": "jjs2484",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjs2484/conversions-extensions/issues"
+  },
+  "homepage": "https://github.com/jjs2484/conversions-extensions#readme",
+  "devDependencies": {
+    "@lodder/grunt-postcss": "^2.0.1",
+    "autoprefixer": "^9.7.5",
+    "eslint": "^6.8.0",
+    "grunt": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-lineending": "^1.0.0",
+    "grunt-rtlcss": "^2.0.2",
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
+  "description": ""
+}

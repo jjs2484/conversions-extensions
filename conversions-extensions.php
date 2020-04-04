@@ -28,6 +28,8 @@ namespace conversions {
 			add_action( 'conversions_customize_register', [ $this, 'conversions_customize_register' ] );
 			add_action( 'wp_head', [ $this, 'wp_head' ], 99 );
 			add_action( 'init', [ $this, 'setup' ] );
+			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
+			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
 		}
 
 		/**
@@ -229,6 +231,72 @@ namespace conversions {
 				?>
 			</style>
 			<?php
+		}
+
+		/**
+		 * Enqueue scripts and styles for the frontend.
+		 *
+		 * @since 2019-08-16
+		 */
+		public function wp_enqueue_scripts() {
+			// CSS.
+			$ext_styles_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/plugin.min.css' ) );
+			wp_enqueue_style(
+				'conversions-ext-styles',
+				plugin_dir_url( __FILE__ ) . 'build/plugin.min.css',
+				array(),
+				$ext_styles_ver
+			);
+			// RTL.
+			if ( is_rtl() ) {
+				$ext_rtl_styles_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/plugin.rtl.min.css' ) );
+				wp_enqueue_style(
+					'conversions-ext-styles-rtl',
+					plugin_dir_url( __FILE__ ) . 'build/plugin.rtl.min.css',
+					array(),
+					$ext_rtl_styles_ver
+				);
+				wp_dequeue_style( 'conversions-ext-styles' );
+			}
+
+			// Javascript.
+			$ext_scripts_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/plugin.min.js' ) );
+			wp_enqueue_script(
+				'conversions-ext-scripts',
+				plugin_dir_url( __FILE__ ) . 'build/plugin.min.js',
+				array(),
+				$ext_scripts_ver,
+				true
+			);
+		}
+
+		/**
+		 * Enqueue scripts and styles for the customizer.
+		 *
+		 * @since 2019-12-25
+		 */
+		public function customize_controls_enqueue_scripts() {
+			// Styles.
+			$ext_styles_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/conversions-customizer.min.css' ) );
+			wp_enqueue_style(
+				'conversions-ext-customizer-css',
+				plugin_dir_url( __FILE__ ) . 'build/conversions-customizer.min.css',
+				array(),
+				$ext_styles_ver
+			);
+
+			// Scripts.
+			wp_enqueue_script( 'jquery-ui-core' );
+			wp_enqueue_script( 'jquery-ui-sortable' );
+
+			$ext_scripts_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/conversions-customizer.min.js' ) );
+			wp_enqueue_script(
+				'conversions-ext-customizer-js',
+				plugin_dir_url( __FILE__ ) . 'build/conversions-customizer.min.js',
+				array('jquery', 'jquery-ui-draggable', 'wp-color-picker' ),
+				$ext_scripts_ver,
+				true
+			);
 		}
 
 	}
