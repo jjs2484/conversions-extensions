@@ -171,8 +171,8 @@ class Conversions_Repeater extends \WP_Customize_Control {
 		if ( ! empty( $id ) ) {
 			$this->id = $id;
 		}
-		if ( file_exists( get_template_directory() . '/inc/customizer-icons.php' ) ) {
-			$this->customizer_icon_container = '/inc/customizer-icons';
+		if ( file_exists( __DIR__ . '/customizer-icons.php' ) ) {
+			$this->customizer_icon_container = '/customizer-icons.php';
 		}
 		$allowed_array1     = wp_kses_allowed_html( 'post' );
 		$allowed_array2     = array(
@@ -564,7 +564,7 @@ class Conversions_Repeater extends \WP_Customize_Control {
 					<i class="cr__icon <?php echo esc_attr( $value ); ?>"></i>
 				</span>
 			</div>
-			<?php get_template_part( $this->customizer_icon_container ); ?>
+			<?php include __DIR__ . $this->customizer_icon_container; ?>
 		</div>
 		<?php
 	}
