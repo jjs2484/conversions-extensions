@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 			basic_and_extras: {
 				files: {
 					'build/plugin.js': ['node_modules/slick-carousel/slick/slick.js', 'js/plugin.js'],
-					'build/conversions-customizer.js': ['js/conversions-repeater.js', 'js/fontawesome-iconpicker.js', 'js/customizer-conditionals.js', 'js/homepage_sorting.js'],
+					'build/conversions-customizer.js': ['js/conversions-repeater.js', 'js/fontawesome-iconpicker.js', 'js/customizer-conditionals.js', 'js/homepage_sorting.js', 'js/customizer-conditionals.js'],
 				},
 			},
 		},
