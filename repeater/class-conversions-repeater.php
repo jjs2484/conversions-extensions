@@ -112,7 +112,7 @@ class Conversions_Repeater extends \WP_Customize_Control {
 	public $customizer_repeater_link_control = false;
 
 	/**
-	 * Check if the social repeater control is added in the repeater
+	 * Check if the repeater control is added in the repeater
 	 *
 	 * @var bool
 	 */
