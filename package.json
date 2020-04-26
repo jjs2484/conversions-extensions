@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/jjs2484/conversions-extensions#readme",
   "devDependencies": {
-    "@lodder/grunt-postcss": "^2.0.1",
-    "autoprefixer": "^9.7.5",
+    "@lodder/grunt-postcss": "^2.0.2",
+    "autoprefixer": "^9.7.6",
     "eslint": "^6.8.0",
     "grunt": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
@@ -28,7 +28,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-lineending": "^1.0.0",
     "grunt-rtlcss": "^2.0.2",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.14.0"
   },
   "dependencies": {
     "slick-carousel": "^1.8.1"
