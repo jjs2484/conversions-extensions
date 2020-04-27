@@ -60,7 +60,6 @@ class Navbar_Variants {
 	public function conversions_navbar_branding_filter( $navbar_branding ) {
 
 		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) {
-			$navbar = new Navbar();
 
 			// Navbar brand text if blog is homepage.
 			$conversions_brand_blog_home = sprintf(
@@ -85,7 +84,7 @@ class Navbar_Variants {
 					$navbar_branding .= '<div class="container-fluid">';
 					$navbar_branding .= $conversions_brand_blog_home; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= $this->conversions_navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$navbar_branding .= $navbar->conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= '</div>';
 					$navbar_branding .= '</div>';
 				} else {
@@ -93,7 +92,7 @@ class Navbar_Variants {
 					$navbar_branding .= '<div class="container-fluid">';
 					$navbar_branding .= $conversions_brand_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= $this->conversions_navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$navbar_branding .= $navbar->conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= '</div>';
 					$navbar_branding .= '</div>';
 				}
@@ -102,7 +101,7 @@ class Navbar_Variants {
 				$navbar_branding .= '<div class="container-fluid">';
 				$navbar_branding .= get_custom_logo();
 				$navbar_branding .= $this->conversions_navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				$navbar_branding .= $navbar->conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				$navbar_branding .= '</div>';
 				$navbar_branding .= '</div>';
 			}
