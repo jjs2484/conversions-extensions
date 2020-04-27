@@ -80,6 +80,7 @@ namespace conversions {
 			}
 
 			require_once __DIR__ . '/homepage/class-homepage.php';
+			require_once __DIR__ . '/navbar/navbar-variants.php';
 		}
 
 		/**
@@ -116,6 +117,7 @@ namespace conversions {
 			require_once __DIR__ . '/homepage/customizer/homepage.woocommerce.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.edd.php';
 			require_once __DIR__ . '/footer/customizer/social-icons.php';
+			require_once __DIR__ . '/navbar/customizer/navbar-variants.php';
 			// phpcs:enable
 		}
 
@@ -162,6 +164,9 @@ namespace conversions {
 		 */
 		public function wp_head() {
 
+			// fixed navbar height calc variables.
+			$fixed_navbar_height = conversions()->customizer->fixed_navbar_height_calc();
+
 			$mods = [
 				[ '.page-template-homepage section.c-hero h1', 'color', get_theme_mod( 'conversions_hh_title_color' ) ],
 				[ '.page-template-homepage section.c-hero .c-hero__description', 'color', get_theme_mod( 'conversions_hh_desc_color' ) ],
@@ -187,6 +192,10 @@ namespace conversions {
 				[ '.page-template-homepage section.c-edd', 'background-color', get_theme_mod( 'conversions_edd_bg_color' ) ],
 				[ '.page-template-homepage section.c-edd h2', 'color', get_theme_mod( 'conversions_edd_title_color' ) ],
 				[ '.page-template-homepage section.c-edd p.subtitle', 'color', get_theme_mod( 'conversions_edd_desc_color' ) ],
+				[ '.navbar-below .navbar-below-menu .nav-link', 'padding-top', get_theme_mod( 'conversions_nav_tbpadding' ), 'rem' ],
+				[ '.navbar-below .navbar-below-menu .nav-link', 'padding-bottom', get_theme_mod( 'conversions_nav_tbpadding' ), 'rem' ],
+				[ '.navbar-below .navbar-below-branding', 'padding-top', get_theme_mod( 'conversions_branding_tbpadding' ), 'rem' ],
+				[ '.navbar-below .navbar-below-branding', 'padding-bottom', get_theme_mod( 'conversions_branding_tbpadding' ), 'rem' ],
 			];
 			?>
 
@@ -227,6 +236,19 @@ namespace conversions {
 							display: none;
 						}
 					}';
+				}
+				// Fixed navbar below height.
+				if ( get_theme_mod( 'conversions_nav_position', 'fixed-top' ) === 'fixed-top' ) {
+					if ( get_theme_mod( 'conversions_nav_layout', 'right' ) == 'below' ) {
+						echo '.content-wrapper {
+							margin-top: ' . esc_html( $fixed_navbar_height[0] ) . 'rem;
+						}';
+						echo '@media screen and (min-width: 992px) {
+							.content-wrapper {
+								margin-top: ' . esc_html( $fixed_navbar_height[1] ) . 'rem;
+							}
+						}';
+					}
 				}
 				?>
 			</style>
