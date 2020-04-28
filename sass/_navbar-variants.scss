@@ -2,6 +2,9 @@
 #wrapper-navbar .navbar {
 	// Navbar below specific
 	&.navbar-below {
+		@media (max-width: 991.98px) {
+			border-bottom: 1px solid #dee2e6;
+		}
 		@media (min-width: 992px) {
 			flex-flow: column nowrap;
 			align-items: normal;

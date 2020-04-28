@@ -421,6 +421,9 @@ section.c-testimonials .c-testimonials__quote {
     #wrapper-footer .social-media-icons ul.list-inline li.list-inline-item i {
       vertical-align: middle; }
 
+@media (max-width: 991.98px) {
+  #wrapper-navbar .navbar.navbar-below {
+    border-bottom: 1px solid #dee2e6; } }
 @media (min-width: 992px) {
   #wrapper-navbar .navbar.navbar-below {
     flex-flow: column nowrap;
