@@ -51,7 +51,7 @@ $wp_customize->add_control(
 		'description' => __( 'Top and bottom padding in rem.', 'conversions' ),
 		'section'     => 'conversions_nav',
 		'settings'    => 'conversions_branding_tbpadding',
-		'priority'    => 35,
+		'priority'    => 21,
 		'type'        => 'number',
 		'input_attrs' => [
 			'min'  => 0,
