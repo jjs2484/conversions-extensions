@@ -21,17 +21,18 @@ class Navbar_Variants {
 	 * @since 2020-04-26
 	 */
 	public function __construct() {
-		add_filter( 'conversions_nav_open_wrapper', [ $this, 'conversions_navbar_open_filter' ] );
-		add_filter( 'conversions_nav_close_wrapper', [ $this, 'conversions_navbar_close_filter' ] );
-		add_filter( 'conversions_nav_branding_output', [ $this, 'conversions_navbar_branding_filter' ] );
+		add_filter( 'conversions_nav_open_wrapper', [ $this, 'navbar_open_filter' ] );
+		add_filter( 'conversions_nav_close_wrapper', [ $this, 'navbar_close_filter' ] );
+		add_filter( 'conversions_nav_branding_output', [ $this, 'navbar_branding_filter' ] );
 	}
 
 	/**
 	 * Navbar opening divs filter.
 	 *
 	 * @since 2020-04-26
+	 * @param string $navbar_open navbar opening divs.
 	 */
-	public function conversions_navbar_open_filter( $navbar_open ) {
+	public function navbar_open_filter( $navbar_open ) {
 		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) {
 			$navbar_open = '<nav class="navbar navbar-expand-lg navbar-below navbar-light bg-white">';
 		}
@@ -43,8 +44,9 @@ class Navbar_Variants {
 	 * Navbar closing divs filter.
 	 *
 	 * @since 2020-04-26
+	 * @param string $navbar_close navbar closing divs.
 	 */
-	public function conversions_navbar_close_filter( $navbar_close ) {
+	public function navbar_close_filter( $navbar_close ) {
 		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) {
 			$navbar_close = '</nav>';
 		}
@@ -53,16 +55,17 @@ class Navbar_Variants {
 	}
 
 	/**
-	 * Navbar branding output.
+	 * Navbar branding output filter.
 	 *
-	 * @since 2020-01-28
+	 * @since 2020-04-26
+	 * @param string $navbar_branding navbar branding HTML.
 	 */
-	public function conversions_navbar_branding_filter( $navbar_branding ) {
+	public function navbar_branding_filter( $navbar_branding ) {
 
 		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) {
 
 			// Navbar brand text if blog is homepage.
-			$conversions_brand_blog_home = sprintf(
+			$brand_blog_home = sprintf(
 				'<h1 class="navbar-brand mb-0"><a rel="home" href="%s" title="%s" itemprop="url">%s</a></h1>',
 				esc_url( home_url( '/' ) ),
 				esc_attr( get_bloginfo( 'name', 'display' ) ),
@@ -70,7 +73,7 @@ class Navbar_Variants {
 			);
 
 			// Navbar brand text.
-			$conversions_brand_text = sprintf(
+			$brand_text = sprintf(
 				'<a class="navbar-brand" rel="home" href="%s" title="%s" itemprop="url">%s</a>',
 				esc_url( home_url( '/' ) ),
 				esc_attr( get_bloginfo( 'name', 'display' ) ),
@@ -80,27 +83,27 @@ class Navbar_Variants {
 			// If no custom logo output blog name.
 			if ( ! has_custom_logo() ) {
 				if ( is_front_page() && is_home() ) {
-					$navbar_branding = '<div class="navbar-below-branding">';
+					$navbar_branding  = '<div class="navbar-below-branding">';
 					$navbar_branding .= '<div class="container-fluid">';
-					$navbar_branding .= $conversions_brand_blog_home; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$navbar_branding .= $this->conversions_navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= $brand_blog_home; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= $this->navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= '</div>';
 					$navbar_branding .= '</div>';
 				} else {
-					$navbar_branding = '<div class="navbar-below-branding">';
+					$navbar_branding  = '<div class="navbar-below-branding">';
 					$navbar_branding .= '<div class="container-fluid">';
-					$navbar_branding .= $conversions_brand_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$navbar_branding .= $this->conversions_navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= $brand_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= $this->navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= '</div>';
 					$navbar_branding .= '</div>';
 				}
 			} else {
-				$navbar_branding = '<div class="navbar-below-branding">';
+				$navbar_branding  = '<div class="navbar-below-branding">';
 				$navbar_branding .= '<div class="container-fluid">';
 				$navbar_branding .= get_custom_logo();
-				$navbar_branding .= $this->conversions_navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$navbar_branding .= $this->navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				$navbar_branding .= '</div>';
 				$navbar_branding .= '</div>';
@@ -115,7 +118,7 @@ class Navbar_Variants {
 	 *
 	 * @since 2020-04-26
 	 */
-	public function conversions_navbar_below_extras() {
+	public function navbar_below_extras() {
 
 		// Is woocommerce is active?
 		if ( class_exists( 'woocommerce' ) ) {
