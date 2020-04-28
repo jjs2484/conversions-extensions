@@ -1,18 +1,24 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.0.0
-Tags: theme, extension, homepage
+Stable tag: 1.0.1
+Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.4
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds homepage sections and other extensions to Conversions WordPress theme.
+Adds sections and other features to Conversions WordPress theme.
 
 == Description ==
 
-Adds homepage sections and other extensions to Conversions WordPress theme.
+Adds sections and other features to Conversions WordPress theme.
+
+= Extensions List: =
+
+- Homepage sections
+- Navbar variants
+- Footer social icons
 
 = Automatic Installation =
 
@@ -29,3 +35,9 @@ Adds homepage sections and other extensions to Conversions WordPress theme.
 
 = 1.0.0 =
 * Initial release
+
+= 1.0.1 =
+* New: Add navbar variants.
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.
+* Update: Minor code refactoring.
