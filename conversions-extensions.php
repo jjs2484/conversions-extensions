@@ -116,8 +116,8 @@ namespace conversions {
 			require_once __DIR__ . '/homepage/customizer/homepage.news.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.woocommerce.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.edd.php';
-			require_once __DIR__ . '/footer/customizer/social-icons.php';
-			require_once __DIR__ . '/navbar/customizer/navbar-variants.php';
+			require_once __DIR__ . '/footer/social-icons-customizer.php';
+			require_once __DIR__ . '/navbar/navbar-variants-customizer.php';
 			// phpcs:enable
 		}
 
@@ -394,6 +394,7 @@ namespace
 	 * @param string $id Control ID.
 	 * @param string $control Control name.
 	 */
+	add_filter( 'conversions_repeater_labels_filter', 'conversions_ext_repeater_labels', 10, 3 );
 	function conversions_ext_repeater_labels( $string, $id, $control ) {
 
 		// testimonial repeater labels.
@@ -421,9 +422,6 @@ namespace
 
 		return $string;
 	}
-	add_filter( 'conversions_repeater_labels_filter', 'conversions_ext_repeater_labels', 10, 3 );
-
 
 	$conversions_extensions = new conversions\Conversions_Extensions();
 }
-
