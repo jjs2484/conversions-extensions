@@ -12,6 +12,7 @@ jQuery(document).ready(function($) {
 		[ '#customize-control-conversions_hh_vbtn_text_control, #customize-control-conversions_hh_vbtn_url_control', '#customize-control-conversions_hh_vbtn', 'no'],
 		[ '#customize-control-conversions_hc_sm_control, #customize-control-conversions_hc_md_control, #customize-control-conversions_hc_lg_control', '#customize-control-conversions_hc_respond', 'auto'],
 		[ '#customize-control-conversions_pricing_sm_control, #customize-control-conversions_pricing_md_control, #customize-control-conversions_pricing_lg_control', '#customize-control-conversions_pricing_respond', 'auto'],
+		[ '#customize-control-conversions_branding_tbpadding_control', '#customize-control-conversions_nav_layout', 'Logo left, navbar right'],
 	];
 	
 	conditionalOptions.forEach( function( conditionalOptionsArray ) {
