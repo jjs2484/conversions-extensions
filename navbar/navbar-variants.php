@@ -230,9 +230,16 @@ class Navbar_Variants {
 			$items .= $nav_button;
 		}
 
+		// Check for filter.
+		if ( has_filter( 'conversions_navbar_below_extras' ) ) {
+			$items = apply_filters( 'conversions_navbar_below_extras', $items );
+		}
+
+		// If not empty add wrapper.
 		if ( ! empty( $items ) ) {
 			$items = '<ul class="list-inline nav-extras">' . $items . '</ul>';
 		}
+
 		return $items;
 	}
 }

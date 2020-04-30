@@ -38,6 +38,7 @@ Adds sections and other features to Conversions WordPress theme.
 
 = 1.0.1 =
 * New: Add navbar variants.
+* New: Add conversions_navbar_below_extras filter.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Update: Minor code refactoring.
