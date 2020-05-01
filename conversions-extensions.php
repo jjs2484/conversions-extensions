@@ -24,12 +24,32 @@ namespace conversions {
 		 * @since 2020-03-25
 		 */
 		public function __construct() {
+
+			if ( ! static::theme_check() )
+				return;
+
 			add_action( 'conversions_footer_info', [ $this, 'conversions_footer_social' ], 20 );
 			add_action( 'conversions_customize_register', [ $this, 'conversions_customize_register' ] );
 			add_action( 'wp_head', [ $this, 'wp_head' ], 99 );
 			add_action( 'init', [ $this, 'setup' ] );
 			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
+		}
+
+		/**
+		 * Theme check.
+		 *
+		 * @since 2020-03-27
+		 */
+		public static function theme_check() {
+			// Gets the current theme.
+			$theme = wp_get_theme();
+
+			// Check if Conversions is active or parent theme.
+			if ( 'Conversions' == $theme->name || 'Conversions' == $theme->parent_theme ) {
+				return true;
+			}
+			return false;
 		}
 
 		/**
