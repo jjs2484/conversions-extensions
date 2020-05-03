@@ -5,7 +5,7 @@ Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.4
 Requires at least: 4.7
 Requires PHP: 5.6
-License: GPLv2
+License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds sections and other features to Conversions WordPress theme.
