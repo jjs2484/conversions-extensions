@@ -28,7 +28,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-lineending": "^1.0.0",
     "grunt-rtlcss": "^2.0.2",
-    "node-sass": "^4.14.0"
+    "node-sass": "^4.14.1"
   },
   "dependencies": {
     "slick-carousel": "^1.8.1"
