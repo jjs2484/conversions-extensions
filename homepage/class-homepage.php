@@ -158,7 +158,7 @@ class Homepage {
 		$client_logos_decoded = json_decode( $client_logos );
 		if ( ! $client_logos_decoded)
 			return false;
-		$has_logos = ( $client_logos_decoded[ 0 ]->image_url != '' );
+		$has_logos = ( $client_logos_decoded[ 0 ]->image_url != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 		if ( ! $has_logos )
 			return false;
 		return $client_logos_decoded;
@@ -175,7 +175,7 @@ class Homepage {
 		$features_decoded = json_decode( $features );
 		if ( ! $features_decoded )
 			return false;
-		$has_features = ( $features_decoded[ 0 ]->icon_value != '' || $features_decoded[ 0 ]->title != '' );
+		$has_features = ( $features_decoded[ 0 ]->icon_value != '' || $features_decoded[ 0 ]->title != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 		if ( ! $has_features )
 			return false;
 		return $features_decoded;
@@ -192,7 +192,7 @@ class Homepage {
 		$img_features_decoded = json_decode( $img_features );
 		if ( ! $img_features_decoded )
 			return false;
-		$has_img_features = ( $img_features_decoded[ 0 ]->image_url != '' || $img_features_decoded[ 0 ]->title != '' );
+		$has_img_features = ( $img_features_decoded[ 0 ]->image_url != '' || $img_features_decoded[ 0 ]->title != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 		if ( ! $has_img_features )
 			return false;
 		return $img_features_decoded;
@@ -234,7 +234,7 @@ class Homepage {
 		if ( ! $pricing )
 			return false;
 
-		$has_pricing = ( $pricing[ 0 ]->title != '' || $pricing[ 0 ]->subtitle != '' );
+		$has_pricing = ( $pricing[ 0 ]->title != '' || $pricing[ 0 ]->subtitle != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 
 		if ( ! $has_pricing )
 			return false;
@@ -262,7 +262,7 @@ class Homepage {
 		$sections = static::get_sections();
 		$options  = get_theme_mod( static::$theme_mod_key );
 
-		if ( $options != '' ) {
+		if ( $options != '' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 			$options      = explode( ',', $options );
 			$new_sections = [];
 			foreach ( $options as $section ) {
@@ -295,7 +295,7 @@ class Homepage {
 		if ( ! $testimonials )
 			return false;
 
-		$has_testimonials = ( $testimonials[ 0 ]->title != '' || $testimonials[ 0 ]->text != '' );
+		$has_testimonials = ( $testimonials[ 0 ]->title != '' || $testimonials[ 0 ]->text != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 
 		if ( ! $has_testimonials )
 			return false;

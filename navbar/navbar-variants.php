@@ -33,7 +33,7 @@ class Navbar_Variants {
 	 * @param string $navbar_open navbar opening divs.
 	 */
 	public function navbar_open_filter( $navbar_open ) {
-		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) {
+		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 			$navbar_open = '<nav class="navbar navbar-expand-lg navbar-below navbar-light bg-white">';
 		}
 
@@ -47,7 +47,7 @@ class Navbar_Variants {
 	 * @param string $navbar_close navbar closing divs.
 	 */
 	public function navbar_close_filter( $navbar_close ) {
-		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) {
+		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 			$navbar_close = '</nav>';
 		}
 
@@ -62,7 +62,7 @@ class Navbar_Variants {
 	 */
 	public function navbar_branding_filter( $navbar_branding ) {
 
-		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) {
+		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 
 			// Navbar brand text if blog is homepage.
 			$brand_blog_home = sprintf(

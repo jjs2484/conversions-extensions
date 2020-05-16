@@ -46,7 +46,7 @@ namespace conversions {
 			$theme = wp_get_theme();
 
 			// Check if Conversions is active or parent theme.
-			if ( 'Conversions' == $theme->name || 'Conversions' == $theme->parent_theme ) {
+			if ( 'Conversions' == $theme->name || 'Conversions' == $theme->parent_theme ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 				return true;
 			}
 			return false;
@@ -252,7 +252,7 @@ namespace conversions {
 					}';
 				}
 				// Homepage news.
-				if ( get_theme_mod( 'conversions_news_mposts', '2' ) == 1 ) {
+				if ( get_theme_mod( 'conversions_news_mposts', '2' ) == 1 ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 					echo '@media (max-width: 991.98px) {
 						section.c-news #c-news__1,
 						section.c-news #c-news__2 {
@@ -260,7 +260,7 @@ namespace conversions {
 						}
 					}';
 				}
-				if ( get_theme_mod( 'conversions_news_mposts', '2' ) == 2 ) {
+				if ( get_theme_mod( 'conversions_news_mposts', '2' ) == 2 ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 					echo '@media (max-width: 991.98px) {
 						section.c-news #c-news__2 {
 							display: none;
@@ -269,7 +269,7 @@ namespace conversions {
 				}
 				// Fixed navbar below height.
 				if ( get_theme_mod( 'conversions_nav_position', 'fixed-top' ) === 'fixed-top' ) {
-					if ( get_theme_mod( 'conversions_nav_layout', 'right' ) == 'below' ) {
+					if ( get_theme_mod( 'conversions_nav_layout', 'right' ) == 'below' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 						echo '.content-wrapper {
 							margin-top: ' . esc_html( $fixed_navbar_height[0] ) . 'rem;
 						}';
@@ -424,7 +424,6 @@ namespace
 	 * @param string $id Control ID.
 	 * @param string $control Control name.
 	 */
-	add_filter( 'conversions_repeater_labels_filter', 'conversions_ext_repeater_labels', 10, 3 );
 	function conversions_ext_repeater_labels( $string, $id, $control ) {
 
 		// testimonial repeater labels.
@@ -452,6 +451,7 @@ namespace
 
 		return $string;
 	}
+	add_filter( 'conversions_repeater_labels_filter', 'conversions_ext_repeater_labels', 10, 3 );
 
 	$conversions_extensions = new conversions\Conversions_Extensions();
 }
