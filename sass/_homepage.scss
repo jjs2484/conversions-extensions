@@ -19,7 +19,8 @@
 		padding-bottom: 1rem;
 	}
 }
-.page-template-homepage section.c-features .container-fluid {
+.page-template-homepage section.c-features .container-fluid,
+.page-template-homepage section.c-img-features .container-fluid {
 	padding-top: 3rem;
 	padding-bottom: 2rem;
 	@media (min-width: 992px) {
@@ -135,7 +136,7 @@ section.c-clients {
 	}
 }
 
-// Features section
+// Icon features section
 section.c-features {
 	.row:first-of-type {
 		@media (min-width: 576px) {
@@ -156,6 +157,29 @@ section.c-features {
 		}
 	}
 	.c-features__block-desc {
+		color: #6c757d;
+		margin-bottom: 1rem;
+	}
+}
+
+// Image features section
+section.c-img-features {
+	.row:first-of-type {
+		@media (min-width: 576px) {
+			justify-content: center;
+		}
+		.c-img-features__block {
+			margin-bottom: 1.5rem;
+			.card {
+				text-align: center;
+				background-color: transparent;
+				.c-features__block-image {
+
+				}
+			}
+		}
+	}
+	.c-img-features__block-desc {
 		color: #6c757d;
 		margin-bottom: 1rem;
 	}

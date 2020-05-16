@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Conversions Extensions
  * Description: Adds homepage sections and other extensions to Conversions WordPress theme.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
  * Text Domain: conversions
@@ -77,6 +77,9 @@ namespace conversions {
 				'conversions_features_sm'          => '2',
 				'conversions_features_md'          => '2',
 				'conversions_features_lg'          => '3',
+				'conversions_img_features_sm'      => '2',
+				'conversions_img_features_md'      => '2',
+				'conversions_img_features_lg'      => '3',
 				'conversions_pricing_respond'      => 'auto',
 				'conversions_pricing_sm'           => '1',
 				'conversions_pricing_md'           => '1',
@@ -131,11 +134,13 @@ namespace conversions {
 			require_once __DIR__ . '/homepage/customizer/homepage.hero.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.clients.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.features.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.testimonials.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.news.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.woocommerce.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.edd.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.blank.php';
 			require_once __DIR__ . '/footer/social-icons-customizer.php';
 			require_once __DIR__ . '/navbar/navbar-variants-customizer.php';
 			// phpcs:enable
@@ -216,6 +221,11 @@ namespace conversions {
 				[ '.navbar-below .navbar-below-menu .nav-link', 'padding-bottom', get_theme_mod( 'conversions_nav_tbpadding' ), 'rem' ],
 				[ '.navbar-below .navbar-below-branding', 'padding-top', get_theme_mod( 'conversions_branding_tbpadding' ), 'rem' ],
 				[ '.navbar-below .navbar-below-branding', 'padding-bottom', get_theme_mod( 'conversions_branding_tbpadding' ), 'rem' ],
+				[ '.page-template-homepage section.c-img-features', 'background-color', get_theme_mod( 'conversions_img_features_bg' ) ],
+				[ '.page-template-homepage section.c-img-features h2, section.c-img-features .card h3', 'color', get_theme_mod( 'conversions_img_features_title_color' ) ],
+				[ '.page-template-homepage section.c-img-features p.subtitle, section.c-img-features .card .c-img-features__block-desc', 'color', get_theme_mod( 'conversions_img_features_desc_color' ) ],
+				[ '.page-template-homepage .c-blank', 'background-color', get_theme_mod( 'conversions_blank_bg_color' ) ],
+				[ '.page-template-homepage .c-blank .c-blank__items', 'align-items', get_theme_mod( 'conversions_blank_content_position' ) ],
 			];
 			?>
 

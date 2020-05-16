@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.4
 Requires at least: 4.7
@@ -42,3 +42,9 @@ Adds sections and other features to Conversions WordPress theme.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Update: Minor code refactoring.
+
+= 1.0.2 =
+* New: Add image feature homepage section.
+* New: Add blank homepage section.
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.

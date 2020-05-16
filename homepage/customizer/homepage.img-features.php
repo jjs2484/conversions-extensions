@@ -1,21 +1,22 @@
 <?php
 /**
- * Homepage Features customizer section
+ * Image Features customizer section
  *
- * @package conversions
+ * @since 2020-05-09
+ * @package conversions_addon_pack
  */
 
 $wp_customize->add_section(
-	'conversions_homepage_features',
+	'conversions_homepage_img_features',
 	[
-		'title'      => __( 'Icon features', 'conversions' ),
-		'priority'   => 30,
+		'title'      => __( 'Image features', 'conversions' ),
+		'priority'   => 31,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_bg_color',
+	'conversions_img_features_bg',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -24,18 +25,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_bg_color_control',
+	'conversions_img_features_bg_control',
 	[
 		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Features section background color.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_bg_color',
+		'description' => __( 'Image features section background color.', 'conversions' ),
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_bg',
 		'priority'    => 10,
 		'type'        => 'color',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_title',
+	'conversions_img_features_title',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -44,18 +45,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_title_control',
+	'conversions_img_features_title_control',
 	[
 		'label'       => __( 'Title', 'conversions' ),
 		'description' => __( 'Add your title.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_title',
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_title',
 		'priority'    => 20,
 		'type'        => 'text',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_title_color',
+	'conversions_img_features_title_color',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -64,18 +65,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_title_color_control',
+	'conversions_img_features_title_color_control',
 	[
 		'label'       => __( 'Title color', 'conversions' ),
 		'description' => __( 'Select a color for the title.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_title_color',
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_title_color',
 		'priority'    => 30,
 		'type'        => 'color',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_desc',
+	'conversions_img_features_desc',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -84,19 +85,19 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_desc',
+	'conversions_img_features_desc',
 	[
 		'label'       => __( 'Description', 'conversions' ),
 		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_desc',
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_desc',
 		'priority'    => 40,
 		'type'        => 'textarea',
 		'capability'  => 'edit_theme_options',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_desc_color',
+	'conversions_img_features_desc_color',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -105,18 +106,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_desc_color_control',
+	'conversions_img_features_desc_color_control',
 	[
 		'label'       => __( 'Description color', 'conversions' ),
 		'description' => __( 'Select a color for the description text.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_desc_color',
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_desc_color',
 		'priority'    => 50,
 		'type'        => 'color',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_sm',
+	'conversions_img_features_sm',
 	[
 		'default'           => '2',
 		'type'              => 'theme_mod',
@@ -126,12 +127,12 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_sm_control',
+	'conversions_img_features_sm_control',
 	[
 		'label'       => __( '# of items on small screens', 'conversions' ),
 		'description' => __( 'Items to show 576px to 767px. Choose 1-4.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_sm',
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_sm',
 		'priority'    => 60,
 		'type'        => 'number',
 		'input_attrs' => [
@@ -141,7 +142,7 @@ $wp_customize->add_control(
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_md',
+	'conversions_img_features_md',
 	[
 		'default'           => '2',
 		'type'              => 'theme_mod',
@@ -151,12 +152,12 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_md_control',
+	'conversions_img_features_md_control',
 	[
 		'label'       => __( '# of items on medium screens', 'conversions' ),
 		'description' => __( 'Items to show 768px to 991px. Choose 1-4.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_md',
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_md',
 		'priority'    => 70,
 		'type'        => 'number',
 		'input_attrs' => [
@@ -166,7 +167,7 @@ $wp_customize->add_control(
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_lg',
+	'conversions_img_features_lg',
 	[
 		'default'           => '3',
 		'type'              => 'theme_mod',
@@ -176,12 +177,12 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_features_lg_control',
+	'conversions_img_features_lg_control',
 	[
 		'label'       => __( '# of items on large screens', 'conversions' ),
 		'description' => __( 'Items to show 992px up. Choose 1-4.', 'conversions' ),
-		'section'     => 'conversions_homepage_features',
-		'settings'    => 'conversions_features_lg',
+		'section'     => 'conversions_homepage_img_features',
+		'settings'    => 'conversions_img_features_lg',
 		'priority'    => 80,
 		'type'        => 'number',
 		'input_attrs' => [
@@ -191,7 +192,7 @@ $wp_customize->add_control(
 	]
 );
 $wp_customize->add_setting(
-	'conversions_features_icons',
+	'conversions_img_features_icons',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -202,13 +203,12 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new \Conversions_Repeater(
 		$wp_customize,
-		'conversions_features_icons',
+		'conversions_img_features_icons',
 		[
 			'label'                                => __( 'Icon block', 'conversions' ),
-			'section'                              => 'conversions_homepage_features',
+			'section'                              => 'conversions_homepage_img_features',
 			'priority'                             => 90,
-			'customizer_repeater_icon_control'     => true,
-			'customizer_repeater_color_control'    => true,
+			'customizer_repeater_image_control'    => true,
 			'customizer_repeater_title_control'    => true,
 			'customizer_repeater_text_control'     => true,
 			'customizer_repeater_linktext_control' => true,
