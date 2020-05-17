@@ -333,6 +333,17 @@ section.c-img-features .row:first-of-type .c-img-features__block {
   section.c-img-features .row:first-of-type .c-img-features__block .card {
     text-align: center;
     background-color: transparent; }
+    section.c-img-features .row:first-of-type .c-img-features__block .card a.c-img-features__img-link {
+      background: #000;
+      border-radius: 4px;
+      display: block; }
+      section.c-img-features .row:first-of-type .c-img-features__block .card a.c-img-features__img-link img {
+        transition: 0.3s; }
+        section.c-img-features .row:first-of-type .c-img-features__block .card a.c-img-features__img-link img:hover {
+          transition: 0.3s;
+          opacity: 0.8; }
+    section.c-img-features .row:first-of-type .c-img-features__block .card .c-features__block-img {
+      border-radius: 4px; }
 section.c-img-features .c-img-features__block-desc {
   color: #6c757d;
   margin-bottom: 1rem; }

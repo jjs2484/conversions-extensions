@@ -649,11 +649,11 @@ class Homepage {
 
 				// If link available wrap image.
 				if ( ! empty( $repeater_item->link ) ) {
-					echo '<a class="c-img-features__img-link" href="' . esc_url( $repeater_item->link ) . '">';
-					echo '<img class="c-img-features__block-image mb-3" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
+					echo '<a class="c-img-features__img-link mb-3" href="' . esc_url( $repeater_item->link ) . '">';
+					echo '<img class="c-img-features__block-img" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
 					echo '</a>';
 				} else {
-					echo '<img class="c-img-features__block-image mb-3" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
+					echo '<img class="c-img-features__block-img mb-3" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
 				}
 			}
 

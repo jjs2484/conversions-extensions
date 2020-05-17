@@ -173,8 +173,22 @@ section.c-img-features {
 			.card {
 				text-align: center;
 				background-color: transparent;
-				.c-features__block-image {
-
+				
+				// Img hover effect
+				a.c-img-features__img-link {
+					background: #000;
+					border-radius: 4px;
+					display: block;
+					img {
+						transition: 0.3s;
+						&:hover {
+							transition: 0.3s;
+							opacity: 0.8;
+						}
+					}
+				}
+				.c-features__block-img {
+					border-radius: 4px;
 				}
 			}
 		}
