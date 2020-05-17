@@ -643,11 +643,18 @@ class Homepage {
 				// Retrieve the alt text.
 				$img_feat_alt = get_post_meta( $img_feat_id, '_wp_attachment_image_alt', true );
 
-				/* grab the featured image sizes */
+				// Grab the featured image sizes.
 				$img_feat_md = wp_get_attachment_image_src( $img_feat_id, 'medium', false );
 				$img_feat_lg = wp_get_attachment_image_src( $img_feat_id, 'large', false );
 
-				echo '<img class="c-img-features__block-image mb-3" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
+				// If link available wrap image.
+				if ( ! empty( $repeater_item->link ) ) {
+					echo '<a class="c-img-features__img-link" href="' . esc_url( $repeater_item->link ) . '">';
+					echo '<img class="c-img-features__block-image mb-3" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
+					echo '</a>';
+				} else {
+					echo '<img class="c-img-features__block-image mb-3" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
+				}
 			}
 
 			if ( ! empty( $repeater_item->title ) ) {
