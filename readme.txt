@@ -44,7 +44,8 @@ Adds sections and other features to Conversions WordPress theme.
 * Update: Minor code refactoring.
 
 = 1.0.2 =
-* New: Add image feature homepage section.
+* New: Add image features homepage section.
 * New: Add blank homepage section.
+* Update: rename "features" homepage section in customizer to "icon features".
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
