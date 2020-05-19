@@ -49,3 +49,8 @@ Adds sections and other features to Conversions WordPress theme.
 * Update: rename "features" homepage section in customizer to "icon features".
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
+* New: do_action hooks:
+- conversions_homepage_before_img_features
+- conversions_homepage_after_img_features
+- conversions_homepage_before_blank
+- conversions_homepage_after_blank
