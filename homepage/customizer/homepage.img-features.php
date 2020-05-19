@@ -192,7 +192,7 @@ $wp_customize->add_control(
 	]
 );
 $wp_customize->add_setting(
-	'conversions_img_features_icons',
+	'conversions_img_features_imgs',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -203,7 +203,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new \Conversions_Repeater(
 		$wp_customize,
-		'conversions_img_features_icons',
+		'conversions_img_features_imgs',
 		[
 			'label'                                => __( 'Icon block', 'conversions' ),
 			'section'                              => 'conversions_homepage_img_features',

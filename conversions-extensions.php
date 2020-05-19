@@ -226,6 +226,7 @@ namespace conversions {
 				[ '.page-template-homepage section.c-img-features p.subtitle, section.c-img-features .card .c-img-features__block-desc', 'color', get_theme_mod( 'conversions_img_features_desc_color' ) ],
 				[ '.page-template-homepage .c-blank', 'background-color', get_theme_mod( 'conversions_blank_bg_color' ) ],
 				[ '.page-template-homepage .c-blank .c-blank__items', 'align-items', get_theme_mod( 'conversions_blank_content_position' ) ],
+				[ '.c-img-features__block a.card:hover', 'border-color', get_theme_mod( 'conversions_link_hcolor' ) ],
 			];
 			?>
 
@@ -426,7 +427,7 @@ namespace
 	 */
 	function conversions_ext_repeater_labels( $string, $id, $control ) {
 
-		// testimonial repeater labels.
+		// testimonial repeater label changes.
 		if ( $id === 'conversions_testimonials_repeater' ) {
 			if ( $control === 'customizer_repeater_title_control' ) {
 				return esc_html__( 'Full name', 'conversions' );
@@ -439,13 +440,20 @@ namespace
 			}
 		}
 
-		// pricing table repeater labels.
+		// pricing table repeater label changes.
 		if ( $id === 'conversions_pricing_repeater' ) {
 			if ( $control === 'customizer_repeater_subtitle_control' ) {
 				return esc_html__( 'Price', 'conversions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle2_control' ) {
 				return esc_html__( 'Duration', 'conversions' );
+			}
+		}
+
+		// image features repeater label changes.
+		if ( $id === 'conversions_img_features_imgs' ) {
+			if ( $control === 'customizer_repeater_linktext_control' ) {
+				return esc_html__( 'Link text (not required)', 'conversions' );
 			}
 		}
 

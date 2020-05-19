@@ -188,7 +188,7 @@ class Homepage {
 	 */
 	public function get_img_features() {
 		// Get all image feature blocks.
-		$img_features         = get_theme_mod( 'conversions_img_features_icons' );
+		$img_features         = get_theme_mod( 'conversions_img_features_imgs' );
 		$img_features_decoded = json_decode( $img_features );
 		if ( ! $img_features_decoded )
 			return false;
@@ -635,7 +635,12 @@ class Homepage {
 			// Feature image block html.
 			echo '<div id="c-img-features__block-' . esc_attr( $img_feature_block_count ) . '" class="c-img-features__block col-sm-' . esc_attr( $cfri[$img_features_block_sm] ) . ' col-md-' . esc_attr( $cfri[$img_features_block_md] ) . ' col-lg-' . esc_attr( $cfri[$img_features_block_lg] ) . '">';
 
-			echo '<div class="card border-0 h-100"><div class="card-body p-2">';
+			// If link available wrap image.
+			if ( ! empty( $repeater_item->link ) ) {
+				echo '<a class="card h-100" href="' . esc_url( $repeater_item->link ) . '">';
+			} else {
+				echo '<div class="card h-100">';
+			}
 
 			if ( ! empty( $repeater_item->image_url ) ) {
 				$img_feat_url = $repeater_item->image_url;
@@ -647,15 +652,10 @@ class Homepage {
 				$img_feat_md = wp_get_attachment_image_src( $img_feat_id, 'medium', false );
 				$img_feat_lg = wp_get_attachment_image_src( $img_feat_id, 'large', false );
 
-				// If link available wrap image.
-				if ( ! empty( $repeater_item->link ) ) {
-					echo '<a class="c-img-features__img-link mb-3" href="' . esc_url( $repeater_item->link ) . '">';
-					echo '<img class="c-img-features__block-img" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
-					echo '</a>';
-				} else {
-					echo '<img class="c-img-features__block-img mb-3" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
-				}
+				echo '<img class="card-img-top" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
 			}
+
+			echo '<div class="card-body">';
 
 			if ( ! empty( $repeater_item->title ) ) {
 				echo '<h3 class="h5">' . esc_html( $repeater_item->title ) . '</h3>';
@@ -666,14 +666,14 @@ class Homepage {
 			}
 
 			if ( ! empty( $repeater_item->linktext ) ) {
-				echo sprintf(
-					'<a class="c-img-features__block-link" href="%s">%s</a>',
-					esc_url( $repeater_item->link ),
-					esc_html( $repeater_item->linktext )
-				);
+				echo '<span class="c-img-features__block-link">' . esc_html( $repeater_item->linktext ) . '</span>';
 			}
 
-			echo '</div></div></div>';
+			if ( ! empty( $repeater_item->link ) ) {
+				echo '</div></a></div>';
+			} else {
+				echo '</div></div></div>';
+			}
 
 			++$img_feature_block_count;
 		}
