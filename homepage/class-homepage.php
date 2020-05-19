@@ -591,9 +591,9 @@ class Homepage {
 					<?php
 				}
 
-				do_action( 'conversions_homepage_before_features' );
+				do_action( 'conversions_before_icon_features' );
 				echo $this->features_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_homepage_after_features' );
+				do_action( 'conversions_after_icon_features' );
 
 				?>
 
@@ -721,9 +721,9 @@ class Homepage {
 					<?php
 				}
 
-				do_action( 'conversions_homepage_before_img_features' );
+				do_action( 'conversions_before_img_features' );
 				echo $this->img_features_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_homepage_after_img_features' );
+				do_action( 'conversions_after_img_features' );
 
 				?>
 

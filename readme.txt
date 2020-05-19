@@ -50,7 +50,10 @@ Adds sections and other features to Conversions WordPress theme.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * New: do_action hooks:
-- conversions_homepage_before_img_features
-- conversions_homepage_after_img_features
+- conversions_before_img_features
+- conversions_after_img_features
 - conversions_homepage_before_blank
 - conversions_homepage_after_blank
+* Update: rename do_action hooks:
+- conversions_homepage_before_features -> conversions_before_icon_features
+- conversions_homepage_after_features -> conversions_after_icon_features
