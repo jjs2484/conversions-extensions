@@ -1255,6 +1255,9 @@ class Homepage {
 	<section class="c-blank">
 		<div class="container-fluid">
 			<div class="row">
+
+				<?php do_action( 'conversions_homepage_before_blank' ); ?>
+
 				<div class="col-12">
 					<div class="c-blank__items d-flex flex-column">
 						<?php
@@ -1269,6 +1272,9 @@ class Homepage {
 						?>
 					</div>
 				</div>
+
+				<?php do_action( 'conversions_homepage_after_blank' ); ?>
+
 			</div>
 		</div>
 	</section>
