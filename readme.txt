@@ -8,17 +8,29 @@ Requires PHP: 5.6
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds sections and other features to Conversions WordPress theme.
+Adds homepage sections and other features to Conversions theme for WordPress.
 
 == Description ==
 
-Adds sections and other features to Conversions WordPress theme.
+Adds homepage sections and other features to <a href="https://conversionswp.com/">Conversions theme</a> for WordPress.
 
 = Extensions List: =
 
-- Homepage sections
-- Navbar variants
-- Footer social icons
+* Homepage sections
+    * Hero
+    * Clients
+    * Icon features
+    * Image features
+    * Pricing
+    * Testimonials
+    * News
+    * Blank
+
+* Navbar variants
+    * Menu right
+    * Menu below
+
+* Footer social icons
 
 = Automatic Installation =
 
@@ -50,10 +62,10 @@ Adds sections and other features to Conversions WordPress theme.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * New: do_action hooks:
-- conversions_before_img_features
-- conversions_after_img_features
-- conversions_homepage_before_blank
-- conversions_homepage_after_blank
+    * conversions_before_img_features
+    * conversions_after_img_features
+    * conversions_homepage_before_blank
+    * conversions_homepage_after_blank
 * Update: rename do_action hooks:
-- conversions_homepage_before_features -> conversions_before_icon_features
-- conversions_homepage_after_features -> conversions_after_icon_features
+    * conversions_homepage_before_features -> conversions_before_icon_features
+    * conversions_homepage_after_features -> conversions_after_icon_features
