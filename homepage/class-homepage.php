@@ -113,8 +113,8 @@ class Homepage {
 			static::$theme_mod_key,
 			[
 				'panel'    => 'conversions_homepage',
-				'priority' => 80,
-				'title'    => __( 'Homepage sorting', 'conversions' ),
+				'priority' => 1,
+				'title'    => __( 'Homepage Sorting', 'conversions' ),
 			]
 		);
 
