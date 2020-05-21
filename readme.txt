@@ -69,3 +69,4 @@ Adds homepage sections and other features to <a href="https://conversionswp.com/
 * Update: rename do_action hooks:
     * conversions_homepage_before_features -> conversions_before_icon_features
     * conversions_homepage_after_features -> conversions_after_icon_features
+* Update: Change Homepage Sorting section display order in the customizer.
