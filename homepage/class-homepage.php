@@ -65,6 +65,9 @@ class Homepage {
 			'news'         => [
 				'title' => __( 'News', 'conversions' ),
 			],
+			'blank'         => [
+				'title' => __( 'Blank', 'conversions' ),
+			],
 		];
 
 		if ( ! class_exists( 'woocommerce' ) ) {
