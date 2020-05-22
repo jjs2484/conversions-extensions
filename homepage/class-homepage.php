@@ -65,7 +65,7 @@ class Homepage {
 			'news'         => [
 				'title' => __( 'News', 'conversions' ),
 			],
-			'blank'         => [
+			'blank'        => [
 				'title' => __( 'Blank', 'conversions' ),
 			],
 		];
