@@ -3,7 +3,7 @@
  * Image Features customizer section
  *
  * @since 2020-05-09
- * @package conversions_addon_pack
+ * @package conversions-extensions
  */
 
 $wp_customize->add_section(
@@ -205,7 +205,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_img_features_imgs',
 		[
-			'label'                                => __( 'Icon block', 'conversions' ),
+			'label'                                => __( 'Image block', 'conversions' ),
 			'section'                              => 'conversions_homepage_img_features',
 			'priority'                             => 90,
 			'customizer_repeater_image_control'    => true,
