@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Conversions Extensions
  * Description: Adds homepage sections and other extensions to Conversions WordPress theme.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
  * Text Domain: conversions

@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.4
 Requires at least: 4.7
@@ -22,6 +22,7 @@ Adds homepage sections and other features to <a href="https://conversionswp.com/
     * Icon features
     * Image features
     * Pricing
+    * Team
     * Testimonials
     * News
     * Blank
@@ -70,3 +71,6 @@ Adds homepage sections and other features to <a href="https://conversionswp.com/
     * conversions_homepage_before_features -> conversions_before_icon_features
     * conversions_homepage_after_features -> conversions_after_icon_features
 * Update: Change Homepage Sorting section display order in the customizer.
+
+= 1.0.3 =
+* New: Add Team homepage section.
