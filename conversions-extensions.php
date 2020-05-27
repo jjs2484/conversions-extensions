@@ -80,6 +80,9 @@ namespace conversions {
 				'conversions_img_features_sm'      => '2',
 				'conversions_img_features_md'      => '2',
 				'conversions_img_features_lg'      => '3',
+				'conversions_team_sm'              => '2',
+				'conversions_team_md'              => '2',
+				'conversions_team_lg'              => '3',
 				'conversions_pricing_respond'      => 'auto',
 				'conversions_pricing_sm'           => '1',
 				'conversions_pricing_md'           => '1',
@@ -136,6 +139,7 @@ namespace conversions {
 			require_once __DIR__ . '/homepage/customizer/homepage.features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.team.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.testimonials.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.news.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.woocommerce.php';
@@ -227,6 +231,9 @@ namespace conversions {
 				[ '.page-template-homepage .c-blank', 'background-color', get_theme_mod( 'conversions_blank_bg_color' ) ],
 				[ '.page-template-homepage .c-blank .c-blank__items', 'align-items', get_theme_mod( 'conversions_blank_content_position' ) ],
 				[ '.c-img-features__block a.card:hover', 'border-color', get_theme_mod( 'conversions_link_hcolor' ) ],
+				[ '.page-template-homepage section.c-team', 'background-color', get_theme_mod( 'conversions_team_bg_color' ) ],
+				[ '.page-template-homepage section.c-team h2, section.c-team .card h3', 'color', get_theme_mod( 'conversions_team_title_color' ) ],
+				[ '.page-template-homepage section.c-team p.subtitle, section.c-team .card .c-team__block-desc', 'color', get_theme_mod( 'conversions_team_desc_color' ) ],
 			];
 			?>
 
@@ -427,7 +434,7 @@ namespace
 	 */
 	function conversions_ext_repeater_labels( $string, $id, $control ) {
 
-		// testimonial repeater label changes.
+		// Testimonial repeater label changes.
 		if ( $id === 'conversions_testimonials_repeater' ) {
 			if ( $control === 'customizer_repeater_title_control' ) {
 				return esc_html__( 'Full name', 'conversions' );
@@ -440,7 +447,7 @@ namespace
 			}
 		}
 
-		// pricing table repeater label changes.
+		// Pricing table repeater label changes.
 		if ( $id === 'conversions_pricing_repeater' ) {
 			if ( $control === 'customizer_repeater_subtitle_control' ) {
 				return esc_html__( 'Price', 'conversions' );
@@ -450,10 +457,23 @@ namespace
 			}
 		}
 
-		// image features repeater label changes.
+		// Image features repeater label changes.
 		if ( $id === 'conversions_img_features_imgs' ) {
 			if ( $control === 'customizer_repeater_linktext_control' ) {
 				return esc_html__( 'Link text (not required)', 'conversions' );
+			}
+		}
+
+		// Team repeater label changes.
+		if ( $id === 'conversions_team_details' ) {
+			if ( $control === 'customizer_repeater_title_control' ) {
+				return esc_html__( 'Full name', 'conversions' );
+			}
+			if ( $control === 'customizer_repeater_subtitle_control' ) {
+				return esc_html__( 'Job title', 'conversions' );
+			}
+			if ( $control === 'customizer_repeater_text_control' ) {
+				return esc_html__( 'Short summary', 'conversions' );
 			}
 		}
 

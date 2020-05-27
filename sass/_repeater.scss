@@ -174,7 +174,8 @@ button.customizer-repeater-new-field:before {
 	vertical-align: middle;
 }
 
-.feature-repeater-remove-feature-item {
+.feature-repeater-remove-feature-item,
+.social-repeater-remove-social-item {
 	display: inline-block;
 	vertical-align: top;
 	color: #a00;
@@ -184,7 +185,8 @@ button.customizer-repeater-new-field:before {
 	padding: 0;
 }
 
-.feature-repeater-remove-feature-item:hover {
+.feature-repeater-remove-feature-item:hover,
+.social-repeater-remove-social-item {
 	color: red;
 }
 
@@ -196,6 +198,17 @@ button.customizer-repeater-new-field:before {
 .icp-container {
 	margin-bottom: 10px;
 }
+
+.customizer-repeater-social-repeater-container {
+	&:first-of-type {
+		input.customizer-repeater-social-repeater-link {
+			margin-bottom: 20px;
+		}
+	}
+	button.social-repeater-remove-social-item {
+		margin-bottom: 20px;
+	}
+}		
 
 .button-secondary.feature-repeater-add-feature-item:before {
 	content: "\f132";

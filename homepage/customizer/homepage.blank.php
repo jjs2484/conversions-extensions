@@ -3,7 +3,7 @@
  * Blank section customizer section
  *
  * @since 2020-03-25
- * @package conversions_addon_pack
+ * @package conversions-extensions
  */
 
 $wp_customize->add_section(

@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_homepage_testimonials',
 	[
 		'title'      => __( 'Testimonials', 'conversions' ),
-		'priority'   => 60,
+		'priority'   => 61,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]
