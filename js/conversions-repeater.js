@@ -464,11 +464,27 @@ jQuery(document).ready(function () {
 		return false;
 	});
 
+	theme_controls.on('paste', '.customizer-repeater-social-repeater-link', function () {
+		var repeater = jQuery(this).parent().parent();
+		setTimeout( function()
+		{
+			customizer_repeater_refresh_social(repeater);
+		} );
+	});
+
 	theme_controls.on('change', '.customizer-repeater-social-repeater-container .icp', function (event) {
 		event.preventDefault();
 		var repeater = jQuery(this).parent().parent().parent();
 		customizer_repeater_refresh_social(repeater);
 		return false;
+	});
+
+	theme_controls.on('paste', '.customizer-repeater-social-repeater-container .icp', function () {
+		var repeater = jQuery(this).parent().parent().parent();
+		setTimeout( function()
+		{
+			customizer_repeater_refresh_social(repeater);
+		} );
 	});
 
 });
