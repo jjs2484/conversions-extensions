@@ -16,17 +16,17 @@ namespace conversions;
  */
 class Homepage {
 
-	use traits\Hero;
-	use traits\Clients;
-	use traits\Icon_Features;
-	use traits\Img_Features;
-	use traits\Pricing;
-	use traits\Team;
-	use traits\Testimonials;
-	use traits\News;
-	use traits\Woocommerce;
-	use traits\Edd;
-	use traits\Blank;
+	use sections\Blank;
+	use sections\Clients;
+	use sections\Edd;
+	use sections\Hero;
+	use sections\Icon_Features;
+	use sections\Img_Features;
+	use sections\News;
+	use sections\Pricing;
+	use sections\Team;
+	use sections\Testimonials;
+	use sections\Woocommerce;
 
 	/**
 	 * The sections available.

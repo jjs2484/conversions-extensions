@@ -5,7 +5,7 @@
  * @package conversions-extension
  */
 
-namespace conversions\traits;
+namespace conversions\sections;
 
 trait News {
 
