@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait News {
+trait news {
 
 	/**
 	 * Return the latest news.

@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Woocommerce {
+trait woocommerce {
 
 	/**
 	 * WooCommerce section.

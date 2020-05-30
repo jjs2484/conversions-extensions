@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Hero {
+trait hero {
 	/**
 	 * Hero section.
 	 *

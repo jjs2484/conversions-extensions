@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Testimonials {
+trait testimonials {
 
 	/**
 	 * Return the testimonials array.

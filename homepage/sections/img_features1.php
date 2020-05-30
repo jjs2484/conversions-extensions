@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Img_Features {
+trait img_features {
 
 	/**
 	 * Return an array of image feature blocks.

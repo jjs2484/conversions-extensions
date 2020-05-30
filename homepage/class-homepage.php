@@ -16,17 +16,17 @@ namespace conversions;
  */
 class Homepage {
 
-	use sections\Blank;
-	use sections\Clients;
-	use sections\Edd;
-	use sections\Hero;
-	use sections\Icon_Features;
-	use sections\Img_Features;
-	use sections\News;
-	use sections\Pricing;
-	use sections\Team;
-	use sections\Testimonials;
-	use sections\Woocommerce;
+	use sections\blank;
+	use sections\clients;
+	use sections\edd;
+	use sections\hero;
+	use sections\icon_features;
+	use sections\img_features;
+	use sections\news;
+	use sections\pricing;
+	use sections\team;
+	use sections\testimonials;
+	use sections\woocommerce;
 
 	/**
 	 * The sections available.

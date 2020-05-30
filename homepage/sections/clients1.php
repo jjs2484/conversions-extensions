@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Clients {
+trait clients {
 
 	/**
 	 * Return the array of client logos.

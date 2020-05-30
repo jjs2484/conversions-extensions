@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Pricing {
+trait pricing {
 
 	/**
 	 * Return the pricing blocks.

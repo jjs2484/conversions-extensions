@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Blank {
+trait blank {
 
 	/**
 	 * Blank section html.

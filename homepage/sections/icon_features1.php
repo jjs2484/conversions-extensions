@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Icon_Features {
+trait icon_features {
 
 	/**
 	 * Return an array of icon feature blocks.

@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Team {
+trait team {
 
 	/**
 	 * Return the team blocks.

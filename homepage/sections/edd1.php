@@ -7,7 +7,7 @@
 
 namespace conversions\sections;
 
-trait Edd {
+trait edd {
 
 	/**
 	 * Easy Digital Downloads section.
