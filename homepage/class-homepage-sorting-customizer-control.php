@@ -5,7 +5,7 @@
  * @package conversions
  */
 
-namespace conversions;
+namespace conversions\extensions\homepage;
 
 /**
  * Class Homepage_Sorting_Customizer_Control.

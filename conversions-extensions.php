@@ -12,7 +12,7 @@
  * @package conversions-extensions
  */
 
-namespace conversions {
+namespace conversions\extensions {
 	/**
 	 * Class Conversions_Extensions
 	 */
@@ -105,8 +105,8 @@ namespace conversions {
 				}
 			}
 
-			require_once __DIR__ . '/homepage/class-homepage.php';
-			require_once __DIR__ . '/navbar/navbar-variants.php';
+			new homepage\Homepage();
+			new navbar\Navbar_Variants();
 		}
 
 		/**
@@ -119,15 +119,6 @@ namespace conversions {
 		public function conversions_customize_register( $conversions_customizer ) {
 
 			$wp_customize = $conversions_customizer->wp_customize;
-
-			// -----------------------------------------------------
-			// Include customizer sections
-			// -----------------------------------------------------
-
-			// require customizer repeater.
-			// phpcs:disable WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once __DIR__ . '/repeater/class-conversions-repeater.php';
-			// phpcs:enable
 
 			// -----------------------------------------------------
 			// Include customizer sections
@@ -364,6 +355,9 @@ namespace conversions {
 
 namespace
 {
+
+	require_once( __DIR__ . '/vendor/autoload.php' );
+
 	/**
 	 * Sanitize select option input.
 	 *
@@ -481,5 +475,5 @@ namespace
 	}
 	add_filter( 'conversions_repeater_labels_filter', 'conversions_ext_repeater_labels', 10, 3 );
 
-	$conversions_extensions = new conversions\Conversions_Extensions();
+	$conversions_extensions = new conversions\extensions\Conversions_Extensions();
 }

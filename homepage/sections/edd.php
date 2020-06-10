@@ -5,7 +5,7 @@
  * @package conversions-extension
  */
 
-namespace conversions\sections;
+namespace conversions\extensions\homepage\sections;
 
 trait edd {
 

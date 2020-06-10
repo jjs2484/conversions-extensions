@@ -227,7 +227,7 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	new \Conversions_Repeater(
+	new \conversions\extensions\repeater\Repeater(
 		$wp_customize,
 		'conversions_pricing_repeater',
 		[

@@ -5,7 +5,7 @@
  * @package conversions
  */
 
-namespace conversions;
+namespace conversions\extensions\homepage;
 
 /**
  * Class Homepage
@@ -208,4 +208,3 @@ class Homepage {
 		return $sections;
 	}
 }
-new Homepage();

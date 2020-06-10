@@ -5,7 +5,7 @@
  * @package conversions
  */
 
-namespace conversions;
+namespace conversions\extensions\navbar;
 
 /**
  * Navbar Variants class.
@@ -243,4 +243,3 @@ class Navbar_Variants {
 		return $items;
 	}
 }
-new Navbar_Variants();

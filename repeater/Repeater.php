@@ -5,13 +5,15 @@
  * @package conversions
  */
 
+namespace conversions\extensions\repeater;
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 /**
- * Class Conversions_Repeater
+ * Class Repeater
  */
-class Conversions_Repeater extends \WP_Customize_Control {
+class Repeater extends \WP_Customize_Control {
 
 	/**
 	 * ID of the field
