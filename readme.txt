@@ -2,7 +2,7 @@
 Contributors: uniquelylost
 Stable tag: 1.0.3
 Tags: theme, extensions, homepage, social, nav
-Tested up to: 5.4
+Tested up to: 5.4.2
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
@@ -74,3 +74,6 @@ Adds homepage sections and other features to <a href="https://conversionswp.com/
 
 = 1.0.3 =
 * New: Add Team homepage section.
+* New: Add PHP class autoloader.
+* Update: Rename namespaces.
+* Update: Separate homepage sections into PHP traits.
