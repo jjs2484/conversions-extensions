@@ -17,8 +17,8 @@
   "homepage": "https://github.com/jjs2484/conversions-extensions#readme",
   "devDependencies": {
     "@lodder/grunt-postcss": "^2.0.4",
-    "autoprefixer": "^9.8.0",
-    "eslint": "^7.2.0",
+    "autoprefixer": "^9.8.1",
+    "eslint": "^7.3.0",
     "grunt": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
