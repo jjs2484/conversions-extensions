@@ -115,12 +115,14 @@ trait pricing {
 							?>
 						</ul>
 						<?php
-							// Plan button and link.
+						// Plan button and link.
+						if ( ! empty( $repeater_item->link ) || ! empty( $repeater_item->linktext ) ) {
 							echo sprintf(
 								'<a href="%1$s" class="btn btn-block btn-primary">%2$s</a>',
 								esc_url( $repeater_item->link ),
 								esc_html( $repeater_item->linktext )
 							);
+						}
 						?>
 					</div>
 				</div>
