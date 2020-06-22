@@ -80,3 +80,4 @@ Adds homepage sections and other features to <a href="https://conversionswp.com/
 
 = 1.0.4 =
 * Fix: Check pricing table button text or link exist before displaying.
+* Update: NPM Dependencies.
