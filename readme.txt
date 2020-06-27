@@ -83,4 +83,5 @@ Adds homepage sections and other features to <a href="https://conversionswp.com/
 * Update: NPM Dependencies.
 
 = 1.0.5 =
+* New: Add Text homepage section.
 * Update: NPM Dependencies.

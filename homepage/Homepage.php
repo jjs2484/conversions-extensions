@@ -26,6 +26,7 @@ class Homepage {
 	use sections\pricing;
 	use sections\team;
 	use sections\testimonials;
+	use sections\text;
 	use sections\woocommerce;
 
 	/**
@@ -77,6 +78,9 @@ class Homepage {
 			],
 			'testimonials' => [
 				'title' => __( 'Testimonials', 'conversions' ),
+			],
+			'text' => [
+				'title' => __( 'Text', 'conversions' ),
 			],
 			'news'         => [
 				'title' => __( 'News', 'conversions' ),

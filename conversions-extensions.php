@@ -83,6 +83,7 @@ namespace conversions\extensions {
 				'conversions_team_sm'              => '2',
 				'conversions_team_md'              => '2',
 				'conversions_team_lg'              => '3',
+				'conversions_text_section_align'   => 'center',
 				'conversions_pricing_respond'      => 'auto',
 				'conversions_pricing_sm'           => '1',
 				'conversions_pricing_md'           => '1',
@@ -132,6 +133,7 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.team.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.testimonials.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.text.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.news.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.woocommerce.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.edd.php';
@@ -225,6 +227,10 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-team', 'background-color', get_theme_mod( 'conversions_team_bg_color' ) ],
 				[ '.page-template-homepage section.c-team h2, section.c-team .card h3', 'color', get_theme_mod( 'conversions_team_title_color' ) ],
 				[ '.page-template-homepage section.c-team p.subtitle, section.c-team .card .c-team__block-desc', 'color', get_theme_mod( 'conversions_team_desc_color' ) ],
+				[ '.page-template-homepage section.c-text', 'background-color', get_theme_mod( 'conversions_text_bg_color' ) ],
+				[ '.page-template-homepage section.c-text h2', 'color', get_theme_mod( 'conversions_text_title_color' ) ],
+				[ '.page-template-homepage section.c-text p.subtitle', 'color', get_theme_mod( 'conversions_text_desc_color' ) ],
+				[ '.page-template-homepage .c-text .c-text__items', 'text-align', get_theme_mod( 'conversions_text_section_align' ) ],
 			];
 			?>
 

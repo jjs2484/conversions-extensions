@@ -199,7 +199,8 @@
 .page-template-homepage section.c-testimonials .container-fluid,
 .page-template-homepage section.c-news .container-fluid,
 .page-template-homepage section.c-edd .container-fluid,
-.page-template-homepage section.c-blank .container-fluid {
+.page-template-homepage section.c-blank .container-fluid
+.page-template-homepage section.c-text .container-fluid {
   padding-top: 3rem;
   padding-bottom: 3rem; }
   @media (min-width: 992px) {
@@ -207,7 +208,8 @@
     .page-template-homepage section.c-testimonials .container-fluid,
     .page-template-homepage section.c-news .container-fluid,
     .page-template-homepage section.c-edd .container-fluid,
-    .page-template-homepage section.c-blank .container-fluid {
+    .page-template-homepage section.c-blank .container-fluid
+    .page-template-homepage section.c-text .container-fluid {
       padding-top: 4rem;
       padding-bottom: 4rem; } }
 
