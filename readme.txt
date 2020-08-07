@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.4.2
 Requires at least: 4.7
@@ -24,6 +24,7 @@ Adds homepage sections and other features to <a href="https://conversionswp.com/
     * Pricing
     * Team
     * Testimonials
+    * Text.
     * News
     * Blank
 
