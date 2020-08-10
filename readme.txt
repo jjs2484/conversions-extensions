@@ -12,7 +12,7 @@ Adds homepage sections and other features to Conversions theme for WordPress.
 
 == Description ==
 
-Adds homepage sections and other features to <a href="https://conversionswp.com/">Conversions theme</a> for WordPress.
+Adds homepage sections and other features to <a href="https://wordpress.org/themes/conversions/">Conversions theme</a> for WordPress.
 
 = Extensions List: =
 
