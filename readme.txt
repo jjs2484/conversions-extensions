@@ -14,6 +14,8 @@ Adds homepage sections and other features to Conversions theme for WordPress.
 
 Adds homepage sections and other features to <a href="https://wordpress.org/themes/conversions/">Conversions theme</a> for WordPress.
 
+You can view the <a href="https://conversionswp.com/docs/documentation/">documentation</a> here.
+
 = Extensions List: =
 
 * Homepage sections
@@ -24,7 +26,7 @@ Adds homepage sections and other features to <a href="https://wordpress.org/them
     * Pricing
     * Team
     * Testimonials
-    * Text.
+    * Text
     * News
     * Blank
 
