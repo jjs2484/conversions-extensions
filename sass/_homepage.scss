@@ -20,6 +20,7 @@
 		padding-bottom: 1rem;
 	}
 }
+.page-template-homepage section.c-counter .container-fluid,
 .page-template-homepage section.c-features .container-fluid,
 .page-template-homepage section.c-img-features .container-fluid,
 .page-template-homepage section.c-team .container-fluid {
@@ -135,6 +136,37 @@ section.c-clients {
 			align-items: center;
 			justify-content: center;
 		}
+	}
+}
+
+// Counter section
+section.c-counter {
+	.row:first-of-type {
+		@media (min-width: 576px) {
+			justify-content: center;
+		}
+		.c-counter__block {
+			margin-bottom: 1.5rem;
+			.card {
+				text-align: center;
+				background-color: #f3f3f3;
+				.c-counter__block-icon {
+					display: block;
+					i {
+						font-size: 3rem;
+					}
+				}
+				.c-counter__block-count {
+					font-weight: 700;
+					margin-bottom: .5rem;
+				}
+			}
+		}
+	}
+	h4.c-counter__block-text {
+		color: #6c757d;
+		font-size: 1.125rem;
+		margin-bottom: 1rem;
 	}
 }
 

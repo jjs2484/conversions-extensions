@@ -98,6 +98,9 @@ namespace conversions\extensions {
 				'conversions_edd_product_columns'  => '3',
 				'conversions_edd_products_orderby' => 'post_date',
 				'conversions_edd_products_order'   => 'DESC',
+				'conversions_counter_sm'           => '2',
+				'conversions_counter_md'           => '2',
+				'conversions_counter_lg'           => '4',
 			];
 
 			foreach ( $defaults as $c => $v ) {
@@ -128,6 +131,7 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.hero.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.clients.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.counter.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
@@ -231,6 +235,9 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-text h2', 'color', get_theme_mod( 'conversions_text_title_color' ) ],
 				[ '.page-template-homepage section.c-text p.subtitle', 'color', get_theme_mod( 'conversions_text_desc_color' ) ],
 				[ '.page-template-homepage .c-text .c-text__items', 'text-align', get_theme_mod( 'conversions_text_section_align' ) ],
+				[ '.page-template-homepage section.c-counter', 'background-color', get_theme_mod( 'conversions_counter_bg_color' ) ],
+				[ '.page-template-homepage section.c-counter h2, section.c-counter .card h3', 'color', get_theme_mod( 'conversions_counter_title_color' ) ],
+				[ '.page-template-homepage section.c-counter p.subtitle, section.c-counter .card h4.c-counter__block-text', 'color', get_theme_mod( 'conversions_counter_desc_color' ) ],
 			];
 			?>
 
@@ -474,6 +481,25 @@ namespace
 			}
 			if ( $control === 'customizer_repeater_text_control' ) {
 				return esc_html__( 'Short summary', 'conversions' );
+			}
+		}
+
+		// Counter repeater label changes.
+		if ( $id === 'conversions_counter_blocks' ) {
+			if ( $control === 'customizer_repeater_color_control' ) {
+				return esc_html__( 'Icon color', 'conversions' );
+			}
+			if ( $control === 'customizer_repeater_title_control' ) {
+				return esc_html__( 'Before counter symbol', 'conversions' );
+			}
+			if ( $control === 'customizer_repeater_subtitle_control' ) {
+				return esc_html__( 'Counter number - Text or shortcodes are allowed', 'conversions' );
+			}
+			if ( $control === 'customizer_repeater_subtitle2_control' ) {
+				return esc_html__( 'After counter symbol', 'conversions' );
+			}
+			if ( $control === 'customizer_repeater_text_control' ) {
+				return esc_html__( 'Title', 'conversions' );
 			}
 		}
 
