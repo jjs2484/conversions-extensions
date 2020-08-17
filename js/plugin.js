@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
 */
 jQuery(document).ready(function() {
 
-	// if the element doesn't exist, abort
+	// if the element doesn't exist return
 	if ( jQuery( '.c-counter__block-number' ).length == 0 ) {
 		return;
 	}
@@ -45,26 +45,12 @@ jQuery(document).ready(function() {
 		(height > viewport_height && top <= viewport_top && bottom >= viewport_bottom);
 	}
 
-	// our simple throttle function
-	function throttle(callback, limit) {
-		var wait = false;                  // Initially, we're not waiting
-		return function () {               // We return a throttled function
-			if (!wait) {                   // If we're not waiting
-				callback.call();           // Execute users function
-				wait = true;               // Prevent future invocations
-				setTimeout(function () {   // After a period of time
-					wait = false;          // And allow future invocations
-				}, limit);
-			}
-		};
-	}
-
-	window.addEventListener('scroll', Count); 
+	window.addEventListener( 'scroll', Count ); 
 
 	function Count(e) { 
 		if( isOnScreen( jQuery( '.c-counter__block-number' ) ) ) {
-			jQuery('.c-counter__block-number').each(function () {
-				jQuery(this).prop('Counter',0).animate({
+			jQuery( '.c-counter__block-number' ).each(function() {
+				jQuery(this).prop( 'Counter', 0 ).animate( {
 					Counter: jQuery(this).text()
 				}, {
 					duration: 4000,
@@ -75,7 +61,7 @@ jQuery(document).ready(function() {
 				});
 			});
 			// The event is only one time triggered 
-			window.removeEventListener('scroll', Count);  
+			window.removeEventListener( 'scroll', Count );  
 		}	
 	}
 });
