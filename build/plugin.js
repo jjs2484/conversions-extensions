@@ -3037,11 +3037,12 @@ jQuery(document).ready(function() {
 */
 jQuery(document).ready(function() {
 
-	// if the element doesn't exist return
+	// If the element doesn't exist return
 	if ( jQuery( '.c-counter__block-number' ).length == 0 ) {
 		return;
 	}
 	
+	// Detect if the counter elements are in the viewport
 	function isOnScreen(elem) {
 		var $window = jQuery(window);
 		var viewport_top = $window.scrollTop();
@@ -3057,8 +3058,30 @@ jQuery(document).ready(function() {
 		(height > viewport_height && top <= viewport_top && bottom >= viewport_bottom);
 	}
 
-	window.addEventListener( 'scroll', Count ); 
+	// Setup a timer
+	var timeout;
 
+	// Scroll event throttler
+	var _listener = function() {
+		// If timer is null, reset it to 100ms and run counter function.
+		// Otherwise, wait until timer is cleared
+		if ( !timeout ) {
+			timeout = setTimeout(function() {
+
+				// Reset timeout
+				timeout = null;
+
+				// Run our count function
+				Count();
+
+			}, 100);
+		}
+	};
+
+	// Add scroll event listener 
+	window.addEventListener( 'scroll', _listener ); 
+
+	// Count up animation when in viewport, then remove event listener
 	function Count(e) { 
 		if( isOnScreen( jQuery( '.c-counter__block-number' ) ) ) {
 			jQuery( '.c-counter__block-number' ).each(function() {
@@ -3073,7 +3096,7 @@ jQuery(document).ready(function() {
 				});
 			});
 			// The event is only one time triggered 
-			window.removeEventListener( 'scroll', Count );  
+			window.removeEventListener( 'scroll', _listener );  
 		}	
 	}
 });
