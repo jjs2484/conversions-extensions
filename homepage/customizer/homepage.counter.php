@@ -191,6 +191,30 @@ $wp_customize->add_control(
 	]
 );
 $wp_customize->add_setting(
+	'conversions_counter_animation',
+	[
+		'default'           => false,
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'conversions_ext_sanitize_checkbox',
+	]
+);
+$wp_customize->add_control(
+	new \WP_Customize_Control(
+		$wp_customize,
+		'conversions_counter_animation',
+		[
+			'label'       => __( 'Add counter animation', 'conversions' ),
+			'description' => __( 'Check to add count up animation when elements are in the viewport.', 'conversions' ),
+			'section'     => 'conversions_homepage_counter',
+			'settings'    => 'conversions_counter_animation',
+			'type'        => 'checkbox',
+			'priority'    => '85',
+		]
+	)
+);
+$wp_customize->add_setting(
 	'conversions_counter_blocks',
 	[
 		'default'           => '',

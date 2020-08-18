@@ -25,8 +25,8 @@ jQuery(document).ready(function() {
 */
 jQuery(document).ready(function() {
 
-	// If the element doesn't exist return
-	if ( jQuery( '.c-counter__block-number' ).length == 0 ) {
+	// If the element doesn't exist along with animation class return
+	if ( jQuery( '.c-counter__block-number.c-counter__block-animate' ).length == 0 ) {
 		return;
 	}
 	

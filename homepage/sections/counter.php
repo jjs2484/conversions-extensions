@@ -86,6 +86,12 @@ trait counter {
 					$after_number_symbol = '';
 				}
 
+				if ( get_theme_mod( 'conversions_counter_animation', false ) === true ) {
+					$animation_class = 'c-counter__block-animate';
+				} else {
+					$animation_class = '';
+				}
+
 				// Remove whitespace from beginning and end of the counter value.
 				$counter_value = trim( $repeater_item->subtitle );
 
@@ -103,23 +109,26 @@ trait counter {
 					// Check the shortcode name is registered.
 					if ( shortcode_exists( $shortcode_name ) ) {
 						echo sprintf(
-							'<h3 class="c-counter__block-count">%1$s<span class="c-counter__block-number">%2$s</span>%3$s</h3>',
+							'<h3 class="c-counter__block-count">%1$s<span class="c-counter__block-number %2$s">%3$s</span>%4$s</h3>',
 							esc_html( $before_number_symbol ),
+							esc_attr( $animation_class ),
 							do_shortcode( '' . $counter_value . '' ),
 							esc_html( $after_number_symbol )
 						);
 					} else {
 						echo sprintf(
-							'<h3 class="c-counter__block-count">%1$s<span class="c-counter__block-number">%2$s</span>%3$s</h3>',
+							'<h3 class="c-counter__block-count">%1$s<span class="c-counter__block-number %2$s">%3$s</span>%4$s</h3>',
 							esc_html( $before_number_symbol ),
+							esc_attr( $animation_class ),
 							wp_kses_post( $counter_value ),
 							esc_html( $after_number_symbol )
 						);
 					}
 				} else {
 					echo sprintf(
-						'<h3 class="c-counter__block-count">%1$s<span class="c-counter__block-number">%2$s</span>%3$s</h3>',
+						'<h3 class="c-counter__block-count">%1$s<span class="c-counter__block-number %2$s">%3$s</span>%4$s</h3>',
 						esc_html( $before_number_symbol ),
+						esc_attr( $animation_class ),
 						wp_kses_post( $counter_value ),
 						esc_html( $after_number_symbol )
 					);

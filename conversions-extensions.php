@@ -101,6 +101,7 @@ namespace conversions\extensions {
 				'conversions_counter_sm'           => '2',
 				'conversions_counter_md'           => '2',
 				'conversions_counter_lg'           => '4',
+				'conversions_counter_animation'    => true,
 			];
 
 			foreach ( $defaults as $c => $v ) {
