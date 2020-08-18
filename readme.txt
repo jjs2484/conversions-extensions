@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.5
 Requires at least: 4.7
@@ -21,6 +21,7 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 * Homepage sections
     * Hero
     * Clients
+    * Counter
     * Icon features
     * Image features
     * Pricing
@@ -87,4 +88,8 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 
 = 1.0.5 =
 * New: Add Text homepage section.
+* Update: NPM Dependencies.
+
+= 1.0.6 =
+* New: Add Counter homepage section.
 * Update: NPM Dependencies.
