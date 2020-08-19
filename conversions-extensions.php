@@ -491,13 +491,13 @@ namespace
 				return esc_html__( 'Icon color', 'conversions' );
 			}
 			if ( $control === 'customizer_repeater_title_control' ) {
-				return esc_html__( 'Before counter symbol', 'conversions' );
+				return esc_html__( 'Before counter symbol ($, €, +, -, etc)', 'conversions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle_control' ) {
-				return esc_html__( 'Counter number - Text or shortcodes are allowed', 'conversions' );
+				return esc_html__( 'Counter number - text or shortcode', 'conversions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle2_control' ) {
-				return esc_html__( 'After counter symbol', 'conversions' );
+				return esc_html__( 'After counter symbol (+, -, etc)', 'conversions' );
 			}
 			if ( $control === 'customizer_repeater_text_control' ) {
 				return esc_html__( 'Title', 'conversions' );

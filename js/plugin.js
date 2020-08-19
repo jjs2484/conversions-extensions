@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
 	var timeout;
 
 	// Scroll event throttler
-	var _listener = function() {
+	var countListener = function() {
 		// If timer is null, reset it to 100ms and run counter function.
 		// Otherwise, wait until timer is cleared
 		if ( !timeout ) {
@@ -67,24 +67,26 @@ jQuery(document).ready(function() {
 	};
 
 	// Add scroll event listener 
-	window.addEventListener( 'scroll', _listener ); 
+	window.addEventListener( 'scroll', countListener ); 
 
 	// Count up animation when in viewport, then remove event listener
 	function Count(e) { 
 		if( isOnScreen( jQuery( '.c-counter__block-number' ) ) ) {
-			jQuery( '.c-counter__block-number' ).each(function() {
-				jQuery(this).prop( 'Counter', 0 ).animate( {
-					Counter: jQuery(this).text()
-				}, {
+
+			var counterUp = window.counterUp["default"]; // import counterUp from "counterup2"
+    
+			var $counters = jQuery('.c-counter__block-number');
+    
+			// Start counting
+			$counters.each(function (ignore, counter) {
+				counterUp(counter, {
 					duration: 4000,
-					easing: 'swing',
-					step: function (now) {
-						jQuery(this).text(Math.ceil(now));
-					}
+					delay: 16
 				});
 			});
+
 			// The event is only one time triggered 
-			window.removeEventListener( 'scroll', _listener );  
+			window.removeEventListener( 'scroll', countListener ); 
 		}	
 	}
 });
