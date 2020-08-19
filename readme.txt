@@ -37,6 +37,13 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 
 * Footer social icons
 
+= Resources =
+
+* Slick v1.8.1 | MIT License
+* Counter-Up2 v1.0.4 | MIT License
+
+== Installation ==
+
 = Automatic Installation =
 
 1. Login to your Dashboard as admin.
