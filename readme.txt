@@ -100,3 +100,4 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 = 1.0.6 =
 * New: Add Counter homepage section.
 * Update: NPM Dependencies.
+* Fix: Refresh repeater color control on more input actions: change, paste.
