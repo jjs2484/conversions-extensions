@@ -3080,6 +3080,7 @@ jQuery(document).ready(function() {
 	};
 
 	// Add scroll event listener 
+	window.addEventListener( 'load', countListener ); 
 	window.addEventListener( 'scroll', countListener ); 
 
 	// Count up animation when in viewport, then remove event listener
@@ -3098,7 +3099,8 @@ jQuery(document).ready(function() {
 				});
 			});
 
-			// The event is only one time triggered 
+			// The event is only one time triggered
+			window.removeEventListener( 'load', countListener ); 
 			window.removeEventListener( 'scroll', countListener ); 
 		}	
 	}
