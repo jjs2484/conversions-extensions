@@ -188,9 +188,9 @@ trait counter {
 					<?php
 				}
 
-				do_action( 'conversions_before_counter' );
+				do_action( 'conversions_homepage_before_counter' );
 				echo $this->counter_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_after_counter' );
+				do_action( 'conversions_homepage_after_counter' );
 
 				?>
 
