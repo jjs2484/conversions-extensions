@@ -112,6 +112,7 @@ namespace conversions\extensions {
 
 			new homepage\Homepage();
 			new navbar\Navbar_Variants();
+			new shortcodes\Shortcodes();
 		}
 
 		/**

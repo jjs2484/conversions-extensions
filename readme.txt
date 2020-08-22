@@ -37,6 +37,18 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 
 * Footer social icons
 
+= Shortcodes =
+
+Many of the homepage sections can also be output outside the homepage using shortcodes.
+
+[conversions_clients]
+[conversions_counter]
+[conversions_icon_features]
+[conversions_img_features]
+[conversions_pricing]
+[conversions_team]
+[conversions_testimonials]
+
 = Resources =
 
 * Slick v1.8.1 | MIT License
@@ -99,5 +111,6 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 
 = 1.0.6 =
 * New: Add Counter homepage section.
+* New: Add Shortcodes.
 * Update: NPM Dependencies.
 * Fix: Refresh repeater color control on more input actions: change, paste.

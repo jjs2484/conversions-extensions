@@ -1,0 +1,116 @@
+<?php
+/**
+ * Shortcodes functions
+ *
+ * @package conversions
+ */
+
+namespace conversions\extensions\shortcodes;
+
+/**
+ * Shortcodes class.
+ *
+ * Contains Shortcodes functions.
+ *
+ * @since 2020-08-22
+ */
+class Shortcodes {
+	/**
+	 * Class constructor.
+	 *
+	 * @since 2020-08-22
+	 */
+	public function __construct() {
+		add_shortcode( 'conversions_clients', [ $this, 'conversions_clients_shortcode' ] );
+		add_shortcode( 'conversions_counter', [ $this, 'conversions_counter_shortcode' ] );
+		add_shortcode( 'conversions_icon_features', [ $this, 'conversions_icon_features_shortcode' ] );
+		add_shortcode( 'conversions_img_features', [ $this, 'conversions_img_features_shortcode' ] );
+		add_shortcode( 'conversions_pricing', [ $this, 'conversions_pricing_shortcode' ] );
+		add_shortcode( 'conversions_team', [ $this, 'conversions_team_shortcode' ] );
+		add_shortcode( 'conversions_testimonials', [ $this, 'conversions_testimonials_shortcode' ] );
+	}
+
+	/**
+	 * Create clients carousel shortcode.
+	 *
+	 * Shortcode: [conversions_clients]
+	 *
+	 * @since 2020-08-22
+	 */
+	public function conversions_clients_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-clients c-shortcode mt-4 mb-4"><div class="row">' . $homepage->clients_content() . '</div></section>';
+	}
+
+	/**
+	 * Create counter shortcode.
+	 *
+	 * Shortcode: [conversions_counter]
+	 *
+	 * @since 2020-08-22
+	 */
+	public function conversions_counter_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-counter c-shortcode mt-4 mb-2"><div class="row">' . $homepage->counter_content() . '</div></section>';
+	}
+
+	/**
+	 * Create icon features shortcode.
+	 *
+	 * Shortcode: [conversions_icon_features]
+	 *
+	 * @since 2020-08-22
+	 */
+	public function conversions_icon_features_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-features c-shortcode mt-4 mb-2"><div class="row">' . $homepage->features_content() . '</div></section>';
+	}
+
+	/**
+	 * Create image features shortcode.
+	 *
+	 * Shortcode: [conversions_img_features]
+	 *
+	 * @since 2020-08-22
+	 */
+	public function conversions_img_features_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-img-features c-shortcode mt-4 mb-2"><div class="row">' . $homepage->img_features_content() . '</div></section>';
+	}
+
+	/**
+	 * Create pricing tables shortcode.
+	 *
+	 * Shortcode: [conversions_pricing]
+	 *
+	 * @since 2020-08-22
+	 */
+	public function conversions_pricing_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-pricing c-shortcode mt-4 mb-2"><div class="row">' . $homepage->pricing_content() . '</div></section>';
+	}
+
+	/**
+	 * Create team shortcode.
+	 *
+	 * Shortcode: [conversions_team]
+	 *
+	 * @since 2020-08-22
+	 */
+	public function conversions_team_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-team c-shortcode mt-4 mb-2"><div class="row">' . $homepage->team_content() . '</div></section>';
+	}
+
+	/**
+	 * Create testimonials shortcode.
+	 *
+	 * Shortcode: [conversions_testimonials]
+	 *
+	 * @since 2020-08-22
+	 */
+	public function conversions_testimonials_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-testimonials c-shortcode mt-4 mb-2"><div class="row">' . $homepage->testimonials_content() . '</div></section>';
+	}
+}

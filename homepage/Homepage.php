@@ -83,7 +83,7 @@ class Homepage {
 			'testimonials' => [
 				'title' => __( 'Testimonials', 'conversions' ),
 			],
-			'text' => [
+			'text'         => [
 				'title' => __( 'Text', 'conversions' ),
 			],
 			'news'         => [
