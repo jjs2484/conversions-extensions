@@ -1,7 +1,8 @@
-// Loads Variables
-@import "variables";
+// Slick variables
+$slick-font-path: "../fonts/";
+$slick-loader-path: "../images/";
 
-// Loads Slick slider
+// Loads Slick styles
 @import "../node_modules/slick-carousel/slick/slick";
 @import "../node_modules/slick-carousel/slick/slick-theme";
 
