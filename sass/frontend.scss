@@ -6,10 +6,10 @@
 @import "../node_modules/slick-carousel/slick/slick-theme";
 
 // Loads Homepage styles
-@import "homepage";
+@import "../homepage/sass/homepage";
 
 // Loads Footer social styles
-@import "footer-social";
+@import "../footer/sass/footer-social";
 
 // Loads Navbar variants styles
-@import "navbar-variants";
+@import "../navbar/sass/navbar-variants";
