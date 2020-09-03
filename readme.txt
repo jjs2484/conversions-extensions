@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.5
 Requires at least: 4.7
@@ -114,3 +114,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * New: Add Shortcodes.
 * Update: NPM Dependencies.
 * Fix: Refresh repeater color control on more input actions: change, paste.
+
+= 1.0.7 =
+* Update: Reorg scripts and styles to sections folders.
+* Update: NPM Dependencies.
