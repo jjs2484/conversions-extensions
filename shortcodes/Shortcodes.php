@@ -23,6 +23,7 @@ class Shortcodes {
 	public function __construct() {
 		add_shortcode( 'conversions_clients', [ $this, 'conversions_clients_shortcode' ] );
 		add_shortcode( 'conversions_counter', [ $this, 'conversions_counter_shortcode' ] );
+		add_shortcode( 'conversions_faq', [ $this, 'conversions_faq_shortcode' ] );
 		add_shortcode( 'conversions_icon_features', [ $this, 'conversions_icon_features_shortcode' ] );
 		add_shortcode( 'conversions_img_features', [ $this, 'conversions_img_features_shortcode' ] );
 		add_shortcode( 'conversions_pricing', [ $this, 'conversions_pricing_shortcode' ] );
@@ -52,6 +53,18 @@ class Shortcodes {
 	public function conversions_counter_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
 		return '<section class="c-counter c-shortcode mt-4 mb-2"><div class="row">' . $homepage->counter_content() . '</div></section>';
+	}
+
+	/**
+	 * Create FAQ shortcode.
+	 *
+	 * Shortcode: [conversions_faq]
+	 *
+	 * @since 2020-09-06
+	 */
+	public function conversions_faq_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-faq c-shortcode mt-4 mb-2"><div class="row">' . $homepage->faq_content() . '</div></section>';
 	}
 
 	/**
