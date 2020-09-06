@@ -19,6 +19,7 @@ class Homepage {
 	use sections\blank;
 	use sections\clients;
 	use sections\counter;
+	use sections\faq;
 	use sections\edd;
 	use sections\hero;
 	use sections\icon_features;
@@ -61,6 +62,9 @@ class Homepage {
 			],
 			'counter'      => [
 				'title' => __( 'Counter', 'conversions' ),
+			],
+			'faq'          => [
+				'title' => __( 'FAQ', 'conversions' ),
 			],
 			'features'     => [
 				'title' => __( 'Icon features', 'conversions' ),

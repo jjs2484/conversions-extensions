@@ -92,3 +92,22 @@ jQuery(document).ready(function() {
 		}	
 	}
 });
+
+/**
+ * FAQ homepage section accordion icon animation
+*/
+jQuery(document).ready(function() {
+	// Add minus icon for collapse element which is open by default
+	jQuery('#c-faq__accordion .collapse.show i').removeClass('fa-plus-square').addClass('fa-minus-square');
+
+	jQuery( '#c-faq__accordion .collapse.show' ).each(function() {
+		jQuery(this).siblings( '.card-header' ).find( '.btn i' ).removeClass('fa-plus-square').addClass('fa-minus-square');
+	});
+	
+	// Toggle plus minus icon on show hide of collapse element
+	jQuery( '.collapse' ).on( 'show.bs.collapse', function() {
+		jQuery(this).parent().find( '.card-header .btn i' ).removeClass('fa-plus-square').addClass('fa-minus-square');
+	}).on( 'hide.bs.collapse', function() {
+		jQuery(this).parent().find( '.card-header .btn i' ).removeClass('fa-minus-square').addClass('fa-plus-square');
+	});
+});

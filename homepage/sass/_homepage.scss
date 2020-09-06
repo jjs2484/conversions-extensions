@@ -4,7 +4,8 @@
 .page-template-homepage section.c-news .container-fluid,
 .page-template-homepage section.c-edd .container-fluid,
 .page-template-homepage section.c-blank .container-fluid,
-.page-template-homepage section.c-text .container-fluid {
+.page-template-homepage section.c-text .container-fluid,
+.page-template-homepage section.c-faq .container-fluid {
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 	@media (min-width: 992px) {
@@ -347,6 +348,39 @@ section.c-testimonials {
 			&:hover {
 				cursor: pointer;
 				color: #77818b;
+			}
+		}
+	}
+}
+
+// FAQ section
+section.c-faq {
+	#c-faq__accordion {
+		border-radius: .25rem;
+	
+		.card {
+			.card-header {
+				padding-top: .5rem;
+				padding-bottom: .5rem;
+				border-bottom: 0;
+				background: #fff;
+
+				.btn {
+					color: #222;
+					width: 100%;
+					text-align: left;
+					font-weight: 500;
+					padding-left: 0;
+					padding-right: 0;
+
+					&:hover {
+						color: #000;
+					}
+				}
+
+				i {
+					margin-right: .5rem;
+				}
 			}
 		}
 	}

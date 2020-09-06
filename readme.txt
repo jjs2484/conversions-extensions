@@ -22,6 +22,7 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
     * Hero
     * Clients
     * Counter
+    * FAQ
     * Icon features
     * Image features
     * Pricing
@@ -116,5 +117,6 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Fix: Refresh repeater color control on more input actions: change, paste.
 
 = 1.0.7 =
+* New: Add FAQ homepage section.
 * Update: Reorg scripts and styles to sections folders.
 * Update: NPM Dependencies.

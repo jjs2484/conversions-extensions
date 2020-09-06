@@ -200,7 +200,8 @@
 .page-template-homepage section.c-news .container-fluid,
 .page-template-homepage section.c-edd .container-fluid,
 .page-template-homepage section.c-blank .container-fluid,
-.page-template-homepage section.c-text .container-fluid {
+.page-template-homepage section.c-text .container-fluid,
+.page-template-homepage section.c-faq .container-fluid {
   padding-top: 3rem;
   padding-bottom: 3rem; }
   @media (min-width: 992px) {
@@ -209,7 +210,8 @@
     .page-template-homepage section.c-news .container-fluid,
     .page-template-homepage section.c-edd .container-fluid,
     .page-template-homepage section.c-blank .container-fluid,
-    .page-template-homepage section.c-text .container-fluid {
+    .page-template-homepage section.c-text .container-fluid,
+    .page-template-homepage section.c-faq .container-fluid {
       padding-top: 4rem;
       padding-bottom: 4rem; } }
 
@@ -459,6 +461,25 @@ section.c-testimonials .c-testimonials__quote {
     section.c-testimonials .c-testimonials__quote .c-testimonials__nav i:hover {
       cursor: pointer;
       color: #77818b; }
+
+section.c-faq #c-faq__accordion {
+  border-radius: .25rem; }
+  section.c-faq #c-faq__accordion .card .card-header {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 0;
+    background: #fff; }
+    section.c-faq #c-faq__accordion .card .card-header .btn {
+      color: #222;
+      width: 100%;
+      text-align: left;
+      font-weight: 500;
+      padding-left: 0;
+      padding-right: 0; }
+      section.c-faq #c-faq__accordion .card .card-header .btn:hover {
+        color: #000; }
+    section.c-faq #c-faq__accordion .card .card-header i {
+      margin-right: .5rem; }
 
 #wrapper-footer .social-media-icons {
   display: flex;

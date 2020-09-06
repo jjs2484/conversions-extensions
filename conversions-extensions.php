@@ -134,6 +134,7 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.hero.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.clients.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.counter.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.faq.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
@@ -240,6 +241,9 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-counter', 'background-color', get_theme_mod( 'conversions_counter_bg_color' ) ],
 				[ '.page-template-homepage section.c-counter h2, section.c-counter .card h3', 'color', get_theme_mod( 'conversions_counter_title_color' ) ],
 				[ '.page-template-homepage section.c-counter p.subtitle, section.c-counter .card h4.c-counter__block-text', 'color', get_theme_mod( 'conversions_counter_desc_color' ) ],
+				[ '.page-template-homepage section.c-faq', 'background-color', get_theme_mod( 'conversions_faq_bg_color' ) ],
+				[ '.page-template-homepage section.c-faq h2', 'color', get_theme_mod( 'conversions_faq_title_color' ) ],
+				[ '.page-template-homepage section.c-faq p.subtitle', 'color', get_theme_mod( 'conversions_faq_desc_color' ) ],
 			];
 			?>
 
@@ -502,6 +506,16 @@ namespace
 			}
 			if ( $control === 'customizer_repeater_text_control' ) {
 				return esc_html__( 'Title', 'conversions' );
+			}
+		}
+
+		// FAQ repeater label changes.
+		if ( $id === 'conversions_faq_repeater' ) {
+			if ( $control === 'customizer_repeater_title_control' ) {
+				return esc_html__( 'Question', 'conversions' );
+			}
+			if ( $control === 'customizer_repeater_text_control' ) {
+				return esc_html__( 'Answer', 'conversions' );
 			}
 		}
 
