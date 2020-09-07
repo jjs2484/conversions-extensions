@@ -44,6 +44,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 [conversions_clients]
 [conversions_counter]
+[conversions_faq]
 [conversions_icon_features]
 [conversions_img_features]
 [conversions_pricing]
