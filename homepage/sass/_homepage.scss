@@ -357,6 +357,7 @@ section.c-testimonials {
 section.c-faq {
 	#c-faq__accordion {
 		border-radius: .25rem;
+		margin-bottom: 1.5rem;
 	
 		.card {
 			.card-header {
@@ -375,6 +376,7 @@ section.c-faq {
 
 					&:hover {
 						color: #000;
+						transition: .3s;
 					}
 				}
 

@@ -463,7 +463,8 @@ section.c-testimonials .c-testimonials__quote {
       color: #77818b; }
 
 section.c-faq #c-faq__accordion {
-  border-radius: .25rem; }
+  border-radius: .25rem;
+  margin-bottom: 1.5rem; }
   section.c-faq #c-faq__accordion .card .card-header {
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -477,7 +478,8 @@ section.c-faq #c-faq__accordion {
       padding-left: 0;
       padding-right: 0; }
       section.c-faq #c-faq__accordion .card .card-header .btn:hover {
-        color: #000; }
+        color: #000;
+        transition: .3s; }
     section.c-faq #c-faq__accordion .card .card-header i {
       margin-right: .5rem; }
 
