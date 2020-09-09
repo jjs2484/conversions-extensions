@@ -87,7 +87,7 @@ class Navbar_Variants {
 					$navbar_branding .= '<div class="container-fluid">';
 					$navbar_branding .= $brand_blog_home; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= $this->navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= \conversions\Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= '</div>';
 					$navbar_branding .= '</div>';
 				} else {
@@ -95,7 +95,7 @@ class Navbar_Variants {
 					$navbar_branding .= '<div class="container-fluid">';
 					$navbar_branding .= $brand_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= $this->navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$navbar_branding .= \conversions\Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$navbar_branding .= '</div>';
 					$navbar_branding .= '</div>';
 				}
@@ -104,7 +104,7 @@ class Navbar_Variants {
 				$navbar_branding .= '<div class="container-fluid">';
 				$navbar_branding .= get_custom_logo();
 				$navbar_branding .= $this->navbar_below_extras(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				$navbar_branding .= Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$navbar_branding .= \conversions\Navbar::conversions_navbar_toggler(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				$navbar_branding .= '</div>';
 				$navbar_branding .= '</div>';
 			}
@@ -120,6 +120,9 @@ class Navbar_Variants {
 	 */
 	public function navbar_below_extras() {
 
+		// Create empty string variable to add active elements to.
+		$items = '';
+
 		// Is woocommerce is active?
 		if ( class_exists( 'woocommerce' ) ) {
 
@@ -128,7 +131,7 @@ class Navbar_Variants {
 				// output the cart icon with item count.
 				$cart_link = sprintf(
 					'<li class="cart list-inline-item">%s</li>',
-					WooCommerce::get_cart_nav_html()
+					\conversions\WooCommerce::get_cart_nav_html()
 				);
 				// Add the cart icon to the end of the menu.
 				$items = $cart_link;
