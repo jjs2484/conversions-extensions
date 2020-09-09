@@ -127,4 +127,4 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: NPM Dependencies.
 
 = 1.0.9 =
-* Fix: fix Navbar Variants namespace paths.
+* Fix: Navbar Variants namespace paths.
