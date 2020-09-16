@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage Features customizer section
+ * Homepage Icon Features customizer section
  *
  * @package conversions
  */
