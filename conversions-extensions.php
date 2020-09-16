@@ -135,7 +135,7 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.clients.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.counter.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.faq.php';
-			require_once __DIR__ . '/homepage/customizer/homepage.features.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.icon-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.team.php';

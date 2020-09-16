@@ -14,16 +14,16 @@ trait icon_features {
 	 *
 	 * @since 2019-12-19
 	 */
-	public function get_features() {
+	public function get_icon_features() {
 		// Get all feature blocks.
-		$features         = get_theme_mod( 'conversions_features_icons' );
-		$features_decoded = json_decode( $features );
-		if ( ! $features_decoded )
+		$icon_features         = get_theme_mod( 'conversions_features_icons' );
+		$icon_features_decoded = json_decode( $icon_features );
+		if ( ! $icon_features_decoded )
 			return false;
-		$has_features = ( $features_decoded[ 0 ]->icon_value != '' || $features_decoded[ 0 ]->title != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
-		if ( ! $has_features )
+		$has_icon_features = ( $icon_features_decoded[ 0 ]->icon_value != '' || $icon_features_decoded[ 0 ]->title != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+		if ( ! $has_icon_features )
 			return false;
-		return $features_decoded;
+		return $icon_features_decoded;
 	}
 
 	/**
@@ -31,9 +31,9 @@ trait icon_features {
 	 *
 	 * @since 2019-12-19
 	 */
-	public function features_content() {
-		$features = $this->get_features();
-		if ( ! $features )
+	public function icon_features_content() {
+		$icon_features = $this->get_icon_features();
+		if ( ! $icon_features )
 			return;
 
 		// We want to capture the output so that we can return it.
@@ -41,11 +41,11 @@ trait icon_features {
 
 		$cfeature_block_count = 0;
 
-		foreach ( $features as $repeater_item ) {
+		foreach ( $icon_features as $repeater_item ) {
 			// How many to show per row.
-			$conversions_features_sm = get_theme_mod( 'conversions_features_sm', '2' );
-			$conversions_features_md = get_theme_mod( 'conversions_features_md', '2' );
-			$conversions_features_lg = get_theme_mod( 'conversions_features_lg', '3' );
+			$conversions_icon_features_sm = get_theme_mod( 'conversions_features_sm', '2' );
+			$conversions_icon_features_md = get_theme_mod( 'conversions_features_md', '2' );
+			$conversions_icon_features_lg = get_theme_mod( 'conversions_features_lg', '3' );
 
 			// # per row to bootstrap grid.
 			$cfri = array(
@@ -56,7 +56,7 @@ trait icon_features {
 			);
 
 			// Feature block.
-			echo '<div id="c-features__block-' . esc_attr( $cfeature_block_count ) . '" class="c-features__block col-sm-' . esc_attr( $cfri[$conversions_features_sm] ) . ' col-md-' . esc_attr( $cfri[$conversions_features_md] ) . ' col-lg-' . esc_attr( $cfri[$conversions_features_lg] ) . '">';
+			echo '<div id="c-features__block-' . esc_attr( $cfeature_block_count ) . '" class="c-features__block col-sm-' . esc_attr( $cfri[$conversions_icon_features_sm] ) . ' col-md-' . esc_attr( $cfri[$conversions_icon_features_md] ) . ' col-lg-' . esc_attr( $cfri[$conversions_icon_features_lg] ) . '">';
 
 			echo '<div class="card border-0 h-100"><div class="card-body p-2">';
 
@@ -100,11 +100,11 @@ trait icon_features {
 	 * @since 2019-12-16
 	 */
 	public function features() {
-		$features = $this->get_features();
-		if ( ! $features )
+		$icon_features = $this->get_icon_features();
+		if ( ! $icon_features )
 			return;
 		?>
-	<!-- Features section -->
+	<!-- Icon Features section -->
 	<section class="c-features">
 		<div class="container-fluid">
 			<div class="row">
@@ -133,7 +133,7 @@ trait icon_features {
 				}
 
 				do_action( 'conversions_before_icon_features' );
-				echo $this->features_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $this->icon_features_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				do_action( 'conversions_after_icon_features' );
 
 				?>
