@@ -22,6 +22,7 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
     * Blank
     * Clients
     * Counter
+    * Easy Digital Downloads
     * FAQ
     * Hero
     * Icon features
@@ -31,6 +32,7 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
     * Team
     * Testimonials
     * Text
+    * WooCommerce
 
 * Navbar variants
     * Menu right

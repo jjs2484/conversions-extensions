@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_homepage_pricing',
 	[
 		'title'      => __( 'Pricing', 'conversions' ),
-		'priority'   => 59,
+		'priority'   => 100,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

@@ -13,7 +13,7 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 			'title'      => __( 'Easy Digital Downloads', 'conversions' ),
 			'capability' => 'edit_theme_options',
 			'panel'      => 'conversions_homepage',
-			'priority'   => 32,
+			'priority'   => 40,
 		]
 	);
 	$wp_customize->add_setting(

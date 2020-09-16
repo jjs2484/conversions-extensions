@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_homepage_faq',
 	[
 		'title'      => __( 'FAQ', 'conversions' ),
-		'priority'   => 62,
+		'priority'   => 50,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

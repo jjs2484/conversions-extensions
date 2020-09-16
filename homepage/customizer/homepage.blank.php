@@ -10,7 +10,7 @@ $wp_customize->add_section(
 	'conversions_homepage_blank',
 	[
 		'title'      => __( 'Blank', 'conversions' ),
-		'priority'   => 80,
+		'priority'   => 10,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

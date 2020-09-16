@@ -10,7 +10,7 @@ $wp_customize->add_section(
 	'conversions_homepage_text',
 	[
 		'title'      => __( 'Text', 'conversions' ),
-		'priority'   => 62,
+		'priority'   => 130,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

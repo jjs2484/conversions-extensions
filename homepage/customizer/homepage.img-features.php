@@ -10,7 +10,7 @@ $wp_customize->add_section(
 	'conversions_homepage_img_features',
 	[
 		'title'      => __( 'Image features', 'conversions' ),
-		'priority'   => 31,
+		'priority'   => 80,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

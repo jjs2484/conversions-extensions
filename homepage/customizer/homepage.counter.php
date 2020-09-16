@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_homepage_counter',
 	[
 		'title'      => __( 'Counter', 'conversions' ),
-		'priority'   => 31,
+		'priority'   => 30,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

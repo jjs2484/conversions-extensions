@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_homepage_news',
 	[
 		'title'      => __( 'News', 'conversions' ),
-		'priority'   => 70,
+		'priority'   => 90,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_homepage_hero',
 	[
 		'title'      => __( 'Hero', 'conversions' ),
-		'priority'   => 10,
+		'priority'   => 60,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

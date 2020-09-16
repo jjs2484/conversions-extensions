@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_homepage_features',
 	[
 		'title'      => __( 'Icon features', 'conversions' ),
-		'priority'   => 30,
+		'priority'   => 70,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]

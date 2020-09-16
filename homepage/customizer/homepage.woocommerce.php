@@ -11,7 +11,7 @@ $wp_customize->add_section(
 		'title'          => __( 'WooCommerce', 'conversions' ),
 		'capability'     => 'edit_theme_options',
 		'panel'          => 'conversions_homepage',
-		'priority'       => 31,
+		'priority'       => 140,
 		'theme_supports' => [ 'woocommerce' ],
 	]
 );

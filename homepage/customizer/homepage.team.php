@@ -10,7 +10,7 @@ $wp_customize->add_section(
 	'conversions_homepage_team',
 	[
 		'title'      => __( 'Team', 'conversions' ),
-		'priority'   => 60,
+		'priority'   => 110,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]
