@@ -19,18 +19,18 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 = Extensions List: =
 
 * Homepage sections
-    * Hero
+    * Blank
     * Clients
     * Counter
     * FAQ
+    * Hero
     * Icon features
     * Image features
+    * News
     * Pricing
     * Team
     * Testimonials
     * Text
-    * News
-    * Blank
 
 * Navbar variants
     * Menu right
