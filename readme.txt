@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.5
 Requires at least: 4.7
@@ -130,3 +130,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.0.9 =
 * Fix: Navbar Variants namespace paths.
+
+= 1.1.0 =
+* Update: Reorder hompage customizer sections alphabetically.
+* Update: NPM Dependencies.
