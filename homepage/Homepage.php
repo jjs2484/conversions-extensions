@@ -55,7 +55,7 @@ class Homepage {
 	public function __construct() {
 		static::$sections = [
 			'blank'        => [
-				'title' => __( 'Blank', 'conversions' ),
+				'title' => __( 'HTML or Shortcode', 'conversions' ),
 			],
 			'clients'      => [
 				'title' => __( 'Clients', 'conversions' ),

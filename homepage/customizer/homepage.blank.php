@@ -9,8 +9,8 @@
 $wp_customize->add_section(
 	'conversions_homepage_blank',
 	[
-		'title'      => __( 'Blank', 'conversions' ),
-		'priority'   => 10,
+		'title'      => __( 'HTML or Shortcode', 'conversions' ),
+		'priority'   => 200,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]
