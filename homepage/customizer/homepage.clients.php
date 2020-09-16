@@ -202,9 +202,9 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_hc_logos',
 		[
-			'label'    => __( 'Client logo', 'conversions' ),
-			'section'  => 'conversions_homepage_clients',
-			'priority' => 80,
+			'label'                             => __( 'Client logo', 'conversions' ),
+			'section'                           => 'conversions_homepage_clients',
+			'priority'                          => 80,
 			'customizer_repeater_image_control' => true,
 		]
 	)
