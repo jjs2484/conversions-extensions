@@ -132,5 +132,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Fix: Navbar Variants namespace paths.
 
 = 1.1.0 =
-* Update: Reorder hompage customizer sections alphabetically.
+* Update: Reorder homepage customizer sections alphabetically.
+* Update: Rename "Blank" homepage customizer section to "HTML or Shortcode".
+* Update: Rename some homepage icon features files, functions, and variables.
 * Update: NPM Dependencies.
