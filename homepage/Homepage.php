@@ -54,8 +54,8 @@ class Homepage {
 	 */
 	public function __construct() {
 		static::$sections = [
-			'hero'         => [
-				'title' => __( 'Hero', 'conversions' ),
+			'blank'        => [
+				'title' => __( 'Blank', 'conversions' ),
 			],
 			'clients'      => [
 				'title' => __( 'Clients', 'conversions' ),
@@ -63,8 +63,14 @@ class Homepage {
 			'counter'      => [
 				'title' => __( 'Counter', 'conversions' ),
 			],
+			'edd'          => [
+				'title' => __( 'Easy Digital Downloads', 'conversions' ),
+			],
 			'faq'          => [
 				'title' => __( 'FAQ', 'conversions' ),
+			],
+			'hero'         => [
+				'title' => __( 'Hero', 'conversions' ),
 			],
 			'features'     => [
 				'title' => __( 'Icon features', 'conversions' ),
@@ -72,14 +78,11 @@ class Homepage {
 			'img_features' => [
 				'title' => __( 'Image features', 'conversions' ),
 			],
-			'woocommerce'  => [
-				'title' => __( 'WooCommerce', 'conversions' ),
-			],
-			'edd'          => [
-				'title' => __( 'Easy Digital Downloads', 'conversions' ),
-			],
 			'pricing'      => [
 				'title' => __( 'Pricing', 'conversions' ),
+			],
+			'news'         => [
+				'title' => __( 'News', 'conversions' ),
 			],
 			'team'         => [
 				'title' => __( 'Team', 'conversions' ),
@@ -90,11 +93,8 @@ class Homepage {
 			'text'         => [
 				'title' => __( 'Text', 'conversions' ),
 			],
-			'news'         => [
-				'title' => __( 'News', 'conversions' ),
-			],
-			'blank'        => [
-				'title' => __( 'Blank', 'conversions' ),
+			'woocommerce'  => [
+				'title' => __( 'WooCommerce', 'conversions' ),
 			],
 		];
 
