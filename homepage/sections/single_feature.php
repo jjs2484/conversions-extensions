@@ -66,7 +66,7 @@ trait single_feature {
 			}
 			if ( ! empty( get_theme_mod( 'conversions_single_feature_desc' ) ) ) {
 				// Description.
-				echo '<p>' . wp_kses_post( get_theme_mod( 'conversions_single_feature_desc' ) ) . '</p>';
+				echo wp_kses_post( get_theme_mod( 'conversions_single_feature_desc' ) );
 			}
 		}
 		echo '</div>';
