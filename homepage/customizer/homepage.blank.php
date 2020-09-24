@@ -71,6 +71,7 @@ $wp_customize->add_setting(
 		'type'              => 'theme_mod',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'wp_kses_post',
+		'capability'        => 'edit_theme_options',
 	]
 );
 $wp_customize->add_control(
@@ -82,7 +83,6 @@ $wp_customize->add_control(
 		'settings'    => 'conversions_blank_content',
 		'priority'    => 20,
 		'type'        => 'textarea',
-		'capability'  => 'edit_theme_options',
 	]
 );
 $wp_customize->add_setting(

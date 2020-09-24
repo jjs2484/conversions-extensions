@@ -83,6 +83,7 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 			'type'              => 'theme_mod',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'wp_kses_post',
+			'capability'        => 'edit_theme_options',
 		]
 	);
 	$wp_customize->add_control(
@@ -94,7 +95,6 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 			'settings'    => 'conversions_edd_desc',
 			'priority'    => 40,
 			'type'        => 'textarea',
-			'capability'  => 'edit_theme_options',
 		]
 	);
 	$wp_customize->add_setting(
