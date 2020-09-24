@@ -24,6 +24,7 @@ class Homepage {
 	use sections\hero;
 	use sections\icon_features;
 	use sections\img_features;
+	use sections\single_feature;
 	use sections\news;
 	use sections\pricing;
 	use sections\team;
@@ -54,46 +55,49 @@ class Homepage {
 	 */
 	public function __construct() {
 		static::$sections = [
-			'blank'        => [
+			'blank'          => [
 				'title' => __( 'HTML or Shortcode', 'conversions' ),
 			],
-			'clients'      => [
+			'clients'        => [
 				'title' => __( 'Clients', 'conversions' ),
 			],
-			'counter'      => [
+			'counter'        => [
 				'title' => __( 'Counter', 'conversions' ),
 			],
-			'edd'          => [
+			'edd'            => [
 				'title' => __( 'Easy Digital Downloads', 'conversions' ),
 			],
-			'faq'          => [
+			'faq'            => [
 				'title' => __( 'FAQ', 'conversions' ),
 			],
-			'hero'         => [
+			'hero'           => [
 				'title' => __( 'Hero', 'conversions' ),
 			],
-			'features'     => [
+			'features'       => [
 				'title' => __( 'Icon features', 'conversions' ),
 			],
-			'img_features' => [
+			'img_features'   => [
 				'title' => __( 'Image features', 'conversions' ),
 			],
-			'pricing'      => [
+			'single_feature' => [
+				'title' => __( 'Single feature', 'conversions' ),
+			],
+			'pricing'        => [
 				'title' => __( 'Pricing', 'conversions' ),
 			],
-			'news'         => [
+			'news'           => [
 				'title' => __( 'News', 'conversions' ),
 			],
-			'team'         => [
+			'team'           => [
 				'title' => __( 'Team', 'conversions' ),
 			],
-			'testimonials' => [
+			'testimonials'   => [
 				'title' => __( 'Testimonials', 'conversions' ),
 			],
-			'text'         => [
+			'text'           => [
 				'title' => __( 'Text', 'conversions' ),
 			],
-			'woocommerce'  => [
+			'woocommerce'    => [
 				'title' => __( 'WooCommerce', 'conversions' ),
 			],
 		];

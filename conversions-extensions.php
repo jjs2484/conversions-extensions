@@ -137,6 +137,7 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.faq.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.icon-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.single-feature.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.team.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.testimonials.php';
@@ -244,6 +245,9 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-faq', 'background-color', get_theme_mod( 'conversions_faq_bg_color' ) ],
 				[ '.page-template-homepage section.c-faq h2', 'color', get_theme_mod( 'conversions_faq_title_color' ) ],
 				[ '.page-template-homepage section.c-faq p.subtitle', 'color', get_theme_mod( 'conversions_faq_desc_color' ) ],
+				[ '.page-template-homepage section.c-single-feature', 'background-color', get_theme_mod( 'conversions_single_feature_bg' ) ],
+				[ '.page-template-homepage section.c-single-feature h2', 'color', get_theme_mod( 'conversions_single_feature_title_color' ) ],
+				[ '.page-template-homepage section.c-single-feature p', 'color', get_theme_mod( 'conversions_single_feature_desc_color' ) ],
 			];
 			?>
 

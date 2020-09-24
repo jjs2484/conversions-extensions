@@ -5,7 +5,8 @@
 .page-template-homepage section.c-edd .container-fluid,
 .page-template-homepage section.c-blank .container-fluid,
 .page-template-homepage section.c-text .container-fluid,
-.page-template-homepage section.c-faq .container-fluid {
+.page-template-homepage section.c-faq .container-fluid,
+.page-template-homepage section.c-single-feature .container-fluid {
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 	@media (min-width: 992px) {
@@ -385,5 +386,23 @@ section.c-faq {
 				}
 			}
 		}
+	}
+}
+
+// Single feature section
+section.c-single-feature {
+	.c-single-feature__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.c-single-feature__media {
+		display: flex;
+		align-items: center;
+	}
+	.c-single-feature__image,
+	.c-single-feature__youtube,
+	.c-single-feature__vimeo {
+		box-shadow: 0 .125rem .25rem rgba(0,0,0,.3);
 	}
 }

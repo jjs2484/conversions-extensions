@@ -63,3 +63,64 @@ jQuery(document).ready(function($) {
 		}
 	});
 });
+
+/*
+ * Single feature options
+ */
+jQuery(document).ready(function($) {
+	
+	// Option selectors.
+	var $image = $( '#customize-control-conversions_single_feature_img' );
+	var $youtube = $( '#customize-control-conversions_single_feature_youtube_control' );
+	var $vimeo = $( '#customize-control-conversions_single_feature_vimeo' );
+	var $shortcode = $( '#customize-control-conversions_single_feature_shortcode_control' );
+	var $choice = $( '#customize-control-conversions_single_feature_media_type select' );
+
+	// On page load hide or show options.
+	if( $( $choice ).val() == 'image' ) {
+		$( $image ).show();
+		$( $youtube ).hide();
+		$( $vimeo ).hide();
+		$( $shortcode ).hide();
+	} else if ( $( $choice ).val() == 'youtube' ) {
+		$( $image ).hide();
+		$( $youtube ).show();
+		$( $vimeo ).hide();
+		$( $shortcode ).hide();
+	} else if ( $( $choice ).val() == 'vimeo' ) {
+		$( $image ).hide();
+		$( $youtube ).hide();
+		$( $vimeo ).show();
+		$( $shortcode ).hide();
+	} else if ( $( $choice ).val() == 'shortcode' ) {
+		$( $image ).hide();
+		$( $youtube ).hide();
+		$( $vimeo ).hide();
+		$( $shortcode ).show();
+	}
+
+	// On change hide or show options.
+	$( $choice ).change(function() {
+		if ( $(this).val() == 'image' ) {
+			$( $image ).show();
+			$( $youtube ).hide();
+			$( $vimeo ).hide();
+			$( $shortcode ).hide();
+		} else if ( $(this).val() == 'youtube' ) {
+			$( $image ).hide();
+			$( $youtube ).show();
+			$( $vimeo ).hide();
+			$( $shortcode ).hide();
+		} else if ( $(this).val() == 'vimeo' ) {
+			$( $image ).hide();
+			$( $youtube ).hide();
+			$( $vimeo ).show();
+			$( $shortcode ).hide();
+		} else if ( $(this).val() == 'shortcode' ) {
+			$( $image ).hide();
+			$( $youtube ).hide();
+			$( $vimeo ).hide();
+			$( $shortcode ).show();
+		}
+	});
+});
