@@ -134,6 +134,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.1.0 =
 * New: Add Single Feature homepage section.
+* Update: Customizer Font Awesome icon picker now includes all icons in popover with search filter.
 * Update: Reorder homepage customizer sections alphabetically.
 * Update: Rename "Blank" homepage customizer section to "HTML or Shortcode".
 * Update: Rename some homepage icon features files, functions, and variables.
