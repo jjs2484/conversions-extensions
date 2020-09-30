@@ -26,6 +26,7 @@ class Shortcodes {
 		add_shortcode( 'conversions_faq', [ $this, 'conversions_faq_shortcode' ] );
 		add_shortcode( 'conversions_icon_features', [ $this, 'conversions_icon_features_shortcode' ] );
 		add_shortcode( 'conversions_img_features', [ $this, 'conversions_img_features_shortcode' ] );
+		add_shortcode( 'conversions_single_feature', [ $this, 'conversions_single_feature_shortcode' ] );
 		add_shortcode( 'conversions_pricing', [ $this, 'conversions_pricing_shortcode' ] );
 		add_shortcode( 'conversions_team', [ $this, 'conversions_team_shortcode' ] );
 		add_shortcode( 'conversions_testimonials', [ $this, 'conversions_testimonials_shortcode' ] );
@@ -89,6 +90,18 @@ class Shortcodes {
 	public function conversions_img_features_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
 		return '<section class="c-img-features c-shortcode mt-4 mb-2"><div class="row">' . $homepage->img_features_content() . '</div></section>';
+	}
+
+	/**
+	 * Create single feature shortcode.
+	 *
+	 * Shortcode: [conversions_single_feature]
+	 *
+	 * @since 2020-09-30
+	 */
+	public function conversions_single_feature_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-single-feature c-shortcode mt-4 mb-4"><div class="row">' . $homepage->single_feature_content() . '</div></section>';
 	}
 
 	/**
