@@ -511,6 +511,9 @@ function escapeHtml(string) {
 /**
  * Fontawesome iconpicker control for the repeater
  */
+/**
+ * Fontawesome iconpicker control for the repeater
+ */
 ( function($) {
 	'use strict';
 	wp.customizerRepeater = {
@@ -543,12 +546,19 @@ function escapeHtml(string) {
 			if ( searchTerm.length > 0 ) {
 				itemsList.children().each(
 					function() {
-						if ( $( this ).
-							filter(
-								'[title*='.concat( searchTerm ).concat( ']' ) ).length > 0 || searchTerm.length < 1 ) {
-							$( this ).show();
+						var $icon = $ ( this );
+
+						// Search for the term in the title.
+						var show = $icon.attr( 'title' ).indexOf( searchTerm ) > -1;
+
+						// And if not found in the title, try the search terms.
+						if ( ! show )
+							show = $icon.data( 'search_terms' ).indexOf( searchTerm ) > -1;
+
+						if ( show ) {
+							$icon.show();
 						} else {
-							$( this ).hide();
+							$icon.hide();
 						}
 					}
 				);
@@ -566,8 +576,17 @@ function escapeHtml(string) {
 		function() {
 			wp.customizerRepeater.init();
 
+			var iconpicker_searching = false;
+
 			$( '.iconpicker-search' ).on( 'keyup', function() {
-				wp.customizerRepeater.search( $( this ) );
+				// Wait for the user to finish typing before searching, so as to not such too often.
+				clearTimeout( iconpicker_searching );
+				var $input = $( this );
+				iconpicker_searching = setTimeout( function()
+				{
+					console.log( 'Searching icons...' );
+					wp.customizerRepeater.search( $input );
+				}, 500 );
 			} );
 
 			$( '.icp-auto' ).on( 'click', function() {
