@@ -1,3 +1,4 @@
+<?php
 /**
  * List of icons for customizer
  *
