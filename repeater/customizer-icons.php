@@ -1,4 +1,3 @@
-<?php
 /**
  * List of icons for customizer
  *
@@ -21,13 +20,21 @@ $json = json_decode( $json );
 
 				<?php
 				foreach ( $json as $icon_id => $data ) {
+
+					// Assume empty search terms.
+					$search_terms = '';
+					if ( isset( $data->search->terms ) )
+						$search_terms = implode( $data->search->terms, " " );
+
 					foreach ( $data->styles as $style ) {
 						$style = $style[ 0 ];
 						echo sprintf(
-							'<i data-type="iconpicker-item" title=".fa-%s" class="fa%s fa-%s"></i>',
+							'<i data-type="iconpicker-item" title=".fa-%s" class="fa%s fa-%s" data-search_terms="%s"></i>%s',
 							esc_attr( $icon_id ),
 							esc_attr( $style ),
-							esc_attr( $icon_id )
+							esc_attr( $icon_id ),
+							esc_attr( $search_terms ),
+							"\n"
 						);
 					}
 				}
