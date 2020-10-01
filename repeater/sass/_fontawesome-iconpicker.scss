@@ -13,6 +13,9 @@
 	display: none;
 	margin-left: -10px;
 	width: 254px;
+	border: 1px solid rgba(0,0,0,.2);
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	border-radius: 5px;
 }
 .iconpicker,
 .iconpicker-popover.popover.iconpicker-visible {
@@ -61,7 +64,7 @@
 }
 .iconpicker-popover.popover.bottomLeft > .arrow {
 	border-top-width: 0;
-	border-bottom-color: #e5e5e5;
+	border-bottom-color: #bbb;
 	top: -11px;
 }
 .iconpicker-popover.popover.bottomLeft > .arrow:after {
@@ -102,7 +105,7 @@
 	background: #fff;
 	overflow-y: auto;
 	min-height: 55px;
-	max-height: 275px;
+	max-height: 194px;
 }
 .iconpicker .iconpicker-items i {
 	float: left;
