@@ -567,19 +567,6 @@ class Repeater extends \WP_Customize_Control {
 			<span class="customize-control-title">
 				<?php esc_html_e( 'Icon', 'conversions' ); ?>
 			</span>
-			<span class="description customize-control-description">
-				<?php
-				echo sprintf(
-					/* translators: 1: <a href...>Fontawesome</a> */
-					esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'conversions' ),
-					sprintf(
-						'<a href="%s" rel="nofollow" target="_blank">%s</a>',
-						esc_url( 'https://fontawesome.com/icons?d=gallery&m=free' ),
-						esc_html__( 'Fontawesome', 'conversions' )
-					)
-				);
-				?>
-			</span>
 			<div class="input-group icp-container">
 				<input data-placement="bottomRight" class="icp icp-auto" value="<?php if ( ! empty( $value ) ) { echo esc_attr( $value ); } ?>" type="text">
 				<span class="input-group-addon">
@@ -700,19 +687,6 @@ class Repeater extends \WP_Customize_Control {
 		$show_del        = 0; ?>
 		<span class="customize-control-title">
 			<?php esc_html_e( 'Social icons', 'conversions' ); ?>
-		</span>
-		<span class="description customize-control-description">
-			<?php
-			echo sprintf(
-				/* translators: 1: <a href...>Fontawesome</a> */
-				esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'conversions' ),
-				sprintf(
-					'<a href="%s" rel="nofollow" target="_blank">%s</a>',
-					esc_url( 'https://fontawesome.com/icons?d=gallery&m=free' ),
-					esc_html__( 'Fontawesome', 'conversions' )
-				)
-			);
-			?>
 		</span>
 		<?php
 		if ( ! empty( $value ) ) {
