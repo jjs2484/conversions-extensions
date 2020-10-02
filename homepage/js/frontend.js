@@ -105,7 +105,7 @@ jQuery(document).ready(function() {
 	});
 	
 	// Toggle plus minus icon on show hide of collapse element
-	jQuery( '.collapse' ).on( 'show.bs.collapse', function() {
+	jQuery( '#c-faq__accordion .collapse' ).on( 'show.bs.collapse', function() {
 		jQuery(this).parent().find( '.card-header .btn i' ).removeClass('fa-plus-square').addClass('fa-minus-square');
 	}).on( 'hide.bs.collapse', function() {
 		jQuery(this).parent().find( '.card-header .btn i' ).removeClass('fa-minus-square').addClass('fa-plus-square');
