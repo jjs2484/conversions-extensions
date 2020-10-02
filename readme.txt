@@ -140,5 +140,6 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Rename "Blank" homepage customizer section to "HTML or Shortcode".
 * Update: Rename some homepage icon features files, functions, and variables.
 * Update: NPM Dependencies.
+* Update: Add Homepage Hero YouTube video modal script from Conversions theme.
 * Fix: Correct some customizer controls capabilities.
 * Fix: Prevent FAQ styles leaking to other Bootstrap collapse elements.
