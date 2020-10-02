@@ -141,3 +141,4 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Rename some homepage icon features files, functions, and variables.
 * Update: NPM Dependencies.
 * Fix: Correct some customizer controls capabilities.
+* Fix: Prevent FAQ styles leaking to other Bootstrap collapse elements.
