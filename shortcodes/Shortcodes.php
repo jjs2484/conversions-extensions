@@ -77,7 +77,7 @@ class Shortcodes {
 	 */
 	public function conversions_icon_features_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-features c-shortcode mt-4 mb-2"><div class="row">' . $homepage->features_content() . '</div></section>';
+		return '<section class="c-features c-shortcode mt-4 mb-2"><div class="row">' . $homepage->icon_features_content() . '</div></section>';
 	}
 
 	/**
