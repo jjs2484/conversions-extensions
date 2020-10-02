@@ -142,4 +142,4 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: NPM Dependencies.
 * Update: Add Homepage Hero YouTube video modal script from Conversions theme.
 * Fix: Correct some customizer controls capabilities.
-* Fix: Prevent FAQ styles leaking to other Bootstrap collapse elements.
+* Fix: Prevent FAQ styles from leaking to other Bootstrap collapse elements.
