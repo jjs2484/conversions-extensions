@@ -19,7 +19,7 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
 = Extensions List: =
 
 * Homepage sections
-    * Blank
+    * Homepage Sorting
     * Clients
     * Counter
     * Easy Digital Downloads
@@ -27,12 +27,14 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
     * Hero
     * Icon features
     * Image features
+    * Single feature
     * News
     * Pricing
     * Team
     * Testimonials
     * Text
     * WooCommerce
+    * HTML or Shortcode
 
 * Navbar variants
     * Menu right
