@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.5.1
 Requires at least: 4.7
@@ -145,3 +145,6 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Add Homepage Hero YouTube video modal script from Conversions theme.
 * Fix: Correct some customizer controls capabilities.
 * Fix: Prevent FAQ styles from leaking to other Bootstrap collapse elements.
+
+= 1.1.1 =
+* Fix: Change homepage sorting drag and drop HTML structure.
