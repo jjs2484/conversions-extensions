@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.5.1
 Requires at least: 4.7
@@ -148,3 +148,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.1.1 =
 * Fix: Change homepage sorting drag and drop HTML structure.
+
+= 1.1.2 =
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.
