@@ -124,3 +124,64 @@ jQuery(document).ready(function($) {
 		}
 	});
 });
+
+/*
+ * Map options
+ */
+jQuery(document).ready(function($) {
+	
+	// Option selectors.
+	var $map = $( '#customize-control-conversions_map_map' );
+	var $mapText = $( '#customize-control-conversions_map_text' );
+	var $mapHtml = $( '#customize-control-conversions_map_html' );
+	var $mapShortcode = $( '#customize-control-conversions_map_shortcode_control' );
+	var $choice = $( '#customize-control-conversions_map_content_type select' );
+
+	// On page load hide or show options.
+	if( $( $choice ).val() == 'map' ) {
+		$( $map ).show();
+		$( $mapText ).hide();
+		$( $mapHtml ).hide();
+		$( $mapShortcode ).hide();
+	} else if ( $( $choice ).val() == 'map_text' ) {
+		$( $map ).show();
+		$( $mapText ).show();
+		$( $mapHtml ).hide();
+		$( $mapShortcode ).hide();
+	} else if ( $( $choice ).val() == 'map_html' ) {
+		$( $map ).show();
+		$( $mapText ).hide();
+		$( $mapHtml ).show();
+		$( $mapShortcode ).hide();
+	} else if ( $( $choice ).val() == 'map_shortcode' ) {
+		$( $map ).show();
+		$( $mapText ).hide();
+		$( $mapHtml ).hide();
+		$( $mapShortcode ).show();
+	}
+
+	// On change hide or show options.
+	$( $choice ).change(function() {
+		if ( $(this).val() == 'map' ) {
+			$( $map ).show();
+			$( $mapText ).hide();
+			$( $mapHtml ).hide();
+			$( $mapShortcode ).hide();
+		} else if ( $(this).val() == 'map_text' ) {
+			$( $map ).show();
+			$( $mapText ).show();
+			$( $mapHtml ).hide();
+			$( $mapShortcode ).hide();
+		} else if ( $(this).val() == 'map_html' ) {
+			$( $map ).show();
+			$( $mapText ).hide();
+			$( $mapHtml ).show();
+			$( $mapShortcode ).hide();
+		} else if ( $(this).val() == 'map_shortcode' ) {
+			$( $map ).show();
+			$( $mapText ).hide();
+			$( $mapHtml ).hide();
+			$( $mapShortcode ).show();
+		}
+	});
+});

@@ -29,9 +29,7 @@ class Homepage_Sorting_Customizer_Control extends \WP_Customize_Control {
 				$class .= 'disabled';
 			?>
 			<li id="<?php echo esc_attr( $section ); ?>" class="<?php echo esc_attr( $class ); ?>">
-				<label>
-					<span class="visibility"></span><?php echo esc_attr( $data->title ); ?>
-				</label>
+				<span class="visibility"></span><?php echo esc_attr( $data->title ); ?>
 			</li>
 			<?php
 		}

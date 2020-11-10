@@ -25,6 +25,7 @@ class Homepage {
 	use sections\icon_features;
 	use sections\img_features;
 	use sections\single_feature;
+	use sections\map;
 	use sections\news;
 	use sections\pricing;
 	use sections\team;
@@ -69,6 +70,9 @@ class Homepage {
 			],
 			'faq'            => [
 				'title' => __( 'FAQ', 'conversions' ),
+			],
+			'map'            => [
+				'title' => __( 'Google map', 'conversions' ),
 			],
 			'hero'           => [
 				'title' => __( 'Hero', 'conversions' ),

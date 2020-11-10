@@ -33,6 +33,27 @@
 		padding-bottom: 3rem;
 	}
 }
+.page-template-homepage section.c-map {
+	.c-intro {
+		padding-top: 3rem;
+		padding-bottom: 0;
+		@media (min-width: 992px) {
+			padding-top: 4rem;
+			padding-bottom: 0;
+		}
+	}
+	.c-map__map .container-fluid {
+		padding-top: 0;
+		padding-bottom: 3rem;
+		@media (min-width: 992px) {
+			padding-top: 0;
+			padding-bottom: 4rem;
+		}
+		.c-map__map-content {
+			margin-top: 2rem;
+		}
+	}
+}
 
 // Hero section
 section.c-hero {
@@ -404,5 +425,26 @@ section.c-single-feature {
 	.c-single-feature__youtube,
 	.c-single-feature__vimeo {
 		box-shadow: 0 .125rem .25rem rgba(0,0,0,.3);
+	}
+}
+
+// Map section
+section.c-map {
+	
+	// Regular map
+	.c-map__map-responsive {
+		display: flex;
+		iframe {
+			height: 100%;
+			width: 100%;
+			min-height: 375px;
+		}
+	}
+
+	// Map with content
+	.c-map__map-responsive.c-map__map-with-content {
+		iframe {
+			box-shadow: 0 .25rem .3rem rgba(0,0,0,.2);
+		}
 	}
 }

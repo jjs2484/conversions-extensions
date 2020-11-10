@@ -150,5 +150,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Fix: Change homepage sorting drag and drop HTML structure.
 
 = 1.1.2 =
+* New: Add Google map homepage section.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
+* Update: Add Vimeo to single feature customizer media type description.
+* Fix: Homepage sorting check on and off sections.

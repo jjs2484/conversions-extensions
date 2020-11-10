@@ -1,22 +1,22 @@
 <?php
 /**
- * Single Feature customizer section
+ * Map customizer section
  *
- * @since 2020-09-16
+ * @since 2020-11-08
  * @package conversions-extensions
  */
 
 $wp_customize->add_section(
-	'conversions_homepage_single_feature',
+	'conversions_homepage_map',
 	[
-		'title'      => __( 'Single feature', 'conversions' ),
-		'priority'   => 81,
+		'title'      => __( 'Google Map', 'conversions' ),
+		'priority'   => 55,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_bg',
+	'conversions_map_bg',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -25,18 +25,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_bg_control',
+	'conversions_map_bg_control',
 	[
 		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Single feature section background color.', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_bg',
+		'description' => __( 'Map section background color.', 'conversions' ),
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_bg',
 		'priority'    => 10,
 		'type'        => 'color',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_title',
+	'conversions_map_title',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -45,18 +45,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_title_control',
+	'conversions_map_title_control',
 	[
 		'label'       => __( 'Title', 'conversions' ),
 		'description' => __( 'Add your title.', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_title',
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_title',
 		'priority'    => 20,
 		'type'        => 'text',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_title_color',
+	'conversions_map_title_color',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -65,18 +65,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_title_color_control',
+	'conversions_map_title_color_control',
 	[
 		'label'       => __( 'Title color', 'conversions' ),
 		'description' => __( 'Select a color for the title.', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_title_color',
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_title_color',
 		'priority'    => 30,
 		'type'        => 'color',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_desc',
+	'conversions_map_desc',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -86,18 +86,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_desc',
+	'conversions_map_desc',
 	[
 		'label'       => __( 'Description', 'conversions' ),
 		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_desc',
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_desc',
 		'priority'    => 40,
 		'type'        => 'textarea',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_desc_color',
+	'conversions_map_desc_color',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -106,20 +106,20 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_desc_color_control',
+	'conversions_map_desc_color_control',
 	[
 		'label'       => __( 'Description color', 'conversions' ),
 		'description' => __( 'Select a color for the description text.', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_desc_color',
-		'priority'    => 45,
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_desc_color',
+		'priority'    => 50,
 		'type'        => 'color',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_media_type',
+	'conversions_map_content_type',
 	[
-		'default'           => 'image',
+		'default'           => 'map',
 		'type'              => 'theme_mod',
 		'sanitize_callback' => 'conversions_ext_sanitize_select',
 		'capability'        => 'edit_theme_options',
@@ -129,67 +129,67 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new \WP_Customize_Control(
 		$wp_customize,
-		'conversions_single_feature_media_type',
+		'conversions_map_content_type',
 		[
-			'label'       => __( 'Media type', 'conversions' ),
-			'description' => __( 'Select to display an image, youtube video, vimeo, or shortcode.', 'conversions' ),
-			'section'     => 'conversions_homepage_single_feature',
-			'settings'    => 'conversions_single_feature_media_type',
+			'label'       => __( 'Map type', 'conversions' ),
+			'description' => __( 'Select a map type to display.', 'conversions' ),
+			'section'     => 'conversions_homepage_map',
+			'settings'    => 'conversions_map_content_type',
 			'type'        => 'select',
 			'choices'     => [
-				'image'     => __( 'Image', 'conversions' ),
-				'youtube'   => __( 'YouTube Video ID', 'conversions' ),
-				'vimeo'     => __( 'Vimeo Video ID', 'conversions' ),
-				'shortcode' => __( 'Shortcode', 'conversions' ),
+				'map'           => __( 'Regular map', 'conversions' ),
+				'map_text'      => __( 'Map and text', 'conversions' ),
+				'map_html'      => __( 'Map and HTML', 'conversions' ),
+				'map_shortcode' => __( 'Map and shortcode', 'conversions' ),
 			],
-			'priority'    => '50',
+			'priority'    => '60',
 		]
 	)
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_img',
+	'conversions_map_map',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
 		'transport'         => 'refresh',
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw',
+		'sanitize_callback' => 'wp_kses_post',
 	]
 );
 $wp_customize->add_control(
-	new WP_Customize_Image_Control(
-		$wp_customize,
-		'conversions_single_feature_img',
-		[
-			'label'    => __( 'Upload image', 'conversions' ),
-			'section'  => 'conversions_homepage_single_feature',
-			'settings' => 'conversions_single_feature_img',
-			'priority' => 50,
-		]
-	)
+	'conversions_map_map',
+	[
+		'label'       => __( 'Google Map embed code', 'conversions' ),
+		'description' => __( 'Use the following instructions to get the embed code: <a href="https://wordpress.com/support/google-maps/#embedding-a-google-map" target="_blank">Embedding a Google Map</a>', 'conversions' ),
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_map',
+		'priority'    => 70,
+		'type'        => 'textarea',
+	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_youtube',
+	'conversions_map_text',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
 		'transport'         => 'refresh',
+		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'wp_filter_nohtml_kses',
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_youtube_control',
+	'conversions_map_text',
 	[
-		'label'       => __( 'YouTube Video ID', 'conversions' ),
-		'description' => __( 'Example: _sI_Ps7JSEk', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_youtube',
-		'priority'    => 60,
-		'type'        => 'text',
+		'label'       => __( 'Text', 'conversions' ),
+		'description' => __( 'Add text to display aside the map.', 'conversions' ),
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_text',
+		'priority'    => 80,
+		'type'        => 'textarea',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_vimeo',
+	'conversions_map_html',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -199,18 +199,18 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_vimeo',
+	'conversions_map_html',
 	[
-		'label'       => __( 'Vimeo Video ID', 'conversions' ),
-		'description' => __( 'Example: 361687086', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_vimeo',
-		'priority'    => 70,
-		'type'        => 'text',
+		'label'       => __( 'HTML', 'conversions' ),
+		'description' => __( 'Add HTML to display aside the map.', 'conversions' ),
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_html',
+		'priority'    => 90,
+		'type'        => 'textarea',
 	]
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_shortcode',
+	'conversions_map_shortcode',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
@@ -219,13 +219,13 @@ $wp_customize->add_setting(
 	]
 );
 $wp_customize->add_control(
-	'conversions_single_feature_shortcode_control',
+	'conversions_map_shortcode_control',
 	[
 		'label'       => __( 'Shortcode', 'conversions' ),
-		'description' => __( 'Add your shortcode.', 'conversions' ),
-		'section'     => 'conversions_homepage_single_feature',
-		'settings'    => 'conversions_single_feature_shortcode',
-		'priority'    => 80,
+		'description' => __( 'Add a shortcode to display aside the map (ex. contact form).', 'conversions' ),
+		'section'     => 'conversions_homepage_map',
+		'settings'    => 'conversions_map_shortcode',
+		'priority'    => 100,
 		'type'        => 'text',
 	]
 );

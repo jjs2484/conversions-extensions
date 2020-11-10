@@ -34,6 +34,7 @@ namespace conversions\extensions {
 			add_action( 'init', [ $this, 'setup' ] );
 			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
+			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ] );
 		}
 
 		/**
@@ -102,6 +103,7 @@ namespace conversions\extensions {
 				'conversions_counter_md'           => '2',
 				'conversions_counter_lg'           => '4',
 				'conversions_counter_animation'    => true,
+				'conversions_map_content_type'     => 'map',
 			];
 
 			foreach ( $defaults as $c => $v ) {
@@ -138,6 +140,7 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.icon-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.single-feature.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.map.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.team.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.testimonials.php';
@@ -248,6 +251,9 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-single-feature', 'background-color', get_theme_mod( 'conversions_single_feature_bg' ) ],
 				[ '.page-template-homepage section.c-single-feature h2', 'color', get_theme_mod( 'conversions_single_feature_title_color' ) ],
 				[ '.page-template-homepage section.c-single-feature p', 'color', get_theme_mod( 'conversions_single_feature_desc_color' ) ],
+				[ '.page-template-homepage section.c-map', 'background-color', get_theme_mod( 'conversions_map_bg' ) ],
+				[ '.page-template-homepage section.c-map h2', 'color', get_theme_mod( 'conversions_map_title_color' ) ],
+				[ '.page-template-homepage section.c-map p', 'color', get_theme_mod( 'conversions_map_desc_color' ) ],
 			];
 			?>
 
@@ -373,6 +379,39 @@ namespace conversions\extensions {
 			);
 		}
 
+		/**
+		 * Allow iframes: prevent wp_kses from removing iframe embeds.
+		 *
+		 * @since 2020-11-07
+		 *
+		 * @param array $tags Allowed tags, attributes, and/or entities.
+		 */
+		public function allow_iframes_filter( $tags ) {
+
+			// Only change for users who can publish posts.
+			if ( ! current_user_can( 'publish_posts' ) ) return $tags;
+
+			// Allow iframes and the following attributes.
+			$tags['iframe'] = array(
+				'align'           => true,
+				'width'           => true,
+				'height'          => true,
+				'frameborder'     => true,
+				'name'            => true,
+				'src'             => true,
+				'id'              => true,
+				'class'           => true,
+				'style'           => true,
+				'scrolling'       => true,
+				'marginwidth'     => true,
+				'marginheight'    => true,
+				'allowfullscreen' => true,
+				'aria-hidden'     => true,
+				'tabindex'        => true,
+			);
+
+			return $tags;
+		}
 	}
 }
 
