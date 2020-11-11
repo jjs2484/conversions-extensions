@@ -78,7 +78,7 @@ class Shortcodes {
 	 */
 	public function conversions_google_map_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-map c-shortcode mt-4 mb-2"><div class="row">' . $homepage->map_content() . '</div></section>';
+		return '<section class="c-map c-shortcode mt-4 mb-4">' . $homepage->map_content() . '</section>';
 	}
 
 	/**
