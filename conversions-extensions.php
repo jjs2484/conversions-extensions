@@ -34,7 +34,7 @@ namespace conversions\extensions {
 			add_action( 'init', [ $this, 'setup' ] );
 			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
-			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ] );
+			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
 		}
 
 		/**
@@ -385,30 +385,31 @@ namespace conversions\extensions {
 		 * @since 2020-11-07
 		 *
 		 * @param array $tags Allowed tags, attributes, and/or entities.
+		 * @param string $context Context to judge allowed tags by. Allowed values are 'post'.
 		 */
-		public function allow_iframes_filter( $tags ) {
+		public function allow_iframes_filter( $tags, $context ) {
 
-			// Only change for users who can publish posts.
-			if ( ! current_user_can( 'publish_posts' ) ) return $tags;
+			if ( 'post' === $context ) {
 
-			// Allow iframes and the following attributes.
-			$tags['iframe'] = array(
-				'align'           => true,
-				'width'           => true,
-				'height'          => true,
-				'frameborder'     => true,
-				'name'            => true,
-				'src'             => true,
-				'id'              => true,
-				'class'           => true,
-				'style'           => true,
-				'scrolling'       => true,
-				'marginwidth'     => true,
-				'marginheight'    => true,
-				'allowfullscreen' => true,
-				'aria-hidden'     => true,
-				'tabindex'        => true,
-			);
+				// Allow iframes and the following attributes.
+				$tags['iframe'] = array(
+					'align'           => true,
+					'width'           => true,
+					'height'          => true,
+					'frameborder'     => true,
+					'name'            => true,
+					'src'             => true,
+					'id'              => true,
+					'class'           => true,
+					'style'           => true,
+					'scrolling'       => true,
+					'marginwidth'     => true,
+					'marginheight'    => true,
+					'allowfullscreen' => true,
+					'aria-hidden'     => true,
+					'tabindex'        => true,
+				);
+			}
 
 			return $tags;
 		}
