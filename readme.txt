@@ -151,7 +151,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.1.2 =
 * New: Add Google map homepage section.
+* Update: Font Awesome JSON file to v5.15.1 for customizer icon picker.
+* Update: Add Vimeo to single feature customizer media type description.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
-* Update: Add Vimeo to single feature customizer media type description.
 * Fix: Homepage sorting check on and off sections.
