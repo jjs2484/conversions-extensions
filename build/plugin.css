@@ -253,8 +253,9 @@
     .page-template-homepage section.c-map .c-map__map .container-fluid {
       padding-top: 0;
       padding-bottom: 4rem; } }
-  .page-template-homepage section.c-map .c-map__map .container-fluid .c-map__map-content {
-    margin-top: 2rem; }
+  @media (max-width: 991.98px) {
+    .page-template-homepage section.c-map .c-map__map .container-fluid .c-map__map-content {
+      margin-top: 2rem; } }
 
 section.c-hero {
   background-position: center;
@@ -519,7 +520,8 @@ section.c-map .c-map__map-responsive {
   section.c-map .c-map__map-responsive iframe {
     height: 100%;
     width: 100%;
-    min-height: 375px; }
+    min-height: 375px;
+    max-height: 450px; }
 section.c-map .c-map__map-responsive.c-map__map-with-content iframe {
   box-shadow: 0 0.25rem 0.3rem rgba(0, 0, 0, 0.2); }
 

@@ -50,7 +50,9 @@
 			padding-bottom: 4rem;
 		}
 		.c-map__map-content {
-			margin-top: 2rem;
+			@media (max-width: 991.98px) {
+				margin-top: 2rem;
+			}
 		}
 	}
 }
@@ -438,6 +440,7 @@ section.c-map {
 			height: 100%;
 			width: 100%;
 			min-height: 375px;
+			max-height: 450px;
 		}
 	}
 
