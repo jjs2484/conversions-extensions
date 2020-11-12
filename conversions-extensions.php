@@ -408,6 +408,7 @@ namespace conversions\extensions {
 					'allowfullscreen' => true,
 					'aria-hidden'     => true,
 					'tabindex'        => true,
+					'loading'         => true,
 				);
 			}
 
