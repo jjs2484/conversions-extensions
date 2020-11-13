@@ -384,7 +384,7 @@ namespace conversions\extensions {
 		 *
 		 * @since 2020-11-07
 		 *
-		 * @param array $tags Allowed tags, attributes, and/or entities.
+		 * @param array  $tags Allowed tags, attributes, and/or entities.
 		 * @param string $context Context to judge allowed tags by. Allowed values are 'post'.
 		 */
 		public function allow_iframes_filter( $tags, $context ) {
