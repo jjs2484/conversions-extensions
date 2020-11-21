@@ -35,6 +35,18 @@ namespace conversions\extensions {
 			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
 			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
+			add_action( 'after_setup_theme', [ $this, 'load_merlin' ] );
+		}
+
+				/**
+			@brief		Load merlin!
+			@since		2020-11-20 20:04:48
+		**/
+		public function load_merlin()
+		{
+			require_once( __DIR__ . '/merlin/vendor/autoload.php' );
+			require_once( __DIR__ . '/merlin/class-merlin.php' );
+			require_once( __DIR__ . '/merlin/merlin-config.php' );
 		}
 
 		/**
