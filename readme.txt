@@ -161,3 +161,4 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.2.0 =
 * New: Add merlin onboarding wizard.
+* Update: NPM Dependencies.
