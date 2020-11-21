@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.1.2
+Stable tag: 1.2.0
 Tags: theme, extensions, homepage, social, nav
 Tested up to: 5.5.3
 Requires at least: 4.7
@@ -158,3 +158,6 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: Homepage sorting check on and off sections.
+
+= 1.2.0 =
+* New: Add merlin onboarding wizard.

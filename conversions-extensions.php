@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Conversions Extensions
  * Description: Adds homepage sections and other extensions to Conversions WordPress theme.
- * Version: 1.1.2
+ * Version: 1.2.0
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
  * Text Domain: conversions
@@ -38,12 +38,12 @@ namespace conversions\extensions {
 			add_action( 'after_setup_theme', [ $this, 'load_merlin' ] );
 		}
 
-				/**
-			@brief		Load merlin!
-			@since		2020-11-20 20:04:48
-		**/
-		public function load_merlin()
-		{
+		/**
+		 * Load merlin!
+		 *
+		 * @since 2020-11-20 20:04:48
+		 */
+		public function load_merlin() {
 			require_once( __DIR__ . '/merlin/vendor/autoload.php' );
 			require_once( __DIR__ . '/merlin/class-merlin.php' );
 			require_once( __DIR__ . '/merlin/merlin-config.php' );
