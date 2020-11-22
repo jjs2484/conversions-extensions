@@ -163,3 +163,4 @@ Many of the homepage sections can also be output outside the homepage using shor
 * New: Add merlin onboarding wizard.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
+* Fix: customizer-icons.php - reorder search term parameters for PHP 7.4
