@@ -25,7 +25,7 @@ $json = json_decode( $json );
 					// Assume empty search terms.
 					$search_terms = '';
 					if ( isset( $data->search->terms ) )
-						$search_terms = implode( $data->search->terms, " " );
+						$search_terms = implode( " ", $data->search->terms );
 
 					foreach ( $data->styles as $style ) {
 						$style = $style[ 0 ];
