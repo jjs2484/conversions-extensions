@@ -528,7 +528,7 @@ section.c-map .c-map__map-responsive.c-map__map-with-content iframe {
 .c-social-icons ul.list-inline {
   margin-bottom: 0; }
   .c-social-icons ul.list-inline li.list-inline-item:not(:last-child) {
-    margin-left: 0.65rem; }
+    margin-left: 0.55rem; }
   .c-social-icons ul.list-inline li.list-inline-item a {
     display: inline-block; }
   .c-social-icons ul.list-inline li.list-inline-item i {
@@ -546,6 +546,13 @@ section.c-map .c-map__map-responsive.c-map__map-with-content iframe {
     #wrapper-footer .c-social-icons {
       justify-content: flex-end;
       margin: 0; } }
+
+.c-social.c-shortcode {
+  margin: 1.5rem 0; }
+
+.widget-area .c-social.c-shortcode,
+.footer-widget-area .c-social.c-shortcode {
+  margin: 0 0 1.5rem 0; }
 
 @media (max-width: 991.98px) {
   #wrapper-navbar .navbar.navbar-below {
