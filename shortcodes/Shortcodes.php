@@ -29,6 +29,7 @@ class Shortcodes {
 		add_shortcode( 'conversions_img_features', [ $this, 'conversions_img_features_shortcode' ] );
 		add_shortcode( 'conversions_single_feature', [ $this, 'conversions_single_feature_shortcode' ] );
 		add_shortcode( 'conversions_pricing', [ $this, 'conversions_pricing_shortcode' ] );
+		add_shortcode( 'conversions_social', [ $this, 'conversions_social_shortcode' ] );
 		add_shortcode( 'conversions_team', [ $this, 'conversions_team_shortcode' ] );
 		add_shortcode( 'conversions_testimonials', [ $this, 'conversions_testimonials_shortcode' ] );
 	}
@@ -127,6 +128,18 @@ class Shortcodes {
 	public function conversions_pricing_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
 		return '<section class="c-pricing c-shortcode mt-4 mb-2"><div class="row">' . $homepage->pricing_content() . '</div></section>';
+	}
+
+	/**
+	 * Create social icon shortcode.
+	 *
+	 * Shortcode: [conversions_social]
+	 *
+	 * @since 2020-11-23
+	 */
+	public function conversions_social_shortcode() {
+		$social = new \conversions\extensions\social\Social();
+		return '<div class="row c-social c-shortcode mt-4 mb-4"><div class="col-12 c-social-icons">' . $social->social_icons_content() . '</div></div>';
 	}
 
 	/**

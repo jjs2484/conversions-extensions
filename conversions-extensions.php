@@ -28,7 +28,6 @@ namespace conversions\extensions {
 			if ( ! static::theme_check() )
 				return;
 
-			add_action( 'conversions_footer_info', [ $this, 'conversions_footer_social' ], 20 );
 			add_action( 'conversions_customize_register', [ $this, 'conversions_customize_register' ] );
 			add_action( 'wp_head', [ $this, 'wp_head' ], 99 );
 			add_action( 'init', [ $this, 'setup' ] );
@@ -36,17 +35,47 @@ namespace conversions\extensions {
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
 			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
 			add_action( 'after_setup_theme', [ $this, 'load_merlin' ] );
+			// add_filter( 'merlin_import_files', [ $this, 'merlin_local_import_files' ] );
+
 		}
 
 		/**
 		 * Load merlin!
 		 *
-		 * @since 2020-11-20 20:04:48
+		 * @since 2020-11-20
 		 */
 		public function load_merlin() {
 			require_once( __DIR__ . '/merlin/vendor/autoload.php' );
 			require_once( __DIR__ . '/merlin/class-merlin.php' );
 			require_once( __DIR__ . '/merlin/merlin-config.php' );
+		}
+
+		/**
+		 * Merlin import local files.
+		 *
+		 * @since 2020-11-21
+		 */
+		public function merlin_local_import_files() {
+			return [
+				[
+					'import_file_name'             => 'Blog Demo Import',
+					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/demo-content.xml',
+					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/widgets.json',
+					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/customizer.dat',
+					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/preview_import_image1.jpg',
+					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
+					'preview_url'                  => 'https://www.example.com/my-demo-1',
+				],
+				[
+					'import_file_name'             => 'Business Demo Import',
+					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/demo-content.xml',
+					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/widgets.json',
+					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/customizer.dat',
+					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/preview_import_image1.jpg',
+					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
+					'preview_url'                  => 'https://www.example.com/my-demo-2',
+				],
+			];
 		}
 
 		/**
@@ -74,6 +103,7 @@ namespace conversions\extensions {
 
 			// Check if settings are set, if not set defaults.
 			$defaults = [
+				'conversions_social_footer'        => true,
 				'conversions_social_size'          => '1.5',
 				'conversions_hh_content_position'  => 'col-lg-6',
 				'conversions_hh_img_height'        => '72',
@@ -127,6 +157,7 @@ namespace conversions\extensions {
 			new homepage\Homepage();
 			new navbar\Navbar_Variants();
 			new shortcodes\Shortcodes();
+			new social\Social();
 		}
 
 		/**
@@ -161,45 +192,9 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.woocommerce.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.edd.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.blank.php';
-			require_once __DIR__ . '/footer/social-icons-customizer.php';
+			require_once __DIR__ . '/social/social-customizer.php';
 			require_once __DIR__ . '/navbar/navbar-variants-customizer.php';
 			// phpcs:enable
-		}
-
-		/**
-		 * Footer social icons output.
-		 *
-		 * @since 2019-08-15
-		 */
-		public function conversions_footer_social() {
-
-			// get option values and decode.
-			$conversions_si         = get_theme_mod( 'conversions_social_icons' );
-			$conversions_si_decoded = json_decode( $conversions_si );
-
-			if ( ! empty( $conversions_si_decoded ) ) {
-
-				echo '<div class="social-media-icons col-md"><ul class="list-inline">';
-
-				foreach ( $conversions_si_decoded as $repeater_item ) {
-
-					// remove prefixes for titles and screen reader text.
-					$find  = [ '/\bfas \b/', '/\bfab \b/', '/\bfar \b/', '/\bfa-\b/' ];
-					$title = preg_replace( $find, '', $repeater_item->icon_value );
-
-					// output the icon and link.
-					echo sprintf(
-						'<li class="list-inline-item"><a title="%1$s" href="%2$s" target="_blank"><i aria-hidden="true" class="%3$s"></i><span class="sr-only">%1$s</span></a></li>',
-						esc_attr( $title ),
-						esc_url( $repeater_item->link ),
-						esc_attr( $repeater_item->icon_value )
-					);
-				}
-
-				echo '</ul></div>';
-
-			}
-
 		}
 
 		/**
@@ -229,7 +224,7 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-features', 'background-color', get_theme_mod( 'conversions_features_bg_color' ) ],
 				[ '.page-template-homepage section.c-features h2, section.c-features .card h3', 'color', get_theme_mod( 'conversions_features_title_color' ) ],
 				[ '.page-template-homepage section.c-features p.subtitle, section.c-features .card .c-features__block-desc', 'color', get_theme_mod( 'conversions_features_desc_color' ) ],
-				[ '#wrapper-footer .social-media-icons ul li.list-inline-item i', 'font-size', get_theme_mod( 'conversions_social_size' ), 'rem' ],
+				[ '.c-social-icons ul li.list-inline-item i', 'font-size', get_theme_mod( 'conversions_social_size' ), 'rem' ],
 				[ '.page-template-homepage section.c-hero', 'min-height', get_theme_mod( 'conversions_hh_img_height' ), 'vh' ],
 				[ '.page-template-homepage section.c-woo', 'background-color', get_theme_mod( 'conversions_woo_bg_color' ) ],
 				[ '.page-template-homepage section.c-woo h2', 'color', get_theme_mod( 'conversions_woo_title_color' ) ],

@@ -1,0 +1,34 @@
+// Social icons
+.c-social-icons {
+	ul.list-inline {
+		margin-bottom: 0;
+		li.list-inline-item:not(:last-child) {
+			margin-right: 0.65rem;
+		}
+		li.list-inline-item {
+			a {
+				display: inline-block;
+			}
+			i {
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+// Social icons footer
+#wrapper-footer {
+	.c-social-icons {
+		display: flex;
+		justify-content: center;
+		margin: 0.75rem 0 0 0;
+		flex-wrap: wrap;
+		@media (max-width: 767.98px) {
+			text-align: center;
+		}
+		@media (min-width: 768px) {
+			justify-content: flex-end;
+			margin: 0;
+		}
+	}
+}
