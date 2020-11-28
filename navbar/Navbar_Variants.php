@@ -24,6 +24,7 @@ class Navbar_Variants {
 		add_filter( 'conversions_nav_open_wrapper', [ $this, 'navbar_open_filter' ] );
 		add_filter( 'conversions_nav_close_wrapper', [ $this, 'navbar_close_filter' ] );
 		add_filter( 'conversions_nav_branding_output', [ $this, 'navbar_branding_filter' ] );
+		add_filter( 'conversions_navbar_menu', [ $this, 'navbar_menu_filter' ] );
 	}
 
 	/**
@@ -33,7 +34,7 @@ class Navbar_Variants {
 	 * @param string $navbar_open navbar opening divs.
 	 */
 	public function navbar_open_filter( $navbar_open ) {
-		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) !== 'right' ) {
 			$navbar_open = '<nav class="navbar navbar-expand-lg navbar-below navbar-light bg-white">';
 		}
 
@@ -47,7 +48,7 @@ class Navbar_Variants {
 	 * @param string $navbar_close navbar closing divs.
 	 */
 	public function navbar_close_filter( $navbar_close ) {
-		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) !== 'right' ) {
 			$navbar_close = '</nav>';
 		}
 
@@ -62,7 +63,7 @@ class Navbar_Variants {
 	 */
 	public function navbar_branding_filter( $navbar_branding ) {
 
-		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) != 'right' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) !== 'right' ) {
 
 			// Navbar brand text if blog is homepage.
 			$brand_blog_home = sprintf(
@@ -111,6 +112,28 @@ class Navbar_Variants {
 		}
 
 		return $navbar_branding;
+	}
+
+	/**
+	 * Navbar menu filter.
+	 *
+	 * @since 2020-11-28
+	 * @param string $menu navbar menu.
+	 */
+	public function navbar_menu_filter( $menu ) {
+
+		if ( get_theme_mod( 'conversions_nav_layout', 'right' ) !== 'right' ) {
+
+			$navbar_color_scheme = implode( ' ', \conversions\Navbar::conversions_navbar_color() );
+			$open                = '<div class="' . esc_attr( $navbar_color_scheme ) . ' navbar-below-menu">';
+			$open               .= '<div class="container-fluid">';
+			$close               = '</div>';
+			$close              .= '</div>';
+
+			$menu = $open . $menu . $close;
+		}
+
+		return $menu;
 	}
 
 	/**
