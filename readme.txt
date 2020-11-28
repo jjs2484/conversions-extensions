@@ -78,15 +78,69 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial release
-
-= 1.0.1 =
-* New: Add navbar variants.
-* New: Add conversions_navbar_below_extras filter.
+= 1.2.0 =
+* New: Add merlin onboarding wizard.
+* New: Filter conversions_footer_social_icons.
+* New: Social Icons top level customizer menu.
+* New: Add navbar_menu_filter function.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
-* Update: Minor code refactoring.
+* Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
+
+= 1.1.2 =
+* New: Add Google map homepage section.
+* Update: Font Awesome JSON file to v5.15.1 for customizer icon picker.
+* Update: Add Vimeo to single feature customizer media type description.
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.
+* Fix: Homepage sorting check on and off sections.
+
+= 1.1.1 =
+* Fix: Change homepage sorting drag and drop HTML structure.
+
+= 1.1.0 =
+* New: Add Single Feature homepage section.
+* Update: Customizer Font Awesome icon picker now includes all icons in popover with search filter.
+* Update: Customizer Font Awesome icon picker styles.
+* Update: Reorder homepage customizer sections alphabetically.
+* Update: Rename "Blank" homepage customizer section to "HTML or Shortcode".
+* Update: Rename some homepage icon features files, functions, and variables.
+* Update: NPM Dependencies.
+* Update: Add Homepage Hero YouTube video modal script from Conversions theme.
+* Fix: Correct some customizer controls capabilities.
+* Fix: Prevent FAQ styles from leaking to other Bootstrap collapse elements.
+
+= 1.0.9 =
+* Fix: Navbar Variants namespace paths.
+
+= 1.0.8 =
+* Update: Style refinements for FAQ section
+* Update: NPM Dependencies.
+
+= 1.0.7 =
+* New: Add FAQ homepage section.
+* Update: Reorg scripts and styles to sections folders.
+* Update: NPM Dependencies.
+
+= 1.0.6 =
+* New: Add Counter homepage section.
+* New: Add Shortcodes.
+* Update: NPM Dependencies.
+* Fix: Refresh repeater color control on more input actions: change, paste.
+
+= 1.0.5 =
+* New: Add Text homepage section.
+* Update: NPM Dependencies.
+
+= 1.0.4 =
+* Fix: Check pricing table button text or link exist before displaying.
+* Update: NPM Dependencies.
+
+= 1.0.3 =
+* New: Add Team homepage section.
+* New: Add PHP class autoloader.
+* Update: Rename namespaces.
+* Update: Separate homepage sections into PHP traits.
 
 = 1.0.2 =
 * New: Add image features homepage section.
@@ -104,66 +158,12 @@ Many of the homepage sections can also be output outside the homepage using shor
     * conversions_homepage_after_features -> conversions_after_icon_features
 * Update: Change Homepage Sorting section display order in the customizer.
 
-= 1.0.3 =
-* New: Add Team homepage section.
-* New: Add PHP class autoloader.
-* Update: Rename namespaces.
-* Update: Separate homepage sections into PHP traits.
-
-= 1.0.4 =
-* Fix: Check pricing table button text or link exist before displaying.
-* Update: NPM Dependencies.
-
-= 1.0.5 =
-* New: Add Text homepage section.
-* Update: NPM Dependencies.
-
-= 1.0.6 =
-* New: Add Counter homepage section.
-* New: Add Shortcodes.
-* Update: NPM Dependencies.
-* Fix: Refresh repeater color control on more input actions: change, paste.
-
-= 1.0.7 =
-* New: Add FAQ homepage section.
-* Update: Reorg scripts and styles to sections folders.
-* Update: NPM Dependencies.
-
-= 1.0.8 =
-* Update: Style refinements for FAQ section
-* Update: NPM Dependencies.
-
-= 1.0.9 =
-* Fix: Navbar Variants namespace paths.
-
-= 1.1.0 =
-* New: Add Single Feature homepage section.
-* Update: Customizer Font Awesome icon picker now includes all icons in popover with search filter.
-* Update: Customizer Font Awesome icon picker styles.
-* Update: Reorder homepage customizer sections alphabetically.
-* Update: Rename "Blank" homepage customizer section to "HTML or Shortcode".
-* Update: Rename some homepage icon features files, functions, and variables.
-* Update: NPM Dependencies.
-* Update: Add Homepage Hero YouTube video modal script from Conversions theme.
-* Fix: Correct some customizer controls capabilities.
-* Fix: Prevent FAQ styles from leaking to other Bootstrap collapse elements.
-
-= 1.1.1 =
-* Fix: Change homepage sorting drag and drop HTML structure.
-
-= 1.1.2 =
-* New: Add Google map homepage section.
-* Update: Font Awesome JSON file to v5.15.1 for customizer icon picker.
-* Update: Add Vimeo to single feature customizer media type description.
+= 1.0.1 =
+* New: Add navbar variants.
+* New: Add conversions_navbar_below_extras filter.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
-* Fix: Homepage sorting check on and off sections.
+* Update: Minor code refactoring.
 
-= 1.2.0 =
-* New: Add merlin onboarding wizard.
-* New: Filter conversions_footer_social_icons.
-* New: Social Icons top level customizer menu.
-* New: Add navbar_menu_filter function.
-* Update: NPM Dependencies.
-* Update: Composer Dependencies.
-* Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
+= 1.0.0 =
+* Initial release
