@@ -163,6 +163,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * New: Add merlin onboarding wizard.
 * New: Filter conversions_footer_social_icons.
 * New: Social Icons top level customizer menu.
+* New: Add navbar_menu_filter function.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
-* Fix: customizer-icons.php - reorder search term parameters for PHP 7.4
+* Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
