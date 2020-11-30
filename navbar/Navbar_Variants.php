@@ -15,6 +15,10 @@ namespace conversions\extensions\navbar;
  * @since 2020-04-26
  */
 class Navbar_Variants {
+
+	// Use the social icons trait.
+	use \conversions\extensions\social\social_icons;
+
 	/**
 	 * Class constructor.
 	 *
@@ -166,6 +170,16 @@ class Navbar_Variants {
 
 		if ( ! empty( $search ) ) {
 			$items .= $search;
+		}
+
+		if ( get_theme_mod( 'conversions_social_navbar', false ) === true ) {
+			$navbar_social_icons = $this->social_icons_content();
+			$navbar_social_icons = str_replace( 'list-inline-item', 'c-social-icons--navbar list-inline-item', $navbar_social_icons );
+			$navbar_social_icons = str_replace( '<a title=', '<a class="nav-link" title=', $navbar_social_icons );
+
+			if ( ! empty( $navbar_social_icons ) ) {
+				$items .= $navbar_social_icons;
+			}
 		}
 
 		if ( ! empty( $button ) ) {

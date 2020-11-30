@@ -15,6 +15,10 @@ namespace conversions\extensions\shortcodes;
  * @since 2020-08-22
  */
 class Shortcodes {
+
+	// Use the social icons trait.
+	use \conversions\extensions\social\social_icons;
+
 	/**
 	 * Class constructor.
 	 *
@@ -138,8 +142,7 @@ class Shortcodes {
 	 * @since 2020-11-23
 	 */
 	public function conversions_social_shortcode() {
-		$social = new \conversions\extensions\social\Social();
-		return '<div class="row c-social c-shortcode mt-4 mb-4"><div class="col-12 c-social-icons">' . $social->social_icons_content() . '</div></div>';
+		return '<div class="row c-social c-shortcode mt-4 mb-4"><div class="col-12 c-social-icons"><ul class="list-inline">' . $this->social_icons_content() . '</ul></div></div>';
 	}
 
 	/**
