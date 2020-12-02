@@ -83,14 +83,9 @@
 					color: rgba(0,0,0,.8);
 				}
 			}
-			.search-icon,
-			.cart,
-			.account-icon,
-			.nav-callout-button {
-				@media (min-width: 992px) {
-					display: none;
-				}
-			}
 		}
+	}
+	.c-social-icons--navbar i {
+		font-size: 1.05rem;
 	}
 }

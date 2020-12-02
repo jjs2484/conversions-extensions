@@ -142,7 +142,8 @@ class Shortcodes {
 	 * @since 2020-11-23
 	 */
 	public function conversions_social_shortcode() {
-		return '<div class="row c-social c-shortcode mt-4 mb-4"><div class="col-12 c-social-icons"><ul class="list-inline">' . $this->social_icons_content() . '</ul></div></div>';
+		$social_icons = static::social_icons_content();
+		return '<div class="row c-social c-shortcode mt-4 mb-4"><div class="col-12 c-social-icons"><ul class="list-inline">' . $social_icons . '</ul></div></div>';
 	}
 
 	/**

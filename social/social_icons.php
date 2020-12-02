@@ -14,7 +14,7 @@ trait social_icons {
 	 *
 	 * @since 2020-11-23
 	 */
-	public function get_social_icons() {
+	public static function get_social_icons() {
 		$social_icons = get_theme_mod( 'conversions_social_icons' );
 		$social_icons = json_decode( $social_icons );
 
@@ -34,9 +34,9 @@ trait social_icons {
 	 *
 	 * @since 2020-11-23
 	 */
-	public function social_icons_content() {
+	public static function social_icons_content() {
 
-		$social_icons = $this->get_social_icons();
+		$social_icons = static::get_social_icons();
 		if ( ! $social_icons )
 			return;
 
