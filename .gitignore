@@ -15,7 +15,4 @@ composer.phar
 # macOS
 .DS_Store
 
-# VSCode
-.vscode
-
 conversions-extensions.zip
