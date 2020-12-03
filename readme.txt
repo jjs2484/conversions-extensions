@@ -84,8 +84,10 @@ Many of the homepage sections can also be output outside the homepage using shor
 * New: Social Icons top level customizer menu.
 * New: Option to add social icons to navbar.
 * New: Social icon short code [conversions_social].
+* New: Refactor and move social icon functions and styles from /footer/... to /social/...
 * New: Filter conversions_footer_social_icons.
 * New: Add navbar_menu_filter function.
+* Update: Refactor functions in /navbar/Navbar_Variants.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
