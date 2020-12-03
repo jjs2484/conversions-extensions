@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Conversions Extensions
- * Description: Adds homepage sections and other extensions to Conversions WordPress theme.
+ * Description: Adds homepage sections, setup wizard, and other extensions to Conversions WordPress theme.
  * Version: 1.2.0
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
@@ -34,17 +34,22 @@ namespace conversions\extensions {
 			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
 			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
-			add_action( 'after_setup_theme', [ $this, 'load_merlin' ] );
+			add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
 			// add_filter( 'merlin_import_files', [ $this, 'merlin_local_import_files' ] );
 
 		}
 
 		/**
-		 * Load merlin!
+		 * After theme setup function, filter, hooks, etc.
 		 *
 		 * @since 2020-11-20
 		 */
-		public function load_merlin() {
+		public function after_setup_theme() {
+			// Prevent WooCommerce automatic wizard redirection after plugin activation.
+			// WC v3.6+ wizard interferes Merlin.
+			add_filter( 'woocommerce_prevent_automatic_wizard_redirect', '__return_true' );
+
+			// Require Merlin files.
 			require_once( __DIR__ . '/merlin/vendor/autoload.php' );
 			require_once( __DIR__ . '/merlin/class-merlin.php' );
 			require_once( __DIR__ . '/merlin/merlin-config.php' );
