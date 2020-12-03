@@ -54,6 +54,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 [conversions_icon_features]
 [conversions_img_features]
 [conversions_single_feature]
+[conversions_social]
 [conversions_pricing]
 [conversions_team]
 [conversions_testimonials]
@@ -80,8 +81,10 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.2.0 =
 * New: Add merlin onboarding wizard.
-* New: Filter conversions_footer_social_icons.
 * New: Social Icons top level customizer menu.
+* New: Option to add social icons to navbar.
+* New: Social icon short code [conversions_social].
+* New: Filter conversions_footer_social_icons.
 * New: Add navbar_menu_filter function.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
