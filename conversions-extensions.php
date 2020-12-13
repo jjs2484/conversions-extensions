@@ -35,7 +35,8 @@ namespace conversions\extensions {
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
 			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
 			add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
-			// add_filter( 'merlin_import_files', [ $this, 'merlin_local_import_files' ] );
+			add_filter( 'merlin_import_files', [ $this, 'merlin_local_import_files' ] );
+			add_action( 'merlin_after_all_import', [ $this, 'merlin_after_import_setup' ] );
 
 		}
 
@@ -50,9 +51,9 @@ namespace conversions\extensions {
 			add_filter( 'woocommerce_prevent_automatic_wizard_redirect', '__return_true' );
 
 			// Require Merlin files.
-			require_once( __DIR__ . '/merlin/vendor/autoload.php' );
-			require_once( __DIR__ . '/merlin/class-merlin.php' );
-			require_once( __DIR__ . '/merlin/merlin-config.php' );
+			require_once __DIR__ . '/merlin/vendor/autoload.php';
+			require_once __DIR__ . '/merlin/class-merlin.php';
+			require_once __DIR__ . '/merlin/merlin-config.php';
 		}
 
 		/**
@@ -64,23 +65,51 @@ namespace conversions\extensions {
 			return [
 				[
 					'import_file_name'             => 'Blog Demo Import',
-					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/demo-content.xml',
-					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/widgets.json',
-					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/customizer.dat',
-					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/preview_import_image1.jpg',
+					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/blog.xml',
+					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-widgets.wie',
+					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/blog-customizer.dat',
+					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-preview.png',
 					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
-					'preview_url'                  => 'https://www.example.com/my-demo-1',
+					'preview_url'                  => 'https://blog.conversionswp.com/',
 				],
 				[
 					'import_file_name'             => 'Business Demo Import',
-					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/demo-content.xml',
-					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/widgets.json',
-					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/customizer.dat',
-					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/preview_import_image1.jpg',
+					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/blog.xml',
+					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-widgets.wie',
+					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/blog-customizer.dat',
+					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-preview.png',
 					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
-					'preview_url'                  => 'https://www.example.com/my-demo-2',
+					'preview_url'                  => 'https://blog.conversionswp.com/',
 				],
 			];
+		}
+
+		/**
+		 * Execute custom code after the whole import has finished.
+		 */
+		public function merlin_after_import_setup() {
+			// Assign menus to their locations.
+			$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+
+			set_theme_mod(
+				'nav_menu_locations',
+				[
+					'main-menu' => $main_menu->term_id,
+				]
+			);
+
+			// Assign posts page (blog page).
+			if ( get_page_by_title( 'Blog' ) != null ) {
+				$blog_page_id = get_page_by_title( 'Blog' );
+				update_option( 'page_for_posts', $blog_page_id->ID );
+			}
+
+			// Assign front page business demo.
+			if ( get_page_by_title( 'NextGen Business Solutions' ) != null ) {
+				$front_page_id = get_page_by_title( 'NextGen Business Solutions' );
+				update_option( 'show_on_front', 'page' );
+				update_option( 'page_on_front', $front_page_id->ID );
+			}
 		}
 
 		/**
@@ -432,7 +461,7 @@ namespace conversions\extensions {
 namespace
 {
 
-	require_once( __DIR__ . '/vendor/autoload.php' );
+	require_once __DIR__ . '/vendor/autoload.php';
 
 	/**
 	 * Sanitize select option input.
