@@ -42,7 +42,7 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 			'default'           => '',
 			'type'              => 'theme_mod',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 	$wp_customize->add_control(
@@ -153,7 +153,7 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 			'default'           => '',
 			'type'              => 'theme_mod',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 	$wp_customize->add_control(

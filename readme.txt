@@ -91,6 +91,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
+* Fix: Switch some customizer sanitization from wp_filter_nohtml_kses to sanitize_text_field.
 
 = 1.1.2 =
 * New: Add Google map homepage section.
