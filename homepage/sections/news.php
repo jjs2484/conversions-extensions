@@ -71,8 +71,13 @@ trait news {
 						</h3>
 						<p class="text-muted">
 							<?php
-							$related_content = strip_shortcodes( get_the_content() );
-							echo wp_kses_post( wp_trim_words( $related_content, 15, '...' ) );
+							// Get the post exerpt and limit output to 15 words.
+							$post_content = strip_shortcodes( get_the_excerpt() );
+							$post_content = wp_trim_words( $post_content, 15, '...' );
+							$post_content = str_replace( '[...]Read More', '', $post_content );
+
+							// Output post content.
+							echo esc_html( $post_content );
 							?>
 						</p>
 					</div>
