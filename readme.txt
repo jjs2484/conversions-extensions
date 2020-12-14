@@ -93,6 +93,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
 * Fix: Switch some customizer sanitization callbacks from wp_filter_nohtml_kses to sanitize_text_field.
 * Fix: Get homepage news post content from get_the_excerpt.
+* Fix: Check homepage client logo URL exists before outputting any HTML.
 
 = 1.1.2 =
 * New: Add Google map homepage section.
