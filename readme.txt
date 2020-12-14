@@ -83,7 +83,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * New: Add merlin onboarding wizard.
 * New: Social Icons top level customizer menu.
 * New: Option to add social icons to navbar.
-* New: Social icon short code [conversions_social].
+* New: Social icon shortcode [conversions_social].
 * New: Refactor and move social icon functions and styles from /footer/... to /social/...
 * New: Filter conversions_footer_social_icons.
 * New: Add navbar_menu_filter function.
@@ -91,7 +91,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
-* Fix: Switch some customizer sanitization from wp_filter_nohtml_kses to sanitize_text_field.
+* Fix: Switch some customizer sanitization callbacks from wp_filter_nohtml_kses to sanitize_text_field.
 * Fix: Get homepage news post content from get_the_excerpt.
 
 = 1.1.2 =
