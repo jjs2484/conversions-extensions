@@ -80,10 +80,11 @@ trait clients {
 							// Retrieve the alt text.
 							$chc_logo_alt = get_post_meta( $chc_logo_id, '_wp_attachment_image_alt', true );
 
-							echo '<div class="c-clients__item px-3" id="c-clients__' . esc_attr( $cclient_logo_count ) . '">
-								<img class="client" src="' . esc_url( $chc_logo_med[0] ) . '" alt="' . esc_html( $chc_logo_alt ) . '">
-							</div>';
-
+							if ( ! empty( $chc_logo_med[0] ) ) {
+								echo '<div class="c-clients__item px-3" id="c-clients__' . esc_attr( $cclient_logo_count ) . '">
+									<img class="client" src="' . esc_url( $chc_logo_med[0] ) . '" alt="' . esc_html( $chc_logo_alt ) . '">
+								</div>';
+							}
 							++$cclient_logo_count;
 						}
 						?>
