@@ -2,7 +2,7 @@
 Contributors: uniquelylost
 Stable tag: 1.2.0
 Tags: theme, extensions, homepage, social, nav
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
