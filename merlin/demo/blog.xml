@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.5.3" created="2020-12-06 18:56" -->
+	<!-- generator="WordPress/5.6" created="2020-12-17 21:51" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>My Blog</title>
 	<link>https://blog.conversionswp.com</link>
 	<description>Just Another WordPress Site</description>
-	<pubDate>Sun, 06 Dec 2020 18:56:27 +0000</pubDate>
+	<pubDate>Thu, 17 Dec 2020 21:51:26 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://conversionswp.com/</wp:base_site_url>
@@ -220,9 +220,9 @@
 		<wp:term>
 		<wp:term_id>178</wp:term_id>
 		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[main]]></wp:term_slug>
+		<wp:term_slug><![CDATA[main-menu]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Main]]></wp:term_name>
+		<wp:term_name><![CDATA[Main Menu]]></wp:term_name>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>31</wp:term_id>
@@ -289,10 +289,10 @@
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Video]]></wp:term_name>
 	</wp:term>
-			<wp:term><wp:term_id>178</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[main]]></wp:term_slug><wp:term_name><![CDATA[Main]]></wp:term_name>
+			<wp:term><wp:term_id>178</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[main-menu]]></wp:term_slug><wp:term_name><![CDATA[Main Menu]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=5.5.3</generator>
+	<generator>https://wordpress.org/?v=5.6</generator>
 
 		<item>
 		<title>Privacy Policy</title>
@@ -783,7 +783,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main"><![CDATA[Main]]></category>
+										<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
@@ -838,7 +838,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main"><![CDATA[Main]]></category>
+										<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
 		<wp:meta_value><![CDATA[page]]></wp:meta_value>
@@ -893,7 +893,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main"><![CDATA[Main]]></category>
+										<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
@@ -948,7 +948,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main"><![CDATA[Main]]></category>
+										<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
 		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
@@ -1707,35 +1707,17 @@
 <p>This post tests various embed blocks:</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:core-embed/twitter {"url":"https://twitter.com/WordPress/status/1057136472321613824","type":"rich","providerNameSlug":"twitter","align":"wide","className":""} -->
-<figure class="wp-block-embed-twitter alignwide wp-block-embed is-type-rich is-provider-twitter"><div class="wp-block-embed__wrapper">
+<!-- wp:embed {"url":"https://twitter.com/WordPress/status/1057136472321613824","type":"rich","providerNameSlug":"twitter","responsive":true,"align":"wide","className":""} -->
+<figure class="wp-block-embed alignwide is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
 https://twitter.com/WordPress/status/1057136472321613824
 </div><figcaption>Twitter,&nbsp; wide width</figcaption></figure>
-<!-- /wp:core-embed/twitter -->
+<!-- /wp:embed -->
 
-<!-- wp:core-embed/youtube {"url":"https://youtu.be/ex8fMxXJDJw","type":"video","providerNameSlug":"youtube","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<!-- wp:embed {"url":"https://youtu.be/ex8fMxXJDJw","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 https://youtu.be/ex8fMxXJDJw
 </div><figcaption>YouTube<br></figcaption></figure>
-<!-- /wp:core-embed/youtube -->
-
-<!-- wp:core-embed/facebook {"url":"https://www.facebook.com/6427302910/posts/10156380423617911/","type":"rich","providerNameSlug":"facebook"} -->
-<figure class="wp-block-embed-facebook wp-block-embed is-type-rich is-provider-facebook"><div class="wp-block-embed__wrapper">
-https://www.facebook.com/6427302910/posts/10156380423617911/
-</div></figure>
-<!-- /wp:core-embed/facebook -->
-
-<!-- wp:core-embed/instagram {"url":"https://www.instagram.com/p/BpmueLLgEn_/?utm_source=ig_share_sheet\u0026amp;igshid=1hcxphic7p9e2","type":"rich","providerNameSlug":"instagram"} -->
-<figure class="wp-block-embed-instagram wp-block-embed is-type-rich is-provider-instagram"><div class="wp-block-embed__wrapper">
-https://www.instagram.com/p/BpmueLLgEn_/?utm_source=ig_share_sheet&amp;igshid=1hcxphic7p9e2
-</div></figure>
-<!-- /wp:core-embed/instagram -->
-
-<!-- wp:core-embed/wordpress-tv {"url":"https://wordpress.tv/2018/10/14/kjell-reigstad-allan-cole-how-we-made-our-first-gutenberg-powered-theme/","type":"video","providerNameSlug":"","align":"full","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-<figure class="wp-block-embed-wordpress-tv alignfull wp-block-embed is-type-video wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-https://wordpress.tv/2018/10/14/kjell-reigstad-allan-cole-how-we-made-our-first-gutenberg-powered-theme/
-</div><figcaption>WordPress TV, full width<br></figcaption></figure>
-<!-- /wp:core-embed/wordpress-tv -->
+<!-- /wp:embed -->
 
 <!-- wp:paragraph -->
 <p></p>
@@ -1806,7 +1788,7 @@ https://wordpress.tv/2018/10/14/kjell-reigstad-allan-cole-how-we-made-our-first-
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_4406cc55c8b4f30599ec7c6592d82e2a]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1607280286]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1607899951]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_4406cc55c8b4f30599ec7c6592d82e2a]]></wp:meta_key>
@@ -1822,7 +1804,7 @@ https://wordpress.tv/2018/10/14/kjell-reigstad-allan-cole-how-we-made-our-first-
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_811416ea7ef5fa03635e1b58df815a86]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1607280285]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1607899950]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_811416ea7ef5fa03635e1b58df815a86]]></wp:meta_key>
@@ -1830,11 +1812,15 @@ https://wordpress.tv/2018/10/14/kjell-reigstad-allan-cole-how-we-made-our-first-
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_059f8e4f83f4aa47ac8e7d3ed896d23c]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1607280285]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1607899950]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_059f8e4f83f4aa47ac8e7d3ed896d23c]]></wp:meta_key>
 		<wp:meta_value><![CDATA[<blockquote class="twitter-tweet" data-width="500" data-dnt="true"><p lang="en" dir="ltr">WordPress 5.0 Beta 2 <a href="https://t.co/Bn5QRqAwLN">https://t.co/Bn5QRqAwLN</a></p>&mdash; WordPress (@WordPress) <a href="https://twitter.com/WordPress/status/1057136472321613824?ref_src=twsrc%5Etfw">October 30, 2018</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_874fe46ae491204826d1694d2ef33bc0]]></wp:meta_key>
@@ -2053,14 +2039,6 @@ Francisco</figcaption></figure></li><li class="blocks-gallery-item"><figure><a h
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
