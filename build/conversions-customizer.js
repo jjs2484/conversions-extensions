@@ -348,7 +348,7 @@ jQuery(document).ready(function () {
 		customizer_repeater_refresh_general_control_values();
 	});
 	
-	jQuery('input.customizer-repeater-color-control').on( 'change paste', function() {
+	jQuery('input.customizer-repeater-color-control').on( 'change input paste', function() {
 		var $the_color_picker = jQuery( this );
 		setTimeout( function()
 		{
