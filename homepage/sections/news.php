@@ -109,28 +109,31 @@ trait news {
 	 * @since 2019-12-16
 	 */
 	public function news() {
-		$news = $this->get_news();
-		if ( ! $news )
+		$news  = $this->get_news();
+		$title = get_theme_mod( 'conversions_news_title' );
+		$desc  = get_theme_mod( 'conversions_news_desc' );
+		if ( ! $news && empty( $title ) && empty( $desc ) )
 			return;
 		?>
+
 	<!-- News Section -->
 	<section class="c-news">
 		<div class="container-fluid">
 			<div class="row">
 
-				<?php if ( ! empty( get_theme_mod( 'conversions_news_title' ) ) || ! empty( get_theme_mod( 'conversions_news_desc' ) ) ) { ?>
+				<?php if ( ! empty( $title ) || ! empty( $desc ) ) { ?>
 
 					<!-- Title -->
 					<div class="col-12 c-intro">
 						<div class="w-md-80 w-lg-60 c-intro__inner">
 							<?php
-							if ( ! empty( get_theme_mod( 'conversions_news_title' ) ) ) {
+							if ( ! empty( $title ) ) {
 								// Title.
-								echo '<h2 class="h3">' . esc_html( get_theme_mod( 'conversions_news_title' ) ) . '</h2>';
+								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
 							}
-							if ( ! empty( get_theme_mod( 'conversions_news_desc' ) ) ) {
+							if ( ! empty( $desc ) ) {
 								// Description.
-								echo '<p class="subtitle">' . wp_kses_post( get_theme_mod( 'conversions_news_desc' ) ) . '</p>';
+								echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
 							}
 							?>
 						</div>

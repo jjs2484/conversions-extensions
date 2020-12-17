@@ -15,12 +15,9 @@ trait map {
 	 * @since 2020-11-06
 	 */
 	public function check_map() {
-
-		$title       = get_theme_mod( 'conversions_map_title' );
-		$description = get_theme_mod( 'conversions_map_desc' );
-		$map         = get_theme_mod( 'conversions_map_map' );
-
+		$map              = get_theme_mod( 'conversions_map_map' );
 		$map_content_type = get_theme_mod( 'conversions_map_content_type', 'map' );
+
 		switch ( $map_content_type ) {
 			case 'map_text':
 				$map_content = get_theme_mod( 'conversions_map_text' );
@@ -35,7 +32,7 @@ trait map {
 				$map_content = '';
 		}
 
-		$has_map = ( $title != '' || $description != '' || $map != '' || $map_content != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+		$has_map = ( $map != '' || $map_content != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 		if ( ! $has_map )
 			return false;
 		return $has_map;
@@ -128,29 +125,30 @@ trait map {
 	 * @since 2020-11-08
 	 */
 	public function map() {
-		$map = $this->check_map();
-		if ( ! $map )
+		$map   = $this->check_map();
+		$title = get_theme_mod( 'conversions_map_title' );
+		$desc  = get_theme_mod( 'conversions_map_desc' );
+		if ( ! $map && empty( $title ) && empty( $desc ) )
 			return;
 		?>
-
 		<!-- Map section -->
 		<section class="c-map">
 			<div class="container-fluid">
 
 				<div class="row">
 
-					<?php if ( ! empty( get_theme_mod( 'conversions_map_title' ) ) || ! empty( get_theme_mod( 'conversions_map_desc' ) ) ) { ?>
+					<?php if ( ! empty( $title ) || ! empty( $desc ) ) { ?>
 
 						<div class="col-12 c-intro">
 							<div class="w-md-80 w-lg-60 c-intro__inner">
 								<?php
-								if ( ! empty( get_theme_mod( 'conversions_map_title' ) ) ) {
+								if ( ! empty( $title ) ) {
 									// Title.
-									echo '<h2 class="h3">' . esc_html( get_theme_mod( 'conversions_map_title' ) ) . '</h2>';
+									echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
 								}
-								if ( ! empty( get_theme_mod( 'conversions_map_desc' ) ) ) {
+								if ( ! empty( $desc ) ) {
 									// Description.
-									echo '<p class="subtitle">' . wp_kses_post( get_theme_mod( 'conversions_map_desc' ) ) . '</p>';
+									echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
 								}
 								?>
 							</div>

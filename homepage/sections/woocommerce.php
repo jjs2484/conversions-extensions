@@ -16,28 +16,30 @@ trait woocommerce {
 	 */
 	public function woocommerce() {
 		// Check whether to show Woo section.
-		if ( ! class_exists( 'woocommerce' ) )
-			return;
-		if ( get_theme_mod( 'conversions_woo_products' ) === 'no' )
+		$title        = get_theme_mod( 'conversions_woo_title' );
+		$desc         = get_theme_mod( 'conversions_woo_desc' );
+		$product_type = get_theme_mod( 'conversions_woo_products' );
+		if ( ! class_exists( 'woocommerce' ) || $product_type === 'no' && empty( $title ) && empty( $desc ) )
 			return;
 		?>
+
 	<!-- WooCommerce section -->
 	<section class="c-woo">
 		<div class="container-fluid">
 			<div class="row">
 
-				<?php if ( ! empty( get_theme_mod( 'conversions_woo_title' ) ) || ! empty( get_theme_mod( 'conversions_woo_desc' ) ) ) { ?>
+				<?php if ( ! empty( $title ) || ! empty( $desc ) ) { ?>
 
 					<div class="col-12 c-intro">
 						<div class="w-md-80 w-lg-60 c-intro__inner">
 							<?php
-							if ( ! empty( get_theme_mod( 'conversions_woo_title' ) ) ) {
+							if ( ! empty( $title ) ) {
 								// Title.
-								echo '<h2 class="h3">' . esc_html( get_theme_mod( 'conversions_woo_title' ) ) . '</h2>';
+								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
 							}
-							if ( ! empty( get_theme_mod( 'conversions_woo_desc' ) ) ) {
+							if ( ! empty( $desc ) ) {
 								// Description.
-								echo '<p class="subtitle">' . wp_kses_post( get_theme_mod( 'conversions_woo_desc' ) ) . '</p>';
+								echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
 							}
 							?>
 						</div>
@@ -49,17 +51,16 @@ trait woocommerce {
 
 				<div class="col-12">
 					<?php
-					$c_product_type = get_theme_mod( 'conversions_woo_products' );
-					if ( $c_product_type === 'all' ) {
-						$c_product_type = '';
+					if ( $product_type === 'all' ) {
+						$product_type = '';
 					} else {
-						$c_product_type = esc_attr( $c_product_type ) . '="true"';
+						$product_type = esc_attr( $product_type ) . '="true"';
 					}
-					$c_product_limit   = get_theme_mod( 'conversions_woo_product_limit' );
-					$c_product_columns = get_theme_mod( 'conversions_woo_product_columns' );
-					$c_product_order   = get_theme_mod( 'conversions_woo_products_order' );
+					$product_limit   = get_theme_mod( 'conversions_woo_product_limit' );
+					$product_columns = get_theme_mod( 'conversions_woo_product_columns' );
+					$product_order   = get_theme_mod( 'conversions_woo_products_order' );
 
-					echo do_shortcode( '[products limit="' . esc_attr( $c_product_limit ) . '" columns="' . esc_attr( $c_product_columns ) . '" orderby="' . esc_attr( $c_product_order ) . '" ' . $c_product_type . ' ]' );
+					echo do_shortcode( '[products limit="' . esc_attr( $product_limit ) . '" columns="' . esc_attr( $product_columns ) . '" orderby="' . esc_attr( $product_order ) . '" ' . $product_type . ' ]' );
 					?>
 				</div>
 

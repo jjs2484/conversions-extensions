@@ -120,10 +120,13 @@ trait team {
 	 * @since 2020-05-27
 	 */
 	public function team() {
-		$team = $this->get_team();
-		if ( ! $team )
+		$team  = $this->get_team();
+		$title = get_theme_mod( 'conversions_team_title' );
+		$desc  = get_theme_mod( 'conversions_team_desc' );
+		if ( ! $team && empty( $title ) && empty( $desc ) )
 			return;
 		?>
+
 	<!-- Team section -->
 	<section class="c-team">
 		<div class="container-fluid">
@@ -131,19 +134,19 @@ trait team {
 
 				<?php
 
-				if ( ! empty( get_theme_mod( 'conversions_team_title' ) ) || ! empty( get_theme_mod( 'conversions_team_desc' ) ) ) {
+				if ( ! empty( $title ) || ! empty( $desc ) ) {
 					?>
 
 					<div class="col-12 c-intro">
 						<div class="w-md-80 w-lg-60 c-intro__inner">
 							<?php
-							if ( ! empty( get_theme_mod( 'conversions_team_title' ) ) ) {
+							if ( ! empty( $title ) ) {
 								// Title.
-								echo '<h2 class="h3">' . esc_html( get_theme_mod( 'conversions_team_title' ) ) . '</h2>';
+								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
 							}
-							if ( ! empty( get_theme_mod( 'conversions_team_desc' ) ) ) {
+							if ( ! empty( $desc ) ) {
 								// Description.
-								echo '<p class="subtitle">' . wp_kses_post( get_theme_mod( 'conversions_team_desc' ) ) . '</p>';
+								echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
 							}
 							?>
 						</div>

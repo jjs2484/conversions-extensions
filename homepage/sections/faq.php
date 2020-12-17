@@ -99,8 +99,10 @@ trait faq {
 	 * @since 2020-09-04
 	 */
 	public function faq() {
-		$faq = $this->get_faq();
-		if ( ! $faq )
+		$faq   = $this->get_faq();
+		$title = get_theme_mod( 'conversions_faq_title' );
+		$desc  = get_theme_mod( 'conversions_faq_desc' );
+		if ( ! $faq && empty( $title ) && empty( $desc ) )
 			return;
 		?>
 	<!-- Testimonial Section -->
@@ -108,18 +110,18 @@ trait faq {
 		<div class="container-fluid">
 			<div class="row">
 
-				<?php if ( ! empty( get_theme_mod( 'conversions_faq_title' ) ) || ! empty( get_theme_mod( 'conversions_faq_desc' ) ) ) { ?>
+				<?php if ( ! empty( $title ) || ! empty( $desc ) ) { ?>
 					<!-- Title -->
 					<div class="col-12 c-intro">
 						<div class="w-md-80 w-lg-60 c-intro__inner">
 							<?php
-							if ( ! empty( get_theme_mod( 'conversions_faq_title' ) ) ) {
+							if ( ! empty( $title ) ) {
 								// Title.
-								echo '<h2 class="h3">' . esc_html( get_theme_mod( 'conversions_faq_title' ) ) . '</h2>';
+								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
 							}
-							if ( ! empty( get_theme_mod( 'conversions_faq_desc' ) ) ) {
+							if ( ! empty( $desc ) ) {
 								// Description.
-								echo '<p class="subtitle">' . wp_kses_post( get_theme_mod( 'conversions_faq_desc' ) ) . '</p>';
+								echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
 							}
 							?>
 						</div>

@@ -101,7 +101,9 @@ trait icon_features {
 	 */
 	public function features() {
 		$icon_features = $this->get_icon_features();
-		if ( ! $icon_features )
+		$title         = get_theme_mod( 'conversions_features_title' );
+		$desc          = get_theme_mod( 'conversions_features_desc' );
+		if ( ! $icon_features && empty( $title ) && empty( $desc ) )
 			return;
 		?>
 	<!-- Icon Features section -->
@@ -111,19 +113,19 @@ trait icon_features {
 
 				<?php
 
-				if ( ! empty( get_theme_mod( 'conversions_features_title' ) ) || ! empty( get_theme_mod( 'conversions_features_desc' ) ) ) {
+				if ( ! empty( $title ) || ! empty( $desc ) ) {
 					?>
 
 					<div class="col-12 c-intro">
 						<div class="w-md-80 w-lg-60 c-intro__inner">
 							<?php
-							if ( ! empty( get_theme_mod( 'conversions_features_title' ) ) ) {
+							if ( ! empty( $title ) ) {
 								// Title.
-								echo '<h2 class="h3">' . esc_html( get_theme_mod( 'conversions_features_title' ) ) . '</h2>';
+								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
 							}
-							if ( ! empty( get_theme_mod( 'conversions_features_desc' ) ) ) {
+							if ( ! empty( $desc ) ) {
 								// Description.
-								echo '<p class="subtitle">' . wp_kses_post( get_theme_mod( 'conversions_features_desc' ) ) . '</p>';
+								echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
 							}
 							?>
 						</div>
