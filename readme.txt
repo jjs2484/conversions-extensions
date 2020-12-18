@@ -81,6 +81,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.2.0 =
 * New: Add merlin onboarding wizard.
+* New: Blog demo for import.
+* New: Business demo for import.
 * New: Social Icons top level customizer menu.
 * New: Option to add social icons to navbar.
 * New: Social icon shortcode [conversions_social].
