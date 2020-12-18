@@ -79,7 +79,7 @@ namespace conversions\extensions {
 					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/business-customizer.dat',
 					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/business-preview.png',
 					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
-					'preview_url'                  => 'https://blog.conversionswp.com/',
+					'preview_url'                  => 'https://business.conversionswp.com/',
 				],
 			];
 		}
