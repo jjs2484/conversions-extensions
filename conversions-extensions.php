@@ -94,7 +94,7 @@ namespace conversions\extensions {
 			set_theme_mod(
 				'nav_menu_locations',
 				[
-					'main-menu' => $main_menu->term_id,
+					'primary' => $main_menu->term_id,
 				]
 			);
 
