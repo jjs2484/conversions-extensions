@@ -64,7 +64,7 @@ namespace conversions\extensions {
 		public function merlin_local_import_files() {
 			return [
 				[
-					'import_file_name'             => 'Blog Demo Import',
+					'import_file_name'             => 'Blog Demo',
 					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/blog.xml',
 					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-widgets.wie',
 					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/blog-customizer.dat',
@@ -73,11 +73,11 @@ namespace conversions\extensions {
 					'preview_url'                  => 'https://blog.conversionswp.com/',
 				],
 				[
-					'import_file_name'             => 'Business Demo Import',
-					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/blog.xml',
-					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-widgets.wie',
-					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/blog-customizer.dat',
-					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-preview.png',
+					'import_file_name'             => 'Business Demo',
+					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/business.xml',
+					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/business-widgets.wie',
+					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/business-customizer.dat',
+					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/business-preview.png',
 					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
 					'preview_url'                  => 'https://blog.conversionswp.com/',
 				],
