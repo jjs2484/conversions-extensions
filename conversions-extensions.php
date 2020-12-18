@@ -106,9 +106,9 @@ namespace conversions\extensions {
 
 			// Assign front page business demo.
 			if ( get_page_by_title( 'NextGen Business Solutions' ) != null ) {
-				$front_page_id = get_page_by_title( 'NextGen Business Solutions' );
+				$business_front_page_id = get_page_by_title( 'NextGen Business Solutions' );
 				update_option( 'show_on_front', 'page' );
-				update_option( 'page_on_front', $front_page_id->ID );
+				update_option( 'page_on_front', $business_front_page_id->ID );
 			}
 		}
 
