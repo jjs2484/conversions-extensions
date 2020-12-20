@@ -91,6 +91,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * New: Add navbar_menu_filter function.
 * Update: Refactor functions in /navbar/Navbar_Variants.
 * Update: Let homepage sections show with only a title or description.
+* Update: Change repeater image field to use image IDs instead of URLs.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.
