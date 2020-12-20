@@ -70,22 +70,59 @@ trait clients {
 					<div class='c-clients__carousel py-4' data-slick='{"arrows":true,"dots":false,"infinite":true,"slidesToShow":<?php echo esc_attr( get_theme_mod( 'conversions_hc_max', '5' ) ); ?>,"slidesToScroll":<?php echo esc_attr( get_theme_mod( 'conversions_hc_max', '5' ) ); ?>,"responsive":[{"breakpoint":992,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[0] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[0] ); ?>}},{"breakpoint":768,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[1] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[1] ); ?>}},{"breakpoint":576,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[2] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[2] ); ?>}}]}'>
 
 						<?php
-						$cclient_logo_count = 0;
-						foreach ( $client_logos as $chc_logo ) {
-							// Retrieve img id.
-							$chc_url     = $chc_logo->image_url;
-							$chc_logo_id = conversions()->template->conversions_id_by_url( $chc_url );
-							// Retrieve the correct img size.
-							$chc_logo_med = wp_get_attachment_image_src( $chc_logo_id, 'medium' );
-							// Retrieve the alt text.
-							$chc_logo_alt = get_post_meta( $chc_logo_id, '_wp_attachment_image_alt', true );
+						$clients_count = 0;
+						foreach ( $client_logos as $client_logo ) {
 
-							if ( ! empty( $chc_logo_med[0] ) ) {
-								echo '<div class="c-clients__item px-3" id="c-clients__' . esc_attr( $cclient_logo_count ) . '">
-									<img class="client" src="' . esc_url( $chc_logo_med[0] ) . '" alt="' . esc_html( $chc_logo_alt ) . '">
+							// Retrieve user img.
+							$logo = $client_logo->image_url;
+
+							/*
+							 * We check below whether the img is in ID or URL form.
+							 * IDs will only be numerical.
+							 * Before v1.2.0 used URLs, 1.2.0+ use IDs.
+							 * Eventually the URL check should be deprecated.
+							 */
+							if ( ! empty( $logo ) && is_numeric( $logo ) ) {
+
+								// Get the medium size image.
+								$logo_med = wp_get_attachment_image_src( $logo, 'medium' );
+								$logo_url = $logo_med[0];
+
+								// If medium size doesn't exist get the full size.
+								if ( empty( $logo_url ) ) {
+									$logo_full = wp_get_attachment_image_src( $logo, 'full' );
+									$logo_url  = $logo_full[0];
+								}
+
+								// Get the alt text.
+								$logo_alt = get_post_meta( $logo, '_wp_attachment_image_alt', true );
+
+							} elseif ( ! empty( $logo ) && filter_var( $logo, FILTER_VALIDATE_URL ) ) {
+
+								// Get the img ID from the img URL.
+								$logo_id = conversions()->template->conversions_id_by_url( $logo );
+
+								// Get the medium size image.
+								$logo_med = wp_get_attachment_image_src( $logo_id, 'medium' );
+								$logo_url = $logo_med[0];
+
+								// If medium size doesn't exist get the full size.
+								if ( empty( $logo_url ) ) {
+									$logo_full = wp_get_attachment_image_src( $logo_id, 'full' );
+									$logo_url  = $logo_full[0];
+								}
+
+								// Get the alt text.
+								$logo_alt = get_post_meta( $logo_id, '_wp_attachment_image_alt', true );
+							}
+
+							// Output HTML.
+							if ( ! empty( $logo_url ) ) {
+								echo '<div class="c-clients__item px-3" id="c-clients__' . esc_attr( $clients_count ) . '">
+									<img class="client" src="' . esc_url( $logo_url ) . '" alt="' . esc_html( $logo_alt ) . '">
 								</div>';
 							}
-							++$cclient_logo_count;
+							++$clients_count;
 						}
 						?>
 					</div>

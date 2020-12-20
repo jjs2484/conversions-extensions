@@ -64,15 +64,35 @@ trait team {
 
 			echo '<div class="card border-0 h-100"><div class="card-body p-2">';
 
-			if ( ! empty( $repeater_item->image_url ) ) {
-				$img_team_url = $repeater_item->image_url;
-				$img_team_id  = conversions()->template->conversions_id_by_url( $img_team_url );
-				// Retrieve the alt text.
-				$img_team_alt = get_post_meta( $img_team_id, '_wp_attachment_image_alt', true );
+			$img_team_img = $repeater_item->image_url;
+			if ( ! empty( $img_team_img ) ) {
+				/*
+				 * We check below whether the img is in ID or URL form.
+				 * IDs will only be numerical.
+				 * Before v1.2.0 used URLs, 1.2.0+ use IDs.
+				 * Eventually the URL check should be deprecated.
+				 */
+				if ( is_numeric( $img_team_img ) ) {
 
-				// Grab the team image size.
-				$img_team = wp_get_attachment_image_src( $img_team_id, 'conversions-team', false );
+					// Grab the team image size.
+					$img_team = wp_get_attachment_image_src( $img_team_img, 'conversions-team', false );
 
+					// Retrieve the alt text.
+					$img_team_alt = get_post_meta( $img_team_img, '_wp_attachment_image_alt', true );
+
+				} elseif ( filter_var( $img_team_img, FILTER_VALIDATE_URL ) ) {
+
+					// Get the img ID from the img URL.
+					$img_team_id = conversions()->template->conversions_id_by_url( $img_team_img );
+
+					// Grab the team image size.
+					$img_team = wp_get_attachment_image_src( $img_team_id, 'conversions-team', false );
+
+					// Retrieve the alt text.
+					$img_team_alt = get_post_meta( $img_team_id, '_wp_attachment_image_alt', true );
+
+				}
+				// Output image.
 				echo '<img class="c-team__block-img" src="' . esc_url( $img_team[0] ) . '" alt="' . esc_html( $img_team_alt ) . '">';
 			}
 

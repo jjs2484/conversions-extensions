@@ -65,16 +65,48 @@ trait img_features {
 				echo '<div class="card h-100">';
 			}
 
-			if ( ! empty( $repeater_item->image_url ) ) {
-				$img_feat_url = $repeater_item->image_url;
-				$img_feat_id  = conversions()->template->conversions_id_by_url( $img_feat_url );
-				// Retrieve the alt text.
-				$img_feat_alt = get_post_meta( $img_feat_id, '_wp_attachment_image_alt', true );
+			// Retrieve user img.
+			$img_feat_img = $repeater_item->image_url;
+			if ( ! empty( $img_feat_img ) ) {
+				/*
+				 * We check below whether the img is in ID or URL form.
+				 * IDs will only be numerical.
+				 * Before v1.2.0 used URLs, 1.2.0+ use IDs.
+				 * Eventually the URL check should be deprecated.
+				 */
+				if ( is_numeric( $img_feat_img ) ) {
 
-				// Grab the featured image sizes.
-				$img_feat_md = wp_get_attachment_image_src( $img_feat_id, 'medium', false );
-				$img_feat_lg = wp_get_attachment_image_src( $img_feat_id, 'large', false );
+					// Get the image sizes.
+					$img_feat_md = wp_get_attachment_image_src( $img_feat_img, 'medium', false );
+					$img_feat_lg = wp_get_attachment_image_src( $img_feat_img, 'large', false );
 
+					// If large size doesn't exist get the full size.
+					if ( empty( $img_feat_lg ) ) {
+						$img_feat_lg = wp_get_attachment_image_src( $img_feat_img, 'full', false );
+					}
+
+					// Get the alt text.
+					$img_feat_alt = get_post_meta( $img_feat_img, '_wp_attachment_image_alt', true );
+
+				} elseif ( filter_var( $img_feat_img, FILTER_VALIDATE_URL ) ) {
+
+					// Get the img ID from the img URL.
+					$img_feat_id = conversions()->template->conversions_id_by_url( $img_feat_img );
+
+					// Get the image sizes.
+					$img_feat_md = wp_get_attachment_image_src( $img_feat_id, 'medium', false );
+					$img_feat_lg = wp_get_attachment_image_src( $img_feat_id, 'large', false );
+
+					// If large size doesn't exist get the full size.
+					if ( empty( $img_feat_lg ) ) {
+						$img_feat_lg = wp_get_attachment_image_src( $img_feat_id, 'full', false );
+					}
+
+					// Get the alt text.
+					$img_feat_alt = get_post_meta( $img_feat_id, '_wp_attachment_image_alt', true );
+
+				}
+				// Output image.
 				echo '<img class="card-img-top" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
 			}
 

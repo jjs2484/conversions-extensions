@@ -5,32 +5,18 @@ function media_upload(button_class) {
 	'use strict';
 	jQuery('body').on('click', button_class, function () {
 		var button_id = '#' + jQuery(this).attr('id');
-		var display_field = jQuery(this).parent().children('input:text');
+		var display_field = jQuery(this).parent().children('input:hidden');
+		var preview_field = jQuery(this).parent().children('.customizer-repeater-image-preview');
 		var _custom_media = true;
 
 		// eslint-disable-next-line no-undef
 		wp.media.editor.send.attachment = function (props, attachment) {
 
 			if (_custom_media) {
-				if (typeof display_field !== 'undefined') {
-					switch (props.size) {
-					case 'full':
-						display_field.val(attachment.sizes.full.url);
-						display_field.trigger('change');
-						break;
-					case 'medium':
-						display_field.val(attachment.sizes.medium.url);
-						display_field.trigger('change');
-						break;
-					case 'thumbnail':
-						display_field.val(attachment.sizes.thumbnail.url);
-						display_field.trigger('change');
-						break;
-					default:
-						display_field.val(attachment.url);
-						display_field.trigger('change');
-					}
-				}
+				display_field.val(attachment.id);
+				display_field.trigger('change');
+				preview_field.attr('src', attachment.url);
+				preview_field.trigger('change');
 				_custom_media = false;
 			} else {
 				// eslint-disable-next-line no-undef
@@ -308,6 +294,7 @@ jQuery(document).ready(function () {
 
 				// Remove value from media field.
 				field.find('.custom-media-url').val('');
+				field.find('.customizer-repeater-image-preview').attr('src', '');
 
 				// Remove value from title field.
 				field.find('.customizer-repeater-title-control').val('');

@@ -590,7 +590,33 @@ class Repeater extends \WP_Customize_Control {
 			<span class="customize-control-title">
 				<?php esc_html_e( 'Image', 'conversions' ); ?>
 			</span>
-			<input type="text" class="widefat custom-media-url" value="<?php echo esc_attr( $value ); ?>">
+			<?php
+			/*
+			 * We check below whether the img is in ID or URL form.
+			 * IDs will only be numerical.
+			 * Before v1.2.0 used URLs, 1.2.0+ use IDs.
+			 * Eventually the URL check should be deprecated.
+			 */
+			if ( ! empty( $value ) && is_numeric( $value ) ) {
+				// Get the image url.
+				$image_med     = wp_get_attachment_image_src( $value, 'medium' );
+				$image_med_url = $image_med[0];
+			} elseif ( ! empty( $value ) && filter_var( $value, FILTER_VALIDATE_URL ) ) {
+				// Get the img ID from the img URL.
+				$image_id = conversions()->template->conversions_id_by_url( $value );
+				// Get the medium size image.
+				$image_med     = wp_get_attachment_image_src( $image_id, 'medium' );
+				$image_med_url = $image_med[0];
+
+				// If medium size doesn't exist get the full size.
+				if ( empty( $image_med_url ) ) {
+					$image_full    = wp_get_attachment_image_src( $image_id, 'full' );
+					$image_med_url = $image_full[0];
+				}
+			}
+			?>
+			<img class="customizer-repeater-image-preview attachment-thumb" src="<?php if ( ! empty( $image_med_url ) ) { echo esc_attr( $image_med_url ); } ?>" draggable="false" alt="">
+			<input type="hidden" class="widefat custom-media-url" value="<?php echo esc_attr( $value ); ?>">
 			<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="<?php esc_attr_e( 'Upload Image', 'conversions' ); ?>" />
 		</div>
 		<?php
