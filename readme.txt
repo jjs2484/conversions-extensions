@@ -80,7 +80,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.2.0 =
-* New: Add merlin onboarding wizard.
+* New: Add One Click Demo Import.
 * New: Blog demo for import.
 * New: Business demo for import.
 * New: Social Icons top level customizer menu.
