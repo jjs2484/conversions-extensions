@@ -713,7 +713,7 @@ jQuery(document).ready(function($) {
 jQuery(document).ready(function($) {
 	
 	// Option selectors.
-	var $image = $( '#customize-control-conversions_single_feature_img' );
+	var $image = $( '#customize-control-conversions_single_feature_img_id' );
 	var $youtube = $( '#customize-control-conversions_single_feature_youtube_control' );
 	var $vimeo = $( '#customize-control-conversions_single_feature_vimeo' );
 	var $shortcode = $( '#customize-control-conversions_single_feature_shortcode_control' );

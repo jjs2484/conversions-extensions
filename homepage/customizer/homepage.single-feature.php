@@ -147,24 +147,25 @@ $wp_customize->add_control(
 	)
 );
 $wp_customize->add_setting(
-	'conversions_single_feature_img',
+	'conversions_single_feature_img_id',
 	[
 		'default'           => '',
 		'type'              => 'theme_mod',
 		'transport'         => 'refresh',
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw',
+		'sanitize_callback' => 'absint',
 	]
 );
 $wp_customize->add_control(
-	new WP_Customize_Image_Control(
+	new WP_Customize_Media_Control(
 		$wp_customize,
-		'conversions_single_feature_img',
+		'conversions_single_feature_img_id',
 		[
-			'label'    => __( 'Upload image', 'conversions' ),
-			'section'  => 'conversions_homepage_single_feature',
-			'settings' => 'conversions_single_feature_img',
-			'priority' => 50,
+			'label'     => __( 'Upload image', 'conversions' ),
+			'section'   => 'conversions_homepage_single_feature',
+			'settings'  => 'conversions_single_feature_img_id',
+			'priority'  => 50,
+			'mime_type' => 'image',
 		]
 	)
 );

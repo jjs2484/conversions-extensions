@@ -92,6 +92,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Refactor functions in /navbar/Navbar_Variants.
 * Update: Let homepage sections show with only a title or description.
 * Update: Change repeater image field to use image IDs instead of URLs.
+* Update: Switch single feature image customizer control to WP_Customize_Media_Control. Save IDs instead of URLs. Not backwards compatible, any previous image needs to be readded.  
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: repeater/customizer-icons - reorder search term parameters for PHP 7.4.

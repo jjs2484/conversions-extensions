@@ -22,7 +22,7 @@ trait single_feature {
 		$single_feature_media_type = get_theme_mod( 'conversions_single_feature_media_type', 'image' );
 		switch ( $single_feature_media_type ) {
 			case 'image':
-				$single_feature_media = get_theme_mod( 'conversions_single_feature_img' );
+				$single_feature_media = get_theme_mod( 'conversions_single_feature_img_id' );
 				break;
 			case 'youtube':
 				$single_feature_media = get_theme_mod( 'conversions_single_feature_youtube' );
@@ -34,7 +34,7 @@ trait single_feature {
 				$single_feature_media = get_theme_mod( 'conversions_single_feature_shortcode' );
 				break;
 			default:
-				$single_feature_media = get_theme_mod( 'conversions_single_feature_img' );
+				$single_feature_media = get_theme_mod( 'conversions_single_feature_img_id' );
 		}
 
 		$has_single_feature = ( $title != '' || $description != '' || $single_feature_media != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
@@ -78,16 +78,18 @@ trait single_feature {
 
 		switch ( $single_feature_media_type ) {
 			case 'image':
-				// Get image URL.
-				$single_feature_media_img = get_theme_mod( 'conversions_single_feature_img' );
+				// Get image ID.
+				$single_feature_media_img = get_theme_mod( 'conversions_single_feature_img_id' );
 
 				if ( ! empty( $single_feature_media_img ) ) {
-					// Get image ID from URL.
-					$single_feature_img_id = conversions()->template->conversions_id_by_url( $single_feature_media_img );
 					// Get the alt text.
-					$single_feature_img_alt = get_post_meta( $single_feature_img_id, '_wp_attachment_image_alt', true );
+					$single_feature_img_alt = get_post_meta( $single_feature_media_img, '_wp_attachment_image_alt', true );
 					// Get the large image size.
-					$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_img_id, 'large', false );
+					$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_media_img, 'large', false );
+					// If large size doesn't exist get the full size.
+					if ( empty( $single_feature_img_lg ) ) {
+						$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_media_img, 'full', false );
+					}
 					// Create image HTML.
 					$single_feature_media = '<img class="c-single-feature__image" src="' . esc_url( $single_feature_img_lg[0] ) . '" alt="' . esc_attr( $single_feature_img_alt ) . '"/>';
 				}
@@ -121,20 +123,21 @@ trait single_feature {
 				}
 				break;
 			default:
-				// Get image URL.
-				$single_feature_media_img = get_theme_mod( 'conversions_single_feature_img' );
+				// Get image ID.
+				$single_feature_media_img = get_theme_mod( 'conversions_single_feature_img_id' );
 
 				if ( ! empty( $single_feature_media_img ) ) {
-					// Get image ID from URL.
-					$single_feature_img_id = conversions()->template->conversions_id_by_url( $single_feature_media_img );
 					// Get the alt text.
-					$single_feature_img_alt = get_post_meta( $single_feature_img_id, '_wp_attachment_image_alt', true );
+					$single_feature_img_alt = get_post_meta( $single_feature_media_img, '_wp_attachment_image_alt', true );
 					// Get the large image size.
-					$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_img_id, 'large', false );
+					$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_media_img, 'large', false );
+					// If large size doesn't exist get the full size.
+					if ( empty( $single_feature_img_lg ) ) {
+						$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_media_img, 'full', false );
+					}
 					// Create image HTML.
 					$single_feature_media = '<img class="c-single-feature__image" src="' . esc_url( $single_feature_img_lg[0] ) . '" alt="' . esc_attr( $single_feature_img_alt ) . '"/>';
 				}
-				break;
 		}
 
 		if ( ! empty( $single_feature_media ) ) {
