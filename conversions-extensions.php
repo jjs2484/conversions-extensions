@@ -34,82 +34,11 @@ namespace conversions\extensions {
 			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
 			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
-			add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
-			add_filter( 'merlin_import_files', [ $this, 'merlin_local_import_files' ] );
-			add_action( 'merlin_after_all_import', [ $this, 'merlin_after_import_setup' ] );
+			add_filter( 'pt-ocdi/import_files', [ $this, 'ocdi_import_files' ] );
+			add_action( 'pt-ocdi/after_import', [ $this, 'ocdi_after_import' ] );
+			add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
+			add_filter( 'pt-ocdi/plugin_intro_text', [ $this, 'ocdi_plugin_intro_text' ] );
 
-		}
-
-		/**
-		 * After theme setup function, filter, hooks, etc.
-		 *
-		 * @since 2020-11-20
-		 */
-		public function after_setup_theme() {
-			// Prevent WooCommerce automatic wizard redirection after plugin activation.
-			// WC v3.6+ wizard interferes Merlin.
-			add_filter( 'woocommerce_prevent_automatic_wizard_redirect', '__return_true' );
-
-			// Require Merlin files.
-			require_once __DIR__ . '/merlin/vendor/autoload.php';
-			require_once __DIR__ . '/merlin/class-merlin.php';
-			require_once __DIR__ . '/merlin/merlin-config.php';
-		}
-
-		/**
-		 * Merlin import local files.
-		 *
-		 * @since 2020-11-21
-		 */
-		public function merlin_local_import_files() {
-			return [
-				[
-					'import_file_name'             => 'Blog Demo',
-					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/blog.xml',
-					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-widgets.wie',
-					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/blog-customizer.dat',
-					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/blog-preview.png',
-					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
-					'preview_url'                  => 'https://blog.conversionswp.com/',
-				],
-				[
-					'import_file_name'             => 'Business Demo',
-					'local_import_file'            => trailingslashit( __DIR__ ) . 'merlin/demo/business.xml',
-					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'merlin/demo/business-widgets.wie',
-					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'merlin/demo/business-customizer.dat',
-					'import_preview_image_url'     => trailingslashit( __DIR__ ) . 'merlin/demo/business-preview.png',
-					'import_notice'                => __( 'A special note for this import.', 'conversions' ),
-					'preview_url'                  => 'https://business.conversionswp.com/',
-				],
-			];
-		}
-
-		/**
-		 * Execute custom code after the whole import has finished.
-		 */
-		public function merlin_after_import_setup() {
-			// Assign menus to their locations.
-			$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
-
-			set_theme_mod(
-				'nav_menu_locations',
-				[
-					'primary' => $main_menu->term_id,
-				]
-			);
-
-			// Assign posts page (blog page).
-			if ( get_page_by_title( 'Blog' ) != null ) {
-				$blog_page_id = get_page_by_title( 'Blog' );
-				update_option( 'page_for_posts', $blog_page_id->ID );
-			}
-
-			// Assign front page business demo.
-			if ( get_page_by_title( 'NextGen Business Solutions' ) != null ) {
-				$business_front_page_id = get_page_by_title( 'NextGen Business Solutions' );
-				update_option( 'show_on_front', 'page' );
-				update_option( 'page_on_front', $business_front_page_id->ID );
-			}
 		}
 
 		/**
@@ -454,6 +383,101 @@ namespace conversions\extensions {
 			}
 
 			return $tags;
+		}
+
+		/**
+		 * One Click Demo Import local files.
+		 *
+		 * @since 2020-12-21
+		 */
+		public function ocdi_import_files() {
+			return [
+				[
+					'import_file_name'             => 'Blog Demo',
+					'categories'                   => [ 'Blog', 'Free' ],
+					'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/blog.xml',
+					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/blog-widgets.wie',
+					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/blog-customizer.dat',
+					'import_preview_image_url'     => plugins_url( 'demos/blog-preview.png', __FILE__ ),
+					'preview_url'                  => 'https://blog.conversionswp.com/',
+				],
+				[
+					'import_file_name'             => 'Business Demo',
+					'categories'                   => [ 'Business', 'Free' ],
+					'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/business.xml',
+					'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/business-widgets.wie',
+					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/business-customizer.dat',
+					'import_preview_image_url'     => plugins_url( 'demos/business-preview.png', __FILE__ ),
+					'preview_url'                  => 'https://business.conversionswp.com/',
+				],
+			];
+		}
+
+		/**
+		 * One Click Demo Import after import execute code .
+		 *
+		 * @since 2020-12-21
+		 */
+		public function ocdi_after_import( $selected_import ) {
+
+			if ( 'Blog Demo' === $selected_import['import_file_name'] ) {
+
+				// Assign menu to location.
+				$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+				set_theme_mod(
+					'nav_menu_locations',
+					[
+						'primary' => $main_menu->term_id,
+					]
+				);
+
+			} elseif ( 'Business Demo' === $selected_import['import_file_name'] ) {
+
+				// Assign menu to location.
+				$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+				set_theme_mod(
+					'nav_menu_locations',
+					[
+						'primary' => $main_menu->term_id,
+					]
+				);
+
+				// Assign posts page (blog page).
+				if ( get_page_by_title( 'Blog' ) != null ) {
+					$blog_page_id = get_page_by_title( 'Blog' );
+					update_option( 'page_for_posts', $blog_page_id->ID );
+				}
+
+				// Assign front page business demo.
+				if ( get_page_by_title( 'NextGen Business Solutions' ) != null ) {
+					$business_front_page_id = get_page_by_title( 'NextGen Business Solutions' );
+					update_option( 'show_on_front', 'page' );
+					update_option( 'page_on_front', $business_front_page_id->ID );
+				}
+			}
+		}
+
+		/**
+		 * One Click Demo Import intro text.
+		 *
+		 * @since 2020-12-21
+		 */
+		public function ocdi_plugin_intro_text( $default_text ) {
+
+			// Plugin notice.
+			$default_text = sprintf(
+				'<div class="ocdi__intro-notice notice notice-warning is-dismissible"><p>%s</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">%s</span></button></div>',
+				__( 'Before you begin, make sure all the required plugins are activated.', 'conversions' ),
+				__( 'Dismiss this notice.', 'conversions' )
+			);
+
+			// Intro description.
+			$default_text .= sprintf(
+				'<div class="ocdi__intro-text"><p class="about-description">%s</p></div>',
+				__( 'Importing demo data (posts, pages, images, theme settings...) is the easiest way to setup your theme. Quickly set everything up instead of editing from scratch.', 'conversions' )
+			);
+
+			return $default_text;
 		}
 	}
 }
