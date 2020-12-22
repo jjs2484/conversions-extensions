@@ -38,6 +38,7 @@ namespace conversions\extensions {
 			add_action( 'pt-ocdi/after_import', [ $this, 'ocdi_after_import' ] );
 			add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 			add_filter( 'pt-ocdi/plugin_intro_text', [ $this, 'ocdi_plugin_intro_text' ] );
+			add_filter( 'gettext', [ $this, 'ocdi_success_notice_text' ], 999, 3 );
 
 		}
 
@@ -478,6 +479,27 @@ namespace conversions\extensions {
 			);
 
 			return $default_text;
+		}
+
+		/**
+		 * Update the OCDI Success Notice
+		 *
+		 * @since 2020-12-21
+		 */
+		public function ocdi_success_notice_text( $translated, $text, $domain ) {
+
+			// New text.
+			$newtext = sprintf(
+				'%s <a class="button button-primary" href="%s">%s</a>',
+				'The demo import has finished. Check your site to see everything imported correctly',
+				esc_url( home_url() ),
+				'Visit site'
+			);
+
+			// String to replace.
+			$translated = str_ireplace( 'The demo import has finished. Please check your page and make sure that everything has imported correctly. If it did, you can deactivate the %3$sOne Click Demo Import%4$s plugin, because it has done its job.', $newtext, $translated );
+
+			return $translated;
 		}
 	}
 }
