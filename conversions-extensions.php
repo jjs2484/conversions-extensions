@@ -418,6 +418,8 @@ namespace conversions\extensions {
 		 * One Click Demo Import after import execute code .
 		 *
 		 * @since 2020-12-21
+		 *
+		 * @param array $selected_import Import demos.
 		 */
 		public function ocdi_after_import( $selected_import ) {
 
@@ -462,6 +464,8 @@ namespace conversions\extensions {
 		 * One Click Demo Import intro text.
 		 *
 		 * @since 2020-12-21
+		 *
+		 * @param string $default_text Intro text string.
 		 */
 		public function ocdi_plugin_intro_text( $default_text ) {
 
@@ -485,6 +489,10 @@ namespace conversions\extensions {
 		 * Update the OCDI Success Notice
 		 *
 		 * @since 2020-12-21
+		 *
+		 * @param string $translated Translated text.
+		 * @param string $text Text.
+		 * @param string $domain Domain.
 		 */
 		public function ocdi_success_notice_text( $translated, $text, $domain ) {
 
