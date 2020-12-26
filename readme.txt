@@ -1,24 +1,24 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
 Stable tag: 1.2.0
-Tags: theme, extensions, homepage, social, nav
+Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 5.6
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds homepage sections and other features to Conversions theme for WordPress.
+Adds homepage sections, one click demo imports, social icons, and other features to Conversions theme for WordPress.
 
 == Description ==
 
-Adds homepage sections and other features to <a href="https://wordpress.org/themes/conversions/">Conversions theme</a> for WordPress.
+Adds homepage sections, one click demo imports, social icons, and other features to <a href="https://wordpress.org/themes/conversions/">Conversions theme</a> for WordPress.
 
 You can view the <a href="https://conversionswp.com/docs/documentation/">documentation</a> here.
 
 = Extensions List: =
 
-* Homepage sections
+* Homepage Sections
     * Homepage Sorting
     * Clients
     * Counter
@@ -37,11 +37,18 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
     * WooCommerce
     * HTML or Shortcode
 
-* Navbar variants
+* One Click Demo Imports
+    * Business demo
+    * Blog demo
+
+* Navbar Variants
     * Menu right
     * Menu below
 
-* Footer social icons
+* Social Icons
+    * Navbar
+    * Footer
+    * Shortcode
 
 = Shortcodes =
 
@@ -81,8 +88,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.2.0 =
 * New: Add One Click Demo Import.
-* New: Blog demo for import.
 * New: Business demo for import.
+* New: Blog demo for import.
 * New: Social Icons top level customizer menu.
 * New: Option to add social icons to navbar.
 * New: Social icon shortcode [conversions_social].
