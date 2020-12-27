@@ -18,6 +18,7 @@ namespace conversions\extensions {
 	 */
 	class Conversions_Extensions {
 
+
 		/**
 		 * Class constructor.
 		 *
@@ -387,11 +388,11 @@ namespace conversions\extensions {
 		}
 
 		/**
-		 * One Click Demo Import local files.
-		 *
-		 * @since 2020-12-21
-		 */
-		public function ocdi_import_files() {
+			@brief		Return the base OCDI import files data.
+			@since		2020-12-27 17:12:39
+		**/
+		public function get_ocdi_import_files()
+		{
 			return [
 				[
 					'import_file_name'             => 'Blog Demo',
@@ -401,6 +402,9 @@ namespace conversions\extensions {
 					'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/blog-customizer.dat',
 					'import_preview_image_url'     => plugins_url( 'demos/blog-preview.png', __FILE__ ),
 					'preview_url'                  => 'https://blog.conversionswp.com/',
+					'required_plugins'             => [
+						'disable-gutenberg' => 'Disable Gutenberg',
+					],
 				],
 				[
 					'import_file_name'             => 'Business Demo',
@@ -412,6 +416,35 @@ namespace conversions\extensions {
 					'preview_url'                  => 'https://business.conversionswp.com/',
 				],
 			];
+		}
+
+		/**
+		 * One Click Demo Import local files.
+		 *
+		 * @since 2020-12-21
+		 */
+		public function ocdi_import_files() {
+			$data = $this->get_ocdi_import_files();
+			foreach( $data as $index => $import_data )
+			{
+				// We are only interested in imports that define required_plugins.
+				if ( ! isset( $import_data[ 'required_plugins' ] ) )
+					continue;
+
+				$import_notice = __( 'The following plugins will be installed and activated if they are not already:', 'conversions' );
+
+				$import_notice .= '<br>';
+				$import_notice .= '<ul>';
+
+				foreach( $import_data[ 'required_plugins' ] as $plugin_slug => $plugin_name )
+					$import_notice .= sprintf( '<li><a href="https://wordpress.org/plugins/%s/">%s</a></li>', $plugin_slug, $plugin_name );
+
+				$import_notice .= '</ul>';
+
+				$data[ $index ][ 'import_notice' ] = $import_notice;
+			}
+
+			return $data;
 		}
 
 		/**
