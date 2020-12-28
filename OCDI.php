@@ -19,13 +19,6 @@ class OCDI
 		add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 		add_filter( 'pt-ocdi/plugin_intro_text', [ $this, 'ocdi_plugin_intro_text' ] );
 		add_filter( 'gettext', [ $this, 'ocdi_success_notice_text' ], 999, 3 );
-
-		add_action( 'axdmin_init', function()
-		{
-			$plugin_data = static::get_plugin_data( 'disable_gutenberg' );
-			$this->replace_plugin( $plugin_data );
-			exit;
-		} );
 	}
 
 	/**
@@ -240,23 +233,11 @@ class OCDI
 		}
 		else
 		{
-		  // Installing
-		  $installed = $this->install_plugin( $plugin_data->zip );
+			// Installing
+			$installed = $this->install_plugin( $plugin_data->zip );
 		}
 
-		if ( !is_wp_error( $installed ) && $installed )
-		{
-			$activate = activate_plugin( $plugin_data->slug );
-
-			if ( is_null($activate) )
-			{
-				// All done!
-			}
-		}
-		else
-		{
-			echo 'Could not install the new plugin.';
-		}
+		$activate = activate_plugin( $plugin_data->slug );
 	}
 
 	public function is_plugin_installed( $slug ) {
@@ -277,6 +258,7 @@ class OCDI
 	  wp_cache_flush();
 
 	  $upgrader = new \Plugin_Upgrader();
+	  $upgrader->skin = new OCDI_Skin();
 	  $installed = $upgrader->install( $plugin_zip );
 
 	  return $installed;
@@ -287,6 +269,7 @@ class OCDI
 	  wp_cache_flush();
 
 	  $upgrader = new \Plugin_Upgrader();
+	  $upgrader->skin = new OCDI_Skin();
 	  $upgraded = $upgrader->upgrade( $plugin_slug );
 
 	  return $upgraded;
