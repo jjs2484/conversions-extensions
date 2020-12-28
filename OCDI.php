@@ -72,6 +72,9 @@ class OCDI {
 						'primary' => $main_menu->term_id,
 					]
 				);
+
+				// Show posts on front page.
+				update_option( 'show_on_front', 'posts' );
 				break;
 			case 'Business Demo':
 				// Assign menu to location.
