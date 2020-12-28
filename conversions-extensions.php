@@ -19,9 +19,10 @@ namespace conversions\extensions {
 	class Conversions_Extensions {
 
 		/**
-			@brief		The instance of the OCDI class.
-			@since		2020-12-27 17:43:01
-		**/
+		 * The instance of the OCDI class.
+		 *
+		 * @since 2020-12-27
+		 */
 		public static $__ocdi;
 
 		/**

@@ -1,17 +1,23 @@
 <?php
+/**
+ * Handles One Click Demo Import stuff.
+ *
+ * @package conversions
+ */
 
 namespace conversions\extensions;
 
 /**
-	@brief		Handle all One Click Demo Import.
-	@since		2020-12-27 17:40:55
-**/
-class OCDI
-{
+ * Class ODCI
+ *
+ * @since 2020-12-27
+ */
+class OCDI {
 	/**
-		@brief		Constructor.
-		@since		2020-12-27 17:42:16
-	**/
+	 * Constructor.
+	 *
+	 * @since 2020-12-27
+	 */
 	public function __construct() {
 		add_filter( 'pt-ocdi/import_files', [ $this, 'ocdi_import_files' ] );
 		add_action( 'pt-ocdi/after_import', [ $this, 'ocdi_after_import' ] );
@@ -22,7 +28,7 @@ class OCDI
 	}
 
 	/**
-	 * One Click Demo Import after import execute code .
+	 * One Click Demo Import after import execute code.
 	 *
 	 * @since 2020-12-21
 	 *
@@ -30,8 +36,7 @@ class OCDI
 	 */
 	public function ocdi_after_import( $selected_import ) {
 
-		switch( $selected_import['import_file_name'] )
-		{
+		switch ( $selected_import['import_file_name'] ) {
 			case 'Blog Demo':
 				// Assign menu to location.
 				$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
@@ -41,7 +46,7 @@ class OCDI
 						'primary' => $main_menu->term_id,
 					]
 				);
-			break;
+				break;
 			case 'Business Demo':
 				// Assign menu to location.
 				$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
@@ -64,12 +69,12 @@ class OCDI
 					update_option( 'show_on_front', 'page' );
 					update_option( 'page_on_front', $business_front_page_id->ID );
 				}
-			break;
+				break;
 		}
 	}
 
 	/**
-	 * One Click Demo Import before import execute code .
+	 * One Click Demo Import before import execute code.
 	 *
 	 * @since 2020-12-21
 	 *
@@ -78,10 +83,8 @@ class OCDI
 	public function ocdi_before_content_import( $selected_import ) {
 
 		// Handle the download and activation of all plugins.
-		if ( isset( $selected_import[ 'required_plugins' ] ) )
-		{
-			foreach( $selected_import[ 'required_plugins' ] as $plugin_id )
-			{
+		if ( isset( $selected_import[ 'required_plugins' ] ) ) {
+			foreach ( $selected_import[ 'required_plugins' ] as $plugin_id ) {
 				$plugin_data = static::get_plugin_data( $plugin_id );
 				$this->replace_plugin( $plugin_data );
 			}
@@ -89,11 +92,11 @@ class OCDI
 	}
 
 	/**
-		@brief		Return the base OCDI import files data.
-		@since		2020-12-27 17:12:39
-	**/
-	public static function get_ocdi_import_files()
-	{
+	 * Return the base OCDI import files data.
+	 *
+	 * @since 2020-12-27
+	 */
+	public static function get_ocdi_import_files() {
 		return [
 			[
 				'import_file_name'             => 'Blog Demo',
@@ -119,33 +122,31 @@ class OCDI
 	}
 
 	/**
-		@brief		Retrieve the plugin data.
-		@since		2020-12-27 18:56:31
-	**/
-	public static function get_plugin_data( $plugin_id = false )
-	{
-		$data = (object)
-		[
-			'disable_gutenberg' => (object)
-			[
+	 * Retrieve the plugin data.
+	 *
+	 * @since 2020-12-27
+	 *
+	 * @param string $plugin_id Plugin ID and array key.
+	 */
+	public static function get_plugin_data( $plugin_id = false ) {
+		$data = (object) [
+			'disable_gutenberg' => (object) [
 				'name' => 'Disable Gutenberg',
-				'zip' => 'https://downloads.wordpress.org/plugin/disable-gutenberg.2.3.zip',
+				'zip'  => 'https://downloads.wordpress.org/plugin/disable-gutenberg.2.3.zip',
 				'slug' => 'disable-gutenberg/disable-gutenberg.php',
-				'url' => 'https://wordpress.org/plugins/disable-gutenberg/',
+				'url'  => 'https://wordpress.org/plugins/disable-gutenberg/',
 			],
-			'contact_form_7' => (object)
-			[
+			'contact_form_7'    => (object) [
 				'name' => 'Contact Form 7',
-				'zip' => 'https://downloads.wordpress.org/plugin/contact-form-7.5.3.2.zip',
+				'zip'  => 'https://downloads.wordpress.org/plugin/contact-form-7.5.3.2.zip',
 				'slug' => 'contact-form-7/wp-contact-form-7.php',
-				'url' => 'https://wordpress.org/plugins/contact-form-7/',
+				'url'  => 'https://wordpress.org/plugins/contact-form-7/',
 			],
-			'ninja_forms' => (object)
-			[
+			'ninja_forms'       => (object) [
 				'name' => 'Ninja Forms',
-				'zip' => 'https://downloads.wordpress.org/plugin/ninja-forms.3.4.33.zip',
+				'zip'  => 'https://downloads.wordpress.org/plugin/ninja-forms.3.4.33.zip',
 				'slug' => 'ninja-forms/ninja-forms.php',
-				'url' => 'https://wordpress.org/plugins/ninja-forms/',
+				'url'  => 'https://wordpress.org/plugins/ninja-forms/',
 			],
 		];
 
@@ -163,8 +164,7 @@ class OCDI
 	 */
 	public function ocdi_import_files() {
 		$data = static::get_ocdi_import_files();
-		foreach( $data as $index => $import_data )
-		{
+		foreach ( $data as $index => $import_data ) {
 			// We are only interested in imports that define required_plugins.
 			if ( ! isset( $import_data[ 'required_plugins' ] ) )
 				continue;
@@ -174,9 +174,8 @@ class OCDI
 			$import_notice .= '<br>';
 			$import_notice .= '<ul>';
 
-			foreach( $import_data[ 'required_plugins' ] as $plugin_id )
-			{
-				$plugin_data = static::get_plugin_data( $plugin_id );
+			foreach ( $import_data[ 'required_plugins' ] as $plugin_id ) {
+				$plugin_data    = static::get_plugin_data( $plugin_id );
 				$import_notice .= sprintf( '<li><a href="%s">%s</a></li>', $plugin_data->url, $plugin_data->name );
 			}
 
@@ -238,56 +237,80 @@ class OCDI
 		return $translated;
 	}
 
-	public function replace_plugin( $plugin_data )
-	{
+	/**
+	 * Replace_plugin
+	 *
+	 * @since 2020-12-27
+	 *
+	 * @param array $plugin_data Plugin data.
+	 */
+	public function replace_plugin( $plugin_data ) {
 		// Check if plugin is already installed.
-		if ( $this->is_plugin_installed( $plugin_data->slug ) )
-		{
+		if ( $this->is_plugin_installed( $plugin_data->slug ) ) {
 			$this->upgrade_plugin( $plugin_data->slug );
 			$installed = true;
-		}
-		else
-		{
-			// Installing
+		} else {
+			// Installing.
 			$installed = $this->install_plugin( $plugin_data->zip );
 		}
 
 		$activate = activate_plugin( $plugin_data->slug );
 	}
 
+	/**
+	 * Is plugin installed
+	 *
+	 * @since 2020-12-27
+	 *
+	 * @param string $slug Plugin slug.
+	 */
 	public function is_plugin_installed( $slug ) {
-	  if ( ! function_exists( 'get_plugins' ) ) {
-		require_once ABSPATH . 'wp-admin/includes/plugin.php';
-	  }
-	  $all_plugins = get_plugins();
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+		$all_plugins = get_plugins();
 
-	  if ( !empty( $all_plugins[$slug] ) ) {
-		return true;
-	  } else {
-		return false;
-	  }
+		if ( ! empty( $all_plugins[$slug] ) ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
+	/**
+	 * Install plugin
+	 *
+	 * @since 2020-12-27
+	 *
+	 * @param string $plugin_zip Plugin zip.
+	 */
 	public function install_plugin( $plugin_zip ) {
-	  include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-	  wp_cache_flush();
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		wp_cache_flush();
 
-	  $upgrader = new \Plugin_Upgrader();
-	  $upgrader->skin = new OCDI_Skin();
-	  $installed = $upgrader->install( $plugin_zip );
+		$upgrader       = new \Plugin_Upgrader();
+		$upgrader->skin = new OCDI_Skin();
+		$installed      = $upgrader->install( $plugin_zip );
 
-	  return $installed;
+		return $installed;
 	}
 
-	function upgrade_plugin( $plugin_slug ) {
-	  include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-	  wp_cache_flush();
+	/**
+	 * Upgrade plugin
+	 *
+	 * @since 2020-12-27
+	 *
+	 * @param string $plugin_slug Plugin slug.
+	 */
+	public function upgrade_plugin( $plugin_slug ) {
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		wp_cache_flush();
 
-	  $upgrader = new \Plugin_Upgrader();
-	  $upgrader->skin = new OCDI_Skin();
-	  $upgraded = $upgrader->upgrade( $plugin_slug );
+		$upgrader       = new \Plugin_Upgrader();
+		$upgrader->skin = new OCDI_Skin();
+		$upgraded       = $upgrader->upgrade( $plugin_slug );
 
-	  return $upgraded;
+		return $upgraded;
 	}
 
 }
