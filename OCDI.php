@@ -103,7 +103,7 @@ class OCDI
 				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/blog-customizer.dat',
 				'import_preview_image_url'     => plugins_url( 'demos/blog-preview.png', __FILE__ ),
 				'preview_url'                  => 'https://blog.conversionswp.com/',
-				'required_plugins'             => [ 'disable_gutenberg' ],
+				'required_plugins'             => [ 'contact_form_7', 'disable_gutenberg', ],
 			],
 			[
 				'import_file_name'             => 'Business Demo',
@@ -113,6 +113,7 @@ class OCDI
 				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/business-customizer.dat',
 				'import_preview_image_url'     => plugins_url( 'demos/business-preview.png', __FILE__ ),
 				'preview_url'                  => 'https://business.conversionswp.com/',
+				'required_plugins'             => [ 'ninja_forms', 'disable_gutenberg', ],
 			],
 		];
 	}
@@ -131,6 +132,20 @@ class OCDI
 				'zip' => 'https://downloads.wordpress.org/plugin/disable-gutenberg.2.3.zip',
 				'slug' => 'disable-gutenberg/disable-gutenberg.php',
 				'url' => 'https://wordpress.org/plugins/disable-gutenberg/',
+			],
+			'contact_form_7' => (object)
+			[
+				'name' => 'Contact Form 7',
+				'zip' => 'https://downloads.wordpress.org/plugin/contact-form-7.5.3.2.zip',
+				'slug' => 'contact-form-7/wp-contact-form-7.php',
+				'url' => 'https://wordpress.org/plugins/contact-form-7/',
+			],
+			'ninja_forms' => (object)
+			[
+				'name' => 'Ninja Forms',
+				'zip' => 'https://downloads.wordpress.org/plugin/ninja-forms.3.4.33.zip',
+				'slug' => 'ninja-forms/ninja-forms.php',
+				'url' => 'https://wordpress.org/plugins/ninja-forms/',
 			],
 		];
 
