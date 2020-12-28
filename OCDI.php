@@ -22,9 +22,35 @@ class OCDI {
 		add_filter( 'pt-ocdi/import_files', [ $this, 'ocdi_import_files' ] );
 		add_action( 'pt-ocdi/after_import', [ $this, 'ocdi_after_import' ] );
 		add_action( 'pt-ocdi/before_content_import', [ $this, 'ocdi_before_content_import' ] );
+		add_action( 'pt-ocdi/before_widgets_import', [ $this, 'ocdi_before_widgets_import' ] );
 		add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 		add_filter( 'pt-ocdi/plugin_intro_text', [ $this, 'ocdi_plugin_intro_text' ] );
 		add_filter( 'gettext', [ $this, 'ocdi_success_notice_text' ], 999, 3 );
+	}
+
+	/**
+	 * One Click Demo Import before widgets import execute code.
+	 *
+	 * @since 2020-12-28
+	 *
+	 * @param array $selected_import Import demos.
+	 */
+	public function ocdi_before_widgets_import( $selected_import ) {
+
+		// Get all sidebar widgets.
+		$sidebars_widgets = get_option( 'sidebars_widgets' );
+
+		// Theme sidebar IDs.
+		$sidebar_id = [ 1, 2, 3, 4, 5, 6 ];
+
+		// Make active widgets inactive.
+		foreach ( $sidebar_id as $v ) {
+			$sidebars_widgets['wp_inactive_widgets']  = array_merge( $sidebars_widgets['wp_inactive_widgets'], $sidebars_widgets[ 'sidebar-' . $v . '' ] );
+			$sidebars_widgets[ 'sidebar-' . $v . '' ] = [];
+		}
+
+		// Update sidebar widgets.
+		update_option( 'sidebars_widgets', $sidebars_widgets );
 	}
 
 	/**
