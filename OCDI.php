@@ -19,6 +19,7 @@ class OCDI {
 	 * @since 2020-12-27
 	 */
 	public function __construct() {
+		add_action( 'plugins_loaded', [ $this, 'plugins_loaded' ] );
 		add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 		add_filter( 'pt-ocdi/plugin_intro_text', [ $this, 'ocdi_plugin_intro_text' ] );
 		add_filter( 'pt-ocdi/import_files', [ $this, 'ocdi_import_files' ] );
@@ -26,6 +27,19 @@ class OCDI {
 		add_action( 'pt-ocdi/before_widgets_import', [ $this, 'ocdi_before_widgets_import' ] );
 		add_action( 'pt-ocdi/after_import', [ $this, 'ocdi_after_import' ] );
 		add_filter( 'gettext', [ $this, 'ocdi_success_notice_text' ], 999, 3 );
+	}
+
+	public function plugins_loaded()
+	{
+		// If there already is an OCDI plugin, don't load ours.
+		if ( class_exists( 'OCDI_Plugin' ) )
+			return;
+		// Include the plugin!
+		if ( isset( $_GET[ 'action' ] ) )
+			if ( $_GET[ 'action' ] == 'activate' )
+				return;
+
+		require_once( __DIR__ . '/vendor/awesomemotive/one-click-demo-import/one-click-demo-import.php' );
 	}
 
 	/**
