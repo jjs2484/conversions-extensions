@@ -72,7 +72,7 @@ class OCDI {
 
 			foreach ( $import_data[ 'required_plugins' ] as $plugin_id ) {
 				$plugin_data    = static::get_plugin_data( $plugin_id );
-				$import_notice .= sprintf( '<li><a href="%s">%s</a></li>', $plugin_data->url, $plugin_data->name );
+				$import_notice .= sprintf( '<li>%s</li>', $plugin_data->name );
 			}
 
 			$import_notice .= '</ul>';
