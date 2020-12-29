@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.6" created="2020-12-26 09:23" -->
+	<!-- generator="WordPress/5.6" created="2020-12-29 14:16" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>My Blog</title>
 	<link>https://blog.conversionswp.com</link>
 	<description>Just Another WordPress Site</description>
-	<pubDate>Sat, 26 Dec 2020 09:23:18 +0000</pubDate>
+	<pubDate>Tue, 29 Dec 2020 14:16:39 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://conversionswp.com/</wp:base_site_url>
@@ -140,6 +140,13 @@
 		<wp:term_description><![CDATA[Items in the block category have been created with the block editor.]]></wp:term_description>
 	</wp:term>
 		<wp:term>
+		<wp:term_id>178</wp:term_id>
+		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[blog-menu]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Blog Menu]]></wp:term_name>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>186</wp:term_id>
 		<wp:term_taxonomy><![CDATA[post_format]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[post-format-chat]]></wp:term_slug>
@@ -218,13 +225,6 @@
 		<wp:term_name><![CDATA[Link]]></wp:term_name>
 	</wp:term>
 		<wp:term>
-		<wp:term_id>178</wp:term_id>
-		<wp:term_taxonomy><![CDATA[nav_menu]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[main-menu]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Main Menu]]></wp:term_name>
-	</wp:term>
-		<wp:term>
 		<wp:term_id>31</wp:term_id>
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[markup]]></wp:term_slug>
@@ -289,7 +289,7 @@
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Video]]></wp:term_name>
 	</wp:term>
-			<wp:term><wp:term_id>178</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[main-menu]]></wp:term_slug><wp:term_name><![CDATA[Main Menu]]></wp:term_name>
+			<wp:term><wp:term_id>178</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[blog-menu]]></wp:term_slug><wp:term_name><![CDATA[Blog Menu]]></wp:term_name>
 </wp:term>
 
 	<generator>https://wordpress.org/?v=5.6</generator>
@@ -655,7 +655,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
+										<category domain="nav_menu" nicename="blog-menu"><![CDATA[Blog Menu]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
@@ -710,7 +710,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
+										<category domain="nav_menu" nicename="blog-menu"><![CDATA[Blog Menu]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
@@ -1038,7 +1038,7 @@
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main-menu"><![CDATA[Main Menu]]></category>
+										<category domain="nav_menu" nicename="blog-menu"><![CDATA[Blog Menu]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
 		<wp:meta_value><![CDATA[0]]></wp:meta_value>

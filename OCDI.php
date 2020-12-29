@@ -108,7 +108,7 @@ class OCDI {
 				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/business-customizer.dat',
 				'import_preview_image_url'     => plugins_url( 'demos/business-preview.png', __FILE__ ),
 				'preview_url'                  => 'https://business.conversionswp.com/',
-				'required_plugins'             => [ 'ninja_forms', 'disable_gutenberg', ],
+				'required_plugins'             => [ 'contact_form_7', 'disable_gutenberg', ],
 			],
 		];
 	}
@@ -204,7 +204,7 @@ class OCDI {
 		switch ( $selected_import['import_file_name'] ) {
 			case 'Blog Demo':
 				// Assign menu to location.
-				$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+				$main_menu = get_term_by( 'name', 'Blog Menu', 'nav_menu' );
 				set_theme_mod(
 					'nav_menu_locations',
 					[
@@ -217,7 +217,7 @@ class OCDI {
 				break;
 			case 'Business Demo':
 				// Assign menu to location.
-				$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+				$main_menu = get_term_by( 'name', 'Business Menu', 'nav_menu' );
 				set_theme_mod(
 					'nav_menu_locations',
 					[
