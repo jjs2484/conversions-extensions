@@ -19,13 +19,152 @@ class OCDI {
 	 * @since 2020-12-27
 	 */
 	public function __construct() {
-		add_filter( 'pt-ocdi/import_files', [ $this, 'ocdi_import_files' ] );
-		add_action( 'pt-ocdi/after_import', [ $this, 'ocdi_after_import' ] );
-		add_action( 'pt-ocdi/before_content_import', [ $this, 'ocdi_before_content_import' ] );
-		add_action( 'pt-ocdi/before_widgets_import', [ $this, 'ocdi_before_widgets_import' ] );
 		add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 		add_filter( 'pt-ocdi/plugin_intro_text', [ $this, 'ocdi_plugin_intro_text' ] );
+		add_filter( 'pt-ocdi/import_files', [ $this, 'ocdi_import_files' ] );
+		add_action( 'pt-ocdi/before_content_import', [ $this, 'ocdi_before_content_import' ] );
+		add_action( 'pt-ocdi/before_widgets_import', [ $this, 'ocdi_before_widgets_import' ] );
+		add_action( 'pt-ocdi/after_import', [ $this, 'ocdi_after_import' ] );
 		add_filter( 'gettext', [ $this, 'ocdi_success_notice_text' ], 999, 3 );
+	}
+
+	/**
+	 * One Click Demo Import intro text.
+	 *
+	 * @since 2020-12-21
+	 *
+	 * @param string $default_text Intro text string.
+	 */
+	public function ocdi_plugin_intro_text( $default_text ) {
+
+		// Plugin notice.
+		$default_text = sprintf(
+			'<div class="ocdi__intro-notice notice notice-warning is-dismissible"><p>%s</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">%s</span></button></div>',
+			__( 'Before you begin, make sure all the required plugins are activated.', 'conversions' ),
+			__( 'Dismiss this notice.', 'conversions' )
+		);
+
+		// Intro description.
+		$default_text .= sprintf(
+			'<div class="ocdi__intro-text"><p class="about-description">%s</p></div>',
+			__( 'Importing demo data (posts, pages, images, theme settings...) is the easiest way to setup your theme. Quickly set everything up instead of editing from scratch.', 'conversions' )
+		);
+
+		return $default_text;
+	}
+
+	/**
+	 * One Click Demo Import local files.
+	 *
+	 * @since 2020-12-21
+	 */
+	public function ocdi_import_files() {
+		$data = static::get_ocdi_import_files();
+		foreach ( $data as $index => $import_data ) {
+			// We are only interested in imports that define required_plugins.
+			if ( ! isset( $import_data[ 'required_plugins' ] ) )
+				continue;
+
+			$import_notice = __( 'The following plugins will be installed and activated if they are not already:', 'conversions' );
+
+			$import_notice .= '<br>';
+			$import_notice .= '<ul>';
+
+			foreach ( $import_data[ 'required_plugins' ] as $plugin_id ) {
+				$plugin_data    = static::get_plugin_data( $plugin_id );
+				$import_notice .= sprintf( '<li><a href="%s">%s</a></li>', $plugin_data->url, $plugin_data->name );
+			}
+
+			$import_notice .= '</ul>';
+
+			$data[ $index ][ 'import_notice' ] = $import_notice;
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Return the base OCDI import files data.
+	 *
+	 * @since 2020-12-27
+	 */
+	public static function get_ocdi_import_files() {
+		return [
+			[
+				'import_file_name'             => 'Blog Demo',
+				'categories'                   => [ 'Blog', 'Free' ],
+				'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/blog.xml',
+				'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/blog-widgets.wie',
+				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/blog-customizer.dat',
+				'import_preview_image_url'     => plugins_url( 'demos/blog-preview.png', __FILE__ ),
+				'preview_url'                  => 'https://blog.conversionswp.com/',
+				'required_plugins'             => [ 'contact_form_7', 'disable_gutenberg', ],
+			],
+			[
+				'import_file_name'             => 'Business Demo',
+				'categories'                   => [ 'Business', 'Free' ],
+				'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/business.xml',
+				'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/business-widgets.wie',
+				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/business-customizer.dat',
+				'import_preview_image_url'     => plugins_url( 'demos/business-preview.png', __FILE__ ),
+				'preview_url'                  => 'https://business.conversionswp.com/',
+				'required_plugins'             => [ 'ninja_forms', 'disable_gutenberg', ],
+			],
+		];
+	}
+
+	/**
+	 * Retrieve the plugin data.
+	 *
+	 * @since 2020-12-27
+	 *
+	 * @param string $plugin_id Plugin ID and array key.
+	 */
+	public static function get_plugin_data( $plugin_id = false ) {
+		$data = (object) [
+			'disable_gutenberg' => (object) [
+				'name' => 'Disable Gutenberg',
+				'zip'  => 'https://downloads.wordpress.org/plugin/disable-gutenberg.2.3.zip',
+				'slug' => 'disable-gutenberg/disable-gutenberg.php',
+				'url'  => 'https://wordpress.org/plugins/disable-gutenberg/',
+			],
+			'contact_form_7'    => (object) [
+				'name' => 'Contact Form 7',
+				'zip'  => 'https://downloads.wordpress.org/plugin/contact-form-7.5.3.2.zip',
+				'slug' => 'contact-form-7/wp-contact-form-7.php',
+				'url'  => 'https://wordpress.org/plugins/contact-form-7/',
+			],
+			'ninja_forms'       => (object) [
+				'name' => 'Ninja Forms',
+				'zip'  => 'https://downloads.wordpress.org/plugin/ninja-forms.3.4.33.zip',
+				'slug' => 'ninja-forms/ninja-forms.php',
+				'url'  => 'https://wordpress.org/plugins/ninja-forms/',
+			],
+		];
+
+		// Do we return a specific plugin?
+		if ( $plugin_id )
+			return $data->$plugin_id;
+
+		return $data;
+	}
+
+	/**
+	 * One Click Demo Import before import execute code.
+	 *
+	 * @since 2020-12-21
+	 *
+	 * @param array $selected_import Import demos.
+	 */
+	public function ocdi_before_content_import( $selected_import ) {
+
+		// Handle the download and activation of all plugins.
+		if ( isset( $selected_import[ 'required_plugins' ] ) ) {
+			foreach ( $selected_import[ 'required_plugins' ] as $plugin_id ) {
+				$plugin_data = static::get_plugin_data( $plugin_id );
+				$this->replace_plugin( $plugin_data );
+			}
+		}
 	}
 
 	/**
@@ -100,145 +239,6 @@ class OCDI {
 				}
 				break;
 		}
-	}
-
-	/**
-	 * One Click Demo Import before import execute code.
-	 *
-	 * @since 2020-12-21
-	 *
-	 * @param array $selected_import Import demos.
-	 */
-	public function ocdi_before_content_import( $selected_import ) {
-
-		// Handle the download and activation of all plugins.
-		if ( isset( $selected_import[ 'required_plugins' ] ) ) {
-			foreach ( $selected_import[ 'required_plugins' ] as $plugin_id ) {
-				$plugin_data = static::get_plugin_data( $plugin_id );
-				$this->replace_plugin( $plugin_data );
-			}
-		}
-	}
-
-	/**
-	 * Return the base OCDI import files data.
-	 *
-	 * @since 2020-12-27
-	 */
-	public static function get_ocdi_import_files() {
-		return [
-			[
-				'import_file_name'             => 'Blog Demo',
-				'categories'                   => [ 'Blog', 'Free' ],
-				'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/blog.xml',
-				'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/blog-widgets.wie',
-				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/blog-customizer.dat',
-				'import_preview_image_url'     => plugins_url( 'demos/blog-preview.png', __FILE__ ),
-				'preview_url'                  => 'https://blog.conversionswp.com/',
-				'required_plugins'             => [ 'contact_form_7', 'disable_gutenberg', ],
-			],
-			[
-				'import_file_name'             => 'Business Demo',
-				'categories'                   => [ 'Business', 'Free' ],
-				'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/business.xml',
-				'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/business-widgets.wie',
-				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/business-customizer.dat',
-				'import_preview_image_url'     => plugins_url( 'demos/business-preview.png', __FILE__ ),
-				'preview_url'                  => 'https://business.conversionswp.com/',
-				'required_plugins'             => [ 'ninja_forms', 'disable_gutenberg', ],
-			],
-		];
-	}
-
-	/**
-	 * Retrieve the plugin data.
-	 *
-	 * @since 2020-12-27
-	 *
-	 * @param string $plugin_id Plugin ID and array key.
-	 */
-	public static function get_plugin_data( $plugin_id = false ) {
-		$data = (object) [
-			'disable_gutenberg' => (object) [
-				'name' => 'Disable Gutenberg',
-				'zip'  => 'https://downloads.wordpress.org/plugin/disable-gutenberg.2.3.zip',
-				'slug' => 'disable-gutenberg/disable-gutenberg.php',
-				'url'  => 'https://wordpress.org/plugins/disable-gutenberg/',
-			],
-			'contact_form_7'    => (object) [
-				'name' => 'Contact Form 7',
-				'zip'  => 'https://downloads.wordpress.org/plugin/contact-form-7.5.3.2.zip',
-				'slug' => 'contact-form-7/wp-contact-form-7.php',
-				'url'  => 'https://wordpress.org/plugins/contact-form-7/',
-			],
-			'ninja_forms'       => (object) [
-				'name' => 'Ninja Forms',
-				'zip'  => 'https://downloads.wordpress.org/plugin/ninja-forms.3.4.33.zip',
-				'slug' => 'ninja-forms/ninja-forms.php',
-				'url'  => 'https://wordpress.org/plugins/ninja-forms/',
-			],
-		];
-
-		// Do we return a specific plugin?
-		if ( $plugin_id )
-			return $data->$plugin_id;
-
-		return $data;
-	}
-
-	/**
-	 * One Click Demo Import local files.
-	 *
-	 * @since 2020-12-21
-	 */
-	public function ocdi_import_files() {
-		$data = static::get_ocdi_import_files();
-		foreach ( $data as $index => $import_data ) {
-			// We are only interested in imports that define required_plugins.
-			if ( ! isset( $import_data[ 'required_plugins' ] ) )
-				continue;
-
-			$import_notice = __( 'The following plugins will be installed and activated if they are not already:', 'conversions' );
-
-			$import_notice .= '<br>';
-			$import_notice .= '<ul>';
-
-			foreach ( $import_data[ 'required_plugins' ] as $plugin_id ) {
-				$plugin_data    = static::get_plugin_data( $plugin_id );
-				$import_notice .= sprintf( '<li><a href="%s">%s</a></li>', $plugin_data->url, $plugin_data->name );
-			}
-
-			$import_notice .= '</ul>';
-
-			$data[ $index ][ 'import_notice' ] = $import_notice;
-		}
-
-		return $data;
-	}
-
-	/**
-	 * One Click Demo Import intro text.
-	 *
-	 * @since 2020-12-21
-	 *
-	 * @param string $default_text Intro text string.
-	 */
-	public function ocdi_plugin_intro_text( $default_text ) {
-
-		// Plugin notice.
-		$default_text = sprintf(
-			'<div class="ocdi__intro-notice notice notice-warning is-dismissible"><p>%s</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">%s</span></button></div>',
-			__( 'Before you begin, make sure all the required plugins are activated.', 'conversions' ),
-			__( 'Dismiss this notice.', 'conversions' )
-		);
-
-		// Intro description.
-		$default_text .= sprintf(
-			'<div class="ocdi__intro-text"><p class="about-description">%s</p></div>',
-			__( 'Importing demo data (posts, pages, images, theme settings...) is the easiest way to setup your theme. Quickly set everything up instead of editing from scratch.', 'conversions' )
-		);
-
-		return $default_text;
 	}
 
 	/**
