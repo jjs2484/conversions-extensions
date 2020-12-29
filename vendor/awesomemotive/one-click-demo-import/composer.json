@@ -1,0 +1,20 @@
+{
+    "name":         "awesomemotive/one-click-demo-import",
+    "description":  "One Click Demo Import plugin by AwesomeMotive.",
+    "license":      "GPL-3.0+",
+    "type":         "project",
+    "repositories": [
+      {
+        "type": "vcs",
+        "url":  "https://github.com/awesomemotive/WordPress-Importer.git"
+      }
+    ],
+    "autoload": {
+        "psr-4": {
+            "OCDI\\": "inc/"
+        }
+    },
+    "require": {
+        "awesomemotive/wp-content-importer-v2": "^3.0.3"
+    }
+}

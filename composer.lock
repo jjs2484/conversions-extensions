@@ -4,9 +4,93 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a66f4b09bd5e329495959927c8ca5e40",
+    "content-hash": "474a0f0fd8119ee40e24fe740a2a9ede",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "awesomemotive/one-click-demo-import",
+            "version": "v2.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/awesomemotive/one-click-demo-import.git",
+                "reference": "a3d16163aecfc8374126b57e38045c1508c85d4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/awesomemotive/one-click-demo-import/zipball/a3d16163aecfc8374126b57e38045c1508c85d4d",
+                "reference": "a3d16163aecfc8374126b57e38045c1508c85d4d",
+                "shasum": ""
+            },
+            "require": {
+                "awesomemotive/wp-content-importer-v2": "^3.0.3"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "OCDI\\": "inc/"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "One Click Demo Import plugin by AwesomeMotive.",
+            "support": {
+                "source": "https://github.com/awesomemotive/one-click-demo-import/tree/v2.6.1",
+                "issues": "https://github.com/awesomemotive/one-click-demo-import/issues"
+            },
+            "time": "2020-07-21T15:12:35+00:00"
+        },
+        {
+            "name": "awesomemotive/wp-content-importer-v2",
+            "version": "v3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/awesomemotive/WordPress-Importer.git",
+                "reference": "318c7657f4a4a84cf9e5a0d7f8d6ee2b2d0d0e9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/awesomemotive/WordPress-Importer/zipball/318c7657f4a4a84cf9e5a0d7f8d6ee2b2d0d0e9e",
+                "reference": "318c7657f4a4a84cf9e5a0d7f8d6ee2b2d0d0e9e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AwesomeMotive\\WPContentImporter2\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Gregor Capuder",
+                    "email": "capuderg@gmail.com"
+                },
+                {
+                    "name": "Primoz Cigler",
+                    "email": "primoz@proteusnet.com"
+                },
+                {
+                    "name": "Humanmade contributors",
+                    "homepage": "https://github.com/humanmade/WordPress-Importer/graphs/contributors"
+                }
+            ],
+            "description": "Improved WP content importer used in OCDI plugin.",
+            "keywords": [
+                "awesomemotive",
+                "content",
+                "import",
+                "theme",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "source": "https://github.com/awesomemotive/WordPress-Importer/tree/v3.0.3"
+            },
+            "time": "2020-07-21T15:06:58+00:00"
+        },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
             "version": "v0.7.1",

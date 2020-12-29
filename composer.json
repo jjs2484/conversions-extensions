@@ -1,14 +1,23 @@
 {
-	"autoload":
-	{
-		"psr-4":
+    "autoload": {
+        "psr-4": {
+            "conversions\\extensions\\": "."
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/awesomemotive/one-click-demo-import.git"
+		},
 		{
-			"conversions\\extensions\\": "."
+			"type": "vcs",
+			"url":  "https://github.com/awesomemotive/WordPress-Importer.git"
 		}
-	},
+    ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
         "wp-coding-standards/wpcs": "^2.2",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+		"awesomemotive/one-click-demo-import": "^2.6.1"
     }
 }

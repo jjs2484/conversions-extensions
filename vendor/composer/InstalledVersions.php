@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '7892b6f615aaf5c87728c40e13c462634cb12185',
+    'reference' => 'ec9ce4cb7d779e0fa28b4c2378def5dd94d546b6',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,25 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '7892b6f615aaf5c87728c40e13c462634cb12185',
+      'reference' => 'ec9ce4cb7d779e0fa28b4c2378def5dd94d546b6',
+    ),
+    'awesomemotive/one-click-demo-import' => 
+    array (
+      'pretty_version' => 'v2.6.1',
+      'version' => '2.6.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a3d16163aecfc8374126b57e38045c1508c85d4d',
+    ),
+    'awesomemotive/wp-content-importer-v2' => 
+    array (
+      'pretty_version' => 'v3.0.3',
+      'version' => '3.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '318c7657f4a4a84cf9e5a0d7f8d6ee2b2d0d0e9e',
     ),
     'dealerdirect/phpcodesniffer-composer-installer' => 
     array (

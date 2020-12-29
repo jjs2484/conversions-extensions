@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'conversions\\extensions\\' => array($baseDir . '/'),
+    'OCDI\\' => array($vendorDir . '/awesomemotive/one-click-demo-import/inc'),
     'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
+    'AwesomeMotive\\WPContentImporter2\\' => array($vendorDir . '/awesomemotive/wp-content-importer-v2/src'),
 );
