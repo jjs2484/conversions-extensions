@@ -1,6 +1,6 @@
 <?php
 /**
- * Handles One Click Demo Import stuff.
+ * Handles OCDI stuff.
  *
  * @package conversions
  */
@@ -20,6 +20,7 @@ class OCDI {
 	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', [ $this, 'plugins_loaded' ] );
+		add_filter( 'pt-ocdi/plugin_page_setup', [ $this, 'ocdi_plugin_page_setup' ] );
 		add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 		add_filter( 'pt-ocdi/plugin_intro_text', [ $this, 'ocdi_plugin_intro_text' ] );
 		add_filter( 'pt-ocdi/import_files', [ $this, 'ocdi_import_files' ] );
@@ -30,7 +31,7 @@ class OCDI {
 	}
 
 	/**
-	 * One Click Demo Import load library if class doesn't exist.
+	 * OCDI load library if class doesn't exist.
 	 *
 	 * @since 2020-12-29
 	 */
@@ -47,7 +48,24 @@ class OCDI {
 	}
 
 	/**
-	 * One Click Demo Import intro text.
+	 * OCDI admin page settings.
+	 *
+	 * @since 2020-12-30
+	 *
+	 * @param array $default_settings Default admin page settings.
+	 */
+	public function ocdi_plugin_page_setup( $default_settings ) {
+		$default_settings['parent_slug'] = 'themes.php';
+		$default_settings['page_title']  = esc_html__( 'Conversions Demos', 'conversions' );
+		$default_settings['menu_title']  = esc_html__( 'Conversions Demos', 'conversions' );
+		$default_settings['capability']  = 'import';
+		$default_settings['menu_slug']   = 'pt-one-click-demo-import';
+
+		return $default_settings;
+	}
+
+	/**
+	 * OCDI intro text.
 	 *
 	 * @since 2020-12-21
 	 *
@@ -72,7 +90,7 @@ class OCDI {
 	}
 
 	/**
-	 * One Click Demo Import local files.
+	 * OCDI local files.
 	 *
 	 * @since 2020-12-21
 	 */
@@ -162,7 +180,7 @@ class OCDI {
 	}
 
 	/**
-	 * One Click Demo Import before import execute code.
+	 * OCDI before import execute code.
 	 *
 	 * @since 2020-12-21
 	 *
@@ -180,7 +198,7 @@ class OCDI {
 	}
 
 	/**
-	 * One Click Demo Import before widgets import execute code.
+	 * OCDI before widgets import execute code.
 	 *
 	 * @since 2020-12-28
 	 *
@@ -205,7 +223,7 @@ class OCDI {
 	}
 
 	/**
-	 * One Click Demo Import after import execute code.
+	 * OCDI after import execute code.
 	 *
 	 * @since 2020-12-21
 	 *
