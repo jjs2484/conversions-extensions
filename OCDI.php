@@ -29,17 +29,21 @@ class OCDI {
 		add_filter( 'gettext', [ $this, 'ocdi_success_notice_text' ], 999, 3 );
 	}
 
-	public function plugins_loaded()
-	{
-		// If there already is an OCDI plugin, don't load ours.
+	/**
+	 * One Click Demo Import load library if class doesn't exist.
+	 *
+	 * @since 2020-12-29
+	 */
+	public function plugins_loaded() {
+		// If there already is an OCDI_Plugin class, don't load ours.
 		if ( class_exists( 'OCDI_Plugin' ) )
 			return;
-		// Include the plugin!
 		if ( isset( $_GET[ 'action' ] ) )
 			if ( $_GET[ 'action' ] == 'activate' )
 				return;
 
-		require_once( __DIR__ . '/vendor/awesomemotive/one-click-demo-import/one-click-demo-import.php' );
+		// Require OCDI_Plugin class.
+		require_once __DIR__ . '/vendor/awesomemotive/one-click-demo-import/one-click-demo-import.php';
 	}
 
 	/**
@@ -112,7 +116,7 @@ class OCDI {
 				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/blog-customizer.dat',
 				'import_preview_image_url'     => plugins_url( 'demos/blog-preview.png', __FILE__ ),
 				'preview_url'                  => 'https://blog.conversionswp.com/',
-				'required_plugins'             => [ 'contact_form_7', 'disable_gutenberg', ],
+				'required_plugins'             => [ 'contact_form_7', ],
 			],
 			[
 				'import_file_name'             => 'Business Demo',
@@ -122,7 +126,7 @@ class OCDI {
 				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/business-customizer.dat',
 				'import_preview_image_url'     => plugins_url( 'demos/business-preview.png', __FILE__ ),
 				'preview_url'                  => 'https://business.conversionswp.com/',
-				'required_plugins'             => [ 'contact_form_7', 'disable_gutenberg', ],
+				'required_plugins'             => [ 'contact_form_7', ],
 			],
 		];
 	}
@@ -136,19 +140,13 @@ class OCDI {
 	 */
 	public static function get_plugin_data( $plugin_id = false ) {
 		$data = (object) [
-			'disable_gutenberg' => (object) [
-				'name' => 'Disable Gutenberg',
-				'zip'  => 'https://downloads.wordpress.org/plugin/disable-gutenberg.2.3.zip',
-				'slug' => 'disable-gutenberg/disable-gutenberg.php',
-				'url'  => 'https://wordpress.org/plugins/disable-gutenberg/',
-			],
-			'contact_form_7'    => (object) [
+			'contact_form_7' => (object) [
 				'name' => 'Contact Form 7',
 				'zip'  => 'https://downloads.wordpress.org/plugin/contact-form-7.5.3.2.zip',
 				'slug' => 'contact-form-7/wp-contact-form-7.php',
 				'url'  => 'https://wordpress.org/plugins/contact-form-7/',
 			],
-			'ninja_forms'       => (object) [
+			'ninja_forms'    => (object) [
 				'name' => 'Ninja Forms',
 				'zip'  => 'https://downloads.wordpress.org/plugin/ninja-forms.3.4.33.zip',
 				'slug' => 'ninja-forms/ninja-forms.php',
