@@ -86,6 +86,11 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 == Changelog ==
 
+= 1.7.0 =
+* Update: Versioning to match theme major version points.
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.
+
 = 1.2.0 =
 * New: Add One Click Demo Import.
 * New: Business demo for import.
