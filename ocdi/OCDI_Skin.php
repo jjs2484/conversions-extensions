@@ -5,7 +5,7 @@
  * @package conversions
  */
 
-namespace conversions\extensions;
+namespace conversions\extensions\ocdi;
 
 /**
  * Class OCDI_Skin

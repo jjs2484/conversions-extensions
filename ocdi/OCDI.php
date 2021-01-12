@@ -5,7 +5,7 @@
  * @package conversions
  */
 
-namespace conversions\extensions;
+namespace conversions\extensions\ocdi;
 
 /**
  * Class ODCI
@@ -44,7 +44,7 @@ class OCDI {
 				return;
 
 		// Require OCDI_Plugin class.
-		require_once __DIR__ . '/vendor/awesomemotive/one-click-demo-import/one-click-demo-import.php';
+		require_once __DIR__ . '/../vendor/awesomemotive/one-click-demo-import/one-click-demo-import.php';
 	}
 
 	/**
@@ -129,20 +129,20 @@ class OCDI {
 			[
 				'import_file_name'             => 'Blog Demo',
 				'categories'                   => [ 'Blog', 'Free' ],
-				'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/blog.xml',
-				'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/blog-widgets.wie',
-				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/blog-customizer.dat',
-				'import_preview_image_url'     => plugins_url( 'demos/blog-preview.png', __FILE__ ),
+				'local_import_file'            => plugin_dir_url( __DIR__ ) . 'ocdi/demos/blog.xml',
+				'local_import_widget_file'     => plugin_dir_url( __DIR__ ) . 'ocdi/demos/blog-widgets.wie',
+				'local_import_customizer_file' => plugin_dir_url( __DIR__ ) . 'ocdi/demos/blog-customizer.dat',
+				'import_preview_image_url'     => plugin_dir_url( __DIR__ ) . 'ocdi/demos/blog-preview.png',
 				'preview_url'                  => 'https://blog.conversionswp.com/',
 				'required_plugins'             => [ 'contact_form_7', ],
 			],
 			[
 				'import_file_name'             => 'Business Demo',
 				'categories'                   => [ 'Business', 'Free' ],
-				'local_import_file'            => trailingslashit( __DIR__ ) . 'demos/business.xml',
-				'local_import_widget_file'     => trailingslashit( __DIR__ ) . 'demos/business-widgets.wie',
-				'local_import_customizer_file' => trailingslashit( __DIR__ ) . 'demos/business-customizer.dat',
-				'import_preview_image_url'     => plugins_url( 'demos/business-preview.png', __FILE__ ),
+				'local_import_file'            => plugin_dir_url( __DIR__ ) . 'ocdi/demos/business.xml',
+				'local_import_widget_file'     => plugin_dir_url( __DIR__ ) . 'ocdi/demos/business-widgets.wie',
+				'local_import_customizer_file' => plugin_dir_url( __DIR__ ) . 'ocdi/demos/business-customizer.dat',
+				'import_preview_image_url'     => plugin_dir_url( __DIR__ ) . 'ocdi/demos/business-preview.png',
 				'preview_url'                  => 'https://business.conversionswp.com/',
 				'required_plugins'             => [ 'contact_form_7', ],
 			],

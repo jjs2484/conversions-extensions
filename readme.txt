@@ -87,6 +87,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.7.0 =
+* Update: Move OCDI files and demos into /ocdi folder and namespace.
 * Update: Versioning to match theme major version points.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.

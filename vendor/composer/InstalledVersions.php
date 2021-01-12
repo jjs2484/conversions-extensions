@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a3aa82dc302409d1d1bbdbffd4950d3491f2a7fc',
+    'reference' => '5dc5999b63d5186bdeb215445fde5451b41cac33',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a3aa82dc302409d1d1bbdbffd4950d3491f2a7fc',
+      'reference' => '5dc5999b63d5186bdeb215445fde5451b41cac33',
     ),
     'awesomemotive/one-click-demo-import' => 
     array (

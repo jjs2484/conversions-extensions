@@ -42,7 +42,7 @@ namespace conversions\extensions {
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
 			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
 
-			static::$__ocdi = new OCDI();
+			static::$__ocdi = new ocdi\OCDI();
 		}
 
 		/**
