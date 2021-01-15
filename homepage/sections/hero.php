@@ -23,10 +23,18 @@ trait hero {
 
 					<?php
 					// Title.
-					if ( get_theme_mod( 'conversions_hh_title' ) === 'alt' && ! empty( get_theme_mod( 'conversions_hh_alt_title' ) ) ) {
-						echo '<h1>' . wp_kses_post( get_theme_mod( 'conversions_hh_alt_title' ) ) . '</h1>';
-					} elseif ( get_theme_mod( 'conversions_hh_title' ) === 'page' ) {
-						echo '<h1>' . esc_html( get_the_title() ) . '</h1>';
+					$title_type = get_theme_mod( 'conversions_hh_title', 'page' );
+					switch ( $title_type ) {
+						case 'alt':
+							if ( ! empty( get_theme_mod( 'conversions_hh_alt_title' ) ) ) {
+								echo '<h1>' . wp_kses_post( get_theme_mod( 'conversions_hh_alt_title' ) ) . '</h1>';
+							}
+							break;
+						case 'page':
+							echo '<h1>' . esc_html( get_the_title() ) . '</h1>';
+							break;
+						default:
+							echo '<h1>' . esc_html( get_the_title() ) . '</h1>';
 					}
 
 					// Description.
