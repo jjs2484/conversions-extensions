@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 5.6
 Requires at least: 4.7
@@ -85,6 +85,9 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.7.1 =
+* Update: Font Awesome icons.json metadata to v5.15.2
 
 = 1.7.0 =
 * Update: Move OCDI files and demos into /ocdi folder and namespace.
