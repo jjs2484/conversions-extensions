@@ -656,6 +656,7 @@ jQuery(document).ready(function($) {
 		[ '#customize-control-conversions_hc_sm_control, #customize-control-conversions_hc_md_control, #customize-control-conversions_hc_lg_control', '#customize-control-conversions_hc_respond', 'auto'],
 		[ '#customize-control-conversions_pricing_sm_control, #customize-control-conversions_pricing_md_control, #customize-control-conversions_pricing_lg_control', '#customize-control-conversions_pricing_respond', 'auto'],
 		[ '#customize-control-conversions_branding_tbpadding_control', '#customize-control-conversions_nav_layout', 'right'],
+		[ '#customize-control-conversions_hh_alt_title', '#customize-control-conversions_hh_title', 'page'],
 	];
 	
 	conditionalOptions.forEach( function( conditionalOptionsArray ) {

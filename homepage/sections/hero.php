@@ -24,7 +24,7 @@ trait hero {
 					<?php
 					// Title.
 					if ( get_theme_mod( 'conversions_hh_title' ) === 'alt' && ! empty( get_theme_mod( 'conversions_hh_alt_title' ) ) ) {
-						echo '<h1>' . esc_html( get_theme_mod( 'conversions_hh_alt_title' ) ) . '</h1>';
+						echo '<h1>' . wp_kses_post( get_theme_mod( 'conversions_hh_alt_title' ) ) . '</h1>';
 					} elseif ( get_theme_mod( 'conversions_hh_title' ) === 'page' ) {
 						echo '<h1>' . esc_html( get_the_title() ) . '</h1>';
 					}
