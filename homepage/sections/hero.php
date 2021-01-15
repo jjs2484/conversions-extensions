@@ -21,14 +21,20 @@ trait hero {
 			<div class="row">
 				<div class="<?php echo esc_attr( get_theme_mod( 'conversions_hh_content_position' ) ); ?>">
 
-					<!-- Title -->
-					<h1><?php echo esc_html( get_the_title() ); ?></h1>
-
 					<?php
+					// Title.
+					if ( get_theme_mod( 'conversions_hh_title' ) === 'alt' && ! empty( get_theme_mod( 'conversions_hh_alt_title' ) ) ) {
+						echo '<h1>' . esc_html( get_theme_mod( 'conversions_hh_alt_title' ) ) . '</h1>';
+					} elseif ( get_theme_mod( 'conversions_hh_title' ) === 'page' ) {
+						echo '<h1>' . esc_html( get_the_title() ) . '</h1>';
+					}
+
+					// Description.
 					if ( ! empty( get_theme_mod( 'conversions_hh_desc' ) ) ) {
 						echo '<p class="lead c-hero__description">' . wp_kses_post( get_theme_mod( 'conversions_hh_desc' ) ) . '</p>';
 					}
 
+					// Buttons.
 					if ( ( get_theme_mod( 'conversions_hh_button', 'no' ) !== 'no' ) || ( get_theme_mod( 'conversions_hh_vbtn', 'no' ) !== 'no' ) ) :
 
 						// Button links.

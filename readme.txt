@@ -88,6 +88,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.7.1 =
 * Update: Font Awesome icons.json metadata to v5.15.2
+* Update: Add customizer option to add an alternative Hero title.
 
 = 1.7.0 =
 * Update: Move OCDI files and demos into /ocdi folder and namespace.
