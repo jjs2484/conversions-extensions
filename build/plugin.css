@@ -615,4 +615,5 @@ section.c-map .c-map__map-responsive.c-map__map-with-content iframe {
   #wrapper-navbar .navbar.navbar-below .navbar-below-menu .show > .nav-link {
     color: rgba(0, 0, 0, 0.8); } }
 #wrapper-navbar .navbar .c-social-icons--navbar i {
-  font-size: 1.05rem; }
+  font-size: 1.05rem;
+  vertical-align: middle; }
