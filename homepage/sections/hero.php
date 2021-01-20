@@ -101,6 +101,7 @@ trait hero {
 				</div>
 			</div>
 		</div>
+		<?php do_action( 'conversions_homepage_bottom_hero' ); ?>
 	</section>
 		<?php
 	}
