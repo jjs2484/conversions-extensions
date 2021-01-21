@@ -42,13 +42,35 @@ trait pricing {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+
 		if ( get_theme_mod( 'conversions_pricing_respond', 'auto' ) === 'auto' ) {
-			// Count pricing tables in loop.
+
+			// Count pricing tables.
 			$cpt_total_count = count( $pricing );
+
+			if ( 1 == $cpt_total_count ) {
+				$col = 5;
+			} elseif ( is_int( $cpt_total_count / 3 ) ) {
+				$col = 4;
+			} elseif ( is_int( $cpt_total_count / 2 ) ) {
+				$col = 5;
+			} else {
+				// prime numbers test divided by three.
+				$get_float = $cpt_total_count / 3;
+				$integer   = floor( $get_float );
+				$float     = $get_float - $integer;
+
+				// Does it fill up atleast a half column?
+				if ( $float >= 0.5 ) {
+					$col = 4;
+				} else { // if not than revert to 2 items per column.
+					$col = 5;
+				}
+			}
 			// Auto calc columns.
 			$conversions_pricing_sm = 12;
 			$conversions_pricing_md = 12;
-			$conversions_pricing_lg = conversions()->template->auto_col_calc( $cpt_total_count );
+			$conversions_pricing_lg = $col;
 		} else {
 			// # per row to bootstrap grid.
 			$cpri = array(

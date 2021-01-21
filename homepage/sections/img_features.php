@@ -39,24 +39,63 @@ trait img_features {
 		// We want to capture the output so that we can return it.
 		ob_start();
 
-		$img_feature_block_count = 0;
+		// Array used to convert items per row to bootstrap grid.
+		$bs_grid = array(
+			'1' => '12',
+			'2' => '6',
+			'3' => '4',
+			'4' => '3',
+		);
 
-		foreach ( $img_features as $repeater_item ) {
+		// Auto calculate items per row.
+		if ( get_theme_mod( 'conversions_img_features_respond', 'auto' ) === 'auto' ) {
+
+			// Image block count.
+			$total_image_blocks = count( $img_features );
+
+			if ( $total_image_blocks == 0 || $total_image_blocks == 1 ) {
+				// Count is 0 or 1.
+				$img_features_block_sm = 1;
+				$img_features_block_md = 1;
+				$img_features_block_lg = 1;
+			} elseif ( $total_image_blocks == 2 ) {
+				// Count is 2.
+				$img_features_block_sm = 2;
+				$img_features_block_md = 2;
+				$img_features_block_lg = 2;
+			} elseif ( ! is_float( $total_image_blocks / 3 ) || $total_image_blocks / 3 - floor( $total_image_blocks / 3 ) >= 0.5 ) {
+				// Count is evenly divisible by 3 or has a float higher than .5.
+				$img_features_block_sm = 2;
+				$img_features_block_md = 2;
+				$img_features_block_lg = 3;
+			} elseif ( ! is_float( $total_image_blocks / 2 ) || $total_image_blocks / 2 - floor( $total_image_blocks / 2 ) >= 0.5 ) {
+				// Count is evenly divisible by 2 or has a float higher than .5.
+				$img_features_block_sm = 2;
+				$img_features_block_md = 2;
+				$img_features_block_lg = 2;
+			} else {
+				// Fallback.
+				$img_features_block_sm = 1;
+				$img_features_block_md = 1;
+				$img_features_block_lg = 1;
+			}
+		} else { // User decides items per row.
+
 			// How many to show per row.
 			$img_features_block_sm = get_theme_mod( 'conversions_img_features_sm', '2' );
 			$img_features_block_md = get_theme_mod( 'conversions_img_features_md', '2' );
 			$img_features_block_lg = get_theme_mod( 'conversions_img_features_lg', '3' );
 
-			// # per row to bootstrap grid.
-			$cfri = array(
-				'1' => '12',
-				'2' => '6',
-				'3' => '4',
-				'4' => '3',
-			);
+		}
+
+		// Block count for HTML IDs.
+		$img_feature_block_count = 0;
+
+		// Loop the image features.
+		foreach ( $img_features as $repeater_item ) {
 
 			// Feature image block html.
-			echo '<div id="c-img-features__block-' . esc_attr( $img_feature_block_count ) . '" class="c-img-features__block col-sm-' . esc_attr( $cfri[$img_features_block_sm] ) . ' col-md-' . esc_attr( $cfri[$img_features_block_md] ) . ' col-lg-' . esc_attr( $cfri[$img_features_block_lg] ) . '">';
+			echo '<div id="c-img-features__block-' . esc_attr( $img_feature_block_count ) . '" class="c-img-features__block col-sm-' . esc_attr( $bs_grid[$img_features_block_sm] ) . ' col-md-' . esc_attr( $bs_grid[$img_features_block_md] ) . ' col-lg-' . esc_attr( $bs_grid[$img_features_block_lg] ) . '">';
 
 			// If link available wrap image.
 			if ( ! empty( $repeater_item->link ) ) {

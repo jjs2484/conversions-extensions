@@ -117,6 +117,34 @@ $wp_customize->add_control(
 	]
 );
 $wp_customize->add_setting(
+	'conversions_team_respond',
+	[
+		'default'           => 'auto',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'conversions_ext_sanitize_select',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+	]
+);
+$wp_customize->add_control(
+	new \WP_Customize_Control(
+		$wp_customize,
+		'conversions_team_respond',
+		[
+			'label'       => __( 'Responsive', 'conversions' ),
+			'description' => __( 'Select auto or manual item breakpoints.', 'conversions' ),
+			'section'     => 'conversions_homepage_team',
+			'settings'    => 'conversions_team_respond',
+			'type'        => 'select',
+			'choices'     => [
+				'auto'   => __( 'Auto', 'conversions' ),
+				'manual' => __( 'Manual', 'conversions' ),
+			],
+			'priority'    => '51',
+		]
+	)
+);
+$wp_customize->add_setting(
 	'conversions_team_sm',
 	[
 		'default'           => '2',

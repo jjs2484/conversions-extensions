@@ -39,24 +39,63 @@ trait icon_features {
 		// We want to capture the output so that we can return it.
 		ob_start();
 
-		$cfeature_block_count = 0;
+		// Array used to convert items per row to bootstrap grid.
+		$bs_grid = array(
+			'1' => '12',
+			'2' => '6',
+			'3' => '4',
+			'4' => '3',
+		);
 
-		foreach ( $icon_features as $repeater_item ) {
+		// Auto calculate items per row.
+		if ( get_theme_mod( 'conversions_features_respond', 'auto' ) === 'auto' ) {
+
+			// Icon block count.
+			$total_icon_blocks = count( $icon_features );
+
+			if ( $total_icon_blocks == 0 || $total_icon_blocks == 1 ) {
+				// Count is 0 or 1.
+				$conversions_icon_features_sm = 1;
+				$conversions_icon_features_md = 1;
+				$conversions_icon_features_lg = 1;
+			} elseif ( $total_icon_blocks == 2 ) {
+				// Count is 2.
+				$conversions_icon_features_sm = 2;
+				$conversions_icon_features_md = 2;
+				$conversions_icon_features_lg = 2;
+			} elseif ( ! is_float( $total_icon_blocks / 3 ) || $total_icon_blocks / 3 - floor( $total_icon_blocks / 3 ) >= 0.5 ) {
+				// Count is evenly divisible by 3 or has a float higher than .5.
+				$conversions_icon_features_sm = 2;
+				$conversions_icon_features_md = 2;
+				$conversions_icon_features_lg = 3;
+			} elseif ( ! is_float( $total_icon_blocks / 2 ) || $total_icon_blocks / 2 - floor( $total_icon_blocks / 2 ) >= 0.5 ) {
+				// Count is evenly divisible by 2 or has a float higher than .5.
+				$conversions_icon_features_sm = 2;
+				$conversions_icon_features_md = 2;
+				$conversions_icon_features_lg = 2;
+			} else {
+				// Fallback.
+				$conversions_icon_features_sm = 1;
+				$conversions_icon_features_md = 1;
+				$conversions_icon_features_lg = 1;
+			}
+		} else { // User decides items per row.
+
 			// How many to show per row.
 			$conversions_icon_features_sm = get_theme_mod( 'conversions_features_sm', '2' );
 			$conversions_icon_features_md = get_theme_mod( 'conversions_features_md', '2' );
 			$conversions_icon_features_lg = get_theme_mod( 'conversions_features_lg', '3' );
 
-			// # per row to bootstrap grid.
-			$cfri = array(
-				'1' => '12',
-				'2' => '6',
-				'3' => '4',
-				'4' => '3',
-			);
+		}
+
+		// Block count for HTML IDs.
+		$cfeature_block_count = 0;
+
+		// Loop the icon features.
+		foreach ( $icon_features as $repeater_item ) {
 
 			// Feature block.
-			echo '<div id="c-features__block-' . esc_attr( $cfeature_block_count ) . '" class="c-features__block col-sm-' . esc_attr( $cfri[$conversions_icon_features_sm] ) . ' col-md-' . esc_attr( $cfri[$conversions_icon_features_md] ) . ' col-lg-' . esc_attr( $cfri[$conversions_icon_features_lg] ) . '">';
+			echo '<div id="c-features__block-' . esc_attr( $cfeature_block_count ) . '" class="c-features__block col-sm-' . esc_attr( $bs_grid[$conversions_icon_features_sm] ) . ' col-md-' . esc_attr( $bs_grid[$conversions_icon_features_md] ) . ' col-lg-' . esc_attr( $bs_grid[$conversions_icon_features_lg] ) . '">';
 
 			echo '<div class="card border-0 h-100"><div class="card-body p-2">';
 

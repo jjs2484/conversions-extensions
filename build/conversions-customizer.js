@@ -657,6 +657,9 @@ jQuery(document).ready(function($) {
 		[ '#customize-control-conversions_pricing_sm_control, #customize-control-conversions_pricing_md_control, #customize-control-conversions_pricing_lg_control', '#customize-control-conversions_pricing_respond', 'auto'],
 		[ '#customize-control-conversions_branding_tbpadding_control', '#customize-control-conversions_nav_layout', 'right'],
 		[ '#customize-control-conversions_hh_alt_title', '#customize-control-conversions_hh_title', 'page'],
+		[ '#customize-control-conversions_features_sm_control, #customize-control-conversions_features_md_control, #customize-control-conversions_features_lg_control', '#customize-control-conversions_features_respond', 'auto'],
+		[ '#customize-control-conversions_img_features_sm_control, #customize-control-conversions_img_features_md_control, #customize-control-conversions_img_features_lg_control', '#customize-control-conversions_img_features_respond', 'auto'],
+		[ '#customize-control-conversions_team_sm_control, #customize-control-conversions_team_md_control, #customize-control-conversions_team_lg_control', '#customize-control-conversions_team_respond', 'auto'],
 	];
 	
 	conditionalOptions.forEach( function( conditionalOptionsArray ) {
