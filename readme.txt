@@ -92,6 +92,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Add customizer option to add an alternative Hero title.
 * Update: Add auto/manual breakpoints for icon features, img features, and team items.
 * Fix: Social icons in navbar vertical-align: middle.
+* Update: NPM Dependencies.
 
 = 1.7.0 =
 * Update: Move OCDI files and demos into /ocdi folder and namespace.
