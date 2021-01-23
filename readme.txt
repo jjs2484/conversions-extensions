@@ -92,6 +92,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Add customizer option to add an alternative Hero title.
 * Update: Add auto/manual breakpoints for icon features, img features, and team items.
 * Update: Add jquery dep to all wp_enqueue_script calls.
+* Update: Blog demo customizer settings.
 * Fix: Social icons in navbar vertical-align: middle.
 * Update: NPM Dependencies.
 
