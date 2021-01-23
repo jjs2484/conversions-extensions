@@ -322,7 +322,7 @@ namespace conversions\extensions {
 			wp_enqueue_script(
 				'conversions-ext-scripts',
 				plugin_dir_url( __FILE__ ) . 'build/plugin.min.js',
-				array(),
+				[ 'jquery' ],
 				$ext_scripts_ver,
 				true
 			);
@@ -351,7 +351,7 @@ namespace conversions\extensions {
 			wp_enqueue_script(
 				'conversions-ext-customizer-js',
 				plugin_dir_url( __FILE__ ) . 'build/conversions-customizer.min.js',
-				array('jquery', 'jquery-ui-draggable', 'wp-color-picker' ),
+				[ 'jquery', 'jquery-ui-draggable', 'wp-color-picker' ],
 				$ext_scripts_ver,
 				true
 			);
