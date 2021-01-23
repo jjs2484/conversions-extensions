@@ -13,6 +13,10 @@
  */
 
 namespace conversions\extensions {
+
+	// Keep in sync with the version above.
+	define( 'CONVERSIONS_EXTENSIONS_VERSION', '1.7.1' );
+
 	/**
 	 * Class Conversions_Extensions
 	 */
@@ -298,32 +302,29 @@ namespace conversions\extensions {
 		 */
 		public function wp_enqueue_scripts() {
 			// CSS.
-			$ext_styles_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/plugin.min.css' ) );
 			wp_enqueue_style(
 				'conversions-ext-styles',
 				plugin_dir_url( __FILE__ ) . 'build/plugin.min.css',
 				array(),
-				$ext_styles_ver
+				CONVERSIONS_EXTENSIONS_VERSION
 			);
 			// RTL.
 			if ( is_rtl() ) {
-				$ext_rtl_styles_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/plugin.rtl.min.css' ) );
 				wp_enqueue_style(
 					'conversions-ext-styles-rtl',
 					plugin_dir_url( __FILE__ ) . 'build/plugin.rtl.min.css',
 					array(),
-					$ext_rtl_styles_ver
+					CONVERSIONS_EXTENSIONS_VERSION
 				);
 				wp_dequeue_style( 'conversions-ext-styles' );
 			}
 
 			// Javascript.
-			$ext_scripts_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/plugin.min.js' ) );
 			wp_enqueue_script(
 				'conversions-ext-scripts',
 				plugin_dir_url( __FILE__ ) . 'build/plugin.min.js',
 				[ 'jquery' ],
-				$ext_scripts_ver,
+				CONVERSIONS_EXTENSIONS_VERSION,
 				true
 			);
 		}
@@ -335,24 +336,22 @@ namespace conversions\extensions {
 		 */
 		public function customize_controls_enqueue_scripts() {
 			// Styles.
-			$ext_styles_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/conversions-customizer.min.css' ) );
 			wp_enqueue_style(
 				'conversions-ext-customizer-css',
 				plugin_dir_url( __FILE__ ) . 'build/conversions-customizer.min.css',
 				array(),
-				$ext_styles_ver
+				CONVERSIONS_EXTENSIONS_VERSION
 			);
 
 			// Scripts.
 			wp_enqueue_script( 'jquery-ui-core' );
 			wp_enqueue_script( 'jquery-ui-sortable' );
 
-			$ext_scripts_ver = gmdate( 'ymd-Gis', filemtime( plugin_dir_path( __FILE__ ) . 'build/conversions-customizer.min.js' ) );
 			wp_enqueue_script(
 				'conversions-ext-customizer-js',
 				plugin_dir_url( __FILE__ ) . 'build/conversions-customizer.min.js',
 				[ 'jquery', 'jquery-ui-draggable', 'wp-color-picker' ],
-				$ext_scripts_ver,
+				CONVERSIONS_EXTENSIONS_VERSION,
 				true
 			);
 		}

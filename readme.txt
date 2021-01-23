@@ -88,6 +88,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.7.1 =
 * New: Action hook conversions_homepage_bottom_hero.
+* New: Add CONVERSIONS_EXTENSIONS_VERSION constant.
 * Update: Font Awesome icons.json metadata to v5.15.2
 * Update: Add customizer option to add an alternative Hero title.
 * Update: Add auto/manual breakpoints for icon features, img features, and team items.
