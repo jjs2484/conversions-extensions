@@ -280,12 +280,21 @@ namespace conversions\extensions {
 				// Fixed navbar below height.
 				if ( get_theme_mod( 'conversions_nav_position', 'fixed-top' ) === 'fixed-top' ) {
 					if ( get_theme_mod( 'conversions_nav_layout', 'right' ) == 'below' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+						// Content margin.
 						echo '.content-wrapper {
 							margin-top: ' . esc_html( $fixed_navbar_height[0] ) . 'rem;
 						}';
+						// Anchor link padding.
+						echo 'html {
+							scroll-padding-top: ' . esc_html( $fixed_navbar_height[0] ) . 'rem;
+						}';
+						// Desktop screen.
 						echo '@media screen and (min-width: 992px) {
 							.content-wrapper {
 								margin-top: ' . esc_html( $fixed_navbar_height[1] ) . 'rem;
+							}
+							html {
+								scroll-padding-top: ' . esc_html( $fixed_navbar_height[1] ) . 'rem;
 							}
 						}';
 					}
