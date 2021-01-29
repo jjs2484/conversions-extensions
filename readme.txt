@@ -87,13 +87,13 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.7.1 =
-* New: Action hook conversions_homepage_bottom_hero.
+* New: Add auto/manual breakpoints for icon features, img features, and team items.
+* New: Add customizer option to add an alternative Hero title.
 * New: Add CONVERSIONS_EXTENSIONS_VERSION constant.
+* New: Action hook conversions_homepage_bottom_hero.
 * Update: Font Awesome icons.json metadata to v5.15.2
-* Update: Add customizer option to add an alternative Hero title.
-* Update: Add auto/manual breakpoints for icon features, img features, and team items.
+* Update: Blog demo import.
 * Update: Add jquery dep to all wp_enqueue_script calls.
-* Update: Blog demo customizer settings.
 * Update: Switch fixed header anchor link offset to use scroll-padding-top.
 * Fix: Social icons in navbar vertical-align: middle.
 * Update: NPM Dependencies.
