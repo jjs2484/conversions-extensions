@@ -87,6 +87,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.7.2 =
+* New: Add auto/manual breakpoints for counter items.
 * Update: NPM Dependencies.
 
 = 1.7.1 =
