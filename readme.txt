@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 5.6
 Requires at least: 4.7
@@ -85,6 +85,9 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.7.2 =
+* Update: NPM Dependencies.
 
 = 1.7.1 =
 * New: Add auto/manual breakpoints for icon features, img features, and team items.
