@@ -83,10 +83,22 @@
 					color: rgba(0,0,0,.8);
 				}
 			}
+			// Hide extras on desktop.
+			.nav-item {
+				&.account-icon,
+				&.cart,
+				&.search-icon,
+				&.nav-callout-button {
+					@media (min-width: 992px) {
+						display: none;
+					}
+				}
+			}
+			.c-nav__social {
+				@media (min-width: 992px) {
+					display: none;
+				}
+			}
 		}
-	}
-	.c-social-icons--navbar i {
-		font-size: 1.05rem;
-		vertical-align: middle;
 	}
 }

@@ -614,6 +614,9 @@ section.c-map .c-map__map-responsive.c-map__map-with-content iframe {
   #wrapper-navbar .navbar.navbar-below .navbar-below-menu .nav-link.show,
   #wrapper-navbar .navbar.navbar-below .navbar-below-menu .show > .nav-link {
     color: rgba(0, 0, 0, 0.8); } }
-#wrapper-navbar .navbar .c-social-icons--navbar i {
-  font-size: 1.05rem;
-  vertical-align: middle; }
+@media (min-width: 992px) {
+  #wrapper-navbar .navbar.navbar-below .navbar-below-menu .nav-item.account-icon, #wrapper-navbar .navbar.navbar-below .navbar-below-menu .nav-item.cart, #wrapper-navbar .navbar.navbar-below .navbar-below-menu .nav-item.search-icon, #wrapper-navbar .navbar.navbar-below .navbar-below-menu .nav-item.nav-callout-button {
+    display: none; } }
+@media (min-width: 992px) {
+  #wrapper-navbar .navbar.navbar-below .navbar-below-menu .c-nav__social {
+    display: none; } }

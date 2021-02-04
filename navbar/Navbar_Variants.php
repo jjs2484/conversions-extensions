@@ -175,7 +175,7 @@ class Navbar_Variants {
 		if ( get_theme_mod( 'conversions_social_navbar', false ) === true ) {
 			$navbar_social_icons = static::social_icons_content();
 			if ( ! empty( $navbar_social_icons ) ) {
-				$navbar_social_icons = str_replace( 'list-inline-item', 'c-social-icons--navbar list-inline-item', $navbar_social_icons );
+				$navbar_social_icons = str_replace( 'list-inline-item', 'c-nav__social-icon list-inline-item', $navbar_social_icons );
 				$navbar_social_icons = str_replace( '<a title=', '<a class="nav-link" title=', $navbar_social_icons );
 				$items              .= $navbar_social_icons;
 			}
