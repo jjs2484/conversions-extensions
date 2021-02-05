@@ -100,5 +100,13 @@
 				}
 			}
 		}
+
+		// Drop down menu
+		.dropdown-menu {
+			@media (min-width: 992px) {
+				margin-top: 0;
+				border-radius: 0 0 .25rem .25rem;
+			}
+		}
 	}
 }

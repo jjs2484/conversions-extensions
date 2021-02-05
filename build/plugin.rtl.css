@@ -620,3 +620,7 @@ section.c-map .c-map__map-responsive.c-map__map-with-content iframe {
 @media (min-width: 992px) {
   #wrapper-navbar .navbar.navbar-below .navbar-below-menu .c-nav__social {
     display: none; } }
+@media (min-width: 992px) {
+  #wrapper-navbar .navbar.navbar-below .dropdown-menu {
+    margin-top: 0;
+    border-radius: 0 0 .25rem .25rem; } }
