@@ -88,8 +88,9 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.7.2 =
 * New: Add auto/manual breakpoints for counter items.
-* Update: Let Navbar icons be styled by the theme stylesheet.
-* Update: Hide extras in base nav on desktop if Navbar below variant is active.
+* Update: Navbar below variant: hide extras in base nav on desktop.
+* Update: Navbar below variant: vertically align extras on desktop.
+* Update: Navbar below variant: use customizer social icon size on desktop.
 * Update: NPM Dependencies.
 
 = 1.7.1 =

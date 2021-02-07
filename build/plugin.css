@@ -581,6 +581,10 @@ section.c-map .c-map__map-responsive.c-map__map-with-content iframe {
   @media (max-width: 991.98px) {
     #wrapper-navbar .navbar.navbar-below .navbar-below-branding .nav-extras {
       display: none; } }
+  @media (min-width: 992px) {
+    #wrapper-navbar .navbar.navbar-below .navbar-below-branding .nav-extras {
+      display: flex;
+      align-items: center; } }
   #wrapper-navbar .navbar.navbar-below .navbar-below-branding .nav-extras .list-inline-item {
     margin-right: 0; }
     #wrapper-navbar .navbar.navbar-below .navbar-below-branding .nav-extras .list-inline-item .nav-link {
