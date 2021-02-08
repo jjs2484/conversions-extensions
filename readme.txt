@@ -91,6 +91,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Navbar below variant: hide extras in base nav on desktop.
 * Update: Navbar below variant: vertically align extras on desktop.
 * Update: Navbar below variant: use customizer social icon size on desktop.
+* Update: Navbar below variant: desktop dropdown styles.
 * Update: NPM Dependencies.
 
 = 1.7.1 =
