@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 5.6
 Requires at least: 4.7
@@ -89,6 +89,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 = 1.7.3 =
 * New: Split Hero.
 * Update: Remove action hook conversions_homepage_bottom_hero.
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.
 
 = 1.7.2 =
 * New: Add auto/manual breakpoints for counter items.
