@@ -13,6 +13,9 @@ One click demo import github page: https://github.com/awesomemotive/one-click-de
 
 ## Changelog
 
+*February 12th 2021*
+- Replaced deprecated WP function `wp_slash_strings_only` with `wp_slash`.
+
 *July 21st 2020*
 - Fixed incorrect post meta import.
 - Fixed Elementor import after `wp_slash` updates in this repo.

@@ -1222,7 +1222,7 @@ class WXRImporter extends \WP_Importer {
 					$value = maybe_unserialize( $meta_item['value'] );
 				}
 
-				add_post_meta( $post_id, wp_slash( $key ), wp_slash_strings_only( $value ) );
+				add_post_meta( $post_id, wp_slash( $key ), wp_slash( $value ) );
 				do_action( 'import_post_meta', $post_id, $key, $value );
 
 				// if the post has a featured image, take note of this in case of remap
