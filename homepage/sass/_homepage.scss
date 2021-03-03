@@ -57,25 +57,63 @@
 	}
 }
 
-// Hero section
-section.c-hero {
+// Hero full section
+.c-hero.c-hero__full {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 2rem 0;
-	p.lead.c-hero__description {
+
+	.col-lg-10.text-center {
+		.c-hero__callout {
+			justify-content: center;
+		}
+	}
+}
+
+// Hero split section
+.c-hero.c-hero__split {
+	.container-fluid {
+		max-width: 100%;
+
+		.c-hero__split-img {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+	
+			@media (max-width: 575.98px) {
+				min-height: 50vh;
+			}
+		}
+
+		.c-hero__content {
+			@media (max-width: 767.98px) {
+				margin-top: 1.5rem;
+			}
+		}
+	}
+}
+
+// Hero content
+.c-hero.c-hero__full,
+.c-hero.c-hero__split {
+	.c-hero__description {
 		margin-bottom: 1.5rem;
 	}
+	.c-hero__callout {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-top: -1rem;
+	}
+	.c-hero__callout-btn {
+		margin-right: 1.5rem;
+		margin-top: 1rem;
+	}
 	.c-hero__fb-video {
-		display: block;
 		margin-top: 1rem;
 		&:hover {
 			text-decoration: none;
-		}
-		@media (min-width: 576px) {
-			display: inline-block;
-			margin-top: 0;
-			margin-left: 1.5rem;
 		}
 		.c-hero__video-btn {
 			&.btn--circle {
@@ -107,8 +145,8 @@ section.c-hero {
 		.close {
 			position:absolute;
 			right: 0;
-		  	top: 0;
-		  	z-index: 999;
+			top: 0;
+			z-index: 999;
 			font-size: 2rem;
 		  	font-weight: normal;
 		  	color: #fff;

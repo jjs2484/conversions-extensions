@@ -86,6 +86,10 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 == Changelog ==
 
+= 1.7.3 =
+* New: Split Hero.
+* Update: Remove action hook conversions_homepage_bottom_hero.
+
 = 1.7.2 =
 * New: Add auto/manual breakpoints for counter items.
 * Update: Navbar below variant: hide extras in base nav on desktop.

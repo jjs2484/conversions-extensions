@@ -15,6 +15,76 @@ $wp_customize->add_section(
 	]
 );
 $wp_customize->add_setting(
+	'conversions_hh_type',
+	[
+		'default'           => 'full',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'conversions_ext_sanitize_select',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+	]
+);
+$wp_customize->add_control(
+	new \WP_Customize_Control(
+		$wp_customize,
+		'conversions_hh_type',
+		[
+			'label'       => __( 'Hero type', 'conversions' ),
+			'description' => __( 'Select the hero display type.', 'conversions' ),
+			'section'     => 'conversions_homepage_hero',
+			'settings'    => 'conversions_hh_type',
+			'type'        => 'select',
+			'choices'     => [
+				'full'  => __( 'Full', 'conversions' ),
+				'split' => __( 'Split', 'conversions' ),
+			],
+			'priority'    => '1',
+		]
+	)
+);
+$wp_customize->add_setting(
+	'conversions_hh_split_type',
+	[
+		'default'           => 'square',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'conversions_ext_sanitize_select',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+	]
+);
+$wp_customize->add_control(
+	new \WP_Customize_Control(
+		$wp_customize,
+		'conversions_hh_split_type',
+		[
+			'label'       => __( 'Split hero type', 'conversions' ),
+			'description' => __( 'Select the split hero display type.', 'conversions' ),
+			'section'     => 'conversions_homepage_hero',
+			'settings'    => 'conversions_hh_split_type',
+			'type'        => 'select',
+			'choices'     => [
+				'square'    => __( 'Square', 'conversions' ),
+				'blob-1'    => __( 'Blob 1', 'conversions' ),
+				'brush-1'   => __( 'Brush 1', 'conversions' ),
+				'brush-2'   => __( 'Brush 2', 'conversions' ),
+				'brush-3'   => __( 'Brush 3', 'conversions' ),
+				'frame-1'   => __( 'Frame 1', 'conversions' ),
+				'frame-2'   => __( 'Frame 2', 'conversions' ),
+				'frame-3'   => __( 'Frame 3', 'conversions' ),
+				'grunge-1'  => __( 'Grunge 1', 'conversions' ),
+				'grunge-2'  => __( 'Grunge 2', 'conversions' ),
+				'grunge-3'  => __( 'Grunge 3', 'conversions' ),
+				'striped-1' => __( 'Striped 1', 'conversions' ),
+				'heart'     => __( 'Heart', 'conversions' ),
+				'drop'      => __( 'Drop', 'conversions' ),
+				'diamond'   => __( 'Diamond', 'conversions' ),
+				'hexagon'   => __( 'Hexagon', 'conversions' ),
+			],
+			'priority'    => '1',
+		]
+	)
+);
+$wp_customize->add_setting(
 	'conversions_hh_title',
 	[
 		'default'           => 'page',
@@ -38,7 +108,7 @@ $wp_customize->add_control(
 				'page' => __( 'WordPress page title', 'conversions' ),
 				'alt'  => __( 'Add new title', 'conversions' ),
 			],
-			'priority'    => '1',
+			'priority'    => '2',
 		]
 	)
 );
@@ -59,7 +129,7 @@ $wp_customize->add_control(
 		'description' => __( 'Add a new hero title. HTML is allowed.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_alt_title',
-		'priority'    => 2,
+		'priority'    => 3,
 		'type'        => 'textarea',
 	]
 );
@@ -79,7 +149,7 @@ $wp_customize->add_control(
 		'description' => __( 'Select a color for the title.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_title_color',
-		'priority'    => 3,
+		'priority'    => 4,
 		'type'        => 'color',
 	]
 );
@@ -100,7 +170,7 @@ $wp_customize->add_control(
 		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_desc',
-		'priority'    => 4,
+		'priority'    => 5,
 		'type'        => 'textarea',
 	]
 );
@@ -120,7 +190,7 @@ $wp_customize->add_control(
 		'description' => __( 'Select a color for the description text.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_desc_color',
-		'priority'    => 5,
+		'priority'    => 6,
 		'type'        => 'color',
 	]
 );
@@ -148,7 +218,7 @@ $wp_customize->add_control(
 				'col-lg-6' => __( 'Left', 'conversions' ),
 				'col-lg-10 d-flex flex-column text-center mx-auto' => __( 'Center', 'conversions' ),
 			],
-			'priority'    => '6',
+			'priority'    => '7',
 		]
 	)
 );
@@ -172,7 +242,7 @@ $wp_customize->add_control(
 			'section'     => 'conversions_homepage_hero',
 			'settings'    => 'conversions_hh_img_parallax',
 			'type'        => 'checkbox',
-			'priority'    => '7',
+			'priority'    => '8',
 		]
 	)
 );
@@ -193,7 +263,7 @@ $wp_customize->add_control(
 		'description' => __( 'Height in vh units. 10vh is relative to 10% of the current viewport height.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_img_height',
-		'priority'    => 8,
+		'priority'    => 9,
 		'type'        => 'number',
 		'input_attrs' => [
 			'min' => 1,
@@ -217,7 +287,7 @@ $wp_customize->add_control(
 		'description' => __( 'Select a color for the image overlay.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_img_color',
-		'priority'    => 9,
+		'priority'    => 10,
 		'type'        => 'color',
 	]
 );
@@ -254,7 +324,7 @@ $wp_customize->add_control(
 				'.9' => __( '90%', 'conversions' ),
 				'1'  => __( '100%', 'conversions' ),
 			],
-			'priority'    => '10',
+			'priority'    => '11',
 		]
 	)
 );
@@ -279,7 +349,7 @@ $wp_customize->add_control(
 			'settings'    => 'conversions_hh_button',
 			'type'        => 'select',
 			'choices'     => $conversions_customizer->alt_button_choices,
-			'priority'    => '11',
+			'priority'    => '12',
 		]
 	)
 );
@@ -299,7 +369,7 @@ $wp_customize->add_control(
 		'description' => __( 'Add text for button to display.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_button_text',
-		'priority'    => 12,
+		'priority'    => 13,
 		'type'        => 'text',
 	]
 );
@@ -319,7 +389,7 @@ $wp_customize->add_control(
 		'description' => __( 'Where should the button link to?', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_button_url',
-		'priority'    => 13,
+		'priority'    => 14,
 		'type'        => 'url',
 	]
 );
@@ -354,7 +424,7 @@ $wp_customize->add_control(
 				'light'     => __( 'Light', 'conversions' ),
 				'dark'      => __( 'Dark', 'conversions' ),
 			],
-			'priority'    => '14',
+			'priority'    => '15',
 		]
 	)
 );
@@ -374,7 +444,7 @@ $wp_customize->add_control(
 		'description' => __( 'Text to display next to the video button.', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_vbtn_text',
-		'priority'    => 15,
+		'priority'    => 16,
 		'type'        => 'text',
 	]
 );
@@ -394,7 +464,7 @@ $wp_customize->add_control(
 		'description' => __( 'Example: _sI_Ps7JSEk', 'conversions' ),
 		'section'     => 'conversions_homepage_hero',
 		'settings'    => 'conversions_hh_vbtn_url',
-		'priority'    => 16,
+		'priority'    => 17,
 		'type'        => 'text',
 	]
 );

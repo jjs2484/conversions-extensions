@@ -79,8 +79,6 @@ namespace conversions\extensions {
 				'conversions_hh_title'             => 'page',
 				'conversions_hh_content_position'  => 'col-lg-6',
 				'conversions_hh_img_height'        => '72',
-				'conversions_hh_img_color'         => '#000000',
-				'conversions_hh_img_overlay'       => '.5',
 				'conversions_hh_button'            => 'no',
 				'conversions_hh_vbtn'              => 'no',
 				'conversions_hc_logo_width'        => '6.2',
@@ -201,7 +199,7 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-features h2, section.c-features .card h3', 'color', get_theme_mod( 'conversions_features_title_color' ) ],
 				[ '.page-template-homepage section.c-features p.subtitle, section.c-features .card .c-features__block-desc', 'color', get_theme_mod( 'conversions_features_desc_color' ) ],
 				[ '.c-social-icons ul li.list-inline-item i', 'font-size', get_theme_mod( 'conversions_social_size' ), 'rem' ],
-				[ '.page-template-homepage section.c-hero', 'min-height', get_theme_mod( 'conversions_hh_img_height' ), 'vh' ],
+				[ '.c-hero.c-hero__full, .c-hero.c-hero__split .c-hero__split-img', 'min-height', get_theme_mod( 'conversions_hh_img_height' ), 'vh' ],
 				[ '.page-template-homepage section.c-woo', 'background-color', get_theme_mod( 'conversions_woo_bg_color' ) ],
 				[ '.page-template-homepage section.c-woo h2', 'color', get_theme_mod( 'conversions_woo_title_color' ) ],
 				[ '.page-template-homepage section.c-woo p.subtitle', 'color', get_theme_mod( 'conversions_woo_desc_color' ) ],
@@ -262,6 +260,34 @@ namespace conversions\extensions {
 						background-attachment: fixed;
 					}';
 				}
+				if ( get_theme_mod( 'conversions_hh_type', 'full' ) === 'split' && get_theme_mod( 'conversions_hh_split_type', 'square' ) !== 'square' ) {
+					$mask_dir  = plugin_dir_url( __FILE__ ) . 'homepage/images/';
+					$mask_file = get_theme_mod( 'conversions_hh_split_type' );
+					$mask_svg  = $mask_dir . $mask_file . '.svg';
+					$mask_type = homepage\sections\hero::hero_split_mask_type();
+
+					if ( $mask_type == true ) {
+						echo '.c-hero__split-img {
+							-webkit-mask-image: url(' . esc_url( $mask_svg ) . ');
+							mask-image: url(' . esc_url( $mask_svg ) . ');
+							-webkit-mask-repeat: no-repeat;
+							mask-repeat: no-repeat;
+							-webkit-mask-size: contain;
+							mask-size: contain;
+							mask-position: center;
+							-webkit-mask-position: center;
+						}';
+					} else {
+						echo '.c-hero__split-img {
+							-webkit-mask-image: url(' . esc_url( $mask_svg ) . ');
+							mask-image: url(' . esc_url( $mask_svg ) . ');
+							-webkit-mask-repeat: no-repeat;
+							mask-repeat: no-repeat;
+							-webkit-mask-size: cover;
+							mask-size: cover;
+						}';
+					}
+				}
 				// Homepage news.
 				if ( get_theme_mod( 'conversions_news_mposts', '2' ) == 1 ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 					echo '@media (max-width: 991.98px) {
@@ -304,7 +330,7 @@ namespace conversions\extensions {
 				if ( get_theme_mod( 'conversions_nav_layout', 'right' ) == 'below' ) {
 					echo '@media screen and (min-width: 992px) {
 						#wrapper-navbar .navbar.navbar-below .nav-link i {
-							font-size: ' . get_theme_mod( 'conversions_social_size' ) . 'rem;
+							font-size: ' . esc_html( get_theme_mod( 'conversions_social_size' ) ) . 'rem;
 						}
 					}';
 				}
