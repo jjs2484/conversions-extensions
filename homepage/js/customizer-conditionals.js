@@ -190,3 +190,49 @@ jQuery(document).ready(function($) {
 		}
 	});
 });
+
+/*
+ * Hero options
+ */
+jQuery(document).ready(function($) {
+	
+	// Option selectors.
+	var $splitType = $( '#customize-control-conversions_hh_split_type' );
+	var $bgColor = $( '#customize-control-conversions_hh_bg_color_control' );
+	var $imgOverlayColor = $( '#customize-control-conversions_hh_img_color_control' );
+	var $imgOverlayOpacity = $( '#customize-control-conversions_hh_img_overlay' );
+	var $contentPosition = $( '#customize-control-conversions_hh_content_position' );
+	var $choice = $( '#customize-control-conversions_hh_type select' );
+
+	// On page load hide or show options.
+	if( $( $choice ).val() == 'full' ) {
+		$( $imgOverlayColor ).show();
+		$( $imgOverlayOpacity ).show();
+		$( $contentPosition ).show();
+		$( $splitType ).hide();
+		$( $bgColor ).hide();
+	} else if ( $( $choice ).val() == 'split' ) {
+		$( $imgOverlayColor ).hide();
+		$( $imgOverlayOpacity ).hide();
+		$( $contentPosition ).hide();
+		$( $splitType ).show();
+		$( $bgColor ).show();
+	}
+
+	// On change hide or show options.
+	$( $choice ).change(function() {
+		if ( $(this).val() == 'full' ) {
+			$( $imgOverlayColor ).show();
+			$( $imgOverlayOpacity ).show();
+			$( $contentPosition ).show();
+			$( $splitType ).hide();
+			$( $bgColor ).hide();
+		} else if ( $(this).val() == 'split' ) {
+			$( $imgOverlayColor ).hide();
+			$( $imgOverlayOpacity ).hide();
+			$( $contentPosition ).hide();
+			$( $splitType ).show();
+			$( $bgColor ).show();
+		}
+	});
+});

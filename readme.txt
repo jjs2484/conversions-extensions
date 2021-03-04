@@ -87,8 +87,11 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.7.3 =
-* New: Split Hero.
+* New: Split Hero with masks.
+* New: Hero bg color.
+* Update: Remove Hero image parallax.
 * Update: Remove action hook conversions_homepage_bottom_hero.
+* Update: Refactor Hero, more modular elements.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 

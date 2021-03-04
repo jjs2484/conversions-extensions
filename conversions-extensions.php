@@ -200,6 +200,7 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-features p.subtitle, section.c-features .card .c-features__block-desc', 'color', get_theme_mod( 'conversions_features_desc_color' ) ],
 				[ '.c-social-icons ul li.list-inline-item i', 'font-size', get_theme_mod( 'conversions_social_size' ), 'rem' ],
 				[ '.c-hero.c-hero__full, .c-hero.c-hero__split .c-hero__split-img', 'min-height', get_theme_mod( 'conversions_hh_img_height' ), 'vh' ],
+				[ '.c-hero.c-hero__split', 'background-color', get_theme_mod( 'conversions_hh_bg_color' ) ],
 				[ '.page-template-homepage section.c-woo', 'background-color', get_theme_mod( 'conversions_woo_bg_color' ) ],
 				[ '.page-template-homepage section.c-woo h2', 'color', get_theme_mod( 'conversions_woo_title_color' ) ],
 				[ '.page-template-homepage section.c-woo p.subtitle', 'color', get_theme_mod( 'conversions_woo_desc_color' ) ],
@@ -255,11 +256,6 @@ namespace conversions\extensions {
 				}
 
 				// Homepage hero.
-				if ( get_theme_mod( 'conversions_hh_img_parallax', false ) === true ) {
-					echo '.page-template-homepage section.c-hero {
-						background-attachment: fixed;
-					}';
-				}
 				if ( get_theme_mod( 'conversions_hh_type', 'full' ) === 'split' && get_theme_mod( 'conversions_hh_split_type', 'square' ) !== 'square' ) {
 					$mask_dir  = plugin_dir_url( __FILE__ ) . 'homepage/images/';
 					$mask_file = get_theme_mod( 'conversions_hh_split_type' );
