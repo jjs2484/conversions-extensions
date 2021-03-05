@@ -131,7 +131,7 @@ trait hero {
 		$split_shape = get_theme_mod( 'conversions_hh_split_type' );
 
 		// Geometrical shapes that require inline image rather than bg images.
-		$geo_shapes = [ 'drop', 'heart', 'diamond', 'hexagon' ];
+		$geo_shapes = [ 'drop', 'heart', 'diamond', 'hexagon', 'shield', 'star', 'shatter', 'blob-1', 'blob-2', 'blob-3' ];
 
 		if ( in_array( $split_shape, $geo_shapes ) ) {
 			return true;
@@ -195,7 +195,7 @@ trait hero {
 		<section class="c-hero c-hero__split">
 			<div class="container-fluid px-0">
 				<div class="row no-gutters">
-					<div class="col-md-6 order-md-2">
+					<div class="col-lg-6 order-lg-2">
 
 						<?php
 						$mask_type = $this->hero_split_mask_type();
@@ -207,8 +207,8 @@ trait hero {
 						?>
 
 					</div>
-					<div class="col-md-6 d-flex align-items-center">
-						<div class="c-hero__content mx-auto mr-md-5 mr-xl-7 pl-3 py-md-3 order-md-1" style="max-width: 516px;">
+					<div class="col-lg-6 d-flex align-items-center">
+						<div class="c-hero__content mx-auto mr-lg-5 mr-xl-7 pl-lg-3 py-lg-3 order-lg-1">
 							<?php
 							// Title.
 							echo $this->hero_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

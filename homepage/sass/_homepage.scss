@@ -81,14 +81,22 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 	
+			@media (max-width: 991.98px) {
+				min-height: 60vh;
+			}
 			@media (max-width: 575.98px) {
-				min-height: 50vh;
+				min-height: 45vh;
 			}
 		}
 
 		.c-hero__content {
-			@media (max-width: 767.98px) {
+			max-width: 516px;
+
+			@media (max-width: 991.98px) {
 				margin-top: 1.5rem;
+				margin-bottom: 3rem;
+				padding-right: 15px;
+				padding-left: 15px;
 			}
 		}
 	}

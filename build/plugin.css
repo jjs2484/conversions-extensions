@@ -271,12 +271,20 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
+    @media (max-width: 991.98px) {
+      .c-hero.c-hero__split .container-fluid .c-hero__split-img {
+        min-height: 60vh; } }
     @media (max-width: 575.98px) {
       .c-hero.c-hero__split .container-fluid .c-hero__split-img {
-        min-height: 50vh; } }
-  @media (max-width: 767.98px) {
-    .c-hero.c-hero__split .container-fluid .c-hero__content {
-      margin-top: 1.5rem; } }
+        min-height: 45vh; } }
+  .c-hero.c-hero__split .container-fluid .c-hero__content {
+    max-width: 516px; }
+    @media (max-width: 991.98px) {
+      .c-hero.c-hero__split .container-fluid .c-hero__content {
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+        padding-right: 15px;
+        padding-left: 15px; } }
 
 .c-hero.c-hero__full .c-hero__description,
 .c-hero.c-hero__split .c-hero__description {
