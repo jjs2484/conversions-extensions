@@ -76,7 +76,7 @@ namespace conversions\extensions {
 			$defaults = [
 				'conversions_social_footer'        => true,
 				'conversions_social_size'          => '1.5',
-				'conversions_hh_split_type'        => 'frame-4',
+				'conversions_hh_split_type'        => 'grunge-1',
 				'conversions_hh_img_height'        => '72',
 				'conversions_hh_content_position'  => 'col-lg-6',
 				'conversions_hh_title'             => 'page',

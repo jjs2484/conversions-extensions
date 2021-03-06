@@ -45,7 +45,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	'conversions_hh_split_type',
 	[
-		'default'           => 'frame-4',
+		'default'           => 'grunge-1',
 		'type'              => 'theme_mod',
 		'sanitize_callback' => 'conversions_ext_sanitize_select',
 		'capability'        => 'edit_theme_options',
