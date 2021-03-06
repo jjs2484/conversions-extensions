@@ -89,6 +89,14 @@
 			}
 		}
 
+		.c-hero__split-geo {
+			margin: 2rem 1rem 0;
+
+			@media (min-width: 992px) {
+				margin: 2rem;
+			}
+		}
+
 		.c-hero__content {
 			max-width: 516px;
 
