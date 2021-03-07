@@ -92,6 +92,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Remove Hero image parallax.
 * Update: Remove action hook conversions_homepage_bottom_hero.
 * Update: Refactor Hero, more modular elements.
+* Update: Business demo import files.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 
