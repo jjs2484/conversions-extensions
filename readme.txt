@@ -1,8 +1,8 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.7.3
+Stable tag: 1.7.4
 Tags: extensions, homepage, shortcodes, social icons, theme demos
-Tested up to: 5.6
+Tested up to: 5.7
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
@@ -85,6 +85,9 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.7.4 =
+* Update: bump WordPress tested to v5.7
 
 = 1.7.3 =
 * New: Split Hero with masks.
