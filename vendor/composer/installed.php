@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '975a44e2a0d6876199c8b5186160808696808067',
+    'reference' => '249d3e0530dfd729ed2ccb27e66063f0e2071644',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '975a44e2a0d6876199c8b5186160808696808067',
+      'reference' => '249d3e0530dfd729ed2ccb27e66063f0e2071644',
     ),
     'awesomemotive/one-click-demo-import' => 
     array (
