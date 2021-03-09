@@ -88,6 +88,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.7.4 =
 * Update: bump WordPress tested to v5.7
+* Update: NPM Dependencies.
 
 = 1.7.3 =
 * New: Split Hero with masks.
