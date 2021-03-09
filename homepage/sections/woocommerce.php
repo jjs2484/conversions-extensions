@@ -49,20 +49,22 @@ trait woocommerce {
 
 				<?php do_action( 'conversions_homepage_before_woo_products' ); ?>
 
-				<div class="col-12">
-					<?php
-					if ( $product_type === 'all' ) {
-						$product_type = '';
-					} else {
-						$product_type = esc_attr( $product_type ) . '="true"';
-					}
-					$product_limit   = get_theme_mod( 'conversions_woo_product_limit' );
-					$product_columns = get_theme_mod( 'conversions_woo_product_columns' );
-					$product_order   = get_theme_mod( 'conversions_woo_products_order' );
+				<?php if ( $product_type !== 'no' ) { ?>
+					<div class="col-12">
+						<?php
+						if ( $product_type === 'all' ) {
+							$product_type = '';
+						} else {
+							$product_type = esc_attr( $product_type ) . '="true"';
+						}
+						$product_limit   = get_theme_mod( 'conversions_woo_product_limit' );
+						$product_columns = get_theme_mod( 'conversions_woo_product_columns' );
+						$product_order   = get_theme_mod( 'conversions_woo_products_order' );
 
-					echo do_shortcode( '[products limit="' . esc_attr( $product_limit ) . '" columns="' . esc_attr( $product_columns ) . '" orderby="' . esc_attr( $product_order ) . '" ' . $product_type . ' ]' );
-					?>
-				</div>
+						echo do_shortcode( '[products limit="' . esc_attr( $product_limit ) . '" columns="' . esc_attr( $product_columns ) . '" orderby="' . esc_attr( $product_order ) . '" ' . $product_type . ' ]' );
+						?>
+					</div>
+				<?php } ?>
 
 				<?php do_action( 'conversions_homepage_after_woo_products' ); ?>
 

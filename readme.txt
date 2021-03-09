@@ -88,6 +88,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.7.4 =
 * Update: bump WordPress tested to v5.7
+* Update: WooCommerce homepage section only show products if a product type is set.
+* Update: EDD homepage section only show products if a product type is set.
 * Update: NPM Dependencies.
 
 = 1.7.3 =
