@@ -146,7 +146,7 @@ trait img_features {
 
 				}
 				// Output image.
-				echo '<img class="card-img-top" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
+				echo '<img class="card-img-top" loading="lazy" src="' . esc_url( $img_feat_lg[0] ) . '" alt="' . esc_html( $img_feat_alt ) . '" srcset="' . esc_url( $img_feat_md[0] ) . ' 300w, ' . esc_url( $img_feat_lg[0] ) . ' 1024w">';
 			}
 
 			echo '<div class="card-body">';

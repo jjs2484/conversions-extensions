@@ -91,7 +91,7 @@ trait single_feature {
 						$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_media_img, 'full', false );
 					}
 					// Create image HTML.
-					$single_feature_media = '<img class="c-single-feature__image" src="' . esc_url( $single_feature_img_lg[0] ) . '" alt="' . esc_attr( $single_feature_img_alt ) . '"/>';
+					$single_feature_media = '<img class="c-single-feature__image" loading="lazy" src="' . esc_url( $single_feature_img_lg[0] ) . '" alt="' . esc_attr( $single_feature_img_alt ) . '"/>';
 				}
 				break;
 			case 'youtube':
@@ -136,7 +136,7 @@ trait single_feature {
 						$single_feature_img_lg = wp_get_attachment_image_src( $single_feature_media_img, 'full', false );
 					}
 					// Create image HTML.
-					$single_feature_media = '<img class="c-single-feature__image" src="' . esc_url( $single_feature_img_lg[0] ) . '" alt="' . esc_attr( $single_feature_img_alt ) . '"/>';
+					$single_feature_media = '<img class="c-single-feature__image" loading="lazy" src="' . esc_url( $single_feature_img_lg[0] ) . '" alt="' . esc_attr( $single_feature_img_alt ) . '"/>';
 				}
 		}
 

@@ -57,7 +57,7 @@ trait news {
 						if ( has_post_thumbnail() ) :
 							the_post_thumbnail( 'conversions-news', array( 'class' => 'card-img-top' ) );
 						else :
-							echo '<img class="card-img-top" alt="' . esc_html( get_the_title() ) . '" src="' . esc_url( get_template_directory_uri() ) . '/placeholder.png" />';
+							echo '<img class="card-img-top" loading="lazy" alt="' . esc_html( get_the_title() ) . '" src="' . esc_url( get_template_directory_uri() ) . '/placeholder.png" />';
 						endif;
 						?>
 					</a>

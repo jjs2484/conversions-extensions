@@ -131,7 +131,7 @@ trait team {
 
 				}
 				// Output image.
-				echo '<img class="c-team__block-img" src="' . esc_url( $img_team[0] ) . '" alt="' . esc_html( $img_team_alt ) . '">';
+				echo '<img class="c-team__block-img" loading="lazy" src="' . esc_url( $img_team[0] ) . '" alt="' . esc_html( $img_team_alt ) . '">';
 			}
 
 			if ( ! empty( $repeater_item->title ) ) {
