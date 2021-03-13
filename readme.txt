@@ -88,7 +88,6 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.8.0 =
 * Update: Lazy load more images.
-* Update: Mark touch and wheel event listeners as `passive`. 
 * Update: NPM Dependencies.
 
 = 1.7.4 =

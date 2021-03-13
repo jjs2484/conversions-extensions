@@ -91,7 +91,7 @@ jQuery(document).ready(function() {
 
 	// Add scroll event listener 
 	window.addEventListener( 'load', countListener ); 
-	window.addEventListener( 'scroll', countListener, {passive: true} ); 
+	window.addEventListener( 'scroll', countListener ); 
 
 	// Count up animation when in viewport, then remove event listener
 	function Count(e) { 

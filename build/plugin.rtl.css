@@ -347,37 +347,38 @@
 section.c-clients {
   border-top: 1px solid #dee2e6;
   border-bottom: 1px solid #dee2e6; }
-  section.c-clients .c-clients__item {
+  section.c-clients .slick-initialized .slick-track {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  section.c-clients .slick-initialized .slick-slide {
+    display: flex;
+    justify-content: center; }
+  section.c-clients .slick-initialized .c-clients__item {
+    vertical-align: middle;
     min-height: 1px;
     display: none; }
-  section.c-clients .slick-initialized .c-clients__item {
-    display: inline-block;
-    vertical-align: middle; }
-  section.c-clients img.client {
+  section.c-clients .slick-initialized img.client {
     width: 100%;
     height: auto;
     margin-right: auto;
     margin-left: auto; }
-  section.c-clients .slick-slider .slick-prev {
+  section.c-clients .slick-initialized .slick-prev {
     right: -10px; }
-    section.c-clients .slick-slider .slick-prev::before {
+    section.c-clients .slick-initialized .slick-prev::before {
       font-family: "Font Awesome 5 Free";
       content: "\f053";
       color: #8c98a4;
       opacity: 1;
       font-weight: 700; }
-  section.c-clients .slick-slider .slick-next {
+  section.c-clients .slick-initialized .slick-next {
     left: -10px; }
-    section.c-clients .slick-slider .slick-next::before {
+    section.c-clients .slick-initialized .slick-next::before {
       font-family: "Font Awesome 5 Free";
       content: "\f054";
       color: #aaa;
       opacity: 1;
       font-weight: 700; }
-  section.c-clients .slick-slider .slick-track {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
 
 @media (min-width: 576px) {
   section.c-counter .row:first-of-type {
