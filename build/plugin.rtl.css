@@ -351,9 +351,6 @@ section.c-clients {
     display: flex;
     align-items: center;
     justify-content: center; }
-  section.c-clients .slick-initialized .slick-slide {
-    display: flex;
-    justify-content: center; }
   section.c-clients .slick-initialized .c-clients__item {
     vertical-align: middle;
     min-height: 1px;
