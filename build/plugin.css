@@ -347,14 +347,20 @@
 section.c-clients {
   border-top: 1px solid #dee2e6;
   border-bottom: 1px solid #dee2e6; }
+  section.c-clients .c-clients__carousel .c-clients__item:nth-child(n + 2) {
+    display: none; }
+  section.c-clients .c-clients__carousel.slick-initialized .c-clients__item {
+    display: inline-block; }
   section.c-clients .slick-initialized .slick-track {
     display: flex;
     align-items: center;
     justify-content: center; }
+  section.c-clients .slick-initialized .slick-slide {
+    display: flex;
+    justify-content: center; }
   section.c-clients .slick-initialized .c-clients__item {
     vertical-align: middle;
-    min-height: 1px;
-    display: none; }
+    min-height: 1px; }
   section.c-clients .slick-initialized img.client {
     width: 100%;
     height: auto;
