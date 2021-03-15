@@ -119,7 +119,7 @@ trait clients {
 							// Output HTML.
 							if ( ! empty( $logo_url ) ) {
 								echo '<div class="c-clients__item px-3" id="c-clients__' . esc_attr( $clients_count ) . '">
-									<img class="client" src="' . esc_url( $logo_url ) . '" alt="' . esc_html( $logo_alt ) . '">
+									<img class="client" loading="lazy" src="' . esc_url( $logo_url ) . '" alt="' . esc_html( $logo_alt ) . '">
 								</div>';
 							}
 							++$clients_count;
