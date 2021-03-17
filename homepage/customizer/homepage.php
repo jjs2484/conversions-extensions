@@ -8,7 +8,7 @@
 $wp_customize->add_panel(
 	'conversions_homepage',
 	[
-		'priority'    => 119,
+		'priority'    => 43,
 		'title'       => __( 'Homepage Design', 'conversions' ),
 		'description' => __( 'Settings for the Homepage template', 'conversions' ),
 		'capability'  => 'edit_theme_options',

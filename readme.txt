@@ -88,6 +88,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.8.1 =
 * Update: Fontawesome to v5.15.3
+* Update: Reorder customizer sections.
+* Update: NPM Dependencies.
 
 = 1.8.0 =
 * Update: Lazy load more images.
@@ -166,73 +168,3 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.1.1 =
 * Fix: Change homepage sorting drag and drop HTML structure.
-
-= 1.1.0 =
-* New: Add Single Feature homepage section.
-* Update: Customizer Font Awesome icon picker now includes all icons in popover with search filter.
-* Update: Customizer Font Awesome icon picker styles.
-* Update: Reorder homepage customizer sections alphabetically.
-* Update: Rename "Blank" homepage customizer section to "HTML or Shortcode".
-* Update: Rename some homepage icon features files, functions, and variables.
-* Update: NPM Dependencies.
-* Update: Add Homepage Hero YouTube video modal script from Conversions theme.
-* Fix: Correct some customizer controls capabilities.
-* Fix: Prevent FAQ styles from leaking to other Bootstrap collapse elements.
-
-= 1.0.9 =
-* Fix: Navbar Variants namespace paths.
-
-= 1.0.8 =
-* Update: Style refinements for FAQ section
-* Update: NPM Dependencies.
-
-= 1.0.7 =
-* New: Add FAQ homepage section.
-* Update: Reorg scripts and styles to sections folders.
-* Update: NPM Dependencies.
-
-= 1.0.6 =
-* New: Add Counter homepage section.
-* New: Add Shortcodes.
-* Update: NPM Dependencies.
-* Fix: Refresh repeater color control on more input actions: change, paste.
-
-= 1.0.5 =
-* New: Add Text homepage section.
-* Update: NPM Dependencies.
-
-= 1.0.4 =
-* Fix: Check pricing table button text or link exist before displaying.
-* Update: NPM Dependencies.
-
-= 1.0.3 =
-* New: Add Team homepage section.
-* New: Add PHP class autoloader.
-* Update: Rename namespaces.
-* Update: Separate homepage sections into PHP traits.
-
-= 1.0.2 =
-* New: Add image features homepage section.
-* New: Add blank homepage section.
-* Update: rename "features" homepage section in customizer to "icon features".
-* Update: NPM Dependencies.
-* Update: Composer Dependencies.
-* New: do_action hooks:
-    * conversions_before_img_features
-    * conversions_after_img_features
-    * conversions_homepage_before_blank
-    * conversions_homepage_after_blank
-* Update: rename do_action hooks:
-    * conversions_homepage_before_features -> conversions_before_icon_features
-    * conversions_homepage_after_features -> conversions_after_icon_features
-* Update: Change Homepage Sorting section display order in the customizer.
-
-= 1.0.1 =
-* New: Add navbar variants.
-* New: Add conversions_navbar_below_extras filter.
-* Update: NPM Dependencies.
-* Update: Composer Dependencies.
-* Update: Minor code refactoring.
-
-= 1.0.0 =
-* Initial release

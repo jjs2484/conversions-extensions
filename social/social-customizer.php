@@ -9,7 +9,7 @@ $wp_customize->add_section(
 	'conversions_social',
 	[
 		'title'      => __( 'Social Icons', 'conversions' ),
-		'priority'   => 48,
+		'priority'   => 49,
 		'capability' => 'edit_theme_options',
 	]
 );
