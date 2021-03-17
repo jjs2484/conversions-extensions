@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 5.7
 Requires at least: 4.7
@@ -85,6 +85,9 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.8.1 =
+* Update: Fontawesome to v5.15.3
 
 = 1.8.0 =
 * Update: Lazy load more images.
