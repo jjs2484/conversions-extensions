@@ -68,7 +68,7 @@ trait gallery {
 			} elseif ( ! is_float( $total_gallery_blocks / 6 ) || $total_gallery_blocks / 6 - floor( $total_gallery_blocks / 6 ) >= 0.5 ) {
 				// Count is evenly divisible by 6 or has a float higher than .5.
 				$gallery_block_xs = 2;
-				$gallery_block_sm = 2;
+				$gallery_block_sm = 3;
 				$gallery_block_md = 3;
 				$gallery_block_lg = 6;
 			} elseif ( ! is_float( $total_gallery_blocks / 4 ) || $total_gallery_blocks / 4 - floor( $total_gallery_blocks / 4 ) >= 0.5 ) {
@@ -80,7 +80,7 @@ trait gallery {
 			} elseif ( ! is_float( $total_gallery_blocks / 3 ) || $total_gallery_blocks / 3 - floor( $total_gallery_blocks / 3 ) >= 0.5 ) {
 				// Count is evenly divisible by 3 or has a float higher than .5.
 				$gallery_block_xs = 2;
-				$gallery_block_sm = 2;
+				$gallery_block_sm = 3;
 				$gallery_block_md = 3;
 				$gallery_block_lg = 3;
 			} elseif ( ! is_float( $total_gallery_blocks / 2 ) || $total_gallery_blocks / 2 - floor( $total_gallery_blocks / 2 ) >= 0.5 ) {
