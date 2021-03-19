@@ -121,6 +121,11 @@ namespace conversions\extensions {
 				'conversions_counter_lg'           => '4',
 				'conversions_counter_animation'    => true,
 				'conversions_map_content_type'     => 'map',
+				'conversions_gallery_respond'      => 'auto',
+				'conversions_gallery_xs'           => '2',
+				'conversions_gallery_sm'           => '3',
+				'conversions_gallery_md'           => '4',
+				'conversions_gallery_lg'           => '6',
 			];
 
 			foreach ( $defaults as $c => $v ) {
@@ -147,6 +152,11 @@ namespace conversions\extensions {
 			$wp_customize = $conversions_customizer->wp_customize;
 
 			// -----------------------------------------------------
+			// Register gallery control
+			// -----------------------------------------------------
+			$wp_customize->register_control_type( '\conversions\extensions\gallery\Gallery' );
+
+			// -----------------------------------------------------
 			// Include customizer sections
 			// -----------------------------------------------------
 			// phpcs:disable WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
@@ -155,6 +165,7 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.clients.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.counter.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.faq.php';
+			require_once __DIR__ . '/homepage/customizer/homepage.gallery.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.icon-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.single-feature.php';
@@ -237,6 +248,9 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-map', 'background-color', get_theme_mod( 'conversions_map_bg' ) ],
 				[ '.page-template-homepage section.c-map h2', 'color', get_theme_mod( 'conversions_map_title_color' ) ],
 				[ '.page-template-homepage section.c-map p', 'color', get_theme_mod( 'conversions_map_desc_color' ) ],
+				[ '.page-template-homepage section.c-gallery', 'background-color', get_theme_mod( 'conversions_gallery_bg_color' ) ],
+				[ '.page-template-homepage section.c-gallery h2', 'color', get_theme_mod( 'conversions_gallery_title_color' ) ],
+				[ '.page-template-homepage section.c-gallery p', 'color', get_theme_mod( 'conversions_gallery_desc_color' ) ],
 			];
 			?>
 
@@ -391,7 +405,7 @@ namespace conversions\extensions {
 			wp_enqueue_script(
 				'conversions-ext-customizer-js',
 				plugin_dir_url( __FILE__ ) . 'build/conversions-customizer.min.js',
-				[ 'jquery', 'jquery-ui-draggable', 'wp-color-picker' ],
+				[ 'jquery', 'jquery-ui-draggable', 'wp-color-picker', 'customize-controls' ],
 				CONVERSIONS_EXTENSIONS_VERSION,
 				true
 			);

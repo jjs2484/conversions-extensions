@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 					precision: 5,
 				},
 				files: {
-					'build/plugin.css': 'sass/frontend.scss',
+					'sass/frontend.css': 'sass/frontend.scss',
 					'build/conversions-customizer.css': 'sass/customizer.scss',
 				}
 			}
@@ -20,8 +20,9 @@ module.exports = function(grunt) {
 		concat: {
 			basic_and_extras: {
 				files: {
-					'build/plugin.js': ['node_modules/slick-carousel/slick/slick.js', 'node_modules/counterup2/dist/index.js', 'homepage/js/frontend.js'],
-					'build/conversions-customizer.js': ['repeater/js/conversions-repeater.js', 'repeater/js/fontawesome-iconpicker.js', 'homepage/js/customizer-sorting.js', 'homepage/js/customizer-conditionals.js'],
+					'build/plugin.css': ['sass/frontend.css', 'node_modules/lightbox2/dist/css/lightbox.css'],
+					'build/plugin.js': ['node_modules/slick-carousel/slick/slick.js', 'node_modules/counterup2/dist/index.js', 'node_modules/lightbox2/dist/js/lightbox.js', 'homepage/js/frontend.js'],
+					'build/conversions-customizer.js': ['repeater/js/conversions-repeater.js', 'gallery/js/customize-image-gallery-control.js', 'repeater/js/fontawesome-iconpicker.js', 'homepage/js/customizer-sorting.js', 'homepage/js/customizer-conditionals.js'],
 				},
 			},
 		},

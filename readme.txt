@@ -70,6 +70,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 * Slick v1.8.1 | MIT License
 * Counter-Up2 v1.0.4 | MIT License
+* lightbox2 v2.11.3 | MIT License
 
 == Installation ==
 
@@ -87,6 +88,8 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.8.1 =
+* New: Add Gallery homepage section.
+* New: Add lightbox2.
 * Update: Fontawesome to v5.15.3
 * Update: Reorder customizer sections.
 * Update: NPM Dependencies.

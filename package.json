@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "counterup2": "^1.0.4",
+    "lightbox2": "^2.11.3",
     "slick-carousel": "^1.8.1"
   },
   "description": ""

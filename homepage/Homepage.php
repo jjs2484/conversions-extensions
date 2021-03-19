@@ -21,6 +21,7 @@ class Homepage {
 	use sections\counter;
 	use sections\faq;
 	use sections\edd;
+	use sections\gallery;
 	use sections\hero;
 	use sections\icon_features;
 	use sections\img_features;
@@ -73,6 +74,9 @@ class Homepage {
 			],
 			'map'            => [
 				'title' => __( 'Google map', 'conversions' ),
+			],
+			'gallery'        => [
+				'title' => __( 'Gallery', 'conversions' ),
 			],
 			'hero'           => [
 				'title' => __( 'Hero', 'conversions' ),
