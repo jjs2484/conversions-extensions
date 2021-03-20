@@ -156,7 +156,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_gallery_xs_control',
 	[
-		'label'       => __( '# of items on small screens', 'conversions' ),
+		'label'       => __( '# of items on extra small screens', 'conversions' ),
 		'description' => __( 'Items to show up to 576px. Choose 1-6.', 'conversions' ),
 		'section'     => 'conversions_homepage_gallery',
 		'settings'    => 'conversions_gallery_xs',

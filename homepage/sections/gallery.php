@@ -99,7 +99,7 @@ trait gallery {
 		} else { // User decides items per row.
 
 			// How many to show per row.
-			$gallery_block_xs = get_theme_mod( 'conversions_gallery_sm', '2' );
+			$gallery_block_xs = get_theme_mod( 'conversions_gallery_xs', '2' );
 			$gallery_block_sm = get_theme_mod( 'conversions_gallery_sm', '3' );
 			$gallery_block_md = get_theme_mod( 'conversions_gallery_md', '4' );
 			$gallery_block_lg = get_theme_mod( 'conversions_gallery_lg', '6' );
