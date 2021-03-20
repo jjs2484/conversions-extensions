@@ -53,14 +53,14 @@ trait gallery {
 			// Image block count.
 			$total_gallery_blocks = count( $gallery );
 
-			if ( $total_gallery_blocks == 0 || $total_gallery_blocks == 1 ) {
+			if ( $total_gallery_blocks < 2 ) {
 				// Count is 0 or 1.
 				$gallery_block_xs = 1;
 				$gallery_block_sm = 1;
 				$gallery_block_md = 1;
 				$gallery_block_lg = 1;
 			} elseif ( $total_gallery_blocks == 13 || $total_gallery_blocks == 25 || $total_gallery_blocks == 37 || $total_gallery_blocks == 49 || $total_gallery_blocks == 61 || $total_gallery_blocks == 73 || $total_gallery_blocks == 85 ) {
-				// Count is 13.
+				// Count is an oddball number.
 				$gallery_block_xs = 2;
 				$gallery_block_sm = 3;
 				$gallery_block_md = 4;
