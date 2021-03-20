@@ -334,19 +334,17 @@ section.c-gallery {
 }
 
 // Lightbox2
-.theme-conversions {
-	.lb-nav a.lb-prev {
-		background: url(../gallery/images/prev.png) left 48% no-repeat;
-	}
-	.lb-nav a.lb-next {
-		background: url(../gallery/images/next.png) right 48% no-repeat;
-	}
-	.lb-cancel {
-		background: url(../gallery/images/loading.gif) no-repeat;
-	}
-	.lb-data .lb-close {
-		background: url(../gallery/images/close.png) top right no-repeat;
-	}
+.lb-nav a.lb-prev {
+	background: url(../gallery/images/prev.png) left 48% no-repeat !important;
+}
+.lb-nav a.lb-next {
+	background: url(../gallery/images/next.png) right 48% no-repeat !important;
+}
+.lb-cancel {
+	background: url(../gallery/images/loading.gif) no-repeat !important;
+}
+.lb-data .lb-close {
+	background: url(../gallery/images/close.png) top right no-repeat !important;
 }
 
 // Team section

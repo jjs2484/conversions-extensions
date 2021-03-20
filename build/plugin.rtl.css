@@ -451,14 +451,17 @@ section.c-gallery .c-gallery__image {
     max-width: 700px;
     width: 100%; }
 
-.theme-conversions .lb-nav a.lb-prev {
-  background: url(../gallery/images/prev.png) right 48% no-repeat; }
-.theme-conversions .lb-nav a.lb-next {
-  background: url(../gallery/images/next.png) left 48% no-repeat; }
-.theme-conversions .lb-cancel {
-  background: url(../gallery/images/loading.gif) no-repeat; }
-.theme-conversions .lb-data .lb-close {
-  background: url(../gallery/images/close.png) top left no-repeat; }
+.lb-nav a.lb-prev {
+  background: url(../gallery/images/prev.png) right 48% no-repeat !important; }
+
+.lb-nav a.lb-next {
+  background: url(../gallery/images/next.png) left 48% no-repeat !important; }
+
+.lb-cancel {
+  background: url(../gallery/images/loading.gif) no-repeat !important; }
+
+.lb-data .lb-close {
+  background: url(../gallery/images/close.png) top left no-repeat !important; }
 
 @media (min-width: 576px) {
   section.c-team .row:first-of-type {
