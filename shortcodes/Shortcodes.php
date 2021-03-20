@@ -84,7 +84,7 @@ class Shortcodes {
 	 */
 	public function conversions_gallery_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-gallery c-shortcode mt-4 mb-4"><div class="row">' . $homepage->gallery_content() . '</div></section>';
+		return '<section class="c-gallery c-shortcode mt-4 mb-4">' . $homepage->gallery_content() . '</section>';
 	}
 
 	/**
