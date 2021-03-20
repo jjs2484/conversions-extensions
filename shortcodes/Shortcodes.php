@@ -28,6 +28,7 @@ class Shortcodes {
 		add_shortcode( 'conversions_clients', [ $this, 'conversions_clients_shortcode' ] );
 		add_shortcode( 'conversions_counter', [ $this, 'conversions_counter_shortcode' ] );
 		add_shortcode( 'conversions_faq', [ $this, 'conversions_faq_shortcode' ] );
+		add_shortcode( 'conversions_gallery', [ $this, 'conversions_gallery_shortcode' ] );
 		add_shortcode( 'conversions_google_map', [ $this, 'conversions_google_map_shortcode' ] );
 		add_shortcode( 'conversions_icon_features', [ $this, 'conversions_icon_features_shortcode' ] );
 		add_shortcode( 'conversions_img_features', [ $this, 'conversions_img_features_shortcode' ] );
@@ -72,6 +73,18 @@ class Shortcodes {
 	public function conversions_faq_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
 		return '<section class="c-faq c-shortcode mt-4 mb-2"><div class="row">' . $homepage->faq_content() . '</div></section>';
+	}
+
+	/**
+	 * Create Gallery shortcode.
+	 *
+	 * Shortcode: [conversions_gallery]
+	 *
+	 * @since 2021-03-19
+	 */
+	public function conversions_gallery_shortcode() {
+		$homepage = new \conversions\extensions\homepage\Homepage();
+		return '<section class="c-gallery c-shortcode mt-4 mb-4"><div class="row">' . $homepage->gallery_content() . '</div></section>';
 	}
 
 	/**
