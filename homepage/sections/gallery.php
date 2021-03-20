@@ -113,7 +113,7 @@ trait gallery {
 		foreach ( $gallery as $image ) {
 
 			// Feature image block html.
-			echo '<div id="c-gallery__image-' . esc_attr( $gallery_block_count ) . '" class="c-gallery__image col-' . esc_attr( $bs_grid[$gallery_block_sm] ) . ' col-sm-' . esc_attr( $bs_grid[$gallery_block_sm] ) . ' col-md-' . esc_attr( $bs_grid[$gallery_block_md] ) . ' col-lg-' . esc_attr( $bs_grid[$gallery_block_lg] ) . '">';
+			echo '<div id="c-gallery__image-' . esc_attr( $gallery_block_count ) . '" class="c-gallery__image col-' . esc_attr( $bs_grid[$gallery_block_xs] ) . ' col-sm-' . esc_attr( $bs_grid[$gallery_block_sm] ) . ' col-md-' . esc_attr( $bs_grid[$gallery_block_md] ) . ' col-lg-' . esc_attr( $bs_grid[$gallery_block_lg] ) . '">';
 
 			// Get the image sizes.
 			$image_lg = wp_get_attachment_image_src( $image, 'large', false );
