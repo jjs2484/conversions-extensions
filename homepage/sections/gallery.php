@@ -59,31 +59,25 @@ trait gallery {
 				$gallery_block_sm = 1;
 				$gallery_block_md = 1;
 				$gallery_block_lg = 1;
-			} elseif ( $total_gallery_blocks == 2 ) {
-				// Count is 2.
-				$gallery_block_xs = 2;
-				$gallery_block_sm = 2;
-				$gallery_block_md = 2;
-				$gallery_block_lg = 2;
-			} elseif ( ! is_float( $total_gallery_blocks / 6 ) || $total_gallery_blocks / 6 - floor( $total_gallery_blocks / 6 ) >= 0.5 ) {
+			} elseif ( ! is_float( $total_gallery_blocks / 6 ) || $total_gallery_blocks / 6 >= 1 && $total_gallery_blocks / 6 - floor( $total_gallery_blocks / 6 ) >= 0.5 ) {
 				// Count is evenly divisible by 6 or has a float higher than .5.
 				$gallery_block_xs = 2;
 				$gallery_block_sm = 3;
 				$gallery_block_md = 3;
 				$gallery_block_lg = 6;
-			} elseif ( ! is_float( $total_gallery_blocks / 4 ) || $total_gallery_blocks / 4 - floor( $total_gallery_blocks / 4 ) >= 0.5 ) {
+			} elseif ( ! is_float( $total_gallery_blocks / 4 ) || $total_gallery_blocks / 4 >= 1 && $total_gallery_blocks / 4 - floor( $total_gallery_blocks / 4 ) >= 0.5 ) {
 				// Count is evenly divisible by 4 or has a float higher than .5.
 				$gallery_block_xs = 2;
 				$gallery_block_sm = 2;
 				$gallery_block_md = 4;
 				$gallery_block_lg = 4;
-			} elseif ( ! is_float( $total_gallery_blocks / 3 ) || $total_gallery_blocks / 3 - floor( $total_gallery_blocks / 3 ) >= 0.5 ) {
+			} elseif ( ! is_float( $total_gallery_blocks / 3 ) || $total_gallery_blocks / 3 >= 1 && $total_gallery_blocks / 3 - floor( $total_gallery_blocks / 3 ) >= 0.5 ) {
 				// Count is evenly divisible by 3 or has a float higher than .5.
 				$gallery_block_xs = 2;
 				$gallery_block_sm = 3;
 				$gallery_block_md = 3;
 				$gallery_block_lg = 3;
-			} elseif ( ! is_float( $total_gallery_blocks / 2 ) || $total_gallery_blocks / 2 - floor( $total_gallery_blocks / 2 ) >= 0.5 ) {
+			} elseif ( ! is_float( $total_gallery_blocks / 2 ) || $total_gallery_blocks / 2 >= 1 && $total_gallery_blocks / 2 - floor( $total_gallery_blocks / 2 ) >= 0.5 ) {
 				// Count is evenly divisible by 2 or has a float higher than .5.
 				$gallery_block_xs = 2;
 				$gallery_block_sm = 2;
