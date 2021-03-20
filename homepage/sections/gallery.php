@@ -109,15 +109,19 @@ trait gallery {
 		// Block count for HTML IDs.
 		$gallery_block_count = 0;
 
+		echo '<div class="row">';
+
 		// Loop the image features.
 		foreach ( $gallery as $image ) {
 
 			// Feature image block html.
 			echo '<div id="c-gallery__image-' . esc_attr( $gallery_block_count ) . '" class="c-gallery__image col-' . esc_attr( $bs_grid[$gallery_block_xs] ) . ' col-sm-' . esc_attr( $bs_grid[$gallery_block_sm] ) . ' col-md-' . esc_attr( $bs_grid[$gallery_block_md] ) . ' col-lg-' . esc_attr( $bs_grid[$gallery_block_lg] ) . '">';
 
-			// Get the image sizes.
-			$image_lg = wp_get_attachment_image_src( $image, 'large', false );
+			// Get the gallery image size.
+			$image_gal = wp_get_attachment_image_src( $image, 'conversions-gallery', false );
 
+			// Get the large size.
+			$image_lg = wp_get_attachment_image_src( $image, 'large', false );
 			// If large size doesn't exist get the full size.
 			if ( empty( $image_lg ) ) {
 				$image_lg = wp_get_attachment_image_src( $image, 'full', false );
@@ -127,12 +131,14 @@ trait gallery {
 			$image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
 
 			// Output image.
-			echo '<a href="' . esc_url( $image_lg[0] ) . '" data-lightbox="conversions-gallery"><img src="' . esc_url( $image_lg[0] ) . '" alt="' . esc_html( $image_alt ) . '"></a>';
+			echo '<a href="' . esc_url( $image_lg[0] ) . '" data-lightbox="conversions-gallery"><img loading="lazy" src="' . esc_url( $image_gal[0] ) . '" alt="' . esc_html( $image_alt ) . '"></a>';
 
 			echo '</div>';
 
 			++$gallery_block_count;
 		}
+
+		echo '</div>';
 
 		$content = ob_get_contents();
 		ob_clean();
@@ -154,35 +160,37 @@ trait gallery {
 	<!-- Features section -->
 	<section class="c-gallery">
 		<div class="container-fluid">
-			<div class="row">
-
-				<?php
-
-				if ( ! empty( $title ) || ! empty( $desc ) ) {
-					?>
-
-					<div class="col-12 c-intro">
-						<div class="w-md-80 w-lg-60 c-intro__inner">
-							<?php
-							if ( ! empty( $title ) ) {
-								// Title.
-								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
-							}
-							if ( ! empty( $desc ) ) {
-								// Description.
-								echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
-							}
-							?>
-						</div>
-					</div>
+				<div class="row">
 
 					<?php
-				}
+					if ( ! empty( $title ) || ! empty( $desc ) ) {
+						?>
 
+						<div class="col-12 c-intro">
+							<div class="w-md-80 w-lg-60 c-intro__inner">
+								<?php
+								if ( ! empty( $title ) ) {
+									// Title.
+									echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
+								}
+								if ( ! empty( $desc ) ) {
+									// Description.
+									echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
+								}
+								?>
+							</div>
+						</div>
+
+						<?php 
+					}
+					?>
+
+				</div>
+
+				<?php
 				do_action( 'conversions_before_gallery' );
 				echo $this->gallery_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				do_action( 'conversions_after_gallery' );
-
 				?>
 
 			</div>
