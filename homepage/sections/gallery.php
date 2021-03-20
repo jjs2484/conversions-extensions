@@ -63,7 +63,7 @@ trait gallery {
 				// Count is 13.
 				$gallery_block_xs = 2;
 				$gallery_block_sm = 3;
-				$gallery_block_md = 3;
+				$gallery_block_md = 4;
 				$gallery_block_lg = 6;
 			} elseif ( ! is_float( $total_gallery_blocks / 6 ) || $total_gallery_blocks / 6 >= 1 && $total_gallery_blocks / 6 - floor( $total_gallery_blocks / 6 ) >= 0.5 ) {
 				// Count is evenly divisible by 6 or is greater than 1.5.
