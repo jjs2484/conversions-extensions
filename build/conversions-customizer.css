@@ -210,7 +210,8 @@ button.customizer-repeater-new-field:before {
   width: 100%;
   float: left; }
 
-#image-gallery-modify-gallery {
+#image-gallery-modify-gallery,
+#image-gallery-remove-gallery {
   margin-top: 7px; }
 
 .iconpicker .iconpicker-items,

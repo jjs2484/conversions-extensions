@@ -543,6 +543,7 @@ function escapeHtml(string) {
 			var control = this;
 			// Shortcut so that we don't have to use _.bind every time we add a callback.
 			_.bindAll( control, 'openFrame', 'select' );
+			_.bindAll( control, 'removeGallery', 'select' );
 
 			/**
 			 * Set gallery data and render content.
@@ -564,6 +565,7 @@ function escapeHtml(string) {
 
 			// Bind events.
 			control.container.on( 'click keydown', '.upload-button', control.openFrame );
+			control.container.on( 'click keydown', '.remove-button', control.removeGallery );
 		},
 
 		/**
@@ -695,6 +697,15 @@ function escapeHtml(string) {
 		setSettingValues: function( values ) {
 			var control = this;
 			control.setting.set( values );
+		},
+
+		/**
+         * Reset setting to empty array.
+         *
+         * @returns {void}
+         */
+		removeGallery: function() {
+			this.setSettingValues( [] );
 		},
 
 		/**
