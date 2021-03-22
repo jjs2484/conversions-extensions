@@ -116,6 +116,34 @@ $wp_customize->add_control(
 	]
 );
 $wp_customize->add_setting(
+	'conversions_testimonials_random',
+	[
+		'default'           => 'yes',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'conversions_ext_sanitize_select',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+	]
+);
+$wp_customize->add_control(
+	new \WP_Customize_Control(
+		$wp_customize,
+		'conversions_testimonials_random',
+		[
+			'label'       => __( 'Shuffle', 'conversions' ),
+			'description' => __( 'Select yes or no to shuffle the testimonial output on each page load.', 'conversions' ),
+			'section'     => 'conversions_homepage_testimonials',
+			'settings'    => 'conversions_testimonials_random',
+			'type'        => 'select',
+			'choices'     => [
+				'yes' => __( 'Yes', 'conversions' ),
+				'no'  => __( 'No', 'conversions' ),
+			],
+			'priority'    => '55',
+		]
+	)
+);
+$wp_customize->add_setting(
 	'conversions_testimonials_repeater',
 	[
 		'type'              => 'theme_mod',

@@ -82,7 +82,7 @@ namespace conversions\extensions {
 				'conversions_hh_title'             => 'page',
 				'conversions_hh_button'            => 'no',
 				'conversions_hh_vbtn'              => 'no',
-				'conversions_hc_logo_width'        => '6.2',
+				'conversions_hc_logo_width'        => '8.5',
 				'conversions_hc_respond'           => 'auto',
 				'conversions_hc_sm'                => '2',
 				'conversions_hc_md'                => '3',
@@ -126,6 +126,7 @@ namespace conversions\extensions {
 				'conversions_gallery_sm'           => '3',
 				'conversions_gallery_md'           => '4',
 				'conversions_gallery_lg'           => '6',
+				'conversions_testimonials_random'  => 'yes',
 			];
 
 			foreach ( $defaults as $c => $v ) {

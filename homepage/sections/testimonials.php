@@ -47,7 +47,14 @@ trait testimonials {
 
 				<?php
 
+				$shuffle = get_theme_mod( 'conversions_testimonials_random', 'yes' );
+
+				if ( $shuffle == 'yes' ) {
+					$testimonials = shuffle( $testimonials );
+				}
+
 				$testimonials_count = 0;
+
 				foreach ( $testimonials as $conversions_testimonial ) {
 					?>
 

@@ -532,6 +532,7 @@ section.c-testimonials .c-testimonials__quote {
   position: relative;
   overflow: hidden;
   min-height: 120px;
+  background: #fff;
   border-radius: 10px;
   border-top: 1px solid #dee2e6;
   border-right: 1px solid #dee2e6;

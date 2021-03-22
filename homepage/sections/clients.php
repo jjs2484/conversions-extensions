@@ -42,7 +42,7 @@ trait clients {
 
 					<?php
 					$chc_max_slides = get_theme_mod( 'conversions_hc_max', '5' );
-					$chc_logo_width = ( get_theme_mod( 'conversions_hc_logo_width', '6.2' ) * 16 ) + 40;
+					$chc_logo_width = ( get_theme_mod( 'conversions_hc_logo_width', '8.5' ) * 16 ) + 40;
 
 					if ( get_theme_mod( 'conversions_hc_respond', 'auto' ) === 'auto' ) {
 

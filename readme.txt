@@ -89,6 +89,11 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 == Changelog ==
 
+= 1.8.2 =
+* New: Add shuffle option to testimonials.
+* Update: Make default client logo width 8.5rem.
+* Fix: add a default background color to testimonial quotes.
+
 = 1.8.1 =
 * New: Add Gallery homepage section.
 * New: Add lightbox2.

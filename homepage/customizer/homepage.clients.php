@@ -37,7 +37,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 	'conversions_hc_logo_width',
 	[
-		'default'           => '6.2',
+		'default'           => '8.5',
 		'type'              => 'theme_mod',
 		'capability'        => 'edit_theme_options',
 		'transport'         => 'refresh',
