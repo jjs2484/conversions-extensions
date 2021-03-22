@@ -22,7 +22,7 @@ trait pricing {
 		if ( ! $pricing )
 			return false;
 
-		$has_pricing = ( $pricing[ 0 ]->title != '' || $pricing[ 0 ]->subtitle != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+		$has_pricing = ( $pricing[ 0 ]->title != '' || $pricing[ 0 ]->subtitle != '' || $pricing[ 0 ]->subtitle2 != '' ); // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 
 		if ( ! $has_pricing )
 			return false;

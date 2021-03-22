@@ -92,6 +92,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 = 1.8.2 =
 * New: Add shuffle option to testimonials.
 * Update: Make default client logo width 8.5rem.
+* Update: Pricing table check for additional fields to show output earlier.
 * Fix: add a default background color to testimonial quotes.
 
 = 1.8.1 =
