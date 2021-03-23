@@ -91,6 +91,7 @@ trait clients {
 
 							// Retrieve user img.
 							$logo = $client_logo->image_url;
+							$logo_url = '';
 
 							/*
 							 * We check below whether the img is in ID or URL form.
