@@ -172,6 +172,7 @@ trait hero {
 							?>
 						</div>
 					</div>
+					<?php do_action( 'conversions_hero_full_after_content' ); ?>
 				</div>
 			</div>
 		</section>

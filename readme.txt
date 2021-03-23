@@ -90,6 +90,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.8.2 =
+* New: Action hook conversions_hero_full_after_content.
 * New: Add shuffle option to testimonials.
 * Update: Increase line-height for testimonial text.
 * Update: Make default client logo width 8.5rem.
