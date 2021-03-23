@@ -46,7 +46,19 @@ trait clients {
 
 					if ( get_theme_mod( 'conversions_hc_respond', 'auto' ) === 'auto' ) {
 
-						$chc_max_slides = '5';
+						$total_slides = count( $client_logos );
+
+						if ( $total_slides >= 5 ) {
+							$chc_max_slides = '5';
+						} elseif ( $total_slides >= 4 ) {
+							$chc_max_slides = '4';
+						} elseif ( $total_slides >= 3 ) {
+							$chc_max_slides = '3';
+						} elseif ( $total_slides >= 2 ) {
+							$chc_max_slides = '2';
+						} else {
+							$chc_max_slides = '1';
+						}
 
 						$chc_breakpoints = ['768', '576', '375'];
 
