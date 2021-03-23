@@ -41,23 +41,27 @@ trait clients {
 				<div class="col-12">
 
 					<?php
-					$chc_max_slides = get_theme_mod( 'conversions_hc_max', '5' );
+
 					$chc_logo_width = ( get_theme_mod( 'conversions_hc_logo_width', '8.5' ) * 16 ) + 40;
 
 					if ( get_theme_mod( 'conversions_hc_respond', 'auto' ) === 'auto' ) {
 
+						$chc_max_slides = '5';
+
 						$chc_breakpoints = ['768', '576', '375'];
 
-						foreach ( $chc_breakpoints as $s ) {
-							$n = floor( $s / $chc_logo_width );
-							if ( $n > $chc_max_slides ) {
-								$n = $chc_max_slides;
-							} elseif ( $n < 1 ) {
-								$n = 1;
+						foreach ( $chc_breakpoints as $breakpoint ) {
+							$items_to_show = floor( $breakpoint / $chc_logo_width );
+							if ( $items_to_show > $chc_max_slides ) {
+								$items_to_show = $chc_max_slides;
+							} elseif ( $items_to_show < 1 ) {
+								$items_to_show = 1;
 							}
-							$chc_items_to_show[] = $n;
+							$chc_items_to_show[] = $items_to_show;
 						}
 					} else {
+
+						$chc_max_slides    = get_theme_mod( 'conversions_hc_max', '5' );
 						$chc_items_to_show = [
 							'' . esc_html( get_theme_mod( 'conversions_hc_lg', '4' ) ) . '',
 							'' . esc_html( get_theme_mod( 'conversions_hc_md', '3' ) ) . '',
@@ -67,7 +71,7 @@ trait clients {
 					?>
 
 					<!-- Client logos -->
-					<div class='c-clients__carousel py-4' data-slick='{"arrows":true,"dots":false,"infinite":true,"slidesToShow":<?php echo esc_attr( get_theme_mod( 'conversions_hc_max', '5' ) ); ?>,"slidesToScroll":<?php echo esc_attr( get_theme_mod( 'conversions_hc_max', '5' ) ); ?>,"responsive":[{"breakpoint":992,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[0] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[0] ); ?>}},{"breakpoint":768,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[1] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[1] ); ?>}},{"breakpoint":576,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[2] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[2] ); ?>}}]}'>
+					<div class='c-clients__carousel py-4' data-slick='{"arrows":true,"dots":false,"infinite":true,"slidesToShow":<?php echo esc_attr( $chc_max_slides ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_max_slides ); ?>,"responsive":[{"breakpoint":992,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[0] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[0] ); ?>}},{"breakpoint":768,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[1] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[1] ); ?>}},{"breakpoint":576,"settings":{"slidesToShow":<?php echo esc_attr( $chc_items_to_show[2] ); ?>,"slidesToScroll":<?php echo esc_attr( $chc_items_to_show[2] ); ?>}}]}'>
 
 						<?php
 						$clients_count = 0;
