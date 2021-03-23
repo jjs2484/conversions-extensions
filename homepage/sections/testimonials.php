@@ -50,7 +50,15 @@ trait testimonials {
 				$shuffle = get_theme_mod( 'conversions_testimonials_random', 'yes' );
 
 				if ( $shuffle == 'yes' ) {
-					$testimonials = shuffle( $testimonials );
+
+					// Convert from an object to an array.
+					$testimonials = (array) $testimonials;
+
+					// Shuffle array.
+					shuffle( $testimonials );
+
+					// Convert back to an object.
+					$testimonials = (object) $testimonials;
 				}
 
 				$testimonials_count = 0;
