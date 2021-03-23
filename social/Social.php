@@ -39,7 +39,7 @@ class Social {
 		if ( ! $social_icons || get_theme_mod( 'conversions_social_footer', false ) !== true )
 			return;
 
-		$footer_social_icons  = '<div class="c-social-icons social-media-icons col-md">';
+		$footer_social_icons  = '<div class="c-social-icons social-media-icons col-md-auto">';
 		$footer_social_icons .= '<ul class="list-inline">';
 		$footer_social_icons .= static::social_icons_content();
 		$footer_social_icons .= '</ul>';

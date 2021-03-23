@@ -95,6 +95,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Pricing table check for additional fields to show output earlier.
 * Update: Better auto responsive calculation for clients section.
 * Fix: add a default background color to testimonial quotes.
+* Fix: Social media icons footer column should be set as variable width content - col-md-auto.
 
 = 1.8.1 =
 * New: Add Gallery homepage section.
