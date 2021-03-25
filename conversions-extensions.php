@@ -116,6 +116,7 @@ namespace conversions\extensions {
 				'conversions_edd_products_orderby' => 'post_date',
 				'conversions_edd_products_order'   => 'DESC',
 				'conversions_counter_respond'      => 'auto',
+				'conversions_counter_xs'           => '1',
 				'conversions_counter_sm'           => '2',
 				'conversions_counter_md'           => '2',
 				'conversions_counter_lg'           => '4',

@@ -144,6 +144,31 @@ $wp_customize->add_control(
 	)
 );
 $wp_customize->add_setting(
+	'conversions_counter_xs',
+	[
+		'default'           => '1',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'absint',
+	]
+);
+$wp_customize->add_control(
+	'conversions_counter_xs_control',
+	[
+		'label'       => __( '# of items on extra small screens', 'conversions' ),
+		'description' => __( 'Items to show up to 576px. Choose 1-4.', 'conversions' ),
+		'section'     => 'conversions_homepage_counter',
+		'settings'    => 'conversions_counter_xs',
+		'priority'    => 52,
+		'type'        => 'number',
+		'input_attrs' => [
+			'min' => 1,
+			'max' => 4,
+		],
+	]
+);
+$wp_customize->add_setting(
 	'conversions_counter_sm',
 	[
 		'default'           => '2',

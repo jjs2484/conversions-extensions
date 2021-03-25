@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 		[ '#customize-control-conversions_features_sm_control, #customize-control-conversions_features_md_control, #customize-control-conversions_features_lg_control', '#customize-control-conversions_features_respond', 'auto'],
 		[ '#customize-control-conversions_img_features_sm_control, #customize-control-conversions_img_features_md_control, #customize-control-conversions_img_features_lg_control', '#customize-control-conversions_img_features_respond', 'auto'],
 		[ '#customize-control-conversions_team_sm_control, #customize-control-conversions_team_md_control, #customize-control-conversions_team_lg_control', '#customize-control-conversions_team_respond', 'auto'],
-		[ '#customize-control-conversions_counter_sm_control, #customize-control-conversions_counter_md_control, #customize-control-conversions_counter_lg_control', '#customize-control-conversions_counter_respond', 'auto'],
+		[ '#customize-control-conversions_counter_xs_control, #customize-control-conversions_counter_sm_control, #customize-control-conversions_counter_md_control, #customize-control-conversions_counter_lg_control', '#customize-control-conversions_counter_respond', 'auto'],
 		[ '#customize-control-conversions_gallery_xs_control, #customize-control-conversions_gallery_sm_control, #customize-control-conversions_gallery_md_control, #customize-control-conversions_gallery_lg_control', '#customize-control-conversions_gallery_respond', 'auto'],
 	];
 	

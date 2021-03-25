@@ -55,26 +55,31 @@ trait counter {
 
 			if ( $total_counter_blocks == 0 || $total_counter_blocks == 1 ) {
 				// Count is 0 or 1.
+				$conversions_counter_xs = 1;
 				$conversions_counter_sm = 1;
 				$conversions_counter_md = 1;
 				$conversions_counter_lg = 1;
 			} elseif ( $total_counter_blocks == 2 ) {
 				// Count is 2.
+				$conversions_counter_xs = 1;
 				$conversions_counter_sm = 2;
 				$conversions_counter_md = 2;
 				$conversions_counter_lg = 2;
 			} elseif ( ! is_float( $total_counter_blocks / 3 ) || $total_counter_blocks / 3 - floor( $total_counter_blocks / 3 ) >= 0.5 ) {
 				// Count is evenly divisible by 3 or has a float higher than .5.
+				$conversions_counter_xs = 1;
 				$conversions_counter_sm = 2;
 				$conversions_counter_md = 2;
 				$conversions_counter_lg = 3;
 			} elseif ( ! is_float( $total_counter_blocks / 2 ) || $total_counter_blocks / 2 - floor( $total_counter_blocks / 2 ) >= 0.5 ) {
 				// Count is evenly divisible by 2 or has a float higher than .5.
+				$conversions_counter_xs = 1;
 				$conversions_counter_sm = 2;
 				$conversions_counter_md = 2;
 				$conversions_counter_lg = 2;
 			} else {
 				// Fallback.
+				$conversions_counter_xs = 1;
 				$conversions_counter_sm = 1;
 				$conversions_counter_md = 1;
 				$conversions_counter_lg = 1;
@@ -82,6 +87,7 @@ trait counter {
 		} else { // User decides items per row.
 
 			// How many to show per row.
+			$conversions_counter_xs = get_theme_mod( 'conversions_counter_xs', '1' );
 			$conversions_counter_sm = get_theme_mod( 'conversions_counter_sm', '2' );
 			$conversions_counter_md = get_theme_mod( 'conversions_counter_md', '2' );
 			$conversions_counter_lg = get_theme_mod( 'conversions_counter_lg', '3' );
@@ -93,7 +99,7 @@ trait counter {
 		foreach ( $counter as $repeater_item ) {
 
 			// Start counter block.
-			echo '<div id="c-counter__block-' . esc_attr( $counter_block_count ) . '" class="c-counter__block col-sm-' . esc_attr( $bs_grid[$conversions_counter_sm] ) . ' col-md-' . esc_attr( $bs_grid[$conversions_counter_md] ) . ' col-lg-' . esc_attr( $bs_grid[$conversions_counter_lg] ) . '">';
+			echo '<div id="c-counter__block-' . esc_attr( $counter_block_count ) . '" class="c-counter__block col-' . esc_attr( $bs_grid[$conversions_counter_xs] ) . ' col-sm-' . esc_attr( $bs_grid[$conversions_counter_sm] ) . ' col-md-' . esc_attr( $bs_grid[$conversions_counter_md] ) . ' col-lg-' . esc_attr( $bs_grid[$conversions_counter_lg] ) . '">';
 
 			echo '<div class="card border-0 h-100"><div class="card-body">';
 
