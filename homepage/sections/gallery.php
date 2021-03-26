@@ -157,9 +157,9 @@ trait gallery {
 		if ( ! $gallery && empty( $title ) && empty( $desc ) )
 			return;
 		?>
-	<!-- Features section -->
-	<section class="c-gallery">
-		<div class="container-fluid">
+		<!-- Features section -->
+		<section class="c-gallery">
+			<div class="container-fluid">
 				<div class="row">
 
 					<?php

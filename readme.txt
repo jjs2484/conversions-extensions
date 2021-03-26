@@ -100,6 +100,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Fix: add a default background color to testimonial quotes.
 * Fix: Social media icons footer column should be set as variable width content - col-md-auto.
 * Fix: New clients image repeater field was outputting the previous image until a new one was uploaded.
+* Fix: Add container-fluid wrapper to shortcodes.
 
 = 1.8.1 =
 * New: Add Gallery homepage section.
