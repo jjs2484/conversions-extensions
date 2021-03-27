@@ -38,6 +38,7 @@ trait counter {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+		do_action( 'conversions_homepage_before_counter' );
 
 		// Array used to convert items per row to bootstrap grid.
 		$bs_grid = array(
@@ -188,6 +189,7 @@ trait counter {
 			++$counter_block_count;
 		}
 
+		do_action( 'conversions_homepage_after_counter' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -233,9 +235,7 @@ trait counter {
 					<?php
 				}
 
-				do_action( 'conversions_homepage_before_counter' );
 				echo $this->counter_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_homepage_after_counter' );
 
 				?>
 

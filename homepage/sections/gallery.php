@@ -36,6 +36,7 @@ trait gallery {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+		do_action( 'conversions_before_gallery' );
 
 		// Array used to convert items per row to bootstrap grid.
 		$bs_grid = array(
@@ -140,6 +141,7 @@ trait gallery {
 
 		echo '</div>';
 
+		do_action( 'conversions_after_gallery' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -188,9 +190,7 @@ trait gallery {
 				</div>
 
 				<?php
-				do_action( 'conversions_before_gallery' );
 				echo $this->gallery_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_after_gallery' );
 				?>
 
 			</div>

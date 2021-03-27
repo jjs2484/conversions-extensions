@@ -42,6 +42,7 @@ trait team {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+		do_action( 'conversions_homepage_before_team' );
 
 		// Array used to convert items per row to bootstrap grid.
 		$bs_grid = array(
@@ -167,6 +168,7 @@ trait team {
 			++$team_block_count;
 		}
 
+		do_action( 'conversions_homepage_after_team' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -213,10 +215,7 @@ trait team {
 					<?php
 				}
 
-				do_action( 'conversions_homepage_before_team' );
 				echo $this->team_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_homepage_after_team' );
-
 				?>
 
 			</div>

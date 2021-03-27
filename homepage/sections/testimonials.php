@@ -38,8 +38,11 @@ trait testimonials {
 		$testimonials = $this->get_testimonials();
 		if ( ! $testimonials )
 			return;
+
 		ob_start();
+		do_action( 'conversions_homepage_before_testimonials' );
 		?>
+
 		<!-- Testimonials -->
 		<div class="col-12">
 			<!-- Slick Carousel -->
@@ -110,6 +113,7 @@ trait testimonials {
 			</div> <!-- End Slick Carousel -->
 		</div>
 		<?php
+		do_action( 'conversions_homepage_after_testimonials' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -153,9 +157,7 @@ trait testimonials {
 
 
 				<?php
-					do_action( 'conversions_homepage_before_testimonials' );
-					echo $this->testimonials_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					do_action( 'conversions_homepage_after_testimonials' );
+				echo $this->testimonials_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 
 			</div>

@@ -38,6 +38,7 @@ trait icon_features {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+		do_action( 'conversions_before_icon_features' );
 
 		// Array used to convert items per row to bootstrap grid.
 		$bs_grid = array(
@@ -128,6 +129,7 @@ trait icon_features {
 			++$cfeature_block_count;
 		}
 
+		do_action( 'conversions_after_icon_features' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -173,10 +175,7 @@ trait icon_features {
 					<?php
 				}
 
-				do_action( 'conversions_before_icon_features' );
 				echo $this->icon_features_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_after_icon_features' );
-
 				?>
 
 			</div>

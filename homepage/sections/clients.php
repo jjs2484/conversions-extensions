@@ -37,6 +37,7 @@ trait clients {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+		do_action( 'conversions_homepage_before_clients' );
 		?>
 				<div class="col-12">
 
@@ -146,6 +147,7 @@ trait clients {
 
 				</div>
 		<?php
+		do_action( 'conversions_homepage_after_clients' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -167,9 +169,7 @@ trait clients {
 			<div class="row">
 
 				<?php
-					do_action( 'conversions_homepage_before_clients' );
-					echo $this->clients_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					do_action( 'conversions_homepage_after_clients' );
+				echo $this->clients_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 
 			</div>

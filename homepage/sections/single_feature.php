@@ -55,6 +55,7 @@ trait single_feature {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+		do_action( 'conversions_before_single_feature' );
 
 		// Single feature text.
 		echo '<div class="col-12 col-md-6 c-single-feature__text">';
@@ -146,6 +147,7 @@ trait single_feature {
 
 		echo '</div>';
 
+		do_action( 'conversions_after_single_feature' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -167,11 +169,7 @@ trait single_feature {
 			<div class="row">
 
 				<?php
-
-				do_action( 'conversions_before_single_feature' );
 				echo $this->single_feature_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_after_single_feature' );
-
 				?>
 
 			</div>

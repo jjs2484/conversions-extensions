@@ -50,6 +50,7 @@ trait map {
 
 		// We want to capture the output so that we can return it.
 		ob_start();
+		do_action( 'conversions_homepage_before_map' );
 
 		// Get the map content.
 		$map              = get_theme_mod( 'conversions_map_map' );
@@ -114,6 +115,7 @@ trait map {
 
 		endif;
 
+		do_action( 'conversions_homepage_after_map' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -161,9 +163,7 @@ trait map {
 			</div>
 
 			<?php
-			do_action( 'conversions_homepage_before_map' );
 			echo $this->map_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			do_action( 'conversions_homepage_after_map' );
 			?>
 
 		</section>

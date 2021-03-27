@@ -43,6 +43,8 @@ trait pricing {
 		// We want to capture the output so that we can return it.
 		ob_start();
 
+		do_action( 'conversions_homepage_before_pricing' );
+
 		if ( get_theme_mod( 'conversions_pricing_respond', 'auto' ) === 'auto' ) {
 
 			// Count pricing tables.
@@ -153,6 +155,9 @@ trait pricing {
 			<?php
 			++$cpricing_table_count;
 		}
+
+		do_action( 'conversions_homepage_after_pricing' );
+
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -196,9 +201,7 @@ trait pricing {
 					<?php
 				}
 
-				do_action( 'conversions_homepage_before_pricing' );
 				echo $this->pricing_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				do_action( 'conversions_homepage_after_pricing' );
 				?>
 
 			</div>

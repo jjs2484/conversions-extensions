@@ -39,6 +39,7 @@ trait faq {
 		if ( ! $faq )
 			return;
 		ob_start();
+		do_action( 'conversions_homepage_before_faq' );
 		?>
 		<!-- FAQ -->
 		<div class="col-12">
@@ -87,7 +88,9 @@ trait faq {
 
 			</div><!-- End FAQ -->
 		</div>
+
 		<?php
+		do_action( 'conversions_homepage_after_faq' );
 		$content = ob_get_contents();
 		ob_clean();
 		return $content;
@@ -128,11 +131,8 @@ trait faq {
 					</div>
 				<?php } ?>
 
-
 				<?php
-					do_action( 'conversions_homepage_before_faq' );
-					echo $this->faq_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					do_action( 'conversions_homepage_after_faq' );
+				echo $this->faq_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 
 			</div>
