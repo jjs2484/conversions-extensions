@@ -48,7 +48,7 @@ class Shortcodes {
 	 */
 	public function conversions_clients_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-clients c-shortcode mt-4 mb-4"><div class="container-fluid"><div class="row">' . $homepage->clients_content() . '</div></div></section>';
+		return '<section class="c-clients c-shortcode mt-4 mb-4"><div class="row">' . $homepage->clients_content() . '</div></section>';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class Shortcodes {
 	 */
 	public function conversions_counter_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-counter c-shortcode mt-4 mb-2"><div class="container-fluid"><div class="row">' . $homepage->counter_content() . '</div></div></section>';
+		return '<section class="c-counter c-shortcode mt-4 mb-2"><div class="row">' . $homepage->counter_content() . '</div></section>';
 	}
 
 	/**
@@ -72,7 +72,7 @@ class Shortcodes {
 	 */
 	public function conversions_faq_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-faq c-shortcode mt-4 mb-2"><div class="container-fluid"><div class="row">' . $homepage->faq_content() . '</div></div></section>';
+		return '<section class="c-faq c-shortcode mt-4 mb-2"><div class="row">' . $homepage->faq_content() . '</div></section>';
 	}
 
 	/**
@@ -84,7 +84,7 @@ class Shortcodes {
 	 */
 	public function conversions_gallery_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-gallery c-shortcode mt-4 mb-4"><div class="container-fluid">' . $homepage->gallery_content() . '</div></section>';
+		return '<section class="c-gallery c-shortcode mt-4 mb-4">' . $homepage->gallery_content() . '</section>';
 	}
 
 	/**
@@ -108,7 +108,7 @@ class Shortcodes {
 	 */
 	public function conversions_icon_features_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-features c-shortcode mt-4 mb-2"><div class="container-fluid"><div class="row">' . $homepage->icon_features_content() . '</div></div></section>';
+		return '<section class="c-features c-shortcode mt-4 mb-2"><div class="row">' . $homepage->icon_features_content() . '</div></section>';
 	}
 
 	/**
@@ -120,7 +120,7 @@ class Shortcodes {
 	 */
 	public function conversions_img_features_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-img-features c-shortcode mt-4 mb-2"><div class="container-fluid"><div class="row">' . $homepage->img_features_content() . '</div></div></section>';
+		return '<section class="c-img-features c-shortcode mt-4 mb-2"><div class="row">' . $homepage->img_features_content() . '</div></section>';
 	}
 
 	/**
@@ -132,7 +132,7 @@ class Shortcodes {
 	 */
 	public function conversions_single_feature_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-single-feature c-shortcode mt-4 mb-4"><div class="container-fluid"><div class="row">' . $homepage->single_feature_content() . '</div></div></section>';
+		return '<section class="c-single-feature c-shortcode mt-4 mb-4"><div class="row">' . $homepage->single_feature_content() . '</div></section>';
 	}
 
 	/**
@@ -144,7 +144,7 @@ class Shortcodes {
 	 */
 	public function conversions_pricing_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-pricing c-shortcode mt-4 mb-2"><div class="container-fluid"><div class="row">' . $homepage->pricing_content() . '</div></div></section>';
+		return '<section class="c-pricing c-shortcode mt-4 mb-2"><div class="row">' . $homepage->pricing_content() . '</div></section>';
 	}
 
 	/**
@@ -168,7 +168,7 @@ class Shortcodes {
 	 */
 	public function conversions_team_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-team c-shortcode mt-4 mb-2"><div class="container-fluid"><div class="row">' . $homepage->team_content() . '</div></div></section>';
+		return '<section class="c-team c-shortcode mt-4 mb-2"><div class="row">' . $homepage->team_content() . '</div></section>';
 	}
 
 	/**
@@ -180,6 +180,6 @@ class Shortcodes {
 	 */
 	public function conversions_testimonials_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-testimonials c-shortcode mt-4 mb-2"><div class="container-fluid"><div class="row">' . $homepage->testimonials_content() . '</div></div></section>';
+		return '<section class="c-testimonials c-shortcode mt-4 mb-2"><div class="row">' . $homepage->testimonials_content() . '</div></section>';
 	}
 }
