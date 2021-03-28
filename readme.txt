@@ -99,6 +99,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Add conversions_counter_xs for counter section manual responsive breakpoints.
 * Update: Move action hooks for homepage sections so they also apply to shortcodes.
 * Update: NPM Dependencies.
+* Update: Make scroll listeners passive.
 * Fix: add a default background color to testimonial quotes.
 * Fix: Social media icons footer column should be set as variable width content - col-md-auto.
 * Fix: New clients image repeater field was outputting the previous image until a new one was uploaded.
