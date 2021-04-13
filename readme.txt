@@ -91,6 +91,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.8.2 =
 * New: Action hook conversions_hero_full_after_content.
+* New: Filter conversions_hero_description.
 * New: Add shuffle option to testimonials.
 * Update: Increase line-height for testimonial text.
 * Update: Make default client logo width 8.5rem.
@@ -98,6 +99,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Better auto responsive calculation for clients section.
 * Update: Add conversions_counter_xs for counter section manual responsive breakpoints.
 * Update: Move action hooks for homepage sections so they also apply to shortcodes.
+* Update: Wrap c-hero__description in a div rather than p tag.
 * Update: NPM Dependencies.
 * Update: Make scroll listeners passive.
 * Fix: add a default background color to testimonial quotes.

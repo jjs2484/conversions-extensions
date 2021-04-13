@@ -42,7 +42,12 @@ trait hero {
 		// Description.
 		$desc = '';
 		if ( ! empty( get_theme_mod( 'conversions_hh_desc' ) ) ) {
-			$desc = '<p class="lead c-hero__description">' . wp_kses_post( get_theme_mod( 'conversions_hh_desc' ) ) . '</p>';
+			$desc = '<div class="lead c-hero__description">' . wp_kses_post( get_theme_mod( 'conversions_hh_desc' ) ) . '</div>';
+		}
+
+		// Apply filter if exists.
+		if ( has_filter( 'conversions_hero_description' ) ) {
+			$desc = apply_filters( 'conversions_hero_description', $desc );
 		}
 
 		echo $desc; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
