@@ -101,6 +101,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Move action hooks for homepage sections so they also apply to shortcodes.
 * Update: Wrap c-hero__description in a div rather than p tag.
 * Update: NPM Dependencies.
+* Update: Composer Dependencies.
 * Update: Make scroll listeners passive.
 * Fix: add a default background color to testimonial quotes.
 * Fix: Social media icons footer column should be set as variable width content - col-md-auto.
