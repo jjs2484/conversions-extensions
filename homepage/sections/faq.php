@@ -65,7 +65,7 @@ trait faq {
 							<div class="card-header" id="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>">
 								<h4 class="clearfix mb-0">
 									<a class="btn btn-link <?php echo esc_attr( $faq_collapsed ); ?>" data-toggle="collapse" data-target="#c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" aria-expanded="true" aria-controls="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>">
-										<i class="fas fa-plus-square"></i><?php echo esc_html( $conversions_faq->title ); ?>
+										<i class="fas fa-plus-square"></i><?php echo wp_kses_post(  $conversions_faq->title ); ?>
 									</a>									
 								</h4>
 							</div>
@@ -73,7 +73,7 @@ trait faq {
 								<div class="card-body">
 									<?php
 									if ( ! empty( $conversions_faq->text ) ) {
-										echo esc_html( $conversions_faq->text );
+										echo wp_kses_post( $conversions_faq->text );
 									}
 									?>
 								</div>
