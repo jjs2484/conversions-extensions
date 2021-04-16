@@ -100,6 +100,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Add conversions_counter_xs for counter section manual responsive breakpoints.
 * Update: Move action hooks for homepage sections so they also apply to shortcodes.
 * Update: Wrap c-hero__description in a div rather than p tag.
+* Update: FAQ section allow HTML and fullwidth shortcode.
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Update: Make scroll listeners passive.
