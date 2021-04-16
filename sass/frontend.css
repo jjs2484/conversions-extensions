@@ -590,6 +590,9 @@ section.c-faq #c-faq__accordion {
     section.c-faq #c-faq__accordion .card .card-header i {
       margin-right: .5rem; }
 
+.c-faq.c-shortcode #c-faq__accordion {
+  width: 100%; }
+
 section.c-single-feature .c-single-feature__text {
   display: flex;
   flex-direction: column;

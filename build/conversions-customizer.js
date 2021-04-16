@@ -165,7 +165,7 @@ function customizer_repeater_refresh_general_control_values() {
 				values.push({
 					'icon_value': (choice === 'customizer_repeater_none' ? '' : icon_value),
 					'color': color,
-					'text': escapeHtml(text),
+					'text': text,
 					'linktext': escapeHtml(linktext),
 					'link': link,
 					'image_url': (choice === 'customizer_repeater_none' ? '' : image_url),

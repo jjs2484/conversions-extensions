@@ -517,6 +517,10 @@ section.c-faq {
 		}
 	}
 }
+// FAQ shortcode
+.c-faq.c-shortcode #c-faq__accordion {
+	width: 100%;
+}
 
 // Single feature section
 section.c-single-feature {

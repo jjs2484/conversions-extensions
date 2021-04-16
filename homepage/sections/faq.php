@@ -50,26 +50,18 @@ trait faq {
 				$faq_count = 0;
 				foreach ( $faq as $conversions_faq ) {
 					if ( ! empty( $conversions_faq->title ) ) {
-
-						if ( $faq_count > '0' ) {
-							$faq_show      = '';
-							$faq_collapsed = 'collapsed';
-						} else {
-							$faq_show      = 'show';
-							$faq_collapsed = '';
-						}
 						?>
 
 						<!-- FAQ card -->
 						<div class="card">
 							<div class="card-header" id="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>">
 								<h4 class="clearfix mb-0">
-									<a class="btn btn-link <?php echo esc_attr( $faq_collapsed ); ?>" data-toggle="collapse" data-target="#c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" aria-expanded="true" aria-controls="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>">
+									<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" aria-expanded="true" aria-controls="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>">
 										<i class="fas fa-plus-square"></i><?php echo wp_kses_post(  $conversions_faq->title ); ?>
 									</a>									
 								</h4>
 							</div>
-							<div id="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" class="collapse <?php echo esc_attr( $faq_show ); ?>" aria-labelledby="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>" data-parent="#c-faq__accordion">
+							<div id="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" class="collapse" aria-labelledby="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>" data-parent="#c-faq__accordion">
 								<div class="card-body">
 									<?php
 									if ( ! empty( $conversions_faq->text ) ) {
