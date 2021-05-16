@@ -147,40 +147,44 @@ trait icon_features {
 		if ( ! $icon_features && empty( $title ) && empty( $desc ) )
 			return;
 		?>
-	<!-- Icon Features section -->
-	<section class="c-features">
-		<div class="container-fluid">
-			<div class="row">
 
-				<?php
+		<!-- Icon Features section -->
+		<?php do_action( 'conversions_before_icon_features_section' ); ?>
 
-				if ( ! empty( $title ) || ! empty( $desc ) ) {
-					?>
-
-					<div class="col-12 c-intro">
-						<div class="w-md-80 w-lg-60 c-intro__inner">
-							<?php
-							if ( ! empty( $title ) ) {
-								// Title.
-								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
-							}
-							if ( ! empty( $desc ) ) {
-								// Description.
-								echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
-							}
-							?>
-						</div>
-					</div>
+		<section class="c-features">
+			<div class="container-fluid">
+				<div class="row">
 
 					<?php
-				}
 
-				echo $this->icon_features_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				?>
+					if ( ! empty( $title ) || ! empty( $desc ) ) {
+						?>
 
+						<div class="col-12 c-intro">
+							<div class="w-md-80 w-lg-60 c-intro__inner">
+								<?php
+								if ( ! empty( $title ) ) {
+									// Title.
+									echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
+								}
+								if ( ! empty( $desc ) ) {
+									// Description.
+									echo '<p class="subtitle">' . wp_kses_post( $desc ) . '</p>';
+								}
+								?>
+							</div>
+						</div>
+
+						<?php
+					}
+
+					echo $this->icon_features_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					?>
+
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 		<?php
+		do_action( 'conversions_after_icon_features_section' );
 	}
 }
