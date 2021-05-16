@@ -93,6 +93,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: NPM Dependencies.
 * New: Action hook conversions_before_icon_features_section.
 * New: Action hook conversions_after_icon_features_section.
+* New: Filter conversions_single_feature_media.
 
 = 1.8.2 =
 * New: Action hook conversions_hero_full_after_content.

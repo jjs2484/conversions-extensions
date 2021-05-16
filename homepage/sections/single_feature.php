@@ -141,6 +141,10 @@ trait single_feature {
 				}
 		}
 
+		if ( has_filter( 'conversions_single_feature_media' ) ) {
+			$single_feature_media = apply_filters( 'conversions_single_feature_media', $single_feature_media );
+		}
+
 		if ( ! empty( $single_feature_media ) ) {
 			echo $single_feature_media; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
