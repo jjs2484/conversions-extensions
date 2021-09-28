@@ -1,12 +1,14 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.8.3
+Stable tag: 1.8.4
 Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 5.7
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+The code in the main repo branch is undergoing a big shakeup to bring it up to date with bootstrap 5. Please use the v1.8.3 tag for stable version while this process happens. https://github.com/jjs2484/conversions-extensions/releases/tag/1.8.3
 
 Adds homepage sections, one click demo imports, social icons, and other features to Conversions theme for WordPress.
 
@@ -88,6 +90,10 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.8.4 =
+* Update: Bootstrap to 5.1.1
+* Update: NPM Dependencies.
 
 = 1.8.3 =
 * Update: NPM Dependencies.
