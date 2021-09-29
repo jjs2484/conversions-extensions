@@ -100,8 +100,8 @@ trait single_feature {
 				$single_feature_media_youtube = get_theme_mod( 'conversions_single_feature_youtube' );
 
 				if ( ! empty( $single_feature_media_youtube ) ) {
-					$single_feature_media  = '<div class="embed-responsive embed-responsive-16by9 c-single-feature__youtube">';
-					$single_feature_media .= '<iframe class="embed-responsive-item" loading="lazy" src="https://www.youtube.com/embed/' . esc_attr( $single_feature_media_youtube ) . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+					$single_feature_media  = '<div class="ratio ratio-16x9 c-single-feature__youtube">';
+					$single_feature_media .= '<iframe loading="lazy" src="https://www.youtube.com/embed/' . esc_attr( $single_feature_media_youtube ) . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 					$single_feature_media .= '</div>';
 				}
 				break;
@@ -110,8 +110,8 @@ trait single_feature {
 				$single_feature_media_vimeo = get_theme_mod( 'conversions_single_feature_vimeo' );
 
 				if ( ! empty( $single_feature_media_vimeo ) ) {
-					$single_feature_media  = '<div class="embed-responsive embed-responsive-16by9 c-single-feature__vimeo">';
-					$single_feature_media .= '<iframe class="embed-responsive-item" loading="lazy" src="https://player.vimeo.com/video/' . esc_attr( $single_feature_media_vimeo ) . '" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+					$single_feature_media  = '<div class="ratio ratio-16x9 c-single-feature__vimeo">';
+					$single_feature_media .= '<iframe loading="lazy" src="https://player.vimeo.com/video/' . esc_attr( $single_feature_media_vimeo ) . '" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
 					$single_feature_media .= '</div>';
 				}
 				break;

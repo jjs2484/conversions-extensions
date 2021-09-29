@@ -142,7 +142,7 @@ trait pricing {
 						// Plan button and link.
 						if ( ! empty( $repeater_item->link ) || ! empty( $repeater_item->linktext ) ) {
 							echo sprintf(
-								'<a href="%1$s" class="btn btn-block btn-primary">%2$s</a>',
+								'<div class="d-grid gap-2"><a href="%1$s" class="btn btn-primary">%2$s</a></div>',
 								esc_url( $repeater_item->link ),
 								esc_html( $repeater_item->linktext )
 							);

@@ -335,8 +335,8 @@
 .c-hero.c-hero__full #c-hero-modal .modal-body,
 .c-hero.c-hero__split #c-hero-modal .modal-body {
   padding: 0px; }
-.c-hero.c-hero__full #c-hero-modal .close,
-.c-hero.c-hero__split #c-hero-modal .close {
+.c-hero.c-hero__full #c-hero-modal .btn-close,
+.c-hero.c-hero__split #c-hero-modal .btn-close {
   position: absolute;
   right: 0;
   top: 0;
@@ -564,22 +564,12 @@ section.c-testimonials .c-testimonials__quote {
 section.c-faq #c-faq__accordion {
   border-radius: .25rem;
   margin-bottom: 1.5rem; }
-  section.c-faq #c-faq__accordion .card .card-header {
+  section.c-faq #c-faq__accordion .accordion-item .accordion-header {
     padding-top: .5rem;
     padding-bottom: .5rem;
     border-bottom: 0;
     background: #fff; }
-    section.c-faq #c-faq__accordion .card .card-header .btn {
-      color: #222;
-      width: 100%;
-      text-align: left;
-      font-weight: 500;
-      padding-left: 0;
-      padding-right: 0; }
-      section.c-faq #c-faq__accordion .card .card-header .btn:hover {
-        color: #000;
-        transition: .3s; }
-    section.c-faq #c-faq__accordion .card .card-header i {
+    section.c-faq #c-faq__accordion .accordion-item .accordion-header i {
       margin-right: .5rem; }
 
 .c-faq.c-shortcode #c-faq__accordion {

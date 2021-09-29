@@ -55,7 +55,7 @@ trait social_icons {
 
 			// output the icon and link.
 			echo sprintf(
-				'<li class="list-inline-item"><a title="%1$s" href="%2$s" target="_blank"><i aria-hidden="true" class="%3$s"></i><span class="sr-only">%1$s</span></a></li>',
+				'<li class="list-inline-item"><a title="%1$s" href="%2$s" target="_blank"><i aria-hidden="true" class="%3$s"></i><span class="visually-hidden">%1$s</span></a></li>',
 				esc_attr( $title ),
 				esc_url( $repeater_item->link ),
 				esc_attr( $repeater_item->icon_value )

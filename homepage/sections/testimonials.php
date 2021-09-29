@@ -97,8 +97,8 @@ trait testimonials {
 									?>
 
 								</cite>
-								<div class="c-testimonials__nav align-self-end ml-sm-auto">
-									<i class="fas fa-chevron-left slick-arrow mr-2" aria-hidden="true" title="<?php esc_attr_e( 'Previous', 'conversions' ); ?>"></i>
+								<div class="c-testimonials__nav align-self-end ms-sm-auto">
+									<i class="fas fa-chevron-left slick-arrow me-2" aria-hidden="true" title="<?php esc_attr_e( 'Previous', 'conversions' ); ?>"></i>
 									<i class="fas fa-chevron-right slick-arrow" aria-hidden="true" title="<?php esc_attr_e( 'Next', 'conversions' ); ?>"></i>
 								</div>
 							</div>

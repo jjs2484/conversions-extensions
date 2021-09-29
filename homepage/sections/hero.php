@@ -87,7 +87,7 @@ trait hero {
 		// Video button.
 		if ( $video !== 'no' ) {
 			echo sprintf(
-				'<a data-src="%1$s" data-toggle="modal" data-target="#c-hero-modal" href="#" class="c-hero__fb-video"><span class="c-hero__video-btn btn btn-%2$s btn--circle"><i class="fa fa-play"></i></span><span class="c-hero__video-text btn btn-link text-%2$s">%3$s</span></a>',
+				'<a data-bs-src="%1$s" data-bs-toggle="modal" data-bs-target="#c-hero-modal" href="#" class="c-hero__fb-video"><span class="c-hero__video-btn btn btn-%2$s btn--circle"><i class="fa fa-play"></i></span><span class="c-hero__video-text btn btn-link text-%2$s">%3$s</span></a>',
 				esc_url( 'https://www.youtube.com/embed/' . get_theme_mod( 'conversions_hh_vbtn_url' ) ),
 				esc_attr( get_theme_mod( 'conversions_hh_vbtn' ) ),
 				esc_html( get_theme_mod( 'conversions_hh_vbtn_text' ) )
@@ -104,13 +104,11 @@ trait hero {
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-body">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							<!-- 16:9 aspect ratio -->
-							<div class="embed-responsive embed-responsive-16by9">
+							<div class="ratio ratio-16x9">
 								<?php // phpcs:disable WPThemeReview.ThouShallNotUse.ForbiddenIframe.Found ?>
-								<iframe class="embed-responsive-item" src="" id="video" allow="autoplay" allowfullscreen></iframe>
+								<iframe src="" id="video" allow="autoplay" allowfullscreen></iframe>
 								<?php // phpcs:enable ?>
 							</div>
 						</div>
@@ -200,7 +198,7 @@ trait hero {
 
 		<section class="c-hero c-hero__split">
 			<div class="container-fluid px-0">
-				<div class="row no-gutters">
+				<div class="row g-0">
 					<div class="col-lg-6 order-lg-2">
 
 						<?php
@@ -214,7 +212,7 @@ trait hero {
 
 					</div>
 					<div class="col-lg-6 d-flex align-items-center">
-						<div class="c-hero__content mx-auto mr-lg-5 mr-xl-7 pl-lg-3 py-lg-3 order-lg-1">
+						<div class="c-hero__content mx-auto me-lg-5 me-xl-7 ps-lg-3 py-lg-3 order-lg-1">
 							<?php
 							// Title.
 							echo $this->hero_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

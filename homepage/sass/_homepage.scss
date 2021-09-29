@@ -159,7 +159,7 @@
 		.modal-body {
 			padding: 0px;
 		}
-		.close {
+		.btn-close {
 			position:absolute;
 			right: 0;
 			top: 0;
@@ -489,26 +489,12 @@ section.c-faq {
 		border-radius: .25rem;
 		margin-bottom: 1.5rem;
 	
-		.card {
-			.card-header {
+		.accordion-item {
+			.accordion-header {
 				padding-top: .5rem;
 				padding-bottom: .5rem;
 				border-bottom: 0;
 				background: #fff;
-
-				.btn {
-					color: #222;
-					width: 100%;
-					text-align: left;
-					font-weight: 500;
-					padding-left: 0;
-					padding-right: 0;
-
-					&:hover {
-						color: #000;
-						transition: .3s;
-					}
-				}
 
 				i {
 					margin-right: .5rem;
