@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
 	// Gets the video src from the data-src on each button
 	var $videoSrc;  
 	jQuery( '.c-hero__fb-video' ).click(function() {
-		$videoSrc = jQuery(this).data( 'src' );
+		$videoSrc = jQuery(this).attr('data-bs-src');
 	});
 
 	// When the modal is opened autoplay it  

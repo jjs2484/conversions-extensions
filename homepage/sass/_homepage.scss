@@ -292,10 +292,14 @@ section.c-img-features {
 		}
 		.c-img-features__block {
 			margin-bottom: 1.5rem;
-			.card {
+			
+			a.card,
+			a.card:hover {
+				text-decoration: none;
 				transition: .3s;
-				&:hover {
-					text-decoration: none;
+
+				.c-img-features__block-link {
+					text-decoration: underline;
 				}
 			}
 		}
@@ -486,19 +490,11 @@ section.c-testimonials {
 // FAQ section
 section.c-faq {
 	#c-faq__accordion {
-		border-radius: .25rem;
 		margin-bottom: 1.5rem;
 	
 		.accordion-item {
 			.accordion-header {
-				padding-top: .5rem;
-				padding-bottom: .5rem;
-				border-bottom: 0;
 				background: #fff;
-
-				i {
-					margin-right: .5rem;
-				}
 			}
 		}
 	}
