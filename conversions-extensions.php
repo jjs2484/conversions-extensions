@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Conversions Extensions
  * Description: Adds homepage sections, setup wizard, and other extensions to Conversions WordPress theme.
- * Version: 1.8.5
+ * Version: 1.8.6
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
  * Text Domain: conversions
