@@ -193,7 +193,7 @@ namespace conversions\extensions {
 		public function wp_head() {
 
 			// fixed navbar height calc variables.
-			$fixed_navbar_height = conversions()->customizer->fixed_navbar_height_calc();
+			$nav_height = conversions()->customizer->fixed_navbar_height_calc();
 
 			$mods = [
 				[ '.page-template-homepage section.c-hero h1', 'color', get_theme_mod( 'conversions_hh_title_color' ) ],
@@ -322,25 +322,25 @@ namespace conversions\extensions {
 					if ( get_theme_mod( 'conversions_nav_layout', 'right' ) == 'below' ) { // phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 						// Content margin.
 						echo '.content-wrapper {
-							margin-top: ' . esc_html( $fixed_navbar_height[0] ) . 'rem;
+							margin-top: ' . esc_html( $nav_height[0] ) . 'rem;
 						}';
 						// Anchor link padding.
 						echo 'html {
-							scroll-padding-top: ' . esc_html( $fixed_navbar_height[0] ) . 'rem;
+							scroll-padding-top: ' . esc_html( $nav_height[0] ) . 'rem;
 						}';
 						// Desktop screen.
 						echo '@media screen and (min-width: 992px) {
 							.content-wrapper {
-								margin-top: ' . esc_html( $fixed_navbar_height[1] ) . 'rem;
+								margin-top: ' . esc_html( $nav_height[1] ) . 'rem;
 							}
 							html {
-								scroll-padding-top: ' . esc_html( $fixed_navbar_height[1] ) . 'rem;
+								scroll-padding-top: ' . esc_html( $nav_height[1] ) . 'rem;
 							}
 						}';
 					}
 				}
 				// Navbar below icon size.
-				if ( get_theme_mod( 'conversions_nav_layout', 'right' ) == 'below' ) {
+				if ( get_theme_mod( 'conversions_nav_layout', 'right' ) === 'below' ) {
 					echo '@media screen and (min-width: 992px) {
 						#wrapper-navbar .navbar.navbar-below .nav-link i {
 							font-size: ' . esc_html( get_theme_mod( 'conversions_social_size' ) ) . 'rem;
