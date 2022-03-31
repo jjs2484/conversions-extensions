@@ -1,69 +1,68 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '6ef8d4a74c117d74e91ac75faf9bf296fa279cc5',
+        'name' => '__root__',
+        'dev' => true,
     ),
-    'reference' => 'f4b741045495c63567240ebb89d8d2317f336984',
-    'name' => '__root__',
-  ),
-  'versions' => 
-  array (
-    '__root__' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'f4b741045495c63567240ebb89d8d2317f336984',
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '6ef8d4a74c117d74e91ac75faf9bf296fa279cc5',
+            'dev_requirement' => false,
+        ),
+        'awesomemotive/one-click-demo-import' => array(
+            'pretty_version' => 'v2.6.1',
+            'version' => '2.6.1.0',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../awesomemotive/one-click-demo-import',
+            'aliases' => array(),
+            'reference' => 'a3d16163aecfc8374126b57e38045c1508c85d4d',
+            'dev_requirement' => true,
+        ),
+        'awesomemotive/wp-content-importer-v2' => array(
+            'pretty_version' => 'v3.0.4',
+            'version' => '3.0.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../awesomemotive/wp-content-importer-v2',
+            'aliases' => array(),
+            'reference' => '167d4cf57ddd342af14ab65dfeb41ee406734a3e',
+            'dev_requirement' => true,
+        ),
+        'dealerdirect/phpcodesniffer-composer-installer' => array(
+            'pretty_version' => 'v0.7.2',
+            'version' => '0.7.2.0',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../dealerdirect/phpcodesniffer-composer-installer',
+            'aliases' => array(),
+            'reference' => '1c968e542d8843d7cd71de3c5c9c3ff3ad71a1db',
+            'dev_requirement' => true,
+        ),
+        'squizlabs/php_codesniffer' => array(
+            'pretty_version' => '3.6.2',
+            'version' => '3.6.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
+            'aliases' => array(),
+            'reference' => '5e4e71592f69da17871dba6e80dd51bce74a351a',
+            'dev_requirement' => true,
+        ),
+        'wp-coding-standards/wpcs' => array(
+            'pretty_version' => '2.3.0',
+            'version' => '2.3.0.0',
+            'type' => 'phpcodesniffer-standard',
+            'install_path' => __DIR__ . '/../wp-coding-standards/wpcs',
+            'aliases' => array(),
+            'reference' => '7da1894633f168fe244afc6de00d141f27517b62',
+            'dev_requirement' => true,
+        ),
     ),
-    'awesomemotive/one-click-demo-import' => 
-    array (
-      'pretty_version' => 'v2.6.1',
-      'version' => '2.6.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a3d16163aecfc8374126b57e38045c1508c85d4d',
-    ),
-    'awesomemotive/wp-content-importer-v2' => 
-    array (
-      'pretty_version' => 'v3.0.4',
-      'version' => '3.0.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '167d4cf57ddd342af14ab65dfeb41ee406734a3e',
-    ),
-    'dealerdirect/phpcodesniffer-composer-installer' => 
-    array (
-      'pretty_version' => 'v0.7.1',
-      'version' => '0.7.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'fe390591e0241955f22eb9ba327d137e501c771c',
-    ),
-    'squizlabs/php_codesniffer' => 
-    array (
-      'pretty_version' => '3.6.0',
-      'version' => '3.6.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ffced0d2c8fa8e6cdc4d695a743271fab6c38625',
-    ),
-    'wp-coding-standards/wpcs' => 
-    array (
-      'pretty_version' => '2.3.0',
-      'version' => '2.3.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '7da1894633f168fe244afc6de00d141f27517b62',
-    ),
-  ),
 );
