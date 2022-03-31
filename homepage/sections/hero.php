@@ -172,6 +172,7 @@ trait hero {
 
 							// Buttons.
 							echo $this->hero_buttons(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							do_action( 'conversions_hero_after_buttons' );
 							?>
 						</div>
 					</div>
@@ -225,6 +226,7 @@ trait hero {
 
 							// Buttons.
 							echo $this->hero_buttons(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							do_action( 'conversions_hero_after_buttons' );
 							?>
 						</div>
 					</div>

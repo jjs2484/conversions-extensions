@@ -24,10 +24,10 @@
 				width: 100%;
 			}
 			.container-fluid {
-				@media (max-width: 991.98px) {
-					padding-right: 0;
-					padding-left: 0;
-				}
+				display: flex;
+				flex-wrap: inherit;
+				align-items: center;
+				justify-content: space-between;
 			}
 			.nav-extras {
 				margin: 0;
@@ -53,12 +53,6 @@
 			@media (max-width: 991.98px) {
 				width: 100%;
 				background: #fff !important;
-			}
-			.container-fluid {
-				@media (max-width: 991.98px) {
-					padding-right: 0;
-					padding-left: 0;
-				}
 			}
 			li:first-child a.nav-link {
 				@media (min-width: 992px) {
