@@ -54,13 +54,11 @@ trait faq {
 
 						<!-- FAQ card -->
 						<div class="accordion-item">
-							<div class="accordion-header" id="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>">
-								<h4 class="clearfix mb-0">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" aria-expanded="true" aria-controls="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>">
-										<i class="fas fa-plus-square"></i><?php echo wp_kses_post(  $conversions_faq->title ); ?>
-									</button>									
-								</h4>
-							</div>
+							<h4 class="accordion-header" id="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" aria-expanded="true" aria-controls="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>">
+									<?php echo wp_kses_post( $conversions_faq->title ); ?>
+								</button>									
+							</h4>
 							<div id="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" class="accordion-collapse collapse" aria-labelledby="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>" data-bs-parent="#c-faq__accordion">
 								<div class="accordion-body">
 									<?php

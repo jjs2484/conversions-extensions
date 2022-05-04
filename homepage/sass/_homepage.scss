@@ -491,13 +491,8 @@ section.c-testimonials {
 // FAQ section
 section.c-faq {
 	#c-faq__accordion {
+		border-radius: .25rem;
 		margin-bottom: 1.5rem;
-	
-		.accordion-item {
-			.accordion-header {
-				background: #fff;
-			}
-		}
 	}
 }
 // FAQ shortcode

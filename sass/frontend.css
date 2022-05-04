@@ -574,9 +574,8 @@ section.c-testimonials .c-testimonials__quote {
       color: #77818b; }
 
 section.c-faq #c-faq__accordion {
+  border-radius: .25rem;
   margin-bottom: 1.5rem; }
-  section.c-faq #c-faq__accordion .accordion-item .accordion-header {
-    background: #fff; }
 
 .c-faq.c-shortcode #c-faq__accordion {
   width: 100%; }
