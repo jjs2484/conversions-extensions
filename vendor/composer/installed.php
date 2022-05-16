@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '6ef8d4a74c117d74e91ac75faf9bf296fa279cc5',
+        'reference' => 'e8d7bbbfa377ef573e8331c0dd8353a2f083d8b8',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '6ef8d4a74c117d74e91ac75faf9bf296fa279cc5',
+            'reference' => 'e8d7bbbfa377ef573e8331c0dd8353a2f083d8b8',
             'dev_requirement' => false,
         ),
         'awesomemotive/one-click-demo-import' => array(
