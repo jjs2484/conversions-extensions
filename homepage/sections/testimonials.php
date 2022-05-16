@@ -92,14 +92,14 @@ trait testimonials {
 									}
 
 									for ( $i = 0; $i < 5; $i++ ) {
-										echo '<i class="fas fa-star" aria-hidden="true"></i>';
+										echo '<i class="fa-solid fa-star" aria-hidden="true"></i>';
 									}
 									?>
 
 								</cite>
 								<div class="c-testimonials__nav align-self-end ms-sm-auto">
-									<i class="fas fa-chevron-left slick-arrow me-2" aria-hidden="true" title="<?php esc_attr_e( 'Previous', 'conversions' ); ?>"></i>
-									<i class="fas fa-chevron-right slick-arrow" aria-hidden="true" title="<?php esc_attr_e( 'Next', 'conversions' ); ?>"></i>
+									<i class="fa-solid fa-chevron-left slick-arrow me-2" aria-hidden="true" title="<?php esc_attr_e( 'Previous', 'conversions' ); ?>"></i>
+									<i class="fa-solid fa-chevron-right slick-arrow" aria-hidden="true" title="<?php esc_attr_e( 'Next', 'conversions' ); ?>"></i>
 								</div>
 							</div>
 						</blockquote>
