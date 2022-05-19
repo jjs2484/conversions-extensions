@@ -3,7 +3,7 @@
 	// Navbar below specific
 	&.navbar-below {
 		@media (max-width: 991.98px) {
-			border-bottom: 1px solid #dee2e6;
+			border-bottom: 1px solid var(--bs-gray-300);
 		}
 		@media (min-width: 992px) {
 			flex-flow: column nowrap;
