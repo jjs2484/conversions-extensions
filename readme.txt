@@ -2,7 +2,7 @@
 Contributors: uniquelylost
 Stable tag: 1.9.2
 Tags: extensions, homepage, shortcodes, social icons, theme demos
-Tested up to: 5.9.3
+Tested up to: 6.0
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
