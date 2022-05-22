@@ -89,9 +89,19 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 == Changelog ==
 
-= 1.8.4 =
-* Update: Bootstrap to 5.1.1
+= 1.9.2 =
+* Fix: Bootstrap 5 modal
+* Fix: Bootstrap 5 accordion
+* Fix: Bootstrap 5 responsive embeds
+* Fix: Bootstrap 5 various CSS classes
+* Fix: One click demo import for PHP 8
+* Fix: Navbar below display
+* Update: Font Awesome prefixes to v6.1.1
+* Update: Font Awesome icons.json to v6.1.1
+* Update: Switch BS5 colors to use root variables
 * Update: NPM Dependencies.
+* Update: Composer Dependencies.
+* New: Action hook conversions_hero_after_buttons
 
 = 1.8.3 =
 * Update: NPM Dependencies.
