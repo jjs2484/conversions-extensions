@@ -372,7 +372,7 @@ section.c-clients {
   section.c-clients .slick-initialized .slick-prev {
     right: -10px; }
     section.c-clients .slick-initialized .slick-prev::before {
-      font-family: "Font Awesome 5 Free";
+      font-family: "Font Awesome 6 Free";
       content: "\f053";
       color: #8c98a4;
       opacity: 1;
@@ -380,7 +380,7 @@ section.c-clients {
   section.c-clients .slick-initialized .slick-next {
     left: -10px; }
     section.c-clients .slick-initialized .slick-next::before {
-      font-family: "Font Awesome 5 Free";
+      font-family: "Font Awesome 6 Free";
       content: "\f054";
       color: #aaa;
       opacity: 1;
@@ -537,7 +537,7 @@ section.c-testimonials .c-testimonials__quote {
     section.c-testimonials .c-testimonials__quote {
       padding-right: 60px; } }
   section.c-testimonials .c-testimonials__quote::before {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Free";
     content: "\f10d";
     position: absolute;
     top: 5px;

@@ -208,7 +208,7 @@ section.c-clients {
 		.slick-prev {
 			left: -10px;
 			&::before {
-				font-family: "Font Awesome 5 Free";
+				font-family: "Font Awesome 6 Free";
 				content: "\f053";
 				color: #8c98a4;
 				opacity: 1;
@@ -218,7 +218,7 @@ section.c-clients {
 		.slick-next {
 			right: -10px;
 			&::before {
-				font-family: "Font Awesome 5 Free";
+				font-family: "Font Awesome 6 Free";
 				content: "\f054";
 				color: #aaa;
 				opacity: 1;
@@ -452,7 +452,7 @@ section.c-testimonials {
 			padding-left: 60px;
 		}
 		&::before {
-			font-family: "Font Awesome 5 Free";
+			font-family: "Font Awesome 6 Free";
 			content: "\f10d";
 			position: absolute;
 			top: 5px;
