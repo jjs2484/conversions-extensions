@@ -89,7 +89,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 == Changelog ==
 
-= 1.9.2 =
+= 1.9.3 =
 * Fix: Bootstrap 5 modal
 * Fix: Bootstrap 5 accordion
 * Fix: Bootstrap 5 responsive embeds
