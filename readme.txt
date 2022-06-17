@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.9.3
+Stable tag: 1.9.4
 Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 6.0
 Requires at least: 4.7
