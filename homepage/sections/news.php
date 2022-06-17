@@ -52,7 +52,7 @@ trait news {
 				<article class="card shadow h-100">
 
 					<!-- Post image -->
-					<a class="c-news__img-link" href="<?php esc_url( the_permalink() ); ?>" title="<?php the_title(); ?>">
+					<a class="c-news__img-link" href="<?php esc_url( the_permalink() ); ?>">
 						<?php
 						if ( has_post_thumbnail() ) :
 							the_post_thumbnail( 'conversions-news', array( 'class' => 'card-img-top' ) );

@@ -97,7 +97,7 @@ trait pricing {
 
 				<div class="card shadow h-100">
 					<header class="card-header">
-						<h4 class="h5 text-secondary mb-3">
+						<h3 class="h5 text-secondary mb-3">
 							<?php
 								// Plan title.
 								echo esc_html( $repeater_item->title );
