@@ -5,11 +5,10 @@ module.exports = function(grunt) {
 	
 	// Configuration
 	grunt.initConfig({
-		sass: {
-			dist: {
+		'dart-sass': {
+			target: {
 				options: {
-					style: 'nested',
-					precision: 5,
+					sourceMap: false,
 				},
 				files: {
 					'sass/frontend.css': 'sass/frontend.scss',
@@ -108,7 +107,7 @@ module.exports = function(grunt) {
 	});
 
 	// Load plugins
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-dart-sass');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('@lodder/grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -119,6 +118,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-lineending');
 	
 	// Run All Tasks
-	grunt.registerTask('all', ['sass', 'concat', 'lineending', 'postcss', 'rtlcss', 'cssmin', 'uglify', 'copy']);
+	grunt.registerTask('all', ['dart-sass', 'concat', 'lineending', 'postcss', 'rtlcss', 'cssmin', 'uglify', 'copy']);
 
 };
