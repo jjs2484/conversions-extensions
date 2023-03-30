@@ -91,6 +91,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 = 1.9.5.2 =
 * Update: Font Awesome icons.json to v6.2.1
+* Update: Lightbox to v2.11.4
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: Add font size to c-nav__social-icon
