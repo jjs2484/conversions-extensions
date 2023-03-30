@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'cbd227f7e9fbf68d1045c859614a934dc911301b',
+        'reference' => 'f838f56347fc075be72b9548d8061a45a0221bcc',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'cbd227f7e9fbf68d1045c859614a934dc911301b',
+            'reference' => 'f838f56347fc075be72b9548d8061a45a0221bcc',
             'dev_requirement' => false,
         ),
         'awesomemotive/one-click-demo-import' => array(
@@ -47,12 +47,12 @@
             'dev_requirement' => true,
         ),
         'squizlabs/php_codesniffer' => array(
-            'pretty_version' => '3.7.1',
-            'version' => '3.7.1.0',
+            'pretty_version' => '3.7.2',
+            'version' => '3.7.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(),
-            'reference' => '1359e176e9307e906dc3d890bcc9603ff6d90619',
+            'reference' => 'ed8e00df0a83aa96acf703f8c2979ff33341f879',
             'dev_requirement' => true,
         ),
         'wp-coding-standards/wpcs' => array(
