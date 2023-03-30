@@ -342,7 +342,7 @@ namespace conversions\extensions {
 				// Navbar below icon size.
 				if ( get_theme_mod( 'conversions_nav_layout', 'right' ) === 'below' ) {
 					echo '@media screen and (min-width: 992px) {
-						#wrapper-navbar .navbar.navbar-below .nav-link i {
+						#wrapper-navbar .navbar.navbar-below .c-nav__social-icon i {
 							font-size: ' . esc_html( get_theme_mod( 'conversions_social_size' ) ) . 'rem;
 						}
 					}';
