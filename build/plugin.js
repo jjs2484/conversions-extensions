@@ -3012,7 +3012,7 @@
 
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.counterUp=t():e.counterUp=t()}(self,(function(){return(()=>{"use strict";var e={d:(t,n)=>{for(var o in n)e.o(n,o)&&!e.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:n[o]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};e.r(t),e.d(t,{default:()=>n,divideNumbers:()=>r});const n=(e,t={})=>{const{action:n="start",duration:i=1e3,delay:u=16}=t;if("stop"===n)return void o(e);if(o(e),!/[0-9]/.test(e.innerHTML))return;const l=r(e.innerHTML,{duration:i||e.getAttribute("data-duration"),delay:u||e.getAttribute("data-delay")});e._countUpOrigInnerHTML=e.innerHTML,e.innerHTML=l[0]||"&nbsp;",e.style.visibility="visible";const c=function(){e.innerHTML=l.shift()||"&nbsp;",l.length?(clearTimeout(e.countUpTimeout),e.countUpTimeout=setTimeout(c,u)):e._countUpOrigInnerHTML=void 0};e.countUpTimeout=setTimeout(c,u)},o=e=>{clearTimeout(e.countUpTimeout),e._countUpOrigInnerHTML&&(e.innerHTML=e._countUpOrigInnerHTML,e._countUpOrigInnerHTML=void 0),e.style.visibility=""},r=(e,t={})=>{const{duration:n=1e3,delay:o=16}=t,r=n/o,i=e.toString().split(/(<[^>]+>|[0-9.][,.0-9]*[0-9]*)/),u=[];for(let e=0;e<r;e++)u.push("");for(let e=0;e<i.length;e++)if(/([0-9.][,.0-9]*[0-9]*)/.test(i[e])&&!/<[^>]+>/.test(i[e])){let t=i[e];const n=[...t.matchAll(/[.,]/g)].map((e=>({char:e[0],i:t.length-e.index-1}))).sort(((e,t)=>e.i-t.i));t=t.replace(/[.,]/g,"");let o=u.length-1;for(let e=r;e>=1;e--){let i=parseInt(t/r*e,10);i=n.reduce(((e,{char:t,i:n})=>e.length<=n?e:e.slice(0,-n)+t+e.slice(-n)),i.toString()),u[o--]+=i}}else for(let t=0;t<r;t++)u[t]+=i[e];return u[u.length]=e.toString(),u};return t})()}));
 /*!
- * Lightbox v2.11.3
+ * Lightbox v2.11.4
  * by Lokesh Dhakar
  *
  * More info:
@@ -3124,7 +3124,7 @@
     // on the page below.
     //
     // Github issue: https://github.com/lokesh/lightbox2/issues/663
-    $('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""/><div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href="" ></a><a class="lb-next" aria-label="Next image" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>').appendTo($('body'));
+    $('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""/><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href="" ></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href="" ></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div>').appendTo($('body'));
 
     // Cache jQuery objects
     this.$lightbox       = $('#lightbox');
@@ -3212,9 +3212,13 @@
     });
 
 
-    this.$lightbox.find('.lb-loader, .lb-close').on('click', function() {
-      self.end();
-      return false;
+    this.$lightbox.find('.lb-loader, .lb-close').on('click keyup', function(e) {
+      // If mouse click OR 'enter' or 'space' keypress, close LB
+      if (
+        e.type === 'click' || (e.type === 'keyup' && (e.which === 13 || e.which === 32))) {
+        self.end();
+        return false;
+      }
     });
   };
 
@@ -3318,6 +3322,9 @@
 
       $image.width(preloader.width);
       $image.height(preloader.height);
+
+      var aspectRatio = preloader.width / preloader.height;
+
       windowWidth = $(window).width();
       windowHeight = $(window).height();
 
@@ -3329,44 +3336,54 @@
       /*
       Since many SVGs have small intrinsic dimensions, but they support scaling
       up without quality loss because of their vector format, max out their
-      size.
+      size inside the viewport.
       */
       if (filetype === 'svg') {
-        $image.width(maxImageWidth);
-        $image.height(maxImageHeight);
-      }
-
-      // Fit image inside the viewport.
-      if (self.options.fitImagesInViewport) {
-
-        // Check if image size is larger then maxWidth|maxHeight in settings
-        if (self.options.maxWidth && self.options.maxWidth < maxImageWidth) {
-          maxImageWidth = self.options.maxWidth;
+        if (aspectRatio >= 1) {
+          imageWidth = maxImageWidth;
+          imageHeight = parseInt(maxImageWidth / aspectRatio, 10);
+        } else {
+          imageWidth = parseInt(maxImageHeight / aspectRatio, 10);
+          imageHeight = maxImageHeight;
         }
-        if (self.options.maxHeight && self.options.maxHeight < maxImageHeight) {
-          maxImageHeight = self.options.maxHeight;
-        }
+        $image.width(imageWidth);
+        $image.height(imageHeight);
 
       } else {
-        maxImageWidth = self.options.maxWidth || preloader.width || maxImageWidth;
-        maxImageHeight = self.options.maxHeight || preloader.height || maxImageHeight;
-      }
 
-      // Is the current image's width or height is greater than the maxImageWidth or maxImageHeight
-      // option than we need to size down while maintaining the aspect ratio.
-      if ((preloader.width > maxImageWidth) || (preloader.height > maxImageHeight)) {
-        if ((preloader.width / maxImageWidth) > (preloader.height / maxImageHeight)) {
-          imageWidth  = maxImageWidth;
-          imageHeight = parseInt(preloader.height / (preloader.width / imageWidth), 10);
-          $image.width(imageWidth);
-          $image.height(imageHeight);
+        // Fit image inside the viewport.
+        if (self.options.fitImagesInViewport) {
+
+          // Check if image size is larger then maxWidth|maxHeight in settings
+          if (self.options.maxWidth && self.options.maxWidth < maxImageWidth) {
+            maxImageWidth = self.options.maxWidth;
+          }
+          if (self.options.maxHeight && self.options.maxHeight < maxImageHeight) {
+            maxImageHeight = self.options.maxHeight;
+          }
+
         } else {
-          imageHeight = maxImageHeight;
-          imageWidth = parseInt(preloader.width / (preloader.height / imageHeight), 10);
-          $image.width(imageWidth);
-          $image.height(imageHeight);
+          maxImageWidth = self.options.maxWidth || preloader.width || maxImageWidth;
+          maxImageHeight = self.options.maxHeight || preloader.height || maxImageHeight;
+        }
+
+        // Is the current image's width or height is greater than the maxImageWidth or maxImageHeight
+        // option than we need to size down while maintaining the aspect ratio.
+        if ((preloader.width > maxImageWidth) || (preloader.height > maxImageHeight)) {
+          if ((preloader.width / maxImageWidth) > (preloader.height / maxImageHeight)) {
+            imageWidth  = maxImageWidth;
+            imageHeight = parseInt(preloader.height / (preloader.width / imageWidth), 10);
+            $image.width(imageWidth);
+            $image.height(imageHeight);
+          } else {
+            imageHeight = maxImageHeight;
+            imageWidth = parseInt(preloader.width / (preloader.height / imageHeight), 10);
+            $image.width(imageWidth);
+            $image.height(imageHeight);
+          }
         }
       }
+
       self.sizeContainer($image.width(), $image.height());
     };
 
@@ -3409,7 +3426,7 @@
       self.$lightbox.find('.lb-nextLink').height(newHeight);
 
       // Set focus on one of the two root nodes so keyboard events are captured.
-      self.$overlay.focus();
+      self.$overlay.trigger('focus');
 
       self.showImage();
     }
