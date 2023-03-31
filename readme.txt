@@ -90,7 +90,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 == Changelog ==
 
 = 1.9.5.2 =
-* Update: Font Awesome icons.json to v6.2.1
+* Update: Font Awesome icons.json to v6.4.0
 * Update: Lightbox to v2.11.4
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
