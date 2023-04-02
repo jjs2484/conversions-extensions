@@ -1,8 +1,8 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 1.9.5.2
+Stable tag: 1.9.5.4
 Tags: extensions, homepage, shortcodes, social icons, theme demos
-Tested up to: 6.1
+Tested up to: 6.2
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
@@ -89,12 +89,13 @@ Many of the homepage sections can also be output outside the homepage using shor
 
 == Changelog ==
 
-= 1.9.5.2 =
+= 1.9.5.4 =
 * Update: Font Awesome icons.json to v6.4.0
 * Update: Lightbox to v2.11.4
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
 * Fix: Add font size to c-nav__social-icon
+* Fix: nav-below social icon color and spacing.
 
 = 1.9.3 =
 * Fix: Bootstrap 5 modal

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Conversions Extensions
  * Description: Adds homepage sections, setup wizard, and other extensions to Conversions WordPress theme.
- * Version: 1.9.5.2
+ * Version: 1.9.5.4
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
  * Text Domain: conversions
@@ -15,7 +15,7 @@
 namespace conversions\extensions {
 
 	// Keep in sync with the version above.
-	define( 'CONVERSIONS_EXTENSIONS_VERSION', '1.9.5.2' );
+	define( 'CONVERSIONS_EXTENSIONS_VERSION', '1.9.5.4' );
 
 	/**
 	 * Class Conversions_Extensions
@@ -195,6 +195,43 @@ namespace conversions\extensions {
 			// fixed navbar height calc variables.
 			$nav_height = conversions()->customizer->fixed_navbar_height_calc();
 
+			// Nav color scheme for social icons.
+			$nav_color_scheme = get_theme_mod( 'conversions_nav_colors', 'white' );
+			switch ( $nav_color_scheme ) {
+				case 'dark':
+					$nav_icon_btn = 'btn-dark';
+					break;
+				case 'light':
+					$nav_icon_btn = 'btn-light';
+					break;
+				case 'white':
+					$nav_icon_btn = 'btn-dark';
+					break;
+				case 'primary':
+					$nav_icon_btn = 'btn-primary';
+					break;
+				case 'secondary':
+					$nav_icon_btn = 'btn-secondary';
+					break;
+				case 'success':
+					$nav_icon_btn = 'btn-success';
+					break;
+				case 'danger':
+					$nav_icon_btn = 'btn-danger';
+					break;
+				case 'warning':
+					$nav_icon_btn = 'btn-warning';
+					break;
+				case 'info':
+					$nav_icon_btn = 'btn-info';
+					break;
+				default:
+					$nav_icon_btn = 'btn-dark';
+			}
+
+			// Bootstrap button colors.
+			$bs_btn_colors = \conversions\Conversions::bootstrap_btn_colors();
+
 			$mods = [
 				[ '.page-template-homepage section.c-hero h1', 'color', get_theme_mod( 'conversions_hh_title_color' ) ],
 				[ '.page-template-homepage section.c-hero .c-hero__description', 'color', get_theme_mod( 'conversions_hh_desc_color' ) ],
@@ -344,6 +381,15 @@ namespace conversions\extensions {
 					echo '@media screen and (min-width: 992px) {
 						#wrapper-navbar .navbar.navbar-below .c-nav__social-icon i {
 							font-size: ' . esc_html( get_theme_mod( 'conversions_social_size' ) ) . 'rem;
+							color: ' . esc_html( $bs_btn_colors[$nav_icon_btn]['btn_bg'] ) . ';
+							margin-right: 1rem;
+						}
+					}';
+				}
+				if ( get_theme_mod( 'conversions_nav_layout', 'right' ) === 'below' ) {
+					echo '@media screen and (min-width: 992px) {
+						#wrapper-navbar .navbar.navbar-below .c-nav__social-icon i:hover {
+							color: ' . esc_html( $bs_btn_colors[$nav_icon_btn]['btn_bg_hover'] ) . ';
 						}
 					}';
 				}
