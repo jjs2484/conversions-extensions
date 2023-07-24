@@ -157,7 +157,7 @@ trait img_features {
 			}
 
 			if ( ! empty( $repeater_item->text ) ) {
-				echo '<p class="c-img-features__block-desc">' . esc_html( $repeater_item->text ) . '</p>';
+				echo '<p class="c-img-features__block-desc">' . wp_kses_post( $repeater_item->text ) . '</p>';
 			}
 
 			if ( ! empty( $repeater_item->linktext ) ) {
