@@ -19,5 +19,10 @@
         "wp-coding-standards/wpcs": "^2.2",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
 		"awesomemotive/one-click-demo-import": "^2.6.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

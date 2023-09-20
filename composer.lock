@@ -89,6 +89,7 @@
             "support": {
                 "source": "https://github.com/awesomemotive/WordPress-Importer/tree/v3.0.4"
             },
+            "abandoned": true,
             "time": "2021-02-12T13:54:33+00:00"
         },
         {
@@ -282,5 +283,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
