@@ -93,6 +93,7 @@ Many of the homepage sections can also be output outside the homepage using shor
 * Update: Font Awesome icons.json to v6.4.2
 * Update: NPM Dependencies.
 * Update: Composer Dependencies.
+* Update: Allow HTML in image features.
 
 = 1.9.5.4 =
 * Update: Font Awesome icons.json to v6.4.0
