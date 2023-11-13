@@ -50,16 +50,24 @@ trait faq {
 				$faq_count = 0;
 				foreach ( $faq as $conversions_faq ) {
 					if ( ! empty( $conversions_faq->title ) ) {
+
+						if ( $faq_count > 0 ) {
+							$faq_start_btn_class  = 'accordion-button collapsed';
+							$faq_start_body_class = 'accordion-collapse collapse';
+						} else {
+							$faq_start_btn_class  = 'accordion-button';
+							$faq_start_body_class = 'accordion-collapse collapse show';
+						}
 						?>
 
 						<!-- FAQ card -->
 						<div class="accordion-item">
 							<h4 class="accordion-header" id="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" aria-expanded="true" aria-controls="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>">
+								<button class="<?php echo esc_attr( $faq_start_btn_class ); ?>" type="button" data-bs-toggle="collapse" data-bs-target="#c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" aria-expanded="true" aria-controls="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>">
 									<?php echo wp_kses_post( $conversions_faq->title ); ?>
 								</button>									
 							</h4>
-							<div id="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" class="accordion-collapse collapse" aria-labelledby="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>" data-bs-parent="#c-faq__accordion">
+							<div id="c-faq__collapse-<?php echo esc_attr( $faq_count ); ?>" class="<?php echo esc_attr( $faq_start_body_class ); ?>" aria-labelledby="c-faq__heading-<?php echo esc_attr( $faq_count ); ?>" data-bs-parent="#c-faq__accordion">
 								<div class="accordion-body">
 									<?php
 									if ( ! empty( $conversions_faq->text ) ) {
