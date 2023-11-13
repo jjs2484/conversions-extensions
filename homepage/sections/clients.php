@@ -176,5 +176,6 @@ trait clients {
 		</div>
 	</section>
 		<?php
+		do_action( 'conversions_homepage_after_clients_section' );
 	}
 }
