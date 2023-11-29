@@ -314,7 +314,7 @@ namespace conversions\extensions {
 					$mask_dir  = plugin_dir_url( __FILE__ ) . 'homepage/images/';
 					$mask_file = get_theme_mod( 'conversions_hh_split_type' );
 					$mask_svg  = $mask_dir . $mask_file . '.svg';
-					$mask_type = homepage\sections\hero::hero_split_mask_type();
+					$mask_type = homepage\Homepage::hero_split_mask_type();
 
 					if ( $mask_type == true ) {
 						echo '.c-hero__split-img {
