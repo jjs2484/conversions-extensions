@@ -76,12 +76,19 @@ trait hero {
 
 		// Callout button.
 		if ( $callout !== 'no' ) {
-			echo sprintf(
+			$callout_btn = sprintf(
 				'<a href="%s" class="btn %s btn-lg c-hero__callout-btn">%s</a>',
 				esc_url( get_theme_mod( 'conversions_hh_button_url' ) ),
 				esc_attr( get_theme_mod( 'conversions_hh_button' ) ),
 				esc_html( get_theme_mod( 'conversions_hh_button_text' ) )
 			);
+
+			// Apply filter if exists.
+			if ( has_filter( 'conversions_hero_callout_btn' ) ) {
+				$callout_btn = apply_filters( 'conversions_hero_callout_btn', $callout_btn );
+			}
+
+			echo $callout_btn;
 		}
 
 		// Video button.
