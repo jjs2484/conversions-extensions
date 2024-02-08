@@ -3597,7 +3597,7 @@ jQuery(document).ready(function() {
 	// When the modal is opened autoplay it  
 	jQuery( '#c-hero-modal' ).on( 'shown.bs.modal', function () {
 		// set the video src to autoplay and not to show related video.
-		jQuery( '#video' ).attr( 'src', $videoSrc + '?autoplay=1&amp;modestbranding=1&amp;showinfo=0&amp;rel=0' ); 
+		jQuery( '#video' ).attr( 'src', $videoSrc + '?autoplay=1&amp;modestbranding=1&amp;showinfo=0&amp;rel=0&amp;vq=hd1080' ); 
 	});
 
 	// Stop playing the video when the modal is closed
