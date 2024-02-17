@@ -40,7 +40,7 @@ $wp_customize->add_setting(
 		'default'           => '',
 		'type'              => 'theme_mod',
 		'transport'         => 'refresh',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 	]
 );
 $wp_customize->add_control(

@@ -118,7 +118,7 @@ trait faq {
 							<?php
 							if ( ! empty( $title ) ) {
 								// Title.
-								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
+								echo '<h2 class="h3">' . wp_kses_post( $title ) . '</h2>';
 							}
 							if ( ! empty( $desc ) ) {
 								// Description.
