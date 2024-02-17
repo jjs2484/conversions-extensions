@@ -55,7 +55,7 @@ trait news {
 					<a class="c-news__img-link" href="<?php esc_url( the_permalink() ); ?>">
 						<?php
 						if ( has_post_thumbnail() ) :
-							the_post_thumbnail( 'conversions-news', array( 'class' => 'card-img-top' ) );
+							the_post_thumbnail( 'conversions-news', array( 'class' => 'card-img-top', 'loading' => 'lazy' ) );
 						else :
 							echo '<img class="card-img-top" loading="lazy" alt="' . esc_html( get_the_title() ) . '" src="' . esc_url( get_template_directory_uri() ) . '/placeholder.png" />';
 						endif;
@@ -130,6 +130,7 @@ trait news {
 							if ( ! empty( $title ) ) {
 								// Title.
 								echo '<h2 class="h3">' . esc_html( $title ) . '</h2>';
+								do_action( 'conversions_homepage_after_news_title' );
 							}
 							if ( ! empty( $desc ) ) {
 								// Description.
