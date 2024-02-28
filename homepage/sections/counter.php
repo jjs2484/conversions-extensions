@@ -243,5 +243,6 @@ trait counter {
 		</div>
 	</section>
 		<?php
+		do_action( 'conversions_homepage_after_counter_section' );
 	}
 }
