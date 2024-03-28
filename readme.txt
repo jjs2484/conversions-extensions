@@ -1,8 +1,8 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 Tags: extensions, homepage, shortcodes, social icons, theme demos
-Tested up to: 6.3
+Tested up to: 6.4
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
@@ -88,6 +88,20 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 2.1.0 =
+* New: Action hook conversions_homepage_after_clients_section
+* New: Action hook conversions_homepage_after_news_title
+* New: Action hook conversions_homepage_after_counter_section
+* New: Filter conversions_hero_callout_btn
+* Update: Recommended hero modal video quality.
+* Update: Allow html in FAQ title.
+* Update : Homepage news lazy load images.
+* Update: Font Awesome icons.json to v6.5.1
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.
+* Fix: Calling hero_split_mask_type in trait.
+* Fix: Homepage FAQ accordion open and collapsed states.
 
 = 2.0.0 =
 * Update: Font Awesome icons.json to v6.4.2
