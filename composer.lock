@@ -4,25 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "474a0f0fd8119ee40e24fe740a2a9ede",
+    "content-hash": "50e657b2caf275a9ed75013c1bb07119",
     "packages": [],
     "packages-dev": [
         {
             "name": "awesomemotive/one-click-demo-import",
-            "version": "v2.6.1",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/awesomemotive/one-click-demo-import.git",
-                "reference": "a3d16163aecfc8374126b57e38045c1508c85d4d"
+                "reference": "6fa0144120776685069dae924af7c1921969d36d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awesomemotive/one-click-demo-import/zipball/a3d16163aecfc8374126b57e38045c1508c85d4d",
-                "reference": "a3d16163aecfc8374126b57e38045c1508c85d4d",
+                "url": "https://api.github.com/repos/awesomemotive/one-click-demo-import/zipball/6fa0144120776685069dae924af7c1921969d36d",
+                "reference": "6fa0144120776685069dae924af7c1921969d36d",
                 "shasum": ""
             },
             "require": {
-                "awesomemotive/wp-content-importer-v2": "^3.0.3"
+                "awesomemotive/wp-content-importer-v2": "^3.0.5"
+            },
+            "require-dev": {
+                "yoast/phpunit-polyfills": "^2.0"
             },
             "type": "project",
             "autoload": {
@@ -35,10 +38,10 @@
             ],
             "description": "One Click Demo Import plugin by AwesomeMotive.",
             "support": {
-                "source": "https://github.com/awesomemotive/one-click-demo-import/tree/v2.6.1",
+                "source": "https://github.com/awesomemotive/one-click-demo-import/tree/v3.3.0",
                 "issues": "https://github.com/awesomemotive/one-click-demo-import/issues"
             },
-            "time": "2020-07-21T15:12:35+00:00"
+            "time": "2024-10-10T12:32:51+00:00"
         },
         {
             "name": "awesomemotive/wp-content-importer-v2",
@@ -168,16 +171,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.9.0",
+            "version": "3.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "d63cee4890a8afaf86a22e51ad4d97c91dd4579b"
+                "reference": "ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/d63cee4890a8afaf86a22e51ad4d97c91dd4579b",
-                "reference": "d63cee4890a8afaf86a22e51ad4d97c91dd4579b",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10",
+                "reference": "ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10",
                 "shasum": ""
             },
             "require": {
@@ -242,9 +245,13 @@
                 {
                     "url": "https://opencollective.com/php_codesniffer",
                     "type": "open_collective"
+                },
+                {
+                    "url": "https://thanks.dev/phpcsstandards",
+                    "type": "thanks_dev"
                 }
             ],
-            "time": "2024-02-16T15:06:51+00:00"
+            "time": "2025-01-23T17:04:15+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
