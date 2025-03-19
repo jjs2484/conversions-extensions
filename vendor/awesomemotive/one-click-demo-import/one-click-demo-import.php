@@ -38,7 +38,7 @@ class OCDI_Plugin {
 			$this->set_plugin_constants();
 
 			// Composer autoloader.
-			require_once OCDI_PATH . 'vendor/autoload.php';
+			require_once __DIR__ . '/../../autoload.php';
 
 			// Instantiate the main plugin class *Singleton*.
 			$one_click_demo_import = OCDI\OneClickDemoImport::get_instance();
