@@ -1,8 +1,8 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 2.2.1
+Stable tag: 2.2.3
 Tags: extensions, homepage, shortcodes, social icons, theme demos
-Tested up to: 6.7.2
+Tested up to: 6.8
 Requires at least: 4.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
@@ -88,6 +88,9 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 2.2.3 =
+* Fix: Composer autoload classmap.
 
 = 2.2.0 =
 * Update: Font Awesome icons.json to v6.5.1

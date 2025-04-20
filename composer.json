@@ -2,7 +2,11 @@
     "autoload": {
         "psr-4": {
             "conversions\\extensions\\": "."
-        }
+        },
+        "classmap": [
+            "conversions-extensions.php",
+            "homepage/class-homepage-sorting-customizer-control.php"
+        ]
     },
     "repositories": [
         {
