@@ -1,6 +1,6 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 Tags: extensions, homepage, shortcodes, social icons, theme demos
 Tested up to: 6.8
 Requires at least: 4.7
@@ -68,6 +68,13 @@ Many of the homepage sections can also be output outside the homepage using shor
 [conversions_team]
 [conversions_testimonials]
 
+= Examples of sites Conversions Theme is used on =
+
+<a href="https://conversionswp.com/">Conversions Theme</a>
+<a href="https://serviceninjas.io/">Service Ninjas</a>
+<a href="https://mycryptocheckout.com/">MyCryptoCheckout</a>
+<a href="https://safetydig.com/">Safetydig</a>
+
 = Resources =
 
 * Slick v1.8.1 | MIT License
@@ -88,6 +95,9 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 2.2.4 =
+* Update: Lightbox to v2.11.5
 
 = 2.2.3 =
 * Fix: Composer autoload classmap.
