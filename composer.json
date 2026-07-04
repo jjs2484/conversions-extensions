@@ -8,21 +8,10 @@
             "homepage/class-homepage-sorting-customizer-control.php"
         ]
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/awesomemotive/one-click-demo-import.git"
-		},
-		{
-			"type": "vcs",
-			"url":  "https://github.com/awesomemotive/WordPress-Importer.git"
-		}
-    ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
         "wp-coding-standards/wpcs": "^2.2",
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-		"awesomemotive/one-click-demo-import": "^3.2.1"
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
     },
     "config": {
         "allow-plugins": {

@@ -29,7 +29,6 @@ class Shortcodes {
 		add_shortcode( 'conversions_counter', [ $this, 'conversions_counter_shortcode' ] );
 		add_shortcode( 'conversions_faq', [ $this, 'conversions_faq_shortcode' ] );
 		add_shortcode( 'conversions_gallery', [ $this, 'conversions_gallery_shortcode' ] );
-		add_shortcode( 'conversions_google_map', [ $this, 'conversions_google_map_shortcode' ] );
 		add_shortcode( 'conversions_icon_features', [ $this, 'conversions_icon_features_shortcode' ] );
 		add_shortcode( 'conversions_img_features', [ $this, 'conversions_img_features_shortcode' ] );
 		add_shortcode( 'conversions_single_feature', [ $this, 'conversions_single_feature_shortcode' ] );
@@ -85,18 +84,6 @@ class Shortcodes {
 	public function conversions_gallery_shortcode() {
 		$homepage = new \conversions\extensions\homepage\Homepage();
 		return '<section class="c-gallery c-shortcode mt-4 mb-4">' . $homepage->gallery_content() . '</section>';
-	}
-
-	/**
-	 * Create Map shortcode.
-	 *
-	 * Shortcode: [conversions_google_map]
-	 *
-	 * @since 2020-11-10
-	 */
-	public function conversions_google_map_shortcode() {
-		$homepage = new \conversions\extensions\homepage\Homepage();
-		return '<section class="c-map c-shortcode mt-4 mb-4">' . $homepage->map_content() . '</section>';
 	}
 
 	/**

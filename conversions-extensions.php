@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Conversions Extensions
- * Description: Adds homepage sections, setup wizard, and other extensions to Conversions WordPress theme.
- * Version: 2.2.4
+ * Description: Adds homepage sections, social icons, navbar variants, shortcodes, and other extensions to the Conversions WordPress theme.
+ * Version: 2.2.5
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
  * Text Domain: conversions
@@ -15,19 +15,12 @@
 namespace conversions\extensions {
 
 	// Keep in sync with the version above.
-	define( 'CONVERSIONS_EXTENSIONS_VERSION', '2.2.4' );
+	define( 'CONVERSIONS_EXTENSIONS_VERSION', '2.2.5' );
 
 	/**
 	 * Class Conversions_Extensions
 	 */
 	class Conversions_Extensions {
-
-		/**
-		 * The instance of the OCDI class.
-		 *
-		 * @since 2020-12-27
-		 */
-		public static $__ocdi;
 
 		/**
 		 * Class constructor.
@@ -44,9 +37,6 @@ namespace conversions\extensions {
 			add_action( 'init', [ $this, 'setup' ] );
 			add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'customize_controls_enqueue_scripts' ] );
-			add_filter( 'wp_kses_allowed_html', [ $this, 'allow_iframes_filter' ], 10, 2 );
-
-			static::$__ocdi = new ocdi\OCDI();
 		}
 
 		/**
@@ -121,7 +111,6 @@ namespace conversions\extensions {
 				'conversions_counter_md'           => '2',
 				'conversions_counter_lg'           => '4',
 				'conversions_counter_animation'    => true,
-				'conversions_map_content_type'     => 'map',
 				'conversions_gallery_respond'      => 'auto',
 				'conversions_gallery_xs'           => '2',
 				'conversions_gallery_sm'           => '3',
@@ -171,7 +160,6 @@ namespace conversions\extensions {
 			require_once __DIR__ . '/homepage/customizer/homepage.icon-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.img-features.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.single-feature.php';
-			require_once __DIR__ . '/homepage/customizer/homepage.map.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.pricing.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.team.php';
 			require_once __DIR__ . '/homepage/customizer/homepage.testimonials.php';
@@ -284,9 +272,6 @@ namespace conversions\extensions {
 				[ '.page-template-homepage section.c-single-feature', 'background-color', get_theme_mod( 'conversions_single_feature_bg' ) ],
 				[ '.page-template-homepage section.c-single-feature h2', 'color', get_theme_mod( 'conversions_single_feature_title_color' ) ],
 				[ '.page-template-homepage section.c-single-feature p', 'color', get_theme_mod( 'conversions_single_feature_desc_color' ) ],
-				[ '.page-template-homepage section.c-map', 'background-color', get_theme_mod( 'conversions_map_bg' ) ],
-				[ '.page-template-homepage section.c-map h2', 'color', get_theme_mod( 'conversions_map_title_color' ) ],
-				[ '.page-template-homepage section.c-map p', 'color', get_theme_mod( 'conversions_map_desc_color' ) ],
 				[ '.page-template-homepage section.c-gallery', 'background-color', get_theme_mod( 'conversions_gallery_bg_color' ) ],
 				[ '.page-template-homepage section.c-gallery h2', 'color', get_theme_mod( 'conversions_gallery_title_color' ) ],
 				[ '.page-template-homepage section.c-gallery p', 'color', get_theme_mod( 'conversions_gallery_desc_color' ) ],
@@ -457,42 +442,6 @@ namespace conversions\extensions {
 				CONVERSIONS_EXTENSIONS_VERSION,
 				true
 			);
-		}
-
-		/**
-		 * Allow iframes: prevent wp_kses from removing iframe embeds.
-		 *
-		 * @since 2020-11-07
-		 *
-		 * @param array  $tags Allowed tags, attributes, and/or entities.
-		 * @param string $context Context to judge allowed tags by. Allowed values are 'post'.
-		 */
-		public function allow_iframes_filter( $tags, $context ) {
-
-			if ( 'post' === $context ) {
-
-				// Allow iframes and the following attributes.
-				$tags['iframe'] = array(
-					'align'           => true,
-					'width'           => true,
-					'height'          => true,
-					'frameborder'     => true,
-					'name'            => true,
-					'src'             => true,
-					'id'              => true,
-					'class'           => true,
-					'style'           => true,
-					'scrolling'       => true,
-					'marginwidth'     => true,
-					'marginheight'    => true,
-					'allowfullscreen' => true,
-					'aria-hidden'     => true,
-					'tabindex'        => true,
-					'loading'         => true,
-				);
-			}
-
-			return $tags;
 		}
 
 	}

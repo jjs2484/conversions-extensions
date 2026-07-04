@@ -1,18 +1,18 @@
 === Conversions Extensions ===
 Contributors: uniquelylost
-Stable tag: 2.2.4
-Tags: extensions, homepage, shortcodes, social icons, theme demos
-Tested up to: 6.8
+Stable tag: 2.2.5
+Tags: extensions, homepage, shortcodes, social icons, customizer
+Tested up to: 7.0
 Requires at least: 4.7
-Requires PHP: 5.6
+Requires PHP: 7.1
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds homepage sections, one click demo imports, social icons, and other features to Conversions theme for WordPress.
+Adds homepage sections, social icons, and other features to Conversions theme for WordPress.
 
 == Description ==
 
-Adds homepage sections, one click demo imports, social icons, and other features to <a href="https://wordpress.org/themes/conversions/">Conversions theme</a> for WordPress.
+Adds homepage sections, social icons, and other features to <a href="https://wordpress.org/themes/conversions/">Conversions theme</a> for WordPress.
 
 You can view the <a href="https://conversionswp.com/docs/documentation/">documentation</a> here.
 
@@ -25,7 +25,6 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
     * Easy Digital Downloads
     * FAQ
     * Gallery
-    * Google Map
     * Hero
     * Icon features
     * Image features
@@ -37,10 +36,6 @@ You can view the <a href="https://conversionswp.com/docs/documentation/">documen
     * Text
     * WooCommerce
     * HTML or Shortcode
-
-* One Click Demo Imports
-    * Business demo
-    * Blog demo
 
 * Navbar Variants
     * Menu right
@@ -59,7 +54,6 @@ Many of the homepage sections can also be output outside the homepage using shor
 [conversions_counter]
 [conversions_faq]
 [conversions_gallery]
-[conversions_google_map]
 [conversions_icon_features]
 [conversions_img_features]
 [conversions_single_feature]
@@ -95,6 +89,13 @@ Many of the homepage sections can also be output outside the homepage using shor
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 2.2.5 =
+* Update: Lightbox to v2.12.0
+* Update: NPM Dependencies.
+* Update: Composer Dependencies.
+* Remove: One Click Demo Import support and bundled demo import files.
+* Remove: Google map section and shortcode.
 
 = 2.2.4 =
 * Update: Lightbox to v2.11.5
