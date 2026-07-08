@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_clients',
 	[
-		'title'      => __( 'Clients', 'conversions' ),
+		'title'      => __( 'Clients', 'conversions-extensions' ),
 		'priority'   => 20,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
@@ -30,8 +30,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_hc_bg_color_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Client section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'Client section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_clients',
 		'settings'    => 'conversions_hc_bg_color',
 		'priority'    => 10,
@@ -51,8 +51,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_hc_logo_width_control',
 	[
-		'label'       => __( 'Client logo width', 'conversions' ),
-		'description' => __( 'Logo max-width in rem', 'conversions' ),
+		'label'       => __( 'Client logo width', 'conversions-extensions' ),
+		'description' => __( 'Logo max-width in rem', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_clients',
 		'settings'    => 'conversions_hc_logo_width',
 		'priority'    => 20,
@@ -79,14 +79,14 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_hc_respond',
 		[
-			'label'       => __( 'Responsive', 'conversions' ),
-			'description' => __( 'Select auto or manual item breakpoints.', 'conversions' ),
+			'label'       => __( 'Responsive', 'conversions-extensions' ),
+			'description' => __( 'Select auto or manual item breakpoints.', 'conversions-extensions' ),
 			'section'     => 'conversions_homepage_clients',
 			'settings'    => 'conversions_hc_respond',
 			'type'        => 'select',
 			'choices'     => [
-				'auto'   => __( 'Auto', 'conversions' ),
-				'manual' => __( 'Manual', 'conversions' ),
+				'auto'   => __( 'Auto', 'conversions-extensions' ),
+				'manual' => __( 'Manual', 'conversions-extensions' ),
 			],
 			'priority'    => '30',
 		]
@@ -105,8 +105,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_hc_sm_control',
 	[
-		'label'       => __( '# of items up to 576px', 'conversions' ),
-		'description' => __( 'Number of items to show up to 576px.', 'conversions' ),
+		'label'       => __( '# of items up to 576px', 'conversions-extensions' ),
+		'description' => __( 'Number of items to show up to 576px.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_clients',
 		'settings'    => 'conversions_hc_sm',
 		'priority'    => 40,
@@ -130,8 +130,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_hc_md_control',
 	[
-		'label'       => __( '# of items up to 768px', 'conversions' ),
-		'description' => __( 'Number of items to show up to 768px.', 'conversions' ),
+		'label'       => __( '# of items up to 768px', 'conversions-extensions' ),
+		'description' => __( 'Number of items to show up to 768px.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_clients',
 		'settings'    => 'conversions_hc_md',
 		'priority'    => 50,
@@ -155,8 +155,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_hc_lg_control',
 	[
-		'label'       => __( '# of items up to 992px', 'conversions' ),
-		'description' => __( 'Number of items to show up to 992px.', 'conversions' ),
+		'label'       => __( '# of items up to 992px', 'conversions-extensions' ),
+		'description' => __( 'Number of items to show up to 992px.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_clients',
 		'settings'    => 'conversions_hc_lg',
 		'priority'    => 60,
@@ -180,8 +180,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_hc_max_control',
 	[
-		'label'       => __( 'Max items to show', 'conversions' ),
-		'description' => __( 'Max number of items to show at once.', 'conversions' ),
+		'label'       => __( 'Max items to show', 'conversions-extensions' ),
+		'description' => __( 'Max number of items to show at once.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_clients',
 		'settings'    => 'conversions_hc_max',
 		'priority'    => 70,
@@ -206,7 +206,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_hc_logos',
 		[
-			'label'                             => __( 'Client logo', 'conversions' ),
+			'label'                             => __( 'Client logo', 'conversions-extensions' ),
 			'section'                           => 'conversions_homepage_clients',
 			'priority'                          => 80,
 			'customizer_repeater_image_control' => true,

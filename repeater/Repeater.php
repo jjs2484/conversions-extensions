@@ -331,7 +331,7 @@ class Repeater extends \WP_Customize_Control {
 						if ( true == $this->customizer_repeater_color_control ) {
 							$this->input_control(
 								array(
-									'label'             => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Color', 'conversions' ), $this->id, 'customizer_repeater_color_control' ),
+									'label'             => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Color', 'conversions-extensions' ), $this->id, 'customizer_repeater_color_control' ),
 									'class'             => 'customizer-repeater-color-control',
 									'type'              => apply_filters( 'conversions_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_color_control' ),
 									'sanitize_callback' => 'sanitize_hex_color',
@@ -343,7 +343,7 @@ class Repeater extends \WP_Customize_Control {
 						if ( true == $this->customizer_repeater_title_control ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Title', 'conversions' ), $this->id, 'customizer_repeater_title_control' ),
+									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Title', 'conversions-extensions' ), $this->id, 'customizer_repeater_title_control' ),
 									'class' => 'customizer-repeater-title-control',
 									'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_title_control' ),
 								),
@@ -353,7 +353,7 @@ class Repeater extends \WP_Customize_Control {
 						if ( true == $this->customizer_repeater_subtitle_control ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions' ), $this->id, 'customizer_repeater_subtitle_control' ),
+									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions-extensions' ), $this->id, 'customizer_repeater_subtitle_control' ),
 									'class' => 'customizer-repeater-subtitle-control',
 									'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_subtitle_control' ),
 								),
@@ -363,7 +363,7 @@ class Repeater extends \WP_Customize_Control {
 						if ( true == $this->customizer_repeater_subtitle2_control ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions' ), $this->id, 'customizer_repeater_subtitle2_control' ),
+									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions-extensions' ), $this->id, 'customizer_repeater_subtitle2_control' ),
 									'class' => 'customizer-repeater-subtitle2-control',
 									'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_subtitle2_control' ),
 								),
@@ -373,7 +373,7 @@ class Repeater extends \WP_Customize_Control {
 						if ( true == $this->customizer_repeater_text_control ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Text', 'conversions' ), $this->id, 'customizer_repeater_text_control' ),
+									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Text', 'conversions-extensions' ), $this->id, 'customizer_repeater_text_control' ),
 									'class' => 'customizer-repeater-text-control',
 									'type'  => apply_filters( 'conversions_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text_control' ),
 								),
@@ -383,7 +383,7 @@ class Repeater extends \WP_Customize_Control {
 						if ( true == $this->customizer_repeater_linktext_control ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link text', 'conversions' ), $this->id, 'customizer_repeater_linktext_control' ),
+									'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link text', 'conversions-extensions' ), $this->id, 'customizer_repeater_linktext_control' ),
 									'class' => 'customizer-repeater-linktext-control',
 									'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_linktext_control' ),
 								),
@@ -393,7 +393,7 @@ class Repeater extends \WP_Customize_Control {
 						if ( $this->customizer_repeater_link_control ) {
 							$this->input_control(
 								array(
-									'label'             => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link', 'conversions' ), $this->id, 'customizer_repeater_link_control' ),
+									'label'             => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link', 'conversions-extensions' ), $this->id, 'customizer_repeater_link_control' ),
 									'class'             => 'customizer-repeater-link-control',
 									'sanitize_callback' => 'esc_url_raw',
 									'type'              => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link_control' ),
@@ -420,7 +420,7 @@ class Repeater extends \WP_Customize_Control {
 						} else {
 							$sr_delete_field = '';
 						}
-						echo '<button type="button" class="social-repeater-general-control-remove-field" ' . esc_attr( $sr_delete_field ) . '>' . esc_html__( 'Delete field', 'conversions' ) . '</button>';
+						echo '<button type="button" class="social-repeater-general-control-remove-field" ' . esc_attr( $sr_delete_field ) . '>' . esc_html__( 'Delete field', 'conversions-extensions' ) . '</button>';
 						?>
 					</div>
 				</div>
@@ -448,7 +448,7 @@ class Repeater extends \WP_Customize_Control {
 					if ( true == $this->customizer_repeater_color_control ) {
 						$this->input_control(
 							array(
-								'label'             => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Color', 'conversions' ), $this->id, 'customizer_repeater_color_control' ),
+								'label'             => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Color', 'conversions-extensions' ), $this->id, 'customizer_repeater_color_control' ),
 								'class'             => 'customizer-repeater-color-control',
 								'type'              => apply_filters( 'conversions_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_color_control' ),
 								'sanitize_callback' => 'sanitize_hex_color',
@@ -458,7 +458,7 @@ class Repeater extends \WP_Customize_Control {
 					if ( true == $this->customizer_repeater_title_control ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Title', 'conversions' ), $this->id, 'customizer_repeater_title_control' ),
+								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Title', 'conversions-extensions' ), $this->id, 'customizer_repeater_title_control' ),
 								'class' => 'customizer-repeater-title-control',
 								'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_title_control' ),
 							)
@@ -467,7 +467,7 @@ class Repeater extends \WP_Customize_Control {
 					if ( true == $this->customizer_repeater_subtitle_control ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions' ), $this->id, 'customizer_repeater_subtitle_control' ),
+								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions-extensions' ), $this->id, 'customizer_repeater_subtitle_control' ),
 								'class' => 'customizer-repeater-subtitle-control',
 								'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_subtitle_control' ),
 							)
@@ -476,7 +476,7 @@ class Repeater extends \WP_Customize_Control {
 					if ( true == $this->customizer_repeater_subtitle2_control ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions' ), $this->id, 'customizer_repeater_subtitle2_control' ),
+								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Subtitle', 'conversions-extensions' ), $this->id, 'customizer_repeater_subtitle2_control' ),
 								'class' => 'customizer-repeater-subtitle2-control',
 								'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_subtitle2_control' ),
 							)
@@ -485,7 +485,7 @@ class Repeater extends \WP_Customize_Control {
 					if ( true == $this->customizer_repeater_text_control ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Text', 'conversions' ), $this->id, 'customizer_repeater_text_control' ),
+								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Text', 'conversions-extensions' ), $this->id, 'customizer_repeater_text_control' ),
 								'class' => 'customizer-repeater-text-control',
 								'type'  => apply_filters( 'conversions_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_text_control' ),
 							)
@@ -494,7 +494,7 @@ class Repeater extends \WP_Customize_Control {
 					if ( true == $this->customizer_repeater_linktext_control ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link text', 'conversions' ), $this->id, 'customizer_repeater_linktext_control' ),
+								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link text', 'conversions-extensions' ), $this->id, 'customizer_repeater_linktext_control' ),
 								'class' => 'customizer-repeater-linktext-control',
 								'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_linktext_control' ),
 							)
@@ -503,7 +503,7 @@ class Repeater extends \WP_Customize_Control {
 					if ( true == $this->customizer_repeater_link_control ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link', 'conversions' ), $this->id, 'customizer_repeater_link_control' ),
+								'label' => apply_filters( 'conversions_repeater_labels_filter', esc_html__( 'Link', 'conversions-extensions' ), $this->id, 'customizer_repeater_link_control' ),
 								'class' => 'customizer-repeater-link-control',
 								'type'  => apply_filters( 'conversions_repeater_input_types_filter', '', $this->id, 'customizer_repeater_link_control' ),
 							)

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_social',
 	[
-		'title'      => __( 'Social Icons', 'conversions' ),
+		'title'      => __( 'Social Icons', 'conversions-extensions' ),
 		'priority'   => 49,
 		'capability' => 'edit_theme_options',
 	]
@@ -32,8 +32,8 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_social_navbar',
 		[
-			'label'       => __( 'Show in navbar?', 'conversions' ),
-			'description' => __( 'Check to add social icons to the navbar.', 'conversions' ),
+			'label'       => __( 'Show in navbar?', 'conversions-extensions' ),
+			'description' => __( 'Check to add social icons to the navbar.', 'conversions-extensions' ),
 			'section'     => 'conversions_social',
 			'settings'    => 'conversions_social_navbar',
 			'type'        => 'checkbox',
@@ -56,8 +56,8 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_social_footer',
 		[
-			'label'       => __( 'Show in footer?', 'conversions' ),
-			'description' => __( 'Check to add social icons to the footer.', 'conversions' ),
+			'label'       => __( 'Show in footer?', 'conversions-extensions' ),
+			'description' => __( 'Check to add social icons to the footer.', 'conversions-extensions' ),
 			'section'     => 'conversions_social',
 			'settings'    => 'conversions_social_footer',
 			'type'        => 'checkbox',
@@ -78,8 +78,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_social_size_control',
 	[
-		'label'       => __( 'Social icon size', 'conversions' ),
-		'description' => __( 'Icon size in rem', 'conversions' ),
+		'label'       => __( 'Social icon size', 'conversions-extensions' ),
+		'description' => __( 'Icon size in rem', 'conversions-extensions' ),
 		'section'     => 'conversions_social',
 		'settings'    => 'conversions_social_size',
 		'priority'    => 10,
@@ -105,7 +105,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_social_icons',
 		[
-			'label'                            => __( 'Icons', 'conversions' ),
+			'label'                            => __( 'Icons', 'conversions-extensions' ),
 			'section'                          => 'conversions_social',
 			'priority'                         => 20,
 			'customizer_repeater_icon_control' => true,

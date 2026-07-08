@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_blank',
 	[
-		'title'      => __( 'HTML or Shortcode', 'conversions' ),
+		'title'      => __( 'HTML or Shortcode', 'conversions-extensions' ),
 		'priority'   => 200,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
@@ -31,8 +31,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_blank_bg_color_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Blank section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'Blank section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_blank',
 		'settings'    => 'conversions_blank_bg_color',
 		'priority'    => 10,
@@ -54,15 +54,15 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_blank_content_position',
 		[
-			'label'       => __( 'Content alignment', 'conversions' ),
-			'description' => __( 'Select the content alignment.', 'conversions' ),
+			'label'       => __( 'Content alignment', 'conversions-extensions' ),
+			'description' => __( 'Select the content alignment.', 'conversions-extensions' ),
 			'section'     => 'conversions_homepage_blank',
 			'settings'    => 'conversions_blank_content_position',
 			'type'        => 'select',
 			'choices'     => [
-				'flex-start' => __( 'Left', 'conversions' ),
-				'center'     => __( 'Center', 'conversions' ),
-				'flex-end'   => __( 'Right', 'conversions' ),
+				'flex-start' => __( 'Left', 'conversions-extensions' ),
+				'center'     => __( 'Center', 'conversions-extensions' ),
+				'flex-end'   => __( 'Right', 'conversions-extensions' ),
 			],
 			'priority'    => '15',
 		]
@@ -81,8 +81,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_blank_content',
 	[
-		'label'       => __( 'Content', 'conversions' ),
-		'description' => __( 'Add some content. HTML is allowed.', 'conversions' ),
+		'label'       => __( 'Content', 'conversions-extensions' ),
+		'description' => __( 'Add some content. HTML is allowed.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_blank',
 		'settings'    => 'conversions_blank_content',
 		'priority'    => 20,
@@ -101,8 +101,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_blank_shortcode_control',
 	[
-		'label'       => __( 'Shortcode', 'conversions' ),
-		'description' => __( 'Add your shortcode.', 'conversions' ),
+		'label'       => __( 'Shortcode', 'conversions-extensions' ),
+		'description' => __( 'Add your shortcode.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_blank',
 		'settings'    => 'conversions_blank_shortcode',
 		'priority'    => 30,

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_news',
 	[
-		'title'      => __( 'News', 'conversions' ),
+		'title'      => __( 'News', 'conversions-extensions' ),
 		'priority'   => 90,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
@@ -30,8 +30,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_news_bg_color_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Call to Action section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'Call to Action section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_news',
 		'settings'    => 'conversions_news_bg_color',
 		'priority'    => 10,
@@ -50,8 +50,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_news_title_control',
 	[
-		'label'       => __( 'Title', 'conversions' ),
-		'description' => __( 'Add your title.', 'conversions' ),
+		'label'       => __( 'Title', 'conversions-extensions' ),
+		'description' => __( 'Add your title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_news',
 		'settings'    => 'conversions_news_title',
 		'priority'    => 20,
@@ -70,8 +70,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_news_title_color_control',
 	[
-		'label'       => __( 'Title color', 'conversions' ),
-		'description' => __( 'Select a color for the title.', 'conversions' ),
+		'label'       => __( 'Title color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_news',
 		'settings'    => 'conversions_news_title_color',
 		'priority'    => 30,
@@ -91,8 +91,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_news_desc',
 	[
-		'label'       => __( 'Description', 'conversions' ),
-		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
+		'label'       => __( 'Description', 'conversions-extensions' ),
+		'description' => __( 'Add some description text. HTML is allowed.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_news',
 		'settings'    => 'conversions_news_desc',
 		'priority'    => 40,
@@ -111,8 +111,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_news_desc_color_control',
 	[
-		'label'       => __( 'Description color', 'conversions' ),
-		'description' => __( 'Select a color for the description text.', 'conversions' ),
+		'label'       => __( 'Description color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the description text.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_news',
 		'settings'    => 'conversions_news_desc_color',
 		'priority'    => 50,
@@ -132,8 +132,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_news_mposts_control',
 	[
-		'label'       => __( '# of posts to show on mobile', 'conversions' ),
-		'description' => __( 'Number of posts to show from 992px and down.', 'conversions' ),
+		'label'       => __( '# of posts to show on mobile', 'conversions-extensions' ),
+		'description' => __( 'Number of posts to show from 992px and down.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_news',
 		'settings'    => 'conversions_news_mposts',
 		'priority'    => 60,

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_features',
 	[
-		'title'      => __( 'Icon features', 'conversions' ),
+		'title'      => __( 'Icon features', 'conversions-extensions' ),
 		'priority'   => 70,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
@@ -30,8 +30,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_bg_color_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Features section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'Features section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_bg_color',
 		'priority'    => 10,
@@ -50,8 +50,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_title_control',
 	[
-		'label'       => __( 'Title', 'conversions' ),
-		'description' => __( 'Add your title.', 'conversions' ),
+		'label'       => __( 'Title', 'conversions-extensions' ),
+		'description' => __( 'Add your title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_title',
 		'priority'    => 20,
@@ -70,8 +70,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_title_color_control',
 	[
-		'label'       => __( 'Title color', 'conversions' ),
-		'description' => __( 'Select a color for the title.', 'conversions' ),
+		'label'       => __( 'Title color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_title_color',
 		'priority'    => 30,
@@ -91,8 +91,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_desc',
 	[
-		'label'       => __( 'Description', 'conversions' ),
-		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
+		'label'       => __( 'Description', 'conversions-extensions' ),
+		'description' => __( 'Add some description text. HTML is allowed.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_desc',
 		'priority'    => 40,
@@ -111,8 +111,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_desc_color_control',
 	[
-		'label'       => __( 'Description color', 'conversions' ),
-		'description' => __( 'Select a color for the description text.', 'conversions' ),
+		'label'       => __( 'Description color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the description text.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_desc_color',
 		'priority'    => 50,
@@ -134,14 +134,14 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_features_respond',
 		[
-			'label'       => __( 'Responsive', 'conversions' ),
-			'description' => __( 'Select auto or manual item breakpoints.', 'conversions' ),
+			'label'       => __( 'Responsive', 'conversions-extensions' ),
+			'description' => __( 'Select auto or manual item breakpoints.', 'conversions-extensions' ),
 			'section'     => 'conversions_homepage_features',
 			'settings'    => 'conversions_features_respond',
 			'type'        => 'select',
 			'choices'     => [
-				'auto'   => __( 'Auto', 'conversions' ),
-				'manual' => __( 'Manual', 'conversions' ),
+				'auto'   => __( 'Auto', 'conversions-extensions' ),
+				'manual' => __( 'Manual', 'conversions-extensions' ),
 			],
 			'priority'    => '51',
 		]
@@ -160,8 +160,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_sm_control',
 	[
-		'label'       => __( '# of items on small screens', 'conversions' ),
-		'description' => __( 'Items to show 576px to 767px. Choose 1-4.', 'conversions' ),
+		'label'       => __( '# of items on small screens', 'conversions-extensions' ),
+		'description' => __( 'Items to show 576px to 767px. Choose 1-4.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_sm',
 		'priority'    => 60,
@@ -185,8 +185,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_md_control',
 	[
-		'label'       => __( '# of items on medium screens', 'conversions' ),
-		'description' => __( 'Items to show 768px to 991px. Choose 1-4.', 'conversions' ),
+		'label'       => __( '# of items on medium screens', 'conversions-extensions' ),
+		'description' => __( 'Items to show 768px to 991px. Choose 1-4.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_md',
 		'priority'    => 70,
@@ -210,8 +210,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_features_lg_control',
 	[
-		'label'       => __( '# of items on large screens', 'conversions' ),
-		'description' => __( 'Items to show 992px up. Choose 1-4.', 'conversions' ),
+		'label'       => __( '# of items on large screens', 'conversions-extensions' ),
+		'description' => __( 'Items to show 992px up. Choose 1-4.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_features',
 		'settings'    => 'conversions_features_lg',
 		'priority'    => 80,
@@ -236,7 +236,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_features_icons',
 		[
-			'label'                                => __( 'Icon block', 'conversions' ),
+			'label'                                => __( 'Icon block', 'conversions-extensions' ),
 			'section'                              => 'conversions_homepage_features',
 			'priority'                             => 90,
 			'customizer_repeater_icon_control'     => true,

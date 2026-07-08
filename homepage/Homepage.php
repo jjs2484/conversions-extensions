@@ -61,52 +61,52 @@ class Homepage {
 	public function __construct() {
 		static::$sections = [
 			'blank'          => [
-				'title' => __( 'HTML or Shortcode', 'conversions' ),
+				'title' => __( 'HTML or Shortcode', 'conversions-extensions' ),
 			],
 			'clients'        => [
-				'title' => __( 'Clients', 'conversions' ),
+				'title' => __( 'Clients', 'conversions-extensions' ),
 			],
 			'counter'        => [
-				'title' => __( 'Counter', 'conversions' ),
+				'title' => __( 'Counter', 'conversions-extensions' ),
 			],
 			'edd'            => [
-				'title' => __( 'Easy Digital Downloads', 'conversions' ),
+				'title' => __( 'Easy Digital Downloads', 'conversions-extensions' ),
 			],
 			'faq'            => [
-				'title' => __( 'FAQ', 'conversions' ),
+				'title' => __( 'FAQ', 'conversions-extensions' ),
 			],
 			'gallery'        => [
-				'title' => __( 'Gallery', 'conversions' ),
+				'title' => __( 'Gallery', 'conversions-extensions' ),
 			],
 			'hero'           => [
-				'title' => __( 'Hero', 'conversions' ),
+				'title' => __( 'Hero', 'conversions-extensions' ),
 			],
 			'features'       => [
-				'title' => __( 'Icon features', 'conversions' ),
+				'title' => __( 'Icon features', 'conversions-extensions' ),
 			],
 			'img_features'   => [
-				'title' => __( 'Image features', 'conversions' ),
+				'title' => __( 'Image features', 'conversions-extensions' ),
 			],
 			'single_feature' => [
-				'title' => __( 'Single feature', 'conversions' ),
+				'title' => __( 'Single feature', 'conversions-extensions' ),
 			],
 			'pricing'        => [
-				'title' => __( 'Pricing', 'conversions' ),
+				'title' => __( 'Pricing', 'conversions-extensions' ),
 			],
 			'news'           => [
-				'title' => __( 'News', 'conversions' ),
+				'title' => __( 'News', 'conversions-extensions' ),
 			],
 			'team'           => [
-				'title' => __( 'Team', 'conversions' ),
+				'title' => __( 'Team', 'conversions-extensions' ),
 			],
 			'testimonials'   => [
-				'title' => __( 'Testimonials', 'conversions' ),
+				'title' => __( 'Testimonials', 'conversions-extensions' ),
 			],
 			'text'           => [
-				'title' => __( 'Text', 'conversions' ),
+				'title' => __( 'Text', 'conversions-extensions' ),
 			],
 			'woocommerce'    => [
-				'title' => __( 'WooCommerce', 'conversions' ),
+				'title' => __( 'WooCommerce', 'conversions-extensions' ),
 			],
 		];
 
@@ -157,7 +157,7 @@ class Homepage {
 			[
 				'panel'    => 'conversions_homepage',
 				'priority' => 1,
-				'title'    => __( 'Homepage Sorting', 'conversions' ),
+				'title'    => __( 'Homepage Sorting', 'conversions-extensions' ),
 			]
 		);
 

@@ -57,13 +57,13 @@ class Gallery extends \WP_Customize_Control {
 		$this->button_labels = wp_parse_args(
 			$this->button_labels,
 			[
-				'select'       => __( 'Select Images', 'conversions' ),
-				'change'       => __( 'Modify Gallery', 'conversions' ),
-				'default'      => __( 'Default', 'conversions' ),
-				'remove'       => __( 'Remove', 'conversions' ),
-				'placeholder'  => __( 'No images selected', 'conversions' ),
-				'frame_title'  => __( 'Select Gallery Images', 'conversions' ),
-				'frame_button' => __( 'Choose Images', 'conversions' ),
+				'select'       => __( 'Select Images', 'conversions-extensions' ),
+				'change'       => __( 'Modify Gallery', 'conversions-extensions' ),
+				'default'      => __( 'Default', 'conversions-extensions' ),
+				'remove'       => __( 'Remove', 'conversions-extensions' ),
+				'placeholder'  => __( 'No images selected', 'conversions-extensions' ),
+				'frame_title'  => __( 'Select Gallery Images', 'conversions-extensions' ),
+				'frame_button' => __( 'Choose Images', 'conversions-extensions' ),
 			]
 		);
 	}

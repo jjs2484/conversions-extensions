@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_woo',
 	[
-		'title'          => __( 'WooCommerce', 'conversions' ),
+		'title'          => __( 'WooCommerce', 'conversions-extensions' ),
 		'capability'     => 'edit_theme_options',
 		'panel'          => 'conversions_homepage',
 		'priority'       => 140,
@@ -31,8 +31,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_woo_bg_color_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'WooCommerce section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'WooCommerce section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_woo',
 		'settings'    => 'conversions_woo_bg_color',
 		'priority'    => 10,
@@ -51,8 +51,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_woo_title_control',
 	[
-		'label'       => __( 'Title', 'conversions' ),
-		'description' => __( 'Add your title.', 'conversions' ),
+		'label'       => __( 'Title', 'conversions-extensions' ),
+		'description' => __( 'Add your title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_woo',
 		'settings'    => 'conversions_woo_title',
 		'priority'    => 20,
@@ -71,8 +71,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_woo_title_color_control',
 	[
-		'label'       => __( 'Title color', 'conversions' ),
-		'description' => __( 'Select a color for the title.', 'conversions' ),
+		'label'       => __( 'Title color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_woo',
 		'settings'    => 'conversions_woo_title_color',
 		'priority'    => 30,
@@ -92,8 +92,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_woo_desc',
 	[
-		'label'       => __( 'Description', 'conversions' ),
-		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
+		'label'       => __( 'Description', 'conversions-extensions' ),
+		'description' => __( 'Add some description text. HTML is allowed.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_woo',
 		'settings'    => 'conversions_woo_desc',
 		'priority'    => 40,
@@ -112,8 +112,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_woo_desc_color_control',
 	[
-		'label'       => __( 'Description color', 'conversions' ),
-		'description' => __( 'Select a color for the description text.', 'conversions' ),
+		'label'       => __( 'Description color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the description text.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_woo',
 		'settings'    => 'conversions_woo_desc_color',
 		'priority'    => 50,
@@ -135,15 +135,15 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_woo_products',
 		[
-			'label'       => __( 'Product type', 'conversions' ),
-			'description' => __( 'Select the type of WooCommerce products to show.', 'conversions' ),
+			'label'       => __( 'Product type', 'conversions-extensions' ),
+			'description' => __( 'Select the type of WooCommerce products to show.', 'conversions-extensions' ),
 			'section'     => 'conversions_homepage_woo',
 			'settings'    => 'conversions_woo_products',
 			'type'        => 'select',
 			'choices'     => [
-				'no'      => __( 'None', 'conversions' ),
-				'all'     => __( 'All', 'conversions' ),
-				'on_sale' => __( 'On sale', 'conversions' ),
+				'no'      => __( 'None', 'conversions-extensions' ),
+				'all'     => __( 'All', 'conversions-extensions' ),
+				'on_sale' => __( 'On sale', 'conversions-extensions' ),
 			],
 			'priority'    => '60',
 		]
@@ -162,8 +162,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_woo_product_limit',
 	[
-		'label'       => __( 'Products limit', 'conversions' ),
-		'description' => __( 'The number of products to display. Choose 1-12.', 'conversions' ),
+		'label'       => __( 'Products limit', 'conversions-extensions' ),
+		'description' => __( 'The number of products to display. Choose 1-12.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_woo',
 		'settings'    => 'conversions_woo_product_limit',
 		'priority'    => 70,
@@ -187,8 +187,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_woo_product_columns',
 	[
-		'label'       => __( 'Product columns', 'conversions' ),
-		'description' => __( 'The number of columns to display. Choose 1-4.', 'conversions' ),
+		'label'       => __( 'Product columns', 'conversions-extensions' ),
+		'description' => __( 'The number of columns to display. Choose 1-4.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_woo',
 		'settings'    => 'conversions_woo_product_columns',
 		'priority'    => 80,
@@ -214,17 +214,17 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_woo_products_order',
 		[
-			'label'       => __( 'Products orderby', 'conversions' ),
-			'description' => __( 'Sorts the products displayed by the entered option.', 'conversions' ),
+			'label'       => __( 'Products orderby', 'conversions-extensions' ),
+			'description' => __( 'Sorts the products displayed by the entered option.', 'conversions-extensions' ),
 			'section'     => 'conversions_homepage_woo',
 			'settings'    => 'conversions_woo_products_order',
 			'type'        => 'select',
 			'choices'     => [
-				'date'       => __( 'Date', 'conversions' ),
-				'popularity' => __( 'Popularity', 'conversions' ),
-				'rand'       => __( 'Random', 'conversions' ),
-				'rating'     => __( 'Rating', 'conversions' ),
-				'title'      => __( 'title', 'conversions' ),
+				'date'       => __( 'Date', 'conversions-extensions' ),
+				'popularity' => __( 'Popularity', 'conversions-extensions' ),
+				'rand'       => __( 'Random', 'conversions-extensions' ),
+				'rating'     => __( 'Rating', 'conversions-extensions' ),
+				'title'      => __( 'title', 'conversions-extensions' ),
 			],
 			'priority'    => '90',
 		]

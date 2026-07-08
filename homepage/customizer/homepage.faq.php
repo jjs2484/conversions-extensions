@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_faq',
 	[
-		'title'      => __( 'FAQ', 'conversions' ),
+		'title'      => __( 'FAQ', 'conversions-extensions' ),
 		'priority'   => 50,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
@@ -30,8 +30,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_faq_bg_color_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'faq section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'faq section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_faq',
 		'settings'    => 'conversions_faq_bg_color',
 		'priority'    => 10,
@@ -50,8 +50,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_faq_title_control',
 	[
-		'label'       => __( 'Title', 'conversions' ),
-		'description' => __( 'Add your title.', 'conversions' ),
+		'label'       => __( 'Title', 'conversions-extensions' ),
+		'description' => __( 'Add your title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_faq',
 		'settings'    => 'conversions_faq_title',
 		'priority'    => 20,
@@ -70,8 +70,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_faq_title_color_control',
 	[
-		'label'       => __( 'Title color', 'conversions' ),
-		'description' => __( 'Select a color for the title.', 'conversions' ),
+		'label'       => __( 'Title color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_faq',
 		'settings'    => 'conversions_faq_title_color',
 		'priority'    => 30,
@@ -91,8 +91,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_faq_desc',
 	[
-		'label'       => __( 'Description', 'conversions' ),
-		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
+		'label'       => __( 'Description', 'conversions-extensions' ),
+		'description' => __( 'Add some description text. HTML is allowed.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_faq',
 		'settings'    => 'conversions_faq_desc',
 		'priority'    => 40,
@@ -111,8 +111,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_faq_desc_color_control',
 	[
-		'label'       => __( 'Description color', 'conversions' ),
-		'description' => __( 'Select a color for the description text.', 'conversions' ),
+		'label'       => __( 'Description color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the description text.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_faq',
 		'settings'    => 'conversions_faq_desc_color',
 		'priority'    => 50,
@@ -132,7 +132,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_faq_repeater',
 		[
-			'label'                             => __( 'FAQ', 'conversions' ),
+			'label'                             => __( 'FAQ', 'conversions-extensions' ),
 			'section'                           => 'conversions_homepage_faq',
 			'priority'                          => 60,
 			'customizer_repeater_title_control' => true,

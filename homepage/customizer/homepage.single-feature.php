@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_single_feature',
 	[
-		'title'      => __( 'Single feature', 'conversions' ),
+		'title'      => __( 'Single feature', 'conversions-extensions' ),
 		'priority'   => 81,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
@@ -31,8 +31,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_bg_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Single feature section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'Single feature section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_bg',
 		'priority'    => 10,
@@ -51,8 +51,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_title_control',
 	[
-		'label'       => __( 'Title', 'conversions' ),
-		'description' => __( 'Add your title.', 'conversions' ),
+		'label'       => __( 'Title', 'conversions-extensions' ),
+		'description' => __( 'Add your title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_title',
 		'priority'    => 20,
@@ -71,8 +71,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_title_color_control',
 	[
-		'label'       => __( 'Title color', 'conversions' ),
-		'description' => __( 'Select a color for the title.', 'conversions' ),
+		'label'       => __( 'Title color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_title_color',
 		'priority'    => 30,
@@ -92,8 +92,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_desc',
 	[
-		'label'       => __( 'Description', 'conversions' ),
-		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
+		'label'       => __( 'Description', 'conversions-extensions' ),
+		'description' => __( 'Add some description text. HTML is allowed.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_desc',
 		'priority'    => 40,
@@ -112,8 +112,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_desc_color_control',
 	[
-		'label'       => __( 'Description color', 'conversions' ),
-		'description' => __( 'Select a color for the description text.', 'conversions' ),
+		'label'       => __( 'Description color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the description text.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_desc_color',
 		'priority'    => 45,
@@ -135,16 +135,16 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_single_feature_media_type',
 		[
-			'label'       => __( 'Media type', 'conversions' ),
-			'description' => __( 'Select to display an image, youtube video, vimeo, or shortcode.', 'conversions' ),
+			'label'       => __( 'Media type', 'conversions-extensions' ),
+			'description' => __( 'Select to display an image, youtube video, vimeo, or shortcode.', 'conversions-extensions' ),
 			'section'     => 'conversions_homepage_single_feature',
 			'settings'    => 'conversions_single_feature_media_type',
 			'type'        => 'select',
 			'choices'     => [
-				'image'     => __( 'Image', 'conversions' ),
-				'youtube'   => __( 'YouTube Video ID', 'conversions' ),
-				'vimeo'     => __( 'Vimeo Video ID', 'conversions' ),
-				'shortcode' => __( 'Shortcode', 'conversions' ),
+				'image'     => __( 'Image', 'conversions-extensions' ),
+				'youtube'   => __( 'YouTube Video ID', 'conversions-extensions' ),
+				'vimeo'     => __( 'Vimeo Video ID', 'conversions-extensions' ),
+				'shortcode' => __( 'Shortcode', 'conversions-extensions' ),
 			],
 			'priority'    => '50',
 		]
@@ -165,7 +165,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_single_feature_img_id',
 		[
-			'label'     => __( 'Upload image', 'conversions' ),
+			'label'     => __( 'Upload image', 'conversions-extensions' ),
 			'section'   => 'conversions_homepage_single_feature',
 			'settings'  => 'conversions_single_feature_img_id',
 			'priority'  => 50,
@@ -185,8 +185,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_youtube_control',
 	[
-		'label'       => __( 'YouTube Video ID', 'conversions' ),
-		'description' => __( 'Example: _sI_Ps7JSEk', 'conversions' ),
+		'label'       => __( 'YouTube Video ID', 'conversions-extensions' ),
+		'description' => __( 'Example: _sI_Ps7JSEk', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_youtube',
 		'priority'    => 60,
@@ -206,8 +206,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_vimeo',
 	[
-		'label'       => __( 'Vimeo Video ID', 'conversions' ),
-		'description' => __( 'Example: 361687086', 'conversions' ),
+		'label'       => __( 'Vimeo Video ID', 'conversions-extensions' ),
+		'description' => __( 'Example: 361687086', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_vimeo',
 		'priority'    => 70,
@@ -226,8 +226,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_single_feature_shortcode_control',
 	[
-		'label'       => __( 'Shortcode', 'conversions' ),
-		'description' => __( 'Add your shortcode.', 'conversions' ),
+		'label'       => __( 'Shortcode', 'conversions-extensions' ),
+		'description' => __( 'Add your shortcode.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_single_feature',
 		'settings'    => 'conversions_single_feature_shortcode',
 		'priority'    => 80,

@@ -25,14 +25,14 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_nav_layout',
 		[
-			'label'       => __( 'Navbar layout', 'conversions' ),
-			'description' => __( 'Select the Navbar layout.', 'conversions' ),
+			'label'       => __( 'Navbar layout', 'conversions-extensions' ),
+			'description' => __( 'Select the Navbar layout.', 'conversions-extensions' ),
 			'section'     => 'conversions_nav',
 			'settings'    => 'conversions_nav_layout',
 			'type'        => 'select',
 			'choices'     => [
-				'right' => __( 'Logo left, navbar right', 'conversions' ),
-				'below' => __( 'Logo left, navbar below', 'conversions' ),
+				'right' => __( 'Logo left, navbar right', 'conversions-extensions' ),
+				'below' => __( 'Logo left, navbar below', 'conversions-extensions' ),
 			],
 			'priority'    => '7',
 		]
@@ -51,8 +51,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_branding_tbpadding_control',
 	[
-		'label'       => __( 'Branding padding', 'conversions' ),
-		'description' => __( 'Top and bottom padding in rem.', 'conversions' ),
+		'label'       => __( 'Branding padding', 'conversions-extensions' ),
+		'description' => __( 'Top and bottom padding in rem.', 'conversions-extensions' ),
 		'section'     => 'conversions_nav',
 		'settings'    => 'conversions_branding_tbpadding',
 		'priority'    => 21,

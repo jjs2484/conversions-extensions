@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->add_section(
 	'conversions_homepage_text',
 	[
-		'title'      => __( 'Text', 'conversions' ),
+		'title'      => __( 'Text', 'conversions-extensions' ),
 		'priority'   => 130,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'conversions_homepage',
@@ -31,8 +31,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_text_bg_color_control',
 	[
-		'label'       => __( 'Background color', 'conversions' ),
-		'description' => __( 'Text section background color.', 'conversions' ),
+		'label'       => __( 'Background color', 'conversions-extensions' ),
+		'description' => __( 'Text section background color.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_text',
 		'settings'    => 'conversions_text_bg_color',
 		'priority'    => 10,
@@ -54,15 +54,15 @@ $wp_customize->add_control(
 		$wp_customize,
 		'conversions_text_section_align',
 		[
-			'label'       => __( 'Text alignment', 'conversions' ),
-			'description' => __( 'Select the text alignment.', 'conversions' ),
+			'label'       => __( 'Text alignment', 'conversions-extensions' ),
+			'description' => __( 'Select the text alignment.', 'conversions-extensions' ),
 			'section'     => 'conversions_homepage_text',
 			'settings'    => 'conversions_text_section_align',
 			'type'        => 'select',
 			'choices'     => [
-				'left'   => __( 'Left', 'conversions' ),
-				'center' => __( 'Center', 'conversions' ),
-				'right'  => __( 'Right', 'conversions' ),
+				'left'   => __( 'Left', 'conversions-extensions' ),
+				'center' => __( 'Center', 'conversions-extensions' ),
+				'right'  => __( 'Right', 'conversions-extensions' ),
 			],
 			'priority'    => '15',
 		]
@@ -80,8 +80,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_text_title_control',
 	[
-		'label'       => __( 'Title', 'conversions' ),
-		'description' => __( 'Add your title.', 'conversions' ),
+		'label'       => __( 'Title', 'conversions-extensions' ),
+		'description' => __( 'Add your title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_text',
 		'settings'    => 'conversions_text_title',
 		'priority'    => 20,
@@ -100,8 +100,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_text_title_color_control',
 	[
-		'label'       => __( 'Title color', 'conversions' ),
-		'description' => __( 'Select a color for the title.', 'conversions' ),
+		'label'       => __( 'Title color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the title.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_text',
 		'settings'    => 'conversions_text_title_color',
 		'priority'    => 30,
@@ -121,8 +121,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_text_desc',
 	[
-		'label'       => __( 'Description', 'conversions' ),
-		'description' => __( 'Add some description text. HTML is allowed.', 'conversions' ),
+		'label'       => __( 'Description', 'conversions-extensions' ),
+		'description' => __( 'Add some description text. HTML is allowed.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_text',
 		'settings'    => 'conversions_text_desc',
 		'priority'    => 40,
@@ -141,8 +141,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	'conversions_text_desc_color_control',
 	[
-		'label'       => __( 'Description color', 'conversions' ),
-		'description' => __( 'Select a color for the description text.', 'conversions' ),
+		'label'       => __( 'Description color', 'conversions-extensions' ),
+		'description' => __( 'Select a color for the description text.', 'conversions-extensions' ),
 		'section'     => 'conversions_homepage_text',
 		'settings'    => 'conversions_text_desc_color',
 		'priority'    => 50,
