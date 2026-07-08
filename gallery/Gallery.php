@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\gallery;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }

@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\homepage;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Homepage
  *

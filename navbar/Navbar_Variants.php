@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\navbar;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Navbar Variants class.
  *

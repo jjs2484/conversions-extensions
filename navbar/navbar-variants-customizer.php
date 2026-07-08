@@ -5,6 +5,10 @@
  * @package conversions
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Create our settings.
 $wp_customize->add_setting(
 	'conversions_nav_layout',

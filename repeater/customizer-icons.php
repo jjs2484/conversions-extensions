@@ -5,6 +5,10 @@
  * @package conversions
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Load all of the FA icons directly from their json.
 $json = file_get_contents( __DIR__ . '/icons.json' );
 $json = json_decode( $json );

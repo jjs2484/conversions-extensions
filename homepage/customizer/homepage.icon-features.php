@@ -5,6 +5,10 @@
  * @package conversions
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $wp_customize->add_section(
 	'conversions_homepage_features',
 	[

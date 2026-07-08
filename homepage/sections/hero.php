@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\homepage\sections;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 trait hero {
 
 	/**
@@ -88,7 +92,7 @@ trait hero {
 				$callout_btn = apply_filters( 'conversions_hero_callout_btn', $callout_btn );
 			}
 
-			echo $callout_btn;
+			echo $callout_btn; // 	WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped earlier.
 		}
 
 		// Video button.

@@ -5,7 +5,7 @@
  * Version: 2.2.5
  * Author: uniquelylost
  * Author URI: https://conversionswp.com
- * Text Domain: conversions
+ * Text Domain: conversions-extensions
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -13,6 +13,10 @@
  */
 
 namespace conversions\extensions {
+
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit;
+	}
 
 	// Keep in sync with the version above.
 	define( 'CONVERSIONS_EXTENSIONS_VERSION', '2.2.5' );
@@ -525,72 +529,72 @@ namespace
 		// Testimonial repeater label changes.
 		if ( $id === 'conversions_testimonials_repeater' ) {
 			if ( $control === 'customizer_repeater_title_control' ) {
-				return esc_html__( 'Full name', 'conversions' );
+				return esc_html__( 'Full name', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle_control' ) {
-				return esc_html__( 'Company name', 'conversions' );
+				return esc_html__( 'Company name', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_text_control' ) {
-				return esc_html__( 'Testimonial text', 'conversions' );
+				return esc_html__( 'Testimonial text', 'conversions-extensions' );
 			}
 		}
 
 		// Pricing table repeater label changes.
 		if ( $id === 'conversions_pricing_repeater' ) {
 			if ( $control === 'customizer_repeater_subtitle_control' ) {
-				return esc_html__( 'Price', 'conversions' );
+				return esc_html__( 'Price', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle2_control' ) {
-				return esc_html__( 'Duration', 'conversions' );
+				return esc_html__( 'Duration', 'conversions-extensions' );
 			}
 		}
 
 		// Image features repeater label changes.
 		if ( $id === 'conversions_img_features_imgs' ) {
 			if ( $control === 'customizer_repeater_linktext_control' ) {
-				return esc_html__( 'Link text (not required)', 'conversions' );
+				return esc_html__( 'Link text (not required)', 'conversions-extensions' );
 			}
 		}
 
 		// Team repeater label changes.
 		if ( $id === 'conversions_team_details' ) {
 			if ( $control === 'customizer_repeater_title_control' ) {
-				return esc_html__( 'Full name', 'conversions' );
+				return esc_html__( 'Full name', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle_control' ) {
-				return esc_html__( 'Job title', 'conversions' );
+				return esc_html__( 'Job title', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_text_control' ) {
-				return esc_html__( 'Short summary', 'conversions' );
+				return esc_html__( 'Short summary', 'conversions-extensions' );
 			}
 		}
 
 		// Counter repeater label changes.
 		if ( $id === 'conversions_counter_blocks' ) {
 			if ( $control === 'customizer_repeater_color_control' ) {
-				return esc_html__( 'Icon color', 'conversions' );
+				return esc_html__( 'Icon color', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_title_control' ) {
-				return esc_html__( 'Before counter symbol ($, €, +, -, etc)', 'conversions' );
+				return esc_html__( 'Before counter symbol ($, €, +, -, etc)', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle_control' ) {
-				return esc_html__( 'Counter number - text or shortcode', 'conversions' );
+				return esc_html__( 'Counter number - text or shortcode', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_subtitle2_control' ) {
-				return esc_html__( 'After counter symbol (+, -, etc)', 'conversions' );
+				return esc_html__( 'After counter symbol (+, -, etc)', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_text_control' ) {
-				return esc_html__( 'Title', 'conversions' );
+				return esc_html__( 'Title', 'conversions-extensions' );
 			}
 		}
 
 		// FAQ repeater label changes.
 		if ( $id === 'conversions_faq_repeater' ) {
 			if ( $control === 'customizer_repeater_title_control' ) {
-				return esc_html__( 'Question', 'conversions' );
+				return esc_html__( 'Question', 'conversions-extensions' );
 			}
 			if ( $control === 'customizer_repeater_text_control' ) {
-				return esc_html__( 'Answer', 'conversions' );
+				return esc_html__( 'Answer', 'conversions-extensions' );
 			}
 		}
 

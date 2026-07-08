@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\homepage\sections;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 trait single_feature {
 
 	/**

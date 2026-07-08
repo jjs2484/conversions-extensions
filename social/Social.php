@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\social;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Social class.
  *

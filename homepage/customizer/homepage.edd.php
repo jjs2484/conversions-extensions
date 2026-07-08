@@ -5,6 +5,10 @@
  * @package conversions
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 
 	$wp_customize->add_section(

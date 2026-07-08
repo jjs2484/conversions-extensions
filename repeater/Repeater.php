@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\repeater;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
@@ -137,11 +141,11 @@ class Repeater extends \WP_Customize_Control {
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 		// Get options from customizer.php.
-		$this->add_field_label = esc_html__( 'Add new field', 'conversions' );
+		$this->add_field_label = esc_html__( 'Add new field', 'conversions-extensions' );
 		if ( ! empty( $args['add_field_label'] ) ) {
 			$this->add_field_label = $args['add_field_label'];
 		}
-		$this->boxtitle = esc_html__( 'Customizer Repeater', 'conversions' );
+		$this->boxtitle = esc_html__( 'Customizer Repeater', 'conversions-extensions' );
 		if ( ! empty( $args['item_name'] ) ) {
 			$this->boxtitle = $args['item_name'];
 		} elseif ( ! empty( $this->label ) ) {
@@ -514,7 +518,7 @@ class Repeater extends \WP_Customize_Control {
 					?>
 					<input type="hidden" class="social-repeater-box-id">
 					<button type="button" class="social-repeater-general-control-remove-field button" style="display:none;">
-						<?php esc_html_e( 'Delete field', 'conversions' ); ?>
+						<?php esc_html_e( 'Delete field', 'conversions-extensions' ); ?>
 					</button>
 				</div>
 			</div>
@@ -565,7 +569,7 @@ class Repeater extends \WP_Customize_Control {
 		?>
 		<div class="social-repeater-general-control-icon" <?php if ( $show === 'customizer_repeater_image' || $show === 'customizer_repeater_none' ) { echo 'style="display:none;"'; } ?>>
 			<span class="customize-control-title">
-				<?php esc_html_e( 'Icon', 'conversions' ); ?>
+				<?php esc_html_e( 'Icon', 'conversions-extensions' ); ?>
 			</span>
 			<div class="input-group icp-container">
 				<input data-placement="bottomRight" class="icp icp-auto" value="<?php if ( ! empty( $value ) ) { echo esc_attr( $value ); } ?>" type="text">
@@ -588,7 +592,7 @@ class Repeater extends \WP_Customize_Control {
 		?>
 		<div class="customizer-repeater-image-control" <?php if ( $show === 'customizer_repeater_icon' || $show === 'customizer_repeater_none' ) { echo 'style="display:none;"'; } ?>>
 			<span class="customize-control-title">
-				<?php esc_html_e( 'Image', 'conversions' ); ?>
+				<?php esc_html_e( 'Image', 'conversions-extensions' ); ?>
 			</span>
 			<?php
 			/*
@@ -617,7 +621,7 @@ class Repeater extends \WP_Customize_Control {
 			?>
 			<img class="customizer-repeater-image-preview attachment-thumb" src="<?php if ( ! empty( $image_med_url ) ) { echo esc_attr( $image_med_url ); } ?>" draggable="false" alt="">
 			<input type="hidden" class="widefat custom-media-url" value="<?php echo esc_attr( $value ); ?>">
-			<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="<?php esc_attr_e( 'Upload Image', 'conversions' ); ?>" />
+			<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="<?php esc_attr_e( 'Upload Image', 'conversions-extensions' ); ?>" />
 		</div>
 		<?php
 	}
@@ -630,12 +634,12 @@ class Repeater extends \WP_Customize_Control {
 	private function icon_type_choice( $value = 'customizer_repeater_icon' ) {
 		?>
 		<span class="customize-control-title">
-			<?php esc_html_e( 'Image type', 'conversions' ); ?>
+			<?php esc_html_e( 'Image type', 'conversions-extensions' ); ?>
 		</span>
 		<select class="customizer-repeater-image-choice">
-			<option value="customizer_repeater_icon" <?php selected( $value, 'customizer_repeater_icon' ); ?>><?php esc_html_e( 'Icon', 'conversions' ); ?></option>
-			<option value="customizer_repeater_image" <?php selected( $value, 'customizer_repeater_image' ); ?>><?php esc_html_e( 'Image', 'conversions' ); ?></option>
-			<option value="customizer_repeater_none" <?php selected( $value, 'customizer_repeater_none' ); ?>><?php esc_html_e( 'None', 'conversions' ); ?></option>
+			<option value="customizer_repeater_icon" <?php selected( $value, 'customizer_repeater_icon' ); ?>><?php esc_html_e( 'Icon', 'conversions-extensions' ); ?></option>
+			<option value="customizer_repeater_image" <?php selected( $value, 'customizer_repeater_image' ); ?>><?php esc_html_e( 'Image', 'conversions-extensions' ); ?></option>
+			<option value="customizer_repeater_none" <?php selected( $value, 'customizer_repeater_none' ); ?>><?php esc_html_e( 'None', 'conversions-extensions' ); ?></option>
 		</select>
 		<?php
 	}
@@ -649,7 +653,7 @@ class Repeater extends \WP_Customize_Control {
 		$feature_repeater = array();
 		$show_del         = 0;
 		?>
-		<span class="customize-control-title"><?php esc_html_e( 'Features', 'conversions' ); ?></span>
+		<span class="customize-control-title"><?php esc_html_e( 'Features', 'conversions-extensions' ); ?></span>
 		<?php
 		if ( ! empty( $value ) ) {
 			$feature_repeater = json_decode( html_entity_decode( $value ), true );
@@ -659,15 +663,15 @@ class Repeater extends \WP_Customize_Control {
 			<div class="customizer-repeater-feature-repeater">
 				<div class="customizer-repeater-feature-repeater-container">
 					<input type="text" class="customizer-repeater-feature-repeater-text"
-						placeholder="<?php esc_attr_e( 'Feature', 'conversions' ); ?>">
+						placeholder="<?php esc_attr_e( 'Feature', 'conversions-extensions' ); ?>">
 					<input type="hidden" class="customizer-repeater-feature-repeater-id" value="">
 					<button class="feature-repeater-remove-feature-item" style="display:none">
-						<?php esc_html_e( 'Remove Feature', 'conversions' ); ?>
+						<?php esc_html_e( 'Remove Feature', 'conversions-extensions' ); ?>
 					</button>
 				</div>
 				<input type="hidden" id="feature-repeater-features-repeater-collector" class="feature-repeater-features-repeater-collector" value=""/>
 			</div>
-			<button class="feature-repeater-add-feature-item button-secondary"><?php esc_html_e( 'Add Feature', 'conversions' ); ?></button>
+			<button class="feature-repeater-add-feature-item button-secondary"><?php esc_html_e( 'Add Feature', 'conversions-extensions' ); ?></button>
 			<?php
 		} else {
 			?>
@@ -678,7 +682,7 @@ class Repeater extends \WP_Customize_Control {
 					?>
 					<div class="customizer-repeater-feature-repeater-container">
 						<input type="text" class="customizer-repeater-feature-repeater-text"
-							placeholder="<?php esc_attr_e( 'Feature', 'conversions' ); ?>"
+							placeholder="<?php esc_attr_e( 'Feature', 'conversions-extensions' ); ?>"
 							value="<?php if ( ! empty( $feat['feature'] ) ) {
 								echo esc_html( $feat['feature'] );
 							} ?>">
@@ -689,7 +693,7 @@ class Repeater extends \WP_Customize_Control {
 						<button class="feature-repeater-remove-feature-item"
 							style="<?php if ( 1 == $show_del ) {
 								echo 'display:none';
-							} ?>"><?php esc_html_e( 'Remove Feature', 'conversions' ); ?></button>
+							} ?>"><?php esc_html_e( 'Remove Feature', 'conversions-extensions' ); ?></button>
 					</div>
 					<?php
 				}
@@ -698,7 +702,7 @@ class Repeater extends \WP_Customize_Control {
 					class="feature-repeater-features-repeater-collector"
 					value="<?php echo esc_textarea( html_entity_decode( $value ) ); ?>" />
 			</div>
-			<button class="feature-repeater-add-feature-item button-secondary"><?php esc_html_e( 'Add Feature', 'conversions' ); ?></button>
+			<button class="feature-repeater-add-feature-item button-secondary"><?php esc_html_e( 'Add Feature', 'conversions-extensions' ); ?></button>
 			<?php
 		}
 	}
@@ -712,7 +716,7 @@ class Repeater extends \WP_Customize_Control {
 		$social_repeater = array();
 		$show_del        = 0; ?>
 		<span class="customize-control-title">
-			<?php esc_html_e( 'Social icons', 'conversions' ); ?>
+			<?php esc_html_e( 'Social icons', 'conversions-extensions' ); ?>
 		</span>
 		<?php
 		if ( ! empty( $value ) ) {
@@ -727,15 +731,15 @@ class Repeater extends \WP_Customize_Control {
 					</div>
 					<?php include __DIR__ . $this->customizer_icon_container; ?>
 					<input type="text" class="customizer-repeater-social-repeater-link"
-						placeholder="<?php esc_attr_e( 'Link', 'conversions' ); ?>">
+						placeholder="<?php esc_attr_e( 'Link', 'conversions-extensions' ); ?>">
 					<input type="hidden" class="customizer-repeater-social-repeater-id" value="">
 					<button class="social-repeater-remove-social-item" style="display:none">
-						<?php esc_html_e( 'Remove Icon', 'conversions' ); ?>
+						<?php esc_html_e( 'Remove Icon', 'conversions-extensions' ); ?>
 					</button>
 				</div>
 				<input type="hidden" id="social-repeater-socials-repeater-collector" class="social-repeater-socials-repeater-collector" value=""/>
 			</div>
-			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'conversions' ); ?></button>
+			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'conversions-extensions' ); ?></button>
 			<?php
 		} else { ?>
 			<div class="customizer-repeater-social-repeater">
@@ -750,7 +754,7 @@ class Repeater extends \WP_Customize_Control {
 						<?php get_template_part( $this->customizer_icon_container ); ?>
 						<?php include __DIR__ . $this->customizer_icon_container; ?>
 						<input type="text" class="customizer-repeater-social-repeater-link"
-							placeholder="<?php esc_attr_e( 'Link', 'conversions' ); ?>"
+							placeholder="<?php esc_attr_e( 'Link', 'conversions-extensions' ); ?>"
 							value="<?php if ( ! empty( $social_icon['link'] ) ) {
 								echo esc_url( $social_icon['link'] );
 							} ?>">
@@ -761,7 +765,7 @@ class Repeater extends \WP_Customize_Control {
 						<button class="social-repeater-remove-social-item"
 							style="<?php if ( $show_del == 1 ) {
 								echo 'display:none';
-							} ?>"><?php esc_html_e( 'Remove Icon', 'conversions' ); ?></button>
+							} ?>"><?php esc_html_e( 'Remove Icon', 'conversions-extensions' ); ?></button>
 					</div>
 					<?php
 				} ?>
@@ -769,7 +773,7 @@ class Repeater extends \WP_Customize_Control {
 					class="social-repeater-socials-repeater-collector"
 					value="<?php echo esc_textarea( html_entity_decode( $value ) ); ?>" />
 			</div>
-			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'conversions' ); ?></button>
+			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add Icon', 'conversions-extensions' ); ?></button>
 			<?php
 		}
 	}

@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\homepage;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Homepage_Sorting_Customizer_Control.
  */
@@ -17,7 +21,7 @@ class Homepage_Sorting_Customizer_Control extends \WP_Customize_Control {
 	 */
 	public function render_content() {
 		?>
-			<span class="customize-control-title"><?php esc_html_e( 'Sorting', 'conversions' ); ?></span>
+			<span class="customize-control-title"><?php esc_html_e( 'Sorting', 'conversions-extensions' ); ?></span>
 			<ul class="conversions_homepage_sorting">
 		<?php
 		$sections = Homepage::get_sorted_sections();

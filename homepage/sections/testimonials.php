@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\homepage\sections;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 trait testimonials {
 
 	/**
@@ -98,8 +102,8 @@ trait testimonials {
 
 								</cite>
 								<div class="c-testimonials__nav align-self-end ms-sm-auto">
-									<i class="fa-solid fa-chevron-left slick-arrow me-2" aria-hidden="true" title="<?php esc_attr_e( 'Previous', 'conversions' ); ?>"></i>
-									<i class="fa-solid fa-chevron-right slick-arrow" aria-hidden="true" title="<?php esc_attr_e( 'Next', 'conversions' ); ?>"></i>
+									<i class="fa-solid fa-chevron-left slick-arrow me-2" aria-hidden="true" title="<?php esc_attr_e( 'Previous', 'conversions-extensions' ); ?>"></i>
+									<i class="fa-solid fa-chevron-right slick-arrow" aria-hidden="true" title="<?php esc_attr_e( 'Next', 'conversions-extensions' ); ?>"></i>
 								</div>
 							</div>
 						</blockquote>

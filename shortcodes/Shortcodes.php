@@ -7,6 +7,10 @@
 
 namespace conversions\extensions\shortcodes;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Shortcodes class.
  *
